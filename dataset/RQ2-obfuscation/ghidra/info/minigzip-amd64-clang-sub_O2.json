@@ -1,0 +1,52 @@
+{
+    "funcCount": 7,
+    "funcInfo": [
+        {
+            "funcStartAddr": 4198816,
+            "funcEndAddr": 4198821,
+            "decompiledFuncCode": "\nvoid _dl_relocate_static_pie(void)\n\n{\n  return;\n}\n\n",
+            "funcName": "_dl_relocate_static_pie"
+        },
+        {
+            "funcStartAddr": 4199008,
+            "funcEndAddr": 4199048,
+            "decompiledFuncCode": "\nvoid error(char *msg)\n\n{\n  fprintf(stderr,\"%s: %s\\n\",prog,msg);\n                    /* WARNING: Subroutine does not return */\n  exit(1);\n}\n\n",
+            "funcName": "error"
+        },
+        {
+            "funcStartAddr": 4199056,
+            "funcEndAddr": 4199231,
+            "decompiledFuncCode": "\nvoid gz_compress(FILE *in,gzFile out)\n\n{\n  int iVar1;\n  size_t sVar2;\n  char *msg;\n  int err;\n  char buf [16384];\n  undefined local_402c [4];\n  undefined local_4028 [16392];\n  \n  while( true ) {\n    sVar2 = fread(local_4028,1,0x4000,(FILE *)in);\n    iVar1 = ferror((FILE *)in);\n    if (iVar1 != 0) {\n      perror(\"fread\");\n                    /* WARNING: Subroutine does not return */\n      exit(1);\n    }\n    if ((int)sVar2 == 0) break;\n    iVar1 = gzwrite(out,local_4028,sVar2 & 0xffffffff);\n    if (iVar1 != (int)sVar2) {\n      msg = (char *)gzerror(out,local_402c);\n                    /* WARNING: Subroutine does not return */\n      error(msg);\n    }\n  }\n  fclose((FILE *)in);\n  iVar1 = gzclose(out);\n  if (iVar1 == 0) {\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  error(\"failed gzclose\");\n}\n\n",
+            "funcName": "gz_compress"
+        },
+        {
+            "funcStartAddr": 4199232,
+            "funcEndAddr": 4199399,
+            "decompiledFuncCode": "\nvoid gz_uncompress(gzFile in,FILE *out)\n\n{\n  uint uVar1;\n  int iVar2;\n  size_t sVar3;\n  char *msg;\n  int err;\n  char buf [16384];\n  undefined local_402c [4];\n  undefined local_4028 [16392];\n  \n  while( true ) {\n    uVar1 = gzread(in,local_4028,0x4000);\n    if ((int)uVar1 < 0) {\n      msg = (char *)gzerror(in,local_402c);\n                    /* WARNING: Subroutine does not return */\n      error(msg);\n    }\n    if (uVar1 == 0) break;\n    sVar3 = fwrite(local_4028,1,(ulong)uVar1,(FILE *)out);\n    if ((uint)sVar3 != uVar1) {\n                    /* WARNING: Subroutine does not return */\n      error(\"failed fwrite\");\n    }\n  }\n  iVar2 = fclose((FILE *)out);\n  if (iVar2 != 0) {\n                    /* WARNING: Subroutine does not return */\n    error(\"failed fclose\");\n  }\n  iVar2 = gzclose(in);\n  if (iVar2 == 0) {\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  error(\"failed gzclose\");\n}\n\n",
+            "funcName": "gz_uncompress"
+        },
+        {
+            "funcStartAddr": 4199408,
+            "funcEndAddr": 4199642,
+            "decompiledFuncCode": "\nvoid file_compress(char *file,char *mode)\n\n{\n  size_t sVar1;\n  FILE *in;\n  gzFile out;\n  char outfile [1024];\n  char acStack_418 [1024];\n  \n  sVar1 = strlen(file);\n  if (0x3ff < sVar1 + 3) {\n    fprintf(stderr,\"%s: filename too long\\n\",prog);\n                    /* WARNING: Subroutine does not return */\n    exit(1);\n  }\n  snprintf(acStack_418,0x400,\"%s%s\",file,&DAT_00402059);\n  in = fopen(file,\"rb\");\n  if (in != (FILE *)0x0) {\n    out = (gzFile)gzopen(acStack_418,mode);\n    if (out != (gzFile)0x0) {\n      gz_compress((FILE *)in,out);\n      unlink(file);\n      return;\n    }\n    fprintf(stderr,\"%s: can\\'t gzopen %s\\n\",prog,acStack_418);\n                    /* WARNING: Subroutine does not return */\n    exit(1);\n  }\n  perror(file);\n                    /* WARNING: Subroutine does not return */\n  exit(1);\n}\n\n",
+            "funcName": "file_compress"
+        },
+        {
+            "funcStartAddr": 4199648,
+            "funcEndAddr": 4200005,
+            "decompiledFuncCode": "\nvoid file_uncompress(char *file)\n\n{\n  int iVar1;\n  size_t sVar2;\n  gzFile in;\n  FILE *out;\n  char *__filename;\n  char *__name;\n  char buf [1024];\n  undefined8 uStack_430;\n  char acStack_428 [1032];\n  \n  __filename = acStack_428;\n  uStack_430 = 0x4014f6;\n  sVar2 = strlen(file);\n  if (0x3ff < sVar2 + 3) {\n    uStack_430 = 0x401602;\n    fprintf(stderr,\"%s: filename too long\\n\",prog);\n                    /* WARNING: Subroutine does not return */\n    uStack_430 = 0x40160c;\n    exit(1);\n  }\n  uStack_430 = 0x401534;\n  snprintf(acStack_428,0x400,\"%s\",file);\n  if (3 < sVar2) {\n    uStack_430 = 0x401549;\n    iVar1 = strcmp(file + (sVar2 - 3),\".gz\");\n    if (iVar1 == 0) {\n      acStack_428[sVar2 - 3] = '\\0';\n      __name = file;\n      goto LAB_0040157d;\n    }\n  }\n  uStack_430 = 0x40157a;\n  snprintf(acStack_428 + sVar2,0x400 - sVar2,\"%s\",&DAT_00402059);\n  __filename = file;\n  __name = acStack_428;\nLAB_0040157d:\n  uStack_430 = 0x40158a;\n  in = (gzFile)gzopen(__name,&DAT_0040205d);\n  if (in == (gzFile)0x0) {\n    uStack_430 = 0x401629;\n    fprintf(stderr,\"%s: can\\'t gzopen %s\\n\",prog,__name);\n                    /* WARNING: Subroutine does not return */\n    uStack_430 = 0x401633;\n    exit(1);\n  }\n  uStack_430 = 0x40159f;\n  out = fopen(__filename,\"wb\");\n  if (out != (FILE *)0x0) {\n    uStack_430 = 0x4015b3;\n    gz_uncompress(in,(FILE *)out);\n    uStack_430 = 0x4015bb;\n    unlink(__name);\n    return;\n  }\n  uStack_430 = 0x40163b;\n  perror(file);\n                    /* WARNING: Subroutine does not return */\n  uStack_430 = 0x401645;\n  exit(1);\n}\n\n",
+            "funcName": "file_uncompress"
+        },
+        {
+            "funcStartAddr": 4200016,
+            "funcEndAddr": 4200707,
+            "decompiledFuncCode": "\nint main(int argc,char **argv)\n\n{\n  char *pcVar1;\n  bool bVar2;\n  char cVar3;\n  int iVar4;\n  int iVar5;\n  char *pcVar6;\n  gzFile pgVar7;\n  FILE *in;\n  char **ppcVar8;\n  char *__s1;\n  bool bVar9;\n  char acStack_48 [2];\n  char local_46;\n  char local_45;\n  \n  bVar2 = false;\n  snprintf(acStack_48,0x14,\"%s\",&DAT_00402078);\n  prog = *argv;\n  pcVar1 = *argv;\n  pcVar6 = strrchr(pcVar1,0x2f);\n  __s1 = pcVar6 + 1;\n  if (pcVar6 == (char *)0x0) {\n    __s1 = pcVar1;\n  }\n  iVar4 = strcmp(__s1,\"gunzip\");\n  if (iVar4 == 0) {\n    bVar9 = true;\n  }\n  else {\n    iVar4 = strcmp(__s1,\"zcat\");\n    bVar9 = iVar4 == 0;\n    bVar2 = bVar9;\n  }\n  iVar4 = argc + -1;\n  ppcVar8 = argv + 1;\n  if (1 < argc) {\n    do {\n      pcVar1 = *ppcVar8;\n      iVar4 = strcmp(pcVar1,\"-c\");\n      if (iVar4 == 0) {\n        bVar2 = true;\n        cVar3 = local_46;\n      }\n      else {\n        iVar4 = strcmp(pcVar1,\"-d\");\n        if (iVar4 == 0) {\n          bVar9 = true;\n          cVar3 = local_46;\n        }\n        else {\n          iVar4 = strcmp(pcVar1,\"-f\");\n          if (iVar4 == 0) {\n            local_45 = 'f';\n            cVar3 = local_46;\n          }\n          else {\n            iVar4 = strcmp(pcVar1,\"-h\");\n            if (iVar4 == 0) {\n              local_45 = 'h';\n              cVar3 = local_46;\n            }\n            else {\n              iVar4 = strcmp(pcVar1,\"-r\");\n              if (iVar4 == 0) {\n                local_45 = 'R';\n                cVar3 = local_46;\n              }\n              else if (((*pcVar1 != '-') || (8 < (byte)(pcVar1[1] - 0x31U))) ||\n                      (cVar3 = pcVar1[1], pcVar1[2] != '\\0')) break;\n            }\n          }\n        }\n      }\n      local_46 = cVar3;\n      ppcVar8 = ppcVar8 + 1;\n      argc = argc + -1;\n    } while (1 < argc);\n    iVar4 = argc + -1;\n  }\n  if (local_45 == ' ') {\n    local_45 = '\\0';\n  }\n  if (iVar4 == 0) {\n    if (bVar9) {\n      iVar4 = fileno(stdin);\n      pgVar7 = (gzFile)gzdopen(iVar4,&DAT_0040205d);\n      if (pgVar7 == (gzFile)0x0) {\n                    /* WARNING: Subroutine does not return */\n        error(\"can\\'t gzdopen stdin\");\n      }\n      gz_uncompress(pgVar7,(FILE *)stdout);\n    }\n    else {\n      iVar4 = fileno(stdout);\n      pgVar7 = (gzFile)gzdopen(iVar4,acStack_48);\n      if (pgVar7 == (gzFile)0x0) {\nLAB_0040191c:\n                    /* WARNING: Subroutine does not return */\n        error(\"can\\'t gzdopen stdout\");\n      }\n      gz_compress((FILE *)stdin,pgVar7);\n    }\n  }\n  else {\n    do {\n      pcVar1 = *ppcVar8;\n      if (bVar9) {\n        if (bVar2) {\n          pgVar7 = (gzFile)gzopen(pcVar1,&DAT_0040205d);\n          if (pgVar7 == (gzFile)0x0) {\n            fprintf(stderr,\"%s: can\\'t gzopen %s\\n\",prog,*ppcVar8);\n          }\n          else {\n            gz_uncompress(pgVar7,(FILE *)stdout);\n          }\n        }\n        else {\n          file_uncompress(pcVar1);\n        }\n      }\n      else if (bVar2) {\n        in = fopen(pcVar1,\"rb\");\n        if (in == (FILE *)0x0) {\n          perror(*ppcVar8);\n        }\n        else {\n          iVar5 = fileno(stdout);\n          pgVar7 = (gzFile)gzdopen(iVar5,acStack_48);\n          if (pgVar7 == (gzFile)0x0) goto LAB_0040191c;\n          gz_compress((FILE *)in,pgVar7);\n        }\n      }\n      else {\n        file_compress(pcVar1,acStack_48);\n      }\n      ppcVar8 = ppcVar8 + 1;\n      iVar4 = iVar4 + -1;\n    } while (iVar4 != 0);\n  }\n  return 0;\n}\n\n",
+            "funcName": "main"
+        }
+    ],
+    "decompilerName": "Ghidra",
+    "binaryName": "minigzip-amd64-clang-sub_O2",
+    "isStripped": "True",
+    "compilerName": "gcc",
+    "optLevel": "-O"
+}

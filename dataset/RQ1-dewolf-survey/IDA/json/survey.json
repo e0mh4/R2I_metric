@@ -1,0 +1,20 @@
+{
+    "binaryInfo": {
+        "binaryName": "dewolf",
+        "isStripped": "True"
+    },
+    "buildInfo": {
+        "decompilerName": "dewolf",
+        "compilerName": "gcc",
+        "compilerVersion": "9.4.0",
+        "Optlevel": "-O"
+    },
+    "funcInfo": [
+        {
+            "funcName": "sub_401C3D",
+            "funcStartAddr": "0x401C3D",
+            "funcEndAddr": "0x402dd4",
+            "decompiledFuncCode": "_int64 sub_401C3D()\n{\n    char s[8]; // [rsp+0h] [rbp-60h] BYREF\n    __int64 v2; // [rsp+8h] [rbp-58h]\n    __int64 v3; // [rsp+10h] [rbp-50h]\n    __int64 v4; // [rsp+18h] [rbp-48h]\n    __int64 v5; // [rsp+20h] [rbp-40h]\n    __int64 v6; // [rsp+28h] [rbp-38h]\n    __int64 v7; // [rsp+30h] [rbp-30h]\n    __int64 v8; // [rsp+38h] [rbp-28h]\n    char v9; // [rsp+40h] [rbp-20h]\n    __int64 v10; // [rsp+50h] [rbp-10h] BYREF\n    int v11; // [rsp+58h] rbp-8h]\n    unsigned int v12; // [rsp+5Ch] [rbp-4h]\n\n    *(_QWORD *)s = 0LL;\n    v2 = 0LL;\n    v3 = 0LL;\n    v4 = 0LL;\n    v5 = 0LL;\n    v6 = 0LL;\n    v7 = 0LL;\n    v8 = 0LL;\n    v9 = 0;\n    printf(\"Enter any binary number: \");\n    __isoc99_scanf(\"%lld\", &v10);\n    v12 = v10;\n    while ( v10 > 0 )\n    {\n    v11 = v10 % 10000;\n    if ( v11 == 1111 )\n    {\n        *(_WORD *)&s[strlenstrlen(s)] = 70;\n    }\nelse if ( v11 <= 1111 )\n{\nif ( v11 == 1110 )\n{\n*(_WORD *)&s[strlen(s)] = 69;\n}\nelse if ( v11 == 1101 )\n{\n*(_WORD *)&s[strlen(s)] = 68;\n}\nelse if ( v11 <= 1101 )\n{\nif ( v11 == 1100 )\n{\n*(_WORD *)&s[strlen(s)] = 67;\n}\nelse if ( v11 == 1011 )\n{\n*(_WORD *)&s[strlen(s)] = 66;\n}\nelse if ( v11 <= 1011 )\n{\nif ( v11 == 1010 )\n{\n*(_WORD *)&s[strlen(s)] = 65;\n}\nelse if ( v11 == 1001 )\n{\n*(_WORD *)&s[strlen(s)] = 57;\n}\nelse if ( v11 <= 1001 )\n{\nif ( v11 == 1000 )\n{\n*(_WORD *)&s[strlen(s)] = 56;\n}\nelse if ( v11 == 111 )\n{\n*(_WORD *)&s[strlen(s)] = 55;\n}\nelse if ( v11 <= 111 )\n{\nif ( v11 == 110 )\n{\n*(_WORD *)&s[strlen(s)] = 54;\n}\nelse if ( v11 == 101 )\n{\n*(_WORD *)&s[strlen(s)] = 53;\n}\nelse if ( v11 <= 101 )\n{\nif ( v11 == 100 )\n{\n*(_WORD *)&s[strlen(s)] = 52;\n}\nelse if ( v11 == 11 )\n{\n*(_WORD *)&s[strlen(s)] = 51;\n}\nelse if ( v11 <= 11 )\n{\nif ( v11 == 10 )\n{\n*(_WORD *)&s[strlen(s)] = 50;\n }\n else if ( v11 )\n {\n if ( v11 == 1 )\n *(_WORD *)&s[strlen(s)] = 49;\n }\n else\n {\n*(_WORD *)&s[strlen(s)] = 48;\n}\n}\n}\n}\n}\n}\n}\n}\nv10 /= 10000LL;\n}\nprintf(\"Binary number: %lld\\n\", v12);\nprintf(\"Hexadecimal number: %s\", s);\nreturn 0LL;\n}\n"
+        }
+    ]
+}

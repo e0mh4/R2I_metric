@@ -1,0 +1,57 @@
+{
+    "funcInfo": [
+        {
+            "decompiledFuncCode": "void __fastcall start(FILE *stream, char *nptr)\n{\n  size_t v2; // rbp@3\n  int v3; // edx@3\n  void *v4; // r13@3\n  unsigned __int64 v5; // rax@6\n  void *v6; // rax@7\n  char *v7; // rax@8\n  __int64 v8; // r8@8\n  __int64 v9; // r9@8\n  int v10; // eax@9\n  const char *v11; // rbp@10\n  char *v12; // rax@13\n  __int64 v13; // r9@13\n  int v14; // eax@15\n  const char *v15; // rbp@16\n  char *v16; // rax@19\n\n  if ( *nptr == 48 )\n  {\n    v2 = 0LL;\n    v3 = 2;\n    v4 = 0LL;\nLABEL_4:\n    if ( setvbuf(stream, (char *)v4, v3, v2) )\n    {\n      v10 = fileno(stream);\n      if ( v10 == 1 )\n      {\n        v11 = \"stdout\";\n      }\n      else\n      {\n        v11 = \"stderr\";\n        if ( v10 != 2 )\n        {\n          v11 = \"stdin\";\n          if ( v10 )\n            v11 = \"unknown\";\n        }\n      }\n      v12 = dcgettext(0LL, \"could not set buffering of %s to mode %s\\n\", 5);\n      __fprintf_chk(stderr, 1LL, v12, v11, nptr, v13);\n      free(v4);\n    }\n    return;\n  }\n  if ( *nptr == 76 )\n  {\n    v2 = 0LL;\n    v3 = 1;\n    v4 = 0LL;\n    goto LABEL_4;\n  }\n  v5 = strtoul(nptr, 0LL, 10);\n  v2 = v5;\n  if ( v5 )\n  {\n    v6 = malloc(v5);\n    v3 = 0;\n    v4 = v6;\n    if ( !v6 )\n    {\n      v7 = dcgettext(0LL, \"failed to allocate a %lu byte stdio buffer\\n\", 5);\n      __fprintf_chk(stderr, 1LL, v7, v2, v8, v9);\n      return;\n    }\n    goto LABEL_4;\n  }\n  v14 = fileno(stream);\n  if ( v14 == 1 )\n  {\n    v15 = \"stdout\";\n  }\n  else\n  {\n    v15 = \"stderr\";\n    if ( v14 != 2 )\n    {\n      v15 = \"stdin\";\n      if ( v14 )\n        v15 = \"unknown\";\n    }\n  }\n  v16 = dcgettext(0LL, \"invalid buffering mode %s for %s\\n\", 5);\n  ((void (__fastcall *)(struct _IO_FILE *, signed __int64, char *, char *, const char *))__fprintf_chk)(\n    stderr,\n    1LL,\n    v16,\n    nptr,\n    v15);\n}\n", 
+            "funcStartAddr": "0x810L", 
+            "funcEndAddr": "0x9b4L", 
+            "funcName": "start"
+        }, 
+        {
+            "decompiledFuncCode": "void sub_9C0()\n{\n  char *v0; // r12@1\n  char *v1; // rbp@1\n  char *v2; // rbx@1\n\n  v0 = getenv(\"_STDBUF_E\");\n  v1 = getenv(\"_STDBUF_I\");\n  v2 = getenv(\"_STDBUF_O\");\n  if ( v0 )\n    start(stderr, v0);\n  if ( v1 )\n    start(stdin, v1);\n  if ( v2 )\n    start(stdout, v2);\n}\n", 
+            "funcStartAddr": "0x9c0L", 
+            "funcEndAddr": "0xa3fL", 
+            "funcName": "sub_9C0"
+        }, 
+        {
+            "decompiledFuncCode": "int sub_A3F()\n{\n  char *v0; // rax@1\n\n  v0 = &_bss_start;\n  if ( &_bss_start != &_bss_start )\n  {\n    v0 = (char *)&ITM_deregisterTMCloneTable;\n    if ( &ITM_deregisterTMCloneTable )\n      LODWORD(v0) = ITM_deregisterTMCloneTable();\n  }\n  return (unsigned __int64)v0;\n}\n", 
+            "funcStartAddr": "0xa3fL", 
+            "funcEndAddr": "0xa61L", 
+            "funcName": "sub_A3F"
+        }, 
+        {
+            "decompiledFuncCode": "int sub_A61()\n{\n  return 0;\n}\n", 
+            "funcStartAddr": "0xa61L", 
+            "funcEndAddr": "0xa9aL", 
+            "funcName": "sub_A61"
+        }, 
+        {
+            "decompiledFuncCode": "int sub_A9A()\n{\n  int result; // eax@6\n\n  if ( !_bss_start )\n  {\n    if ( &__cxa_finalize )\n      _cxa_finalize(off_201058);\n    while ( qword_201068 < (unsigned __int64)(((&unk_200E10 - (_UNKNOWN *)&qword_200E08) >> 3) - 1) )\n      (*(&qword_200E08 + ++qword_201068))();\n    result = sub_A3F();\n    _bss_start = 1;\n  }\n  return result;\n}\n", 
+            "funcStartAddr": "0xa9aL", 
+            "funcEndAddr": "0xb09L", 
+            "funcName": "sub_A9A"
+        }, 
+        {
+            "decompiledFuncCode": "int sub_B09()\n{\n  return sub_A61();\n}\n", 
+            "funcStartAddr": "0xb09L", 
+            "funcEndAddr": "0xb0eL", 
+            "funcName": "sub_B09"
+        }, 
+        {
+            "decompiledFuncCode": "__int64 __fastcall sub_B0E(__int64 a1, __int64 a2, __int64 a3)\n{\n  void (**v3)(void); // rbx@1\n  __int64 v5; // [sp-8h] [bp-10h]@1\n\n  v3 = (void (**)(void))&unk_200DF8;\n  v5 = a3;\n  while ( *v3 != (void (*)(void))-1 )\n  {\n    (*v3)();\n    --v3;\n  }\n  return v5;\n}\n", 
+            "funcStartAddr": "0xb0eL", 
+            "funcEndAddr": "0xb30L", 
+            "funcName": "sub_B0E"
+        }
+    ], 
+    "binaryInfo": {
+        "binaryName": "coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf", 
+        "isStripped": "True"
+    }, 
+    "funcCount": 7, 
+    "buildInfo": {
+        "decompilerName": "IDA Pro", 
+        "compilerVersion": "9.4.0", 
+        "Optlevel": "-O", 
+        "compilerName": "gcc"
+    }
+}

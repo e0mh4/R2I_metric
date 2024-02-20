@@ -1,0 +1,21 @@
+{
+    "binaryInfo": {
+        "binaryName": "dewolf",
+        "isStripped": "True"
+    },
+    "buildInfo": {
+        "decompilerName": "dewolf",
+        "compilerName": "gcc",
+        "compilerVersion": "9.4.0",
+        "Optlevel": "-O"
+    },
+    "funcInfo": [
+        {
+            "funcName": "sub_401c3d",
+            "funcStartAddr": "0x401c3d",
+            "funcEndAddr": "0x402dd4",
+            "decompiledFuncCode": "typedef int size_t;\n            long sub_401c3d() {\n            size_t var_5;\n            long i;\n            long var_0;\n            long var_2;\n            long var_4;\n            long * var_3;\n            printf(/* format */ \"Enter any binary number: \");\n            var_3 = &var_0;\n            __isoc99_scanf(/* format */ \"%lld\", var_3);\n            var_2 = 0L;\n            for (i = var_0; i > 0L; i /= 0x2710) {\n            var_4 = i % 0x2710;\n            switch(var_4) {\n            case 0:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x30;\n            break;\n            case 1:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x31;\n            break;\n            case 10:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x32;\n            break;\n            case 11:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x33;\n            break;\n            case 100:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n           *(&var_2 + var_5) = 0x34;\n            break;\n            case 101:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x35;\n            break;\n           case 110:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x36;\n            break;\n            case 111:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x37;\n            break;\n            case 0x3e8:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x38;\n            break;\n            case 0x3e9:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x39;\n            break;\n            case 0x3f2:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x41;\n            break;\n            case 0x3f3:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x42;\n            break;\n            case 0x44c:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x43;\n            break;\n            case 0x44d:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x44;\n            break;\n            case 0x456:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x45;\n            break;\n            case 0x457:\n            var_3 = &var_2;\n            var_5 = strlen(var_3);\n            *(&var_2 + var_5) = 0x46;\n            break;\n            }\n            }\n            printf(/* format */ \"Binary number: %lld\\n\", var_0 & 0xffffffff);\n            var_3 = &var_2;\n            printf(/* format */ \"Hexadecimal number: %s\", var_3);\n            return 0L;\n            }"
+        }
+    ]
+}
+  

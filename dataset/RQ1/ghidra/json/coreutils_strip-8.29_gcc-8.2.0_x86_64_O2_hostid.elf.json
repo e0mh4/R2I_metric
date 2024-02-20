@@ -1,0 +1,532 @@
+{
+    "funcCount": 90,
+    "funcInfo": [
+        {
+            "funcStartAddr": "0x401595",
+            "funcEndAddr": "0x40159a",
+            "decompiledFuncCode": "\nvoid FUN_00401595(void)\n\n{\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "FUN_00401595"
+        },
+        {
+            "funcStartAddr": "0x40159a",
+            "funcEndAddr": "0x40159f",
+            "decompiledFuncCode": "\nvoid FUN_0040159a(void)\n\n{\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "FUN_0040159a"
+        },
+        {
+            "funcStartAddr": "0x40159f",
+            "funcEndAddr": "0x4015a4",
+            "decompiledFuncCode": "\nvoid FUN_0040159f(void)\n\n{\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "FUN_0040159f"
+        },
+        {
+            "funcStartAddr": "0x4015a4",
+            "funcEndAddr": "0x4015a9",
+            "decompiledFuncCode": "\nvoid FUN_004015a4(void)\n\n{\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "FUN_004015a4"
+        },
+        {
+            "funcStartAddr": "0x4015b0",
+            "funcEndAddr": "0x4016a1",
+            "decompiledFuncCode": "\nundefined8 FUN_004015b0(int param_1,undefined8 *param_2)\n\n{\n  int iVar1;\n  ulong uVar2;\n  undefined8 uVar3;\n  undefined8 uVar4;\n  \n  FUN_00401c30(*param_2);\n  setlocale(6,\"\");\n  bindtextdomain(\"coreutils\",\n                 \"/home/dongkwan/data/scripts/gnu_packages/coreutils/coreutils-8.29_gcc-8.2.0_x86_64_O2_debug/gogo/share/locale\"\n                );\n  textdomain(\"coreutils\");\n  FUN_004056b0(FUN_00401a80);\n  FUN_00401b20(param_1,param_2,\"hostid\",\"GNU coreutils\",PTR_DAT_006081d0,FUN_00401790);\n  iVar1 = FUN_00404df0(param_1,param_2,\"\",&DAT_004059e0,0);\n  if (iVar1 == -1) {\n    if (param_1 <= DAT_00608238._4_4_) {\n      uVar2 = gethostid();\n      __printf_chk(1,\"%08x\\n\",uVar2 & 0xffffffff);\n      return 0;\n    }\n    uVar3 = FUN_00403850(param_2[DAT_00608238._4_4_]);\n    uVar4 = dcgettext(0,\"extra operand %s\",5);\n    error(0,0,uVar4,uVar3);\n  }\n                    /* WARNING: Subroutine does not return */\n  FUN_00401790(1);\n}\n\n",
+            "funcName": "FUN_004015b0"
+        },
+        {
+            "funcStartAddr": "0x4016b0",
+            "funcEndAddr": "0x4016db",
+            "decompiledFuncCode": "\nvoid FUN_004016b0(undefined8 param_1,undefined8 param_2,undefined8 param_3)\n\n{\n  undefined8 unaff_retaddr;\n  undefined auStack_8 [8];\n  \n  (*(code *)PTR___libc_start_main_00607ff0)\n            (FUN_004015b0,unaff_retaddr,&stack0x00000008,FUN_00405640,FUN_004056a0,param_3,auStack_8\n            );\n  do {\n                    /* WARNING: Do nothing block with infinite loop */\n  } while( true );\n}\n\n",
+            "funcName": "FUN_004016b0"
+        },
+        {
+            "funcStartAddr": "0x4016db",
+            "funcEndAddr": "0x4016fa",
+            "decompiledFuncCode": "\n/* WARNING: Removing unreachable block (ram,0x004016e8) */\n/* WARNING: Removing unreachable block (ram,0x004016f2) */\n\nvoid FUN_004016db(void)\n\n{\n  return;\n}\n\n",
+            "funcName": "FUN_004016db"
+        },
+        {
+            "funcStartAddr": "0x4016fa",
+            "funcEndAddr": "0x401731",
+            "decompiledFuncCode": "\n/* WARNING: Removing unreachable block (ram,0x00401729) */\n\nvoid FUN_004016fa(void)\n\n{\n  return;\n}\n\n",
+            "funcName": "FUN_004016fa"
+        },
+        {
+            "funcStartAddr": "0x401731",
+            "funcEndAddr": "0x401788",
+            "decompiledFuncCode": "\n/* WARNING: Removing unreachable block (ram,0x00401766) */\n\nvoid FUN_00401731(void)\n\n{\n  if (DAT_00608268 != '\\0') {\n    return;\n  }\n  FUN_004016db();\n  DAT_00608268 = 1;\n  return;\n}\n\n",
+            "funcName": "FUN_00401731"
+        },
+        {
+            "funcStartAddr": "0x401788",
+            "funcEndAddr": "0x40178d",
+            "decompiledFuncCode": "\n/* WARNING: Removing unreachable block (ram,0x00401729) */\n\nvoid thunk_FUN_004016fa(void)\n\n{\n  return;\n}\n\n",
+            "funcName": "thunk_401788"
+        },
+        {
+            "funcStartAddr": "0x401790",
+            "funcEndAddr": "0x401a5d",
+            "decompiledFuncCode": "\nvoid FUN_00401790(int param_1)\n\n{\n  FILE *pFVar1;\n  int iVar2;\n  undefined8 uVar3;\n  char *pcVar4;\n  byte **ppbVar5;\n  undefined8 uVar7;\n  char *pcVar8;\n  long lVar9;\n  byte *pbVar10;\n  byte *pbVar11;\n  bool bVar12;\n  bool bVar13;\n  byte bVar14;\n  byte *local_88;\n  char *local_80;\n  byte *local_78 [5];\n  char *local_50;\n  char *local_48;\n  char *local_40;\n  char *local_38;\n  char *local_30;\n  undefined8 local_28;\n  undefined8 local_20;\n  byte **ppbVar6;\n  \n  uVar7 = DAT_00608288;\n  bVar14 = 0;\n  if (param_1 != 0) {\n    uVar3 = dcgettext(0,\"Try \\'%s --help\\' for more information.\\n\",5);\n    __fprintf_chk(stderr,1,uVar3,uVar7);\n    goto LAB_004017cf;\n  }\n  uVar3 = dcgettext(0,\n                    \"Usage: %s [OPTION]\\nPrint the numeric identifier (in hexadecimal) for the current host.\\n\\n\"\n                    ,5);\n  __printf_chk(1,uVar3,uVar7);\n  pFVar1 = stdout;\n  pcVar4 = (char *)dcgettext(0,\"      --help     display this help and exit\\n\",5);\n  fputs_unlocked(pcVar4,pFVar1);\n  pFVar1 = stdout;\n  pcVar4 = (char *)dcgettext(0,\"      --version  output version information and exit\\n\",5);\n  fputs_unlocked(pcVar4,pFVar1);\n  local_88 = &DAT_0040570b;\n  local_80 = \"test invocation\";\n  local_78[0] = (byte *)0x405785;\n  local_78[1] = (byte *)0x40571d;\n  local_78[2] = (byte *)0x405733;\n  local_78[3] = (byte *)0x40573d;\n  local_78[4] = (byte *)0x40574c;\n  local_50 = \"sha2 utilities\";\n  local_48 = \"sha384sum\";\n  local_40 = \"sha2 utilities\";\n  local_38 = \"sha512sum\";\n  local_30 = \"sha2 utilities\";\n  local_28 = 0;\n  local_20 = 0;\n  ppbVar5 = &local_88;\n  do {\n    ppbVar6 = ppbVar5;\n    ppbVar5 = ppbVar6 + 2;\n    pbVar11 = *ppbVar5;\n    bVar12 = false;\n    bVar13 = pbVar11 == (byte *)0x0;\n    if (bVar13) break;\n    lVar9 = 7;\n    pbVar10 = (byte *)\"hostid\";\n    do {\n      if (lVar9 == 0) break;\n      lVar9 = lVar9 + -1;\n      bVar12 = *pbVar10 < *pbVar11;\n      bVar13 = *pbVar10 == *pbVar11;\n      pbVar10 = pbVar10 + (ulong)bVar14 * -2 + 1;\n      pbVar11 = pbVar11 + (ulong)bVar14 * -2 + 1;\n    } while (bVar13);\n  } while ((!bVar12 && !bVar13) != bVar12);\n  pcVar4 = (char *)ppbVar6[3];\n  if ((byte *)pcVar4 == (byte *)0x0) {\n    uVar7 = dcgettext(0,\"\\n%s online help: <%s>\\n\",5);\n    __printf_chk(1,uVar7,\"GNU coreutils\",\"https://www.gnu.org/software/coreutils/\");\n    pcVar4 = setlocale(5,(char *)0x0);\n    if (pcVar4 != (char *)0x0) {\n      iVar2 = strncmp(pcVar4,\"en_\",3);\n      if (iVar2 != 0) {\n        pcVar4 = \"hostid\";\n        goto LAB_00401a33;\n      }\n    }\n    pcVar4 = \"hostid\";\n    uVar7 = dcgettext(0,\"Full documentation at: <%s%s>\\n\",5);\n    pcVar8 = \" invocation\";\n    __printf_chk(1,uVar7,\"https://www.gnu.org/software/coreutils/\",\"hostid\");\n  }\n  else {\n    uVar7 = dcgettext(0,\"\\n%s online help: <%s>\\n\",5);\n    __printf_chk(1,uVar7,\"GNU coreutils\",\"https://www.gnu.org/software/coreutils/\");\n    pcVar8 = setlocale(5,(char *)0x0);\n    if (pcVar8 != (char *)0x0) {\n      iVar2 = strncmp(pcVar8,\"en_\",3);\n      if (iVar2 != 0) {\nLAB_00401a33:\n        uVar7 = dcgettext(0,\"Report %s translation bugs to <https://translationproject.org/team/>\\n\"\n                          ,5);\n        __printf_chk(1,uVar7,\"hostid\");\n      }\n    }\n    pcVar8 = \" invocation\";\n    uVar7 = dcgettext(0,\"Full documentation at: <%s%s>\\n\",5);\n    __printf_chk(1,uVar7,\"https://www.gnu.org/software/coreutils/\",\"hostid\");\n    if (pcVar4 != \"hostid\") {\n      pcVar8 = \"\";\n    }\n  }\n  uVar7 = dcgettext(0,\"or available locally via: info \\'(coreutils) %s%s\\'\\n\",5);\n  __printf_chk(1,uVar7,pcVar4,pcVar8);\nLAB_004017cf:\n                    /* WARNING: Subroutine does not return */\n  exit(param_1);\n}\n\n",
+            "funcName": "FUN_00401790"
+        },
+        {
+            "funcStartAddr": "0x401a60",
+            "funcEndAddr": "0x401a68",
+            "decompiledFuncCode": "\nvoid FUN_00401a60(undefined8 param_1)\n\n{\n  DAT_00608280 = param_1;\n  return;\n}\n\n",
+            "funcName": "FUN_00401a60"
+        },
+        {
+            "funcStartAddr": "0x401a70",
+            "funcEndAddr": "0x401a78",
+            "decompiledFuncCode": "\nvoid FUN_00401a70(undefined param_1)\n\n{\n  DAT_00608278 = param_1;\n  return;\n}\n\n",
+            "funcName": "FUN_00401a70"
+        },
+        {
+            "funcStartAddr": "0x401a80",
+            "funcEndAddr": "0x401b1e",
+            "decompiledFuncCode": "\nvoid FUN_00401a80(void)\n\n{\n  int iVar1;\n  int *piVar2;\n  undefined8 uVar3;\n  undefined8 uVar4;\n  \n  iVar1 = FUN_00404ef0(stdout);\n  if (iVar1 != 0) {\n    piVar2 = __errno_location();\n    if ((DAT_00608278 == '\\0') || (*piVar2 != 0x20)) {\n      uVar3 = dcgettext(0,\"write error\",5);\n      if (DAT_00608280 == 0) {\n        error(0,*piVar2,\"%s\",uVar3);\n      }\n      else {\n        uVar4 = FUN_004036a0();\n        error(0,*piVar2,\"%s: %s\",uVar4,uVar3);\n      }\n      goto LAB_00401afe;\n    }\n  }\n  iVar1 = FUN_00404ef0(stderr);\n  if (iVar1 == 0) {\n    return;\n  }\nLAB_00401afe:\n                    /* WARNING: Subroutine does not return */\n  _exit(DAT_006081d8);\n}\n\n",
+            "funcName": "FUN_00401a80"
+        },
+        {
+            "funcStartAddr": "0x401b20",
+            "funcEndAddr": "0x401c1e",
+            "decompiledFuncCode": "\nvoid FUN_00401b20(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,\n                 undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,\n                 undefined8 param_9,undefined8 param_10,undefined8 param_11,undefined8 param_12,\n                 undefined8 param_13,code *param_14)\n\n{\n  undefined4 uVar1;\n  char in_AL;\n  int iVar2;\n  undefined4 local_f0;\n  undefined4 local_ec;\n  undefined *local_e8;\n  undefined *local_e0;\n  undefined local_d8 [48];\n  undefined4 local_a8;\n  undefined4 local_98;\n  undefined4 local_88;\n  undefined4 local_78;\n  undefined4 local_68;\n  undefined4 local_58;\n  undefined4 local_48;\n  undefined4 local_38;\n  \n  uVar1 = (undefined4)DAT_00608238;\n  if (in_AL != '\\0') {\n    local_a8 = param_1;\n    local_98 = param_2;\n    local_88 = param_3;\n    local_78 = param_4;\n    local_68 = param_5;\n    local_58 = param_6;\n    local_48 = param_7;\n    local_38 = param_8;\n  }\n  DAT_00608238._0_4_ = 0;\n  if ((int)param_9 == 2) {\n    iVar2 = FUN_00404df0(param_9,param_10,&DAT_00405a18,&PTR_DAT_00405a40,0);\n    if (iVar2 != -1) {\n      if (iVar2 == 0x68) {\n        (*param_14)(0);\n      }\n      else if (iVar2 == 0x76) {\n        local_e8 = &stack0x00000008;\n        local_f0 = 0x30;\n        local_e0 = local_d8;\n        local_ec = 0x30;\n        FUN_00403c70(stdout,param_11,param_12,param_13,&local_f0);\n                    /* WARNING: Subroutine does not return */\n        exit(0);\n      }\n    }\n  }\n  DAT_00608238._0_4_ = uVar1;\n  DAT_00608238._4_4_ = 0;\n  return;\n}\n\n",
+            "funcName": "FUN_00401b20"
+        },
+        {
+            "funcStartAddr": "0x401c30",
+            "funcEndAddr": "0x401cc9",
+            "decompiledFuncCode": "\nvoid FUN_00401c30(byte *param_1)\n\n{\n  byte *pbVar1;\n  char *pcVar2;\n  long lVar3;\n  ulong uVar4;\n  byte *pbVar5;\n  byte *pbVar6;\n  bool bVar7;\n  bool bVar8;\n  bool bVar9;\n  byte bVar10;\n  \n  bVar10 = 0;\n  if (param_1 == (byte *)0x0) {\n    fwrite(\"A NULL argv[0] was passed through an exec system call.\\n\",1,0x37,stderr);\n                    /* WARNING: Subroutine does not return */\n    abort();\n  }\n  pcVar2 = strrchr((char *)param_1,0x2f);\n  if (pcVar2 != (char *)0x0) {\n    pbVar1 = (byte *)(pcVar2 + 1);\n    uVar4 = (long)pbVar1 - (long)param_1;\n    bVar7 = uVar4 < 6;\n    bVar9 = uVar4 == 6;\n    if (6 < (long)uVar4) {\n      lVar3 = 7;\n      pbVar5 = (byte *)(pcVar2 + -6);\n      pbVar6 = (byte *)\"/.libs/\";\n      do {\n        if (lVar3 == 0) break;\n        lVar3 = lVar3 + -1;\n        bVar7 = *pbVar5 < *pbVar6;\n        bVar9 = *pbVar5 == *pbVar6;\n        pbVar5 = pbVar5 + (ulong)bVar10 * -2 + 1;\n        pbVar6 = pbVar6 + (ulong)bVar10 * -2 + 1;\n      } while (bVar9);\n      bVar8 = false;\n      bVar7 = (!bVar7 && !bVar9) == bVar7;\n      if (bVar7) {\n        lVar3 = 3;\n        pbVar5 = pbVar1;\n        pbVar6 = &DAT_00405ae0;\n        do {\n          if (lVar3 == 0) break;\n          lVar3 = lVar3 + -1;\n          bVar8 = *pbVar5 < *pbVar6;\n          bVar7 = *pbVar5 == *pbVar6;\n          pbVar5 = pbVar5 + (ulong)bVar10 * -2 + 1;\n          pbVar6 = pbVar6 + (ulong)bVar10 * -2 + 1;\n        } while (bVar7);\n        param_1 = pbVar1;\n        if ((!bVar8 && !bVar7) == bVar8) {\n          param_1 = (byte *)(pcVar2 + 4);\n          program_invocation_short_name = param_1;\n        }\n      }\n    }\n  }\n  DAT_00608288 = param_1;\n  program_invocation_name = param_1;\n  return;\n}\n\n",
+            "funcName": "FUN_00401c30"
+        },
+        {
+            "funcStartAddr": "0x401cd0",
+            "funcEndAddr": "0x401daf",
+            "decompiledFuncCode": "\nchar * FUN_00401cd0(char *param_1,int param_2)\n\n{\n  char cVar1;\n  char *pcVar2;\n  byte *pbVar3;\n  \n  pcVar2 = (char *)dcgettext(0,param_1,5);\n  if (param_1 == pcVar2) {\n    pbVar3 = (byte *)FUN_00404fb0();\n    if ((*pbVar3 & 0xdf) == 0x55) {\n      if (((((pbVar3[1] & 0xdf) != 0x54) || ((pbVar3[2] & 0xdf) != 0x46)) || (pbVar3[3] != 0x2d)) ||\n         ((pbVar3[4] != 0x38 || (pbVar3[5] != 0)))) {\nLAB_00401da8:\n        pcVar2 = \"\\\"\";\n        if (param_2 != 9) {\n          pcVar2 = \"\\'\";\n        }\n        return pcVar2;\n      }\n      cVar1 = *pcVar2;\n      pcVar2 = &DAT_00405af1;\n      if (cVar1 != '`') {\n        pcVar2 = &DAT_00405ae6;\n      }\n    }\n    else {\n      if (((((*pbVar3 & 0xdf) != 0x47) || ((pbVar3[1] & 0xdf) != 0x42)) || (pbVar3[2] != 0x31)) ||\n         (((pbVar3[3] != 0x38 || (pbVar3[4] != 0x30)) ||\n          ((pbVar3[5] != 0x33 || ((pbVar3[6] != 0x30 || (pbVar3[7] != 0)))))))) goto LAB_00401da8;\n      cVar1 = *pcVar2;\n      pcVar2 = &DAT_00405aed;\n      if (cVar1 != '`') {\n        pcVar2 = &DAT_00405aea;\n      }\n    }\n  }\n  return pcVar2;\n}\n\n",
+            "funcName": "FUN_00401cd0"
+        },
+        {
+            "funcStartAddr": "0x401dd0",
+            "funcEndAddr": "0x402f03",
+            "decompiledFuncCode": "\nulong FUN_00401dd0(undefined *param_1,ulong param_2,char *param_3,ulong param_4,int param_5,\n                  uint param_6,long param_7,char *param_8,char *param_9)\n\n{\n  byte *__s1;\n  ulong uVar1;\n  bool bVar2;\n  bool bVar3;\n  bool bVar4;\n  bool bVar5;\n  bool bVar6;\n  int iVar7;\n  size_t sVar8;\n  ulong uVar9;\n  ushort **ppuVar10;\n  long lVar11;\n  char *pcVar12;\n  byte bVar13;\n  char cVar14;\n  ulong uVar15;\n  ulong uVar16;\n  byte bVar17;\n  uint uVar18;\n  ulong uVar19;\n  bool bVar20;\n  ulong uVar21;\n  ulong uVar22;\n  bool bVar23;\n  bool bVar24;\n  bool bVar25;\n  bool bVar26;\n  size_t local_a0;\n  char *local_78;\n  ulong local_70;\n  bool local_5c;\n  bool local_5b;\n  wint_t local_44;\n  mbstate_t local_40 [2];\n  \n  sVar8 = __ctype_get_mb_cur_max();\n  uVar18 = param_6 & 2;\n  local_5c = uVar18 != 0;\n  uVar9 = param_2;\n  switch(param_5) {\n  case 0:\n    bVar2 = true;\n    bVar3 = false;\n    uVar15 = 0;\n    local_5b = false;\n    local_70 = 0;\n    local_5c = false;\n    bVar6 = false;\n    local_a0 = 0;\n    local_78 = (char *)0x0;\n    break;\n  case 2:\n    if (uVar18 != 0) {\n      bVar2 = true;\n      bVar3 = false;\n      uVar15 = 0;\n      local_5b = false;\n      local_70 = 0;\n      local_5c = true;\n      bVar6 = false;\n      local_a0 = 1;\n      local_78 = \"\\'\";\n      break;\n    }\n    bVar6 = false;\nLAB_00402a21:\n    if (param_2 != 0) {\n      bVar3 = false;\n      local_5b = false;\n      bVar2 = true;\n      local_70 = 0;\n      goto LAB_00402656;\n    }\n    bVar2 = true;\n    bVar3 = false;\n    uVar15 = 1;\n    param_5 = 2;\n    local_70 = 0;\n    local_5b = false;\n    local_5c = false;\n    local_a0 = 1;\n    local_78 = \"\\'\";\n    break;\n  case 3:\n    bVar2 = true;\n    bVar3 = false;\n    uVar15 = 0;\n    param_5 = 2;\n    local_5b = false;\n    local_70 = 0;\n    local_5c = true;\n    bVar6 = true;\n    local_a0 = 1;\n    local_78 = \"\\'\";\n    break;\n  case 4:\n    if (uVar18 == 0) {\n      bVar6 = true;\n      goto LAB_00402a21;\n    }\n  case 1:\n    bVar2 = true;\n    bVar3 = false;\n    uVar15 = 0;\n    param_5 = 2;\n    local_5b = false;\n    local_70 = 0;\n    local_5c = true;\n    bVar6 = false;\n    local_a0 = 1;\n    local_78 = \"\\'\";\n    break;\n  case 5:\n    if (uVar18 == 0) {\n      if (param_2 != 0) {\n        *param_1 = 0x22;\n      }\n      local_5b = false;\n      local_70 = 0;\n      bVar2 = true;\n      bVar3 = false;\n      local_5c = false;\n      uVar15 = 1;\n      bVar6 = true;\n      local_a0 = 1;\n      local_78 = \"\\\"\";\n    }\n    else {\n      bVar2 = true;\n      bVar3 = false;\n      uVar15 = 0;\n      local_5b = false;\n      local_70 = 0;\n      local_5c = true;\n      bVar6 = true;\n      local_a0 = 1;\n      local_78 = \"\\\"\";\n    }\n    break;\n  case 6:\n    bVar2 = true;\n    bVar3 = false;\n    uVar15 = 0;\n    param_5 = 5;\n    local_5b = false;\n    local_70 = 0;\n    local_5c = true;\n    bVar6 = true;\n    local_a0 = 1;\n    local_78 = \"\\\"\";\n    break;\n  case 7:\n    bVar2 = true;\n    bVar3 = false;\n    uVar15 = 0;\n    local_5b = false;\n    local_70 = 0;\n    local_5c = false;\n    bVar6 = true;\n    local_a0 = 0;\n    local_78 = (char *)0x0;\n    break;\n  case 8:\n  case 9:\n  case 10:\n    if (param_5 != 10) {\n      param_8 = (char *)FUN_00401cd0(&DAT_00405af5,param_5);\n      param_9 = (char *)FUN_00401cd0(&DAT_00406cd7);\n    }\n    uVar15 = 0;\n    if (uVar18 == 0) {\n      cVar14 = *param_8;\n      while (cVar14 != '\\0') {\n        if (uVar15 < param_2) {\n          param_1[uVar15] = cVar14;\n        }\n        uVar15 = uVar15 + 1;\n        cVar14 = param_8[uVar15];\n      }\n    }\n    local_a0 = strlen(param_9);\n    bVar2 = true;\n    bVar3 = false;\n    local_78 = param_9;\n    local_5b = false;\n    local_70 = 0;\n    bVar6 = true;\n    break;\n  default:\n                    /* WARNING: Subroutine does not return */\n    abort();\n  }\nLAB_00401e68:\n  uVar22 = 0;\n  bVar5 = local_5b;\nLAB_00401e78:\n  bVar23 = param_4 != uVar22;\n  if (param_4 == 0xffffffffffffffff) {\n    bVar23 = param_3[uVar22] != '\\0';\n  }\n  bVar26 = bVar6;\n  if (!bVar23) goto LAB_004025f8;\n  bVar20 = (bool)(param_5 != 2 & bVar6);\n  __s1 = (byte *)(param_3 + uVar22);\n  uVar16 = uVar15;\n  bVar4 = bVar3;\n  if (bVar20) {\n    if (local_a0 == 0) {\nLAB_00402570:\n      uVar19 = (ulong)*__s1;\n      switch(uVar19) {\n      case 0:\n        goto switchD_00402582_caseD_0;\n      default:\n        bVar20 = false;\n        goto switchD_004023ee_caseD_1;\n      case 7:\n        bVar17 = 0x61;\n        goto LAB_00402285;\n      case 8:\n        bVar17 = 0x62;\n        break;\n      case 9:\nswitchD_00402582_caseD_9:\n        bVar17 = 0x74;\n        break;\n      case 10:\nswitchD_00402582_caseD_a:\n        bVar17 = 0x6e;\n        break;\n      case 0xb:\nswitchD_00402582_caseD_b:\n        bVar17 = 0x76;\n        goto LAB_00402285;\n      case 0xc:\nswitchD_00402582_caseD_c:\n        bVar17 = 0x66;\nLAB_00402285:\n        if (local_5c) {\n          bVar25 = false;\n          goto LAB_004021d8;\n        }\nLAB_00402290:\n        bVar23 = false;\n        goto LAB_0040204b;\n      case 0xd:\n        bVar20 = false;\nswitchD_00401f68_caseD_d:\n        bVar25 = param_5 == 2;\n        uVar19 = 0xd;\n        bVar13 = 0x72;\n        goto LAB_004021a0;\n      case 0x20:\n        bVar25 = false;\nLAB_004025ca:\n        uVar19 = 0x20;\n        goto LAB_00402592;\n      case 0x21:\n      case 0x22:\n      case 0x24:\n      case 0x26:\n      case 0x28:\n      case 0x29:\n      case 0x2a:\n      case 0x3b:\n      case 0x3c:\n      case 0x3d:\n      case 0x3e:\n      case 0x5b:\n      case 0x5e:\n      case 0x60:\n      case 0x7c:\n        bVar20 = false;\nswitchD_00401f68_caseD_21:\n        bVar25 = false;\n        goto LAB_004021ab;\n      case 0x23:\n      case 0x7e:\n        bVar26 = false;\nLAB_004025aa:\n        if (uVar22 == 0) {\n          bVar25 = false;\n          bVar23 = bVar20;\n          bVar20 = bVar26;\n          goto LAB_00401fb8;\n        }\n        bVar23 = false;\n        goto LAB_00401fcf;\n      case 0x25:\n      case 0x2b:\n      case 0x2c:\n      case 0x2d:\n      case 0x2e:\n      case 0x2f:\n      case 0x30:\n      case 0x31:\n      case 0x32:\n      case 0x33:\n      case 0x34:\n      case 0x35:\n      case 0x36:\n      case 0x37:\n      case 0x38:\n      case 0x39:\n      case 0x3a:\n      case 0x41:\n      case 0x42:\n      case 0x43:\n      case 0x44:\n      case 0x45:\n      case 0x46:\n      case 0x47:\n      case 0x48:\n      case 0x49:\n      case 0x4a:\n      case 0x4b:\n      case 0x4c:\n      case 0x4d:\n      case 0x4e:\n      case 0x4f:\n      case 0x50:\n      case 0x51:\n      case 0x52:\n      case 0x53:\n      case 0x54:\n      case 0x55:\n      case 0x56:\n      case 0x57:\n      case 0x58:\n      case 0x59:\n      case 0x5a:\n      case 0x5d:\n      case 0x5f:\n      case 0x61:\n      case 0x62:\n      case 99:\n      case 100:\n      case 0x65:\n      case 0x66:\n      case 0x67:\n      case 0x68:\n      case 0x69:\n      case 0x6a:\n      case 0x6b:\n      case 0x6c:\n      case 0x6d:\n      case 0x6e:\n      case 0x6f:\n      case 0x70:\n      case 0x71:\n      case 0x72:\n      case 0x73:\n      case 0x74:\n      case 0x75:\n      case 0x76:\n      case 0x77:\n      case 0x78:\n      case 0x79:\n      case 0x7a:\n        bVar25 = false;\nLAB_00402592:\n        bVar24 = false;\n        bVar23 = bVar20;\n        bVar20 = bVar25;\n        goto LAB_00401fd1;\n      case 0x27:\n        bVar20 = false;\n        goto switchD_004023ee_caseD_27;\n      case 0x3f:\n        bVar20 = false;\n        goto switchD_004023ee_caseD_3f;\n      case 0x5c:\n        bVar20 = false;\n        goto switchD_00401f68_caseD_5c;\n      case 0x7b:\n      case 0x7d:\n        bVar20 = false;\n        goto switchD_004023ee_caseD_7b;\n      }\n      bVar25 = false;\n      bVar23 = false;\n      goto joined_r0x004021c7;\n    }\n    if ((param_4 == 0xffffffffffffffff) && (1 < local_a0)) {\n      param_4 = strlen(param_3);\n    }\n    if ((param_4 < uVar22 + local_a0) || (iVar7 = memcmp(__s1,local_78,local_a0), iVar7 != 0))\n    goto LAB_00402570;\n    if (!local_5c) {\n      uVar19 = (ulong)*__s1;\n      bVar25 = bVar20;\n      switch(uVar19) {\n      case 0:\n        goto switchD_00401f68_caseD_0;\n      default:\n        goto switchD_004023ee_caseD_1;\n      case 7:\n        bVar17 = 0x61;\n        goto LAB_00402290;\n      case 8:\n        bVar25 = false;\n        bVar23 = false;\n        bVar17 = 0x62;\n        break;\n      case 9:\n        goto switchD_00402582_caseD_9;\n      case 10:\n        goto switchD_00402582_caseD_a;\n      case 0xb:\n        goto switchD_00402582_caseD_b;\n      case 0xc:\n        goto switchD_00402582_caseD_c;\n      case 0xd:\n        goto switchD_00401f68_caseD_d;\n      case 0x20:\n        goto LAB_004025ca;\n      case 0x21:\n      case 0x22:\n      case 0x24:\n      case 0x26:\n      case 0x28:\n      case 0x29:\n      case 0x2a:\n      case 0x3b:\n      case 0x3c:\n      case 0x3d:\n      case 0x3e:\n      case 0x5b:\n      case 0x5e:\n      case 0x60:\n      case 0x7c:\n        goto switchD_00401f68_caseD_21;\n      case 0x23:\n      case 0x7e:\n        bVar26 = bVar20;\n        goto LAB_004025aa;\n      case 0x25:\n      case 0x2b:\n      case 0x2c:\n      case 0x2d:\n      case 0x2e:\n      case 0x2f:\n      case 0x30:\n      case 0x31:\n      case 0x32:\n      case 0x33:\n      case 0x34:\n      case 0x35:\n      case 0x36:\n      case 0x37:\n      case 0x38:\n      case 0x39:\n      case 0x3a:\n      case 0x41:\n      case 0x42:\n      case 0x43:\n      case 0x44:\n      case 0x45:\n      case 0x46:\n      case 0x47:\n      case 0x48:\n      case 0x49:\n      case 0x4a:\n      case 0x4b:\n      case 0x4c:\n      case 0x4d:\n      case 0x4e:\n      case 0x4f:\n      case 0x50:\n      case 0x51:\n      case 0x52:\n      case 0x53:\n      case 0x54:\n      case 0x55:\n      case 0x56:\n      case 0x57:\n      case 0x58:\n      case 0x59:\n      case 0x5a:\n      case 0x5d:\n      case 0x5f:\n      case 0x61:\n      case 0x62:\n      case 99:\n      case 100:\n      case 0x65:\n      case 0x66:\n      case 0x67:\n      case 0x68:\n      case 0x69:\n      case 0x6a:\n      case 0x6b:\n      case 0x6c:\n      case 0x6d:\n      case 0x6e:\n      case 0x6f:\n      case 0x70:\n      case 0x71:\n      case 0x72:\n      case 0x73:\n      case 0x74:\n      case 0x75:\n      case 0x76:\n      case 0x77:\n      case 0x78:\n      case 0x79:\n      case 0x7a:\n        goto LAB_00402592;\n      case 0x27:\n        goto switchD_004023ee_caseD_27;\n      case 0x3f:\n        goto switchD_004023ee_caseD_3f;\n      case 0x5c:\n        goto switchD_00401f68_caseD_5c;\n      case 0x7b:\n      case 0x7d:\n        goto switchD_004023ee_caseD_7b;\n      }\n      goto LAB_00402012;\n    }\n    goto LAB_004021ea;\n  }\n  uVar19 = (ulong)*__s1;\n  switch(uVar19) {\n  case 0:\n    if (bVar6) {\nswitchD_00402582_caseD_0:\n      if (!local_5c) {\n        bVar20 = false;\nswitchD_00401f68_caseD_0:\n        bVar26 = param_5 == 2;\n        bVar24 = (bool)((bVar3 ^ 1U) & bVar26);\n        if (bVar24) {\n          if (uVar15 < uVar9) {\n            param_1[uVar15] = 0x27;\n          }\n          if (uVar15 + 1 < uVar9) {\n            param_1[uVar15 + 1] = 0x24;\n          }\n          if (uVar15 + 2 < uVar9) {\n            param_1[uVar15 + 2] = 0x27;\n          }\n          uVar16 = uVar15 + 3;\n          bVar3 = bVar24;\n          if (uVar9 <= uVar15 + 3) {\n            uVar16 = uVar15 + 4;\n            bVar23 = false;\n            bVar17 = 0x30;\n            bVar4 = bVar24;\n            goto LAB_004020c8;\n          }\nLAB_0040230a:\n          param_1[uVar16] = 0x5c;\n          uVar15 = uVar16;\n        }\n        else if (uVar15 < uVar9) goto LAB_0040230a;\n        uVar16 = uVar15 + 1;\n        bVar24 = bVar23;\n        if (param_5 == 2) {\n          bVar17 = 0x30;\n          bVar23 = false;\n          bVar4 = bVar3;\n          goto LAB_004020c8;\n        }\n        uVar19 = 0x30;\n        if ((uVar22 + 1 < param_4) && ((byte)(param_3[uVar22 + 1] - 0x30U) < 10)) {\n          if (uVar16 < uVar9) {\n            param_1[uVar16] = 0x30;\n          }\n          if (uVar15 + 2 < uVar9) {\n            param_1[uVar15 + 2] = 0x30;\n          }\n          uVar16 = uVar15 + 3;\n          uVar19 = 0x30;\n        }\nLAB_00402349:\n        bVar17 = (byte)uVar19;\n        bVar23 = false;\n        uVar15 = uVar16;\n        bVar4 = bVar3;\n        if ((bool)(bVar6 ^ 1U | bVar26)) goto LAB_004020c8;\n        goto LAB_00401fd1;\n      }\n      bVar26 = param_5 == 2;\n      goto LAB_004021dc;\n    }\n    if ((param_6 & 1) == 0) {\n      bVar25 = param_5 == 2;\n      uVar19 = 0;\n      bVar23 = false;\n      bVar20 = false;\n      goto LAB_00401fb8;\n    }\n    uVar22 = uVar22 + 1;\n    goto LAB_00401e78;\n  default:\nswitchD_004023ee_caseD_1:\n    bVar25 = bVar6;\n    if (sVar8 != 1) {\n      local_40[0] = (mbstate_t)0x0;\n      if (param_4 == 0xffffffffffffffff) {\n        param_4 = strlen(param_3);\n      }\n      uVar21 = 0;\n      do {\n        uVar1 = uVar22 + uVar21;\n        lVar11 = FUN_00404e70(&local_44,param_3 + uVar1,param_4 - uVar1,local_40);\n        if (lVar11 == 0) break;\n        if (lVar11 == -1) {\n          bVar23 = false;\n          goto LAB_00402cfa;\n        }\n        if (lVar11 == -2) {\n          if ((param_4 <= uVar1) || (param_3[uVar1] == '\\0')) goto LAB_00402e37;\n          goto LAB_00402e27;\n        }\n        if (((param_5 == 2) && (local_5c)) && (lVar11 != 1)) {\n          pcVar12 = param_3 + uVar1 + 1;\n          do {\n            if (((byte)(*pcVar12 + 0xa5U) < 0x22) &&\n               ((1L << (*pcVar12 + 0xa5U & 0x3f) & 0x20000002bU) != 0)) {\n              param_5 = 2;\n              goto LAB_004021dc;\n            }\n            pcVar12 = pcVar12 + 1;\n          } while (param_3 + uVar1 + lVar11 != pcVar12);\n        }\n        iVar7 = iswprint(local_44);\n        if (iVar7 == 0) {\n          bVar23 = false;\n        }\n        uVar21 = uVar21 + lVar11;\n        iVar7 = mbsinit(local_40);\n      } while (iVar7 == 0);\n      bVar25 = (bool)((bVar23 ^ 1U) & bVar6);\n      goto LAB_00402cfa;\n    }\n    ppuVar10 = __ctype_b_loc();\n    uVar21 = 1;\n    bVar25 = ((*ppuVar10)[uVar19] & 0x4000) == 0;\n    bVar23 = !bVar25;\n    bVar25 = (bool)(bVar25 & bVar6);\n    goto LAB_004023c4;\n  case 7:\n    bVar25 = param_5 == 2;\n    uVar19 = 7;\n    bVar13 = 0x61;\n    break;\n  case 8:\n    bVar25 = param_5 == 2;\n    uVar19 = 8;\n    bVar13 = 0x62;\n    break;\n  case 9:\n    uVar19 = 9;\n    bVar13 = 0x74;\n    goto LAB_00402402;\n  case 10:\n    uVar19 = 10;\n    bVar13 = 0x6e;\n    goto LAB_00402402;\n  case 0xb:\n    bVar25 = param_5 == 2;\n    uVar19 = 0xb;\n    bVar13 = 0x76;\n    break;\n  case 0xc:\n    bVar25 = param_5 == 2;\n    uVar19 = 0xc;\n    bVar13 = 0x66;\n    break;\n  case 0xd:\n    uVar19 = 0xd;\n    bVar13 = 0x72;\nLAB_00402402:\n    bVar25 = param_5 == 2;\n    bVar20 = (bool)(local_5c & bVar25);\n    if (bVar20) {\nLAB_0040241a:\n      param_5 = 2;\n      goto LAB_004021dc;\n    }\n    break;\n  case 0x20:\n    uVar19 = 0x20;\n    goto LAB_00401fa6;\n  case 0x21:\n  case 0x22:\n  case 0x24:\n  case 0x26:\n  case 0x28:\n  case 0x29:\n  case 0x2a:\n  case 0x3b:\n  case 0x3c:\n  case 0x3d:\n  case 0x3e:\n  case 0x5b:\n  case 0x5e:\n  case 0x60:\n  case 0x7c:\n    bVar23 = false;\nLAB_00401fa6:\n    bVar25 = param_5 == 2;\n    if ((local_5c) && (bVar25)) goto LAB_0040241a;\n    goto LAB_00401fb8;\n  case 0x23:\n  case 0x7e:\nLAB_00401f9d:\n    bVar25 = param_5 == 2;\n    if (uVar22 == 0) goto LAB_00401fa6;\n    goto LAB_004021ab;\n  case 0x25:\n  case 0x2b:\n  case 0x2c:\n  case 0x2d:\n  case 0x2e:\n  case 0x2f:\n  case 0x30:\n  case 0x31:\n  case 0x32:\n  case 0x33:\n  case 0x34:\n  case 0x35:\n  case 0x36:\n  case 0x37:\n  case 0x38:\n  case 0x39:\n  case 0x3a:\n  case 0x41:\n  case 0x42:\n  case 0x43:\n  case 0x44:\n  case 0x45:\n  case 0x46:\n  case 0x47:\n  case 0x48:\n  case 0x49:\n  case 0x4a:\n  case 0x4b:\n  case 0x4c:\n  case 0x4d:\n  case 0x4e:\n  case 0x4f:\n  case 0x50:\n  case 0x51:\n  case 0x52:\n  case 0x53:\n  case 0x54:\n  case 0x55:\n  case 0x56:\n  case 0x57:\n  case 0x58:\n  case 0x59:\n  case 0x5a:\n  case 0x5d:\n  case 0x5f:\n  case 0x61:\n  case 0x62:\n  case 99:\n  case 100:\n  case 0x65:\n  case 0x66:\n  case 0x67:\n  case 0x68:\n  case 0x69:\n  case 0x6a:\n  case 0x6b:\n  case 0x6c:\n  case 0x6d:\n  case 0x6e:\n  case 0x6f:\n  case 0x70:\n  case 0x71:\n  case 0x72:\n  case 0x73:\n  case 0x74:\n  case 0x75:\n  case 0x76:\n  case 0x77:\n  case 0x78:\n  case 0x79:\n  case 0x7a:\n    goto switchD_004023ee_caseD_25;\n  case 0x27:\nswitchD_004023ee_caseD_27:\n    bVar5 = bVar23;\n    if (param_5 != 2) {\n      bVar25 = false;\n      uVar19 = 0x27;\n      goto LAB_00401fb8;\n    }\n    if (!local_5c) {\n      if ((uVar9 == 0) || (uVar19 = 0, uVar21 = uVar9, local_70 != 0)) {\n        if (uVar15 < uVar9) {\n          param_1[uVar15] = 0x27;\n        }\n        if (uVar15 + 1 < uVar9) {\n          param_1[uVar15 + 1] = 0x5c;\n        }\n        uVar19 = uVar9;\n        uVar21 = local_70;\n        if (uVar15 + 2 < uVar9) {\n          param_1[uVar15 + 2] = 0x27;\n        }\n      }\n      uVar16 = uVar15 + 3;\n      bVar17 = 0x27;\n      uVar9 = uVar19;\n      local_70 = uVar21;\n      bVar24 = false;\n      bVar4 = false;\n      goto LAB_004020c8;\n    }\n    goto LAB_004021dc;\n  case 0x3f:\nswitchD_004023ee_caseD_3f:\n    if (param_5 == 2) {\n      if (!local_5c) {\n        bVar17 = 0x3f;\n        bVar24 = false;\n        bVar23 = false;\n        goto LAB_004020c8;\n      }\n      goto LAB_004021dc;\n    }\n    if (param_5 != 5) {\n      bVar25 = param_5 == 2;\n      uVar19 = 0x3f;\n      bVar23 = false;\n      goto LAB_00401fb8;\n    }\n    if (((((param_6 & 4) != 0) && (uVar21 = uVar22 + 2, uVar21 < param_4)) &&\n        (param_3[uVar22 + 1] == '?')) &&\n       ((uVar19 = (ulong)(byte)param_3[uVar21], (byte)param_3[uVar21] < 0x3f &&\n        ((0x7000a38200000000U >> (uVar19 & 0x3f) & 1) != 0)))) {\n      if (!local_5c) {\n        if (uVar15 < uVar9) {\n          param_1[uVar15] = 0x3f;\n        }\n        if (uVar15 + 1 < uVar9) {\n          param_1[uVar15 + 1] = 0x22;\n        }\n        if (uVar15 + 2 < uVar9) {\n          param_1[uVar15 + 2] = 0x22;\n        }\n        if (uVar15 + 3 < uVar9) {\n          param_1[uVar15 + 3] = 0x3f;\n        }\n        uVar16 = uVar15 + 4;\n        bVar26 = false;\n        uVar22 = uVar21;\n        bVar24 = false;\n        goto LAB_00402349;\n      }\n      goto LAB_004021ea;\n    }\n    bVar25 = false;\n    uVar19 = 0x3f;\n    bVar23 = false;\n    goto LAB_00401fb8;\n  case 0x5c:\n    if (param_5 != 2) {\nswitchD_00401f68_caseD_5c:\n      uVar19 = 0x5c;\n      bVar17 = 0x5c;\n      bVar13 = 0x5c;\n      bVar25 = (bool)(bVar6 & local_5c & local_a0 != 0);\n      if (!bVar25) break;\n      uVar22 = uVar22 + 1;\n      bVar23 = false;\n      goto LAB_004020e4;\n    }\n    if (local_5c) goto LAB_004021dc;\n    uVar22 = uVar22 + 1;\n    bVar23 = false;\n    bVar17 = 0x5c;\n    goto LAB_004020e4;\n  case 0x7b:\n  case 0x7d:\nswitchD_004023ee_caseD_7b:\n    bVar24 = param_4 != 1;\n    if (param_4 == 0xffffffffffffffff) {\n      bVar24 = param_3[1] != '\\0';\n    }\n    bVar25 = param_5 == 2;\n    if (!bVar24) goto LAB_00401f9d;\n    goto LAB_004021ab;\n  }\nLAB_004021a0:\n  if (!bVar6) {\nLAB_004021ab:\n    bVar23 = false;\n    goto LAB_00401fb8;\n  }\n  bVar23 = false;\n  bVar17 = bVar13;\n  goto joined_r0x004021c7;\nLAB_004025f8:\n  if ((uVar15 == 0) && ((bool)(local_5c & param_5 == 2))) {\n    param_5 = 2;\nLAB_004021dc:\n    if (bVar26) {\n      param_5 = 4;\n    }\nLAB_004021ea:\n    uVar9 = FUN_00401dd0(param_1,uVar9,param_3,param_4,param_5,param_6 & 0xfffffffd,0,param_8,\n                         param_9);\n    return uVar9;\n  }\n  bVar26 = (bool)(param_5 == 2 & (local_5c ^ 1U));\n  bVar23 = (bool)(local_5c ^ 1U);\n  if ((!bVar26) || (bVar23 = bVar26, !bVar5)) {\nLAB_00402ecd:\n    uVar22 = uVar15;\n    if (((local_78 != (char *)0x0) && (bVar23)) && (cVar14 = *local_78, cVar14 != '\\0')) {\n      do {\n        if (uVar22 < uVar9) {\n          param_1[uVar22] = cVar14;\n        }\n        uVar22 = uVar22 + 1;\n        cVar14 = local_78[uVar22 - uVar15];\n      } while (cVar14 != '\\0');\n    }\n    if (uVar22 < uVar9) {\n      param_1[uVar22] = 0;\n    }\n    return uVar22;\n  }\n  if (bVar2) {\n    uVar9 = FUN_00401dd0(param_1,local_70,param_3,param_4,5,param_6,param_7,param_8,param_9);\n    return uVar9;\n  }\n  local_5b = uVar9 == 0 && local_70 != 0;\n  param_2 = local_70;\n  bVar23 = bVar5;\n  if (uVar9 != 0 || local_70 == 0) goto LAB_00402ecd;\nLAB_00402656:\n  *param_1 = 0x27;\n  param_5 = 2;\n  uVar15 = 1;\n  local_78 = \"\\'\";\n  local_a0 = 1;\n  local_5c = false;\n  uVar9 = param_2;\n  goto LAB_00401e68;\n  while (__s1[uVar21] != 0) {\nLAB_00402e27:\n    uVar21 = uVar21 + 1;\n    if (param_4 <= uVar22 + uVar21) break;\n  }\nLAB_00402e37:\n  bVar23 = false;\nLAB_00402cfa:\n  if (1 < uVar21) {\nLAB_004028be:\n    bVar26 = false;\n    uVar21 = uVar21 + uVar22;\n    uVar16 = uVar22;\n    do {\n      bVar17 = (byte)uVar19;\n      if (bVar25) {\n        bVar26 = param_5 == 2;\n        if (local_5c) goto LAB_004021dc;\n        bVar26 = (bool)(bVar26 & (bVar4 ^ 1U));\n        if (bVar26) {\n          if (uVar15 < uVar9) {\n            param_1[uVar15] = 0x27;\n          }\n          if (uVar15 + 1 < uVar9) {\n            param_1[uVar15 + 1] = 0x24;\n          }\n          if (uVar15 + 2 < uVar9) {\n            param_1[uVar15 + 2] = 0x27;\n          }\n          uVar15 = uVar15 + 3;\n          bVar4 = bVar26;\n        }\n        if (uVar15 < uVar9) {\n          param_1[uVar15] = 0x5c;\n        }\n        if (uVar15 + 1 < uVar9) {\n          param_1[uVar15 + 1] = (char)(uVar19 >> 6) + '0';\n        }\n        if (uVar15 + 2 < uVar9) {\n          param_1[uVar15 + 2] = ((byte)(uVar19 >> 3) & 7) + 0x30;\n        }\n        uVar22 = uVar16 + 1;\n        uVar15 = uVar15 + 3;\n        bVar17 = (bVar17 & 7) + 0x30;\n        bVar26 = bVar25;\n        if (uVar21 <= uVar22) goto LAB_0040205d;\n      }\n      else {\n        bVar3 = (bool)((bVar26 ^ 1U) & bVar4);\n        if (bVar20) {\n          if (uVar15 < uVar9) {\n            param_1[uVar15] = 0x5c;\n          }\n          uVar15 = uVar15 + 1;\n        }\n        uVar22 = uVar16 + 1;\n        if (uVar21 <= uVar22) goto LAB_004020e4;\n        if (bVar3) {\n          if (uVar15 < uVar9) {\n            param_1[uVar15] = 0x27;\n          }\n          if (uVar15 + 1 < uVar9) {\n            param_1[uVar15 + 1] = 0x27;\n          }\n          uVar15 = uVar15 + 2;\n          bVar20 = false;\n          bVar4 = false;\n        }\n        else {\n          bVar20 = false;\n        }\n      }\n      uVar16 = uVar16 + 1;\n      if (uVar15 < uVar9) {\n        param_1[uVar15] = bVar17;\n      }\n      uVar19 = (ulong)(byte)param_3[uVar16];\n      uVar15 = uVar15 + 1;\n    } while( true );\n  }\nLAB_004023c4:\n  if (bVar25) {\n    bVar23 = false;\n    bVar25 = bVar6;\n    goto LAB_004028be;\n  }\nswitchD_004023ee_caseD_25:\n  bVar25 = param_5 == 2;\nLAB_00401fb8:\n  bVar17 = (byte)uVar19;\n  bVar24 = (bool)((bVar6 ^ 1U | bVar25) ^ 1 | local_5c);\n  bVar26 = bVar20;\n  if (bVar24) {\nLAB_00401fcf:\n    bVar24 = false;\n    bVar20 = bVar26;\nLAB_00401fd1:\n    bVar17 = (byte)uVar19;\n    uVar16 = uVar15;\n    bVar4 = bVar3;\n    if ((param_7 == 0) || ((*(uint *)(param_7 + (uVar19 >> 5) * 4) >> (bVar17 & 0x1f) & 1) == 0))\n    goto LAB_004020c8;\n    bVar25 = param_5 == 2;\n  }\n  else {\nLAB_004020c8:\n    bVar25 = param_5 == 2;\n    uVar15 = uVar16;\n    bVar3 = bVar4;\n    if (!bVar20) {\n      uVar22 = uVar22 + 1;\n      bVar3 = (bool)((bVar24 ^ 1U) & bVar4);\nLAB_004020e4:\n      if (bVar3) {\n        if (uVar15 < uVar9) {\n          param_1[uVar15] = 0x27;\n        }\n        if (uVar15 + 1 < uVar9) {\n          param_1[uVar15 + 1] = 0x27;\n        }\n        uVar15 = uVar15 + 2;\n        bVar4 = false;\n      }\n      goto LAB_0040205d;\n    }\n  }\njoined_r0x004021c7:\n  if (local_5c) {\nLAB_004021d8:\n    bVar26 = (bool)(bVar6 & bVar25);\n    goto LAB_004021dc;\n  }\nLAB_00402012:\n  bVar25 = (bool)((bVar3 ^ 1U) & bVar25);\n  if (bVar25) {\n    if (uVar15 < uVar9) {\n      param_1[uVar15] = 0x27;\n    }\n    if (uVar15 + 1 < uVar9) {\n      param_1[uVar15 + 1] = 0x24;\n    }\n    if (uVar15 + 2 < uVar9) {\n      param_1[uVar15 + 2] = 0x27;\n    }\n    uVar15 = uVar15 + 3;\n    bVar3 = bVar25;\n  }\nLAB_0040204b:\n  if (uVar15 < uVar9) {\n    param_1[uVar15] = 0x5c;\n  }\n  uVar15 = uVar15 + 1;\n  uVar22 = uVar22 + 1;\n  bVar4 = bVar3;\nLAB_0040205d:\n  bVar3 = bVar4;\n  if (uVar15 < uVar9) {\n    param_1[uVar15] = bVar17;\n  }\n  uVar15 = uVar15 + 1;\n  if (!bVar23) {\n    bVar2 = false;\n  }\n  goto LAB_00401e78;\n}\n\n",
+            "funcName": "FUN_00401dd0"
+        },
+        {
+            "funcStartAddr": "0x403000",
+            "funcEndAddr": "0x40319b",
+            "decompiledFuncCode": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nundefined * FUN_00403000(int param_1,undefined8 param_2,undefined8 param_3,undefined4 *param_4)\n\n{\n  int iVar1;\n  uint uVar2;\n  undefined4 uVar3;\n  ulong uVar4;\n  undefined4 uVar5;\n  undefined4 uVar6;\n  int *piVar7;\n  undefined4 *puVar8;\n  ulong uVar9;\n  undefined *__ptr;\n  ulong *puVar10;\n  \n  piVar7 = __errno_location();\n  iVar1 = *piVar7;\n  if (param_1 < 0) {\n                    /* WARNING: Subroutine does not return */\n    abort();\n  }\n  puVar8 = (undefined4 *)PTR_DAT_00608218;\n  if (DAT_00608230 <= param_1) {\n    if (param_1 == 0x7fffffff) {\n                    /* WARNING: Subroutine does not return */\n      FUN_00404060();\n    }\n    if (PTR_DAT_00608218 == &DAT_00608220) {\n      puVar8 = (undefined4 *)FUN_00403e70(0);\n      uVar6 = PTR_DAT_00608228._4_4_;\n      uVar5 = PTR_DAT_00608228._0_4_;\n      uVar3 = _UNK_00608224;\n      PTR_DAT_00608218 = (undefined *)puVar8;\n      *puVar8 = _DAT_00608220;\n      puVar8[1] = uVar3;\n      puVar8[2] = uVar5;\n      puVar8[3] = uVar6;\n    }\n    else {\n      puVar8 = (undefined4 *)FUN_00403e70(PTR_DAT_00608218);\n      PTR_DAT_00608218 = (undefined *)puVar8;\n    }\n    memset(puVar8 + (long)DAT_00608230 * 4,0,(long)((param_1 + 1) - DAT_00608230) << 4);\n    DAT_00608230 = param_1 + 1;\n  }\n  uVar2 = param_4[1];\n  puVar10 = (ulong *)(puVar8 + (long)param_1 * 4);\n  uVar4 = *puVar10;\n  __ptr = (undefined *)puVar10[1];\n  uVar9 = FUN_00401dd0(__ptr,uVar4,param_2,param_3,*param_4,uVar2 | 1,param_4 + 2,\n                       *(undefined8 *)(param_4 + 10),*(undefined8 *)(param_4 + 0xc));\n  if (uVar4 <= uVar9) {\n    uVar9 = uVar9 + 1;\n    *puVar10 = uVar9;\n    if (__ptr != &DAT_006082a0) {\n      free(__ptr);\n    }\n    __ptr = (undefined *)FUN_00403e10(uVar9);\n    uVar3 = *param_4;\n    puVar10[1] = (ulong)__ptr;\n    FUN_00401dd0(__ptr,uVar9,param_2,param_3,uVar3,uVar2 | 1,param_4 + 2,\n                 *(undefined8 *)(param_4 + 10),*(undefined8 *)(param_4 + 0xc));\n  }\n  *piVar7 = iVar1;\n  return __ptr;\n}\n\n",
+            "funcName": "FUN_00403000"
+        },
+        {
+            "funcStartAddr": "0x4031a0",
+            "funcEndAddr": "0x4031d4",
+            "decompiledFuncCode": "\nvoid FUN_004031a0(undefined *param_1)\n\n{\n  int iVar1;\n  int *piVar2;\n  \n  piVar2 = __errno_location();\n  iVar1 = *piVar2;\n  if (param_1 == (undefined *)0x0) {\n    param_1 = &DAT_006083a0;\n  }\n  FUN_00404010(param_1,0x38);\n  *piVar2 = iVar1;\n  return;\n}\n\n",
+            "funcName": "FUN_004031a0"
+        },
+        {
+            "funcStartAddr": "0x4031e0",
+            "funcEndAddr": "0x4031ef",
+            "decompiledFuncCode": "\nundefined4 FUN_004031e0(undefined4 *param_1)\n\n{\n  if (param_1 == (undefined4 *)0x0) {\n    param_1 = (undefined4 *)&DAT_006083a0;\n  }\n  return *param_1;\n}\n\n",
+            "funcName": "FUN_004031e0"
+        },
+        {
+            "funcStartAddr": "0x4031f0",
+            "funcEndAddr": "0x4031ff",
+            "decompiledFuncCode": "\nvoid FUN_004031f0(undefined4 *param_1,undefined4 param_2)\n\n{\n  if (param_1 == (undefined4 *)0x0) {\n    param_1 = (undefined4 *)&DAT_006083a0;\n  }\n  *param_1 = param_2;\n  return;\n}\n\n",
+            "funcName": "FUN_004031f0"
+        },
+        {
+            "funcStartAddr": "0x403200",
+            "funcEndAddr": "0x403233",
+            "decompiledFuncCode": "\nuint FUN_00403200(undefined *param_1,byte param_2,uint param_3)\n\n{\n  uint uVar1;\n  uint uVar2;\n  \n  if (param_1 == (undefined *)0x0) {\n    param_1 = &DAT_006083a0;\n  }\n  uVar1 = *(uint *)(param_1 + (ulong)(param_2 >> 5) * 4 + 8);\n  uVar2 = uVar1 >> (param_2 & 0x1f);\n  *(uint *)(param_1 + (ulong)(param_2 >> 5) * 4 + 8) =\n       ((param_3 ^ uVar2) & 1) << (param_2 & 0x1f) ^ uVar1;\n  return uVar2 & 1;\n}\n\n",
+            "funcName": "FUN_00403200"
+        },
+        {
+            "funcStartAddr": "0x403240",
+            "funcEndAddr": "0x403253",
+            "decompiledFuncCode": "\nundefined4 FUN_00403240(undefined *param_1,undefined4 param_2)\n\n{\n  undefined4 uVar1;\n  \n  if (param_1 == (undefined *)0x0) {\n    param_1 = &DAT_006083a0;\n  }\n  uVar1 = *(undefined4 *)(param_1 + 4);\n  *(undefined4 *)(param_1 + 4) = param_2;\n  return uVar1;\n}\n\n",
+            "funcName": "FUN_00403240"
+        },
+        {
+            "funcStartAddr": "0x403260",
+            "funcEndAddr": "0x40328b",
+            "decompiledFuncCode": "\nvoid FUN_00403260(undefined4 *param_1,long param_2,long param_3)\n\n{\n  if (param_1 == (undefined4 *)0x0) {\n    param_1 = (undefined4 *)&DAT_006083a0;\n  }\n  *param_1 = 10;\n  if ((param_2 != 0) && (param_3 != 0)) {\n    *(long *)(param_1 + 10) = param_2;\n    *(long *)(param_1 + 0xc) = param_3;\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "FUN_00403260"
+        },
+        {
+            "funcStartAddr": "0x403290",
+            "funcEndAddr": "0x403302",
+            "decompiledFuncCode": "\nvoid FUN_00403290(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,\n                 undefined4 *param_5)\n\n{\n  int iVar1;\n  int *piVar2;\n  \n  if (param_5 == (undefined4 *)0x0) {\n    param_5 = (undefined4 *)&DAT_006083a0;\n  }\n  piVar2 = __errno_location();\n  iVar1 = *piVar2;\n  FUN_00401dd0(param_1,param_2,param_3,param_4,*param_5,param_5[1],param_5 + 2,\n               *(undefined8 *)(param_5 + 10),*(undefined8 *)(param_5 + 0xc));\n  *piVar2 = iVar1;\n  return;\n}\n\n",
+            "funcName": "FUN_00403290"
+        },
+        {
+            "funcStartAddr": "0x403310",
+            "funcEndAddr": "0x4033f1",
+            "decompiledFuncCode": "\nundefined8 FUN_00403310(undefined8 param_1,undefined8 param_2,long *param_3,undefined4 *param_4)\n\n{\n  int iVar1;\n  int *piVar2;\n  long lVar3;\n  undefined8 uVar4;\n  uint uVar5;\n  \n  if (param_4 == (undefined4 *)0x0) {\n    param_4 = (undefined4 *)&DAT_006083a0;\n  }\n  piVar2 = __errno_location();\n  iVar1 = *piVar2;\n  uVar5 = (uint)(param_3 == (long *)0x0) | param_4[1];\n  lVar3 = FUN_00401dd0(0,0,param_1,param_2,*param_4,uVar5,param_4 + 2,*(undefined8 *)(param_4 + 10),\n                       *(undefined8 *)(param_4 + 0xc));\n  uVar4 = FUN_00403e10(lVar3 + 1);\n  FUN_00401dd0(uVar4,lVar3 + 1,param_1,param_2,*param_4,uVar5,param_4 + 2,\n               *(undefined8 *)(param_4 + 10),*(undefined8 *)(param_4 + 0xc));\n  *piVar2 = iVar1;\n  if (param_3 != (long *)0x0) {\n    *param_3 = lVar3;\n  }\n  return uVar4;\n}\n\n",
+            "funcName": "FUN_00403310"
+        },
+        {
+            "funcStartAddr": "0x403400",
+            "funcEndAddr": "0x40340a",
+            "decompiledFuncCode": "\nvoid FUN_00403400(undefined8 param_1,undefined8 param_2,undefined8 param_3)\n\n{\n  FUN_00403310(param_1,param_2,0,param_3);\n  return;\n}\n\n",
+            "funcName": "FUN_00403400"
+        },
+        {
+            "funcStartAddr": "0x403410",
+            "funcEndAddr": "0x4034a5",
+            "decompiledFuncCode": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_00403410(void)\n\n{\n  void **ppvVar1;\n  void *__ptr;\n  undefined *__ptr_00;\n  void **ppvVar2;\n  \n  __ptr_00 = PTR_DAT_00608218;\n  if (1 < DAT_00608230) {\n    ppvVar2 = (void **)(PTR_DAT_00608218 + 0x18);\n    ppvVar1 = (void **)(PTR_DAT_00608218 + (ulong)(DAT_00608230 - 2) * 0x10 + 0x28);\n    do {\n      __ptr = *ppvVar2;\n      ppvVar2 = ppvVar2 + 2;\n      free(__ptr);\n    } while (ppvVar2 != ppvVar1);\n  }\n  if (*(undefined **)(__ptr_00 + 8) != &DAT_006082a0) {\n    free(*(undefined **)(__ptr_00 + 8));\n    _DAT_00608220 = 0x100;\n    PTR_DAT_00608228 = &DAT_006082a0;\n  }\n  if (__ptr_00 != &DAT_00608220) {\n    free(__ptr_00);\n    PTR_DAT_00608218 = &DAT_00608220;\n  }\n  DAT_00608230 = 1;\n  return;\n}\n\n",
+            "funcName": "FUN_00403410"
+        },
+        {
+            "funcStartAddr": "0x4034b0",
+            "funcEndAddr": "0x4034c1",
+            "decompiledFuncCode": "\nvoid FUN_004034b0(undefined8 param_1,undefined8 param_2)\n\n{\n  FUN_00403000(param_1,param_2,0xffffffffffffffff,&DAT_006083a0);\n  return;\n}\n\n",
+            "funcName": "FUN_004034b0"
+        },
+        {
+            "funcStartAddr": "0x4034d0",
+            "funcEndAddr": "0x4034da",
+            "decompiledFuncCode": "\nvoid FUN_004034d0(void)\n\n{\n  FUN_00403000();\n  return;\n}\n\n",
+            "funcName": "FUN_004034d0"
+        },
+        {
+            "funcStartAddr": "0x4034e0",
+            "funcEndAddr": "0x4034f6",
+            "decompiledFuncCode": "\nvoid FUN_004034e0(undefined8 param_1)\n\n{\n  FUN_00403000(0,param_1,0xffffffffffffffff,&DAT_006083a0);\n  return;\n}\n\n",
+            "funcName": "FUN_004034e0"
+        },
+        {
+            "funcStartAddr": "0x403500",
+            "funcEndAddr": "0x403512",
+            "decompiledFuncCode": "\nvoid FUN_00403500(undefined8 param_1,undefined8 param_2)\n\n{\n  FUN_00403000(0,param_1,param_2,&DAT_006083a0);\n  return;\n}\n\n",
+            "funcName": "FUN_00403500"
+        },
+        {
+            "funcStartAddr": "0x403520",
+            "funcEndAddr": "0x403588",
+            "decompiledFuncCode": "\nvoid FUN_00403520(undefined8 param_1,int param_2,undefined8 param_3)\n\n{\n  int local_48;\n  undefined4 local_44;\n  undefined8 local_40;\n  undefined8 local_38;\n  undefined8 local_30;\n  undefined8 local_28;\n  undefined8 local_20;\n  undefined8 local_18;\n  \n  if (param_2 != 10) {\n    local_44 = 0;\n    local_40 = 0;\n    local_38 = 0;\n    local_30 = 0;\n    local_28 = 0;\n    local_20 = 0;\n    local_18 = 0;\n    local_48 = param_2;\n    FUN_00403000(param_1,param_3,0xffffffffffffffff,&local_48);\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "FUN_00403520"
+        },
+        {
+            "funcStartAddr": "0x403590",
+            "funcEndAddr": "0x4035f4",
+            "decompiledFuncCode": "\nvoid FUN_00403590(undefined8 param_1,int param_2,undefined8 param_3,undefined8 param_4)\n\n{\n  int local_48;\n  undefined4 local_44;\n  undefined8 local_40;\n  undefined8 local_38;\n  undefined8 local_30;\n  undefined8 local_28;\n  undefined8 local_20;\n  undefined8 local_18;\n  \n  if (param_2 != 10) {\n    local_44 = 0;\n    local_40 = 0;\n    local_38 = 0;\n    local_30 = 0;\n    local_28 = 0;\n    local_20 = 0;\n    local_18 = 0;\n    local_48 = param_2;\n    FUN_00403000(param_1,param_3,param_4,&local_48);\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "FUN_00403590"
+        },
+        {
+            "funcStartAddr": "0x403600",
+            "funcEndAddr": "0x40360c",
+            "decompiledFuncCode": "\nvoid FUN_00403600(undefined4 param_1,undefined8 param_2)\n\n{\n  FUN_00403520(0,param_1,param_2);\n  return;\n}\n\n",
+            "funcName": "FUN_00403600"
+        },
+        {
+            "funcStartAddr": "0x403610",
+            "funcEndAddr": "0x40361f",
+            "decompiledFuncCode": "\nvoid FUN_00403610(undefined4 param_1,undefined8 param_2,undefined8 param_3)\n\n{\n  FUN_00403590(0,param_1,param_2,param_3);\n  return;\n}\n\n",
+            "funcName": "FUN_00403610"
+        },
+        {
+            "funcStartAddr": "0x403620",
+            "funcEndAddr": "0x403690",
+            "decompiledFuncCode": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_00403620(undefined8 param_1,undefined8 param_2,byte param_3)\n\n{\n  uint *puVar1;\n  uint uVar2;\n  undefined8 local_48;\n  undefined8 uStack_40;\n  undefined8 local_38;\n  undefined8 uStack_30;\n  undefined8 local_28;\n  undefined8 uStack_20;\n  undefined8 local_18;\n  \n  local_18 = DAT_006083d0;\n  local_48 = _DAT_006083a0;\n  uStack_40 = uRam00000000006083a8;\n  local_38 = _DAT_006083b0;\n  uStack_30 = uRam00000000006083b8;\n  puVar1 = (uint *)((long)&uStack_40 + (ulong)(param_3 >> 5) * 4);\n  local_28 = _DAT_006083c0;\n  uStack_20 = uRam00000000006083c8;\n  uVar2 = *puVar1;\n  *puVar1 = (~(uVar2 >> (param_3 & 0x1f)) & 1) << (param_3 & 0x1f) ^ uVar2;\n  FUN_00403000(0,param_1,param_2,&local_48);\n  return;\n}\n\n",
+            "funcName": "FUN_00403620"
+        },
+        {
+            "funcStartAddr": "0x403690",
+            "funcEndAddr": "0x40369d",
+            "decompiledFuncCode": "\nvoid FUN_00403690(undefined8 param_1,char param_2)\n\n{\n  FUN_00403620(param_1,0xffffffffffffffff,(int)param_2);\n  return;\n}\n\n",
+            "funcName": "FUN_00403690"
+        },
+        {
+            "funcStartAddr": "0x4036a0",
+            "funcEndAddr": "0x4036b1",
+            "decompiledFuncCode": "\nvoid FUN_004036a0(undefined8 param_1)\n\n{\n  FUN_00403620(param_1,0xffffffffffffffff,0x3a);\n  return;\n}\n\n",
+            "funcName": "FUN_004036a0"
+        },
+        {
+            "funcStartAddr": "0x4036c0",
+            "funcEndAddr": "0x4036ca",
+            "decompiledFuncCode": "\nvoid FUN_004036c0(undefined8 param_1,undefined8 param_2)\n\n{\n  FUN_00403620(param_1,param_2,0x3a);\n  return;\n}\n\n",
+            "funcName": "FUN_004036c0"
+        },
+        {
+            "funcStartAddr": "0x4036d0",
+            "funcEndAddr": "0x40373e",
+            "decompiledFuncCode": "\nvoid FUN_004036d0(undefined8 param_1,int param_2,undefined8 param_3)\n\n{\n  int local_48;\n  undefined4 local_44;\n  undefined8 local_40;\n  undefined8 local_38;\n  undefined8 local_30;\n  undefined8 local_28;\n  undefined8 local_20;\n  undefined8 local_18;\n  \n  if (param_2 != 10) {\n    local_40 = 0x400000000000000;\n    local_44 = 0;\n    local_38 = 0;\n    local_30 = 0;\n    local_28 = 0;\n    local_20 = 0;\n    local_18 = 0;\n    local_48 = param_2;\n    FUN_00403000(param_1,param_3,0xffffffffffffffff,&local_48);\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "FUN_004036d0"
+        },
+        {
+            "funcStartAddr": "0x403740",
+            "funcEndAddr": "0x4037ac",
+            "decompiledFuncCode": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_00403740(undefined8 param_1,long param_2,long param_3,undefined8 param_4,undefined8 param_5\n                 )\n\n{\n  undefined8 local_48;\n  undefined8 uStack_40;\n  undefined8 local_38;\n  undefined8 uStack_30;\n  undefined8 local_28;\n  long lStack_20;\n  long local_18;\n  \n  uStack_40 = uRam00000000006083a8;\n  local_38 = _DAT_006083b0;\n  uStack_30 = uRam00000000006083b8;\n  local_28 = _DAT_006083c0;\n  lStack_20 = uRam00000000006083c8;\n  local_18 = DAT_006083d0;\n  local_48 = CONCAT44((int)((ulong)_DAT_006083a0 >> 0x20),10);\n  if ((param_2 != 0) && (param_3 != 0)) {\n    lStack_20 = param_2;\n    local_18 = param_3;\n    FUN_00403000(param_1,param_4,param_5,&local_48);\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "FUN_00403740"
+        },
+        {
+            "funcStartAddr": "0x4037b0",
+            "funcEndAddr": "0x4037b9",
+            "decompiledFuncCode": "\nvoid FUN_004037b0(void)\n\n{\n  FUN_00403740();\n  return;\n}\n\n",
+            "funcName": "FUN_004037b0"
+        },
+        {
+            "funcStartAddr": "0x4037c0",
+            "funcEndAddr": "0x4037d7",
+            "decompiledFuncCode": "\nvoid FUN_004037c0(undefined8 param_1,undefined8 param_2,undefined8 param_3)\n\n{\n  FUN_00403740(0,param_1,param_2,param_3,0xffffffffffffffff);\n  return;\n}\n\n",
+            "funcName": "FUN_004037c0"
+        },
+        {
+            "funcStartAddr": "0x4037e0",
+            "funcEndAddr": "0x4037f3",
+            "decompiledFuncCode": "\nvoid FUN_004037e0(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)\n\n{\n  FUN_00403740(0,param_1,param_2,param_3,param_4);\n  return;\n}\n\n",
+            "funcName": "FUN_004037e0"
+        },
+        {
+            "funcStartAddr": "0x403800",
+            "funcEndAddr": "0x40380a",
+            "decompiledFuncCode": "\nvoid FUN_00403800(void)\n\n{\n  FUN_00403000();\n  return;\n}\n\n",
+            "funcName": "FUN_00403800"
+        },
+        {
+            "funcStartAddr": "0x403810",
+            "funcEndAddr": "0x403822",
+            "decompiledFuncCode": "\nvoid FUN_00403810(undefined8 param_1,undefined8 param_2)\n\n{\n  FUN_00403000(0,param_1,param_2,&DAT_006081e0);\n  return;\n}\n\n",
+            "funcName": "FUN_00403810"
+        },
+        {
+            "funcStartAddr": "0x403830",
+            "funcEndAddr": "0x403841",
+            "decompiledFuncCode": "\nvoid FUN_00403830(undefined8 param_1,undefined8 param_2)\n\n{\n  FUN_00403000(param_1,param_2,0xffffffffffffffff,&DAT_006081e0);\n  return;\n}\n\n",
+            "funcName": "FUN_00403830"
+        },
+        {
+            "funcStartAddr": "0x403850",
+            "funcEndAddr": "0x403866",
+            "decompiledFuncCode": "\nvoid FUN_00403850(undefined8 param_1)\n\n{\n  FUN_00403000(0,param_1,0xffffffffffffffff,&DAT_006081e0);\n  return;\n}\n\n",
+            "funcName": "FUN_00403850"
+        },
+        {
+            "funcStartAddr": "0x403870",
+            "funcEndAddr": "0x403c14",
+            "decompiledFuncCode": "\nundefined8\nFUN_00403870(FILE *param_1,long param_2,undefined8 param_3,undefined8 param_4,undefined8 *param_5,\n            undefined8 param_6)\n\n{\n  undefined8 uVar1;\n  char *pcVar2;\n  undefined8 uVar3;\n  undefined8 uVar4;\n  undefined8 uVar5;\n  undefined8 uVar6;\n  undefined8 uVar7;\n  undefined8 local_58;\n  undefined8 local_50;\n  undefined8 local_48;\n  \n  if (param_2 == 0) {\n    __fprintf_chk(param_1,1,\"%s %s\\n\",param_3,param_4);\n  }\n  else {\n    __fprintf_chk(param_1,1,\"%s (%s) %s\\n\",param_2,param_3,param_4);\n  }\n  uVar1 = dcgettext(0,&DAT_0040684b,5);\n  __fprintf_chk(param_1,1,\"Copyright %s %d Free Software Foundation, Inc.\",uVar1,0x7e1);\n  pcVar2 = (char *)dcgettext(0,\n                             \"\\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\\nThis is free software: you are free to change and redistribute it.\\nThere is NO WARRANTY, to the extent permitted by law.\\n\\n\"\n                             ,5);\n  fputs_unlocked(pcVar2,param_1);\n  switch(param_6) {\n  case 0:\n                    /* WARNING: Subroutine does not return */\n    abort();\n  case 1:\n    uVar1 = *param_5;\n    uVar4 = dcgettext(0,\"Written by %s.\\n\",5);\n    uVar1 = __fprintf_chk(param_1,1,uVar4,uVar1);\n    return uVar1;\n  case 2:\n    uVar1 = param_5[1];\n    uVar4 = *param_5;\n    uVar5 = dcgettext(0,\"Written by %s and %s.\\n\",5);\n    uVar1 = __fprintf_chk(param_1,1,uVar5,uVar4,uVar1);\n    return uVar1;\n  case 3:\n    uVar1 = param_5[2];\n    uVar4 = param_5[1];\n    uVar5 = *param_5;\n    uVar6 = dcgettext(0,\"Written by %s, %s, and %s.\\n\",5);\n    uVar1 = __fprintf_chk(param_1,1,uVar6,uVar5,uVar4,uVar1);\n    return uVar1;\n  case 4:\n    uVar1 = param_5[3];\n    uVar4 = param_5[2];\n    uVar5 = param_5[1];\n    uVar6 = *param_5;\n    uVar7 = dcgettext(0,\"Written by %s, %s, %s,\\nand %s.\\n\",5);\n    goto LAB_00403aec;\n  case 5:\n    uVar1 = param_5[3];\n    uVar4 = param_5[2];\n    uVar5 = param_5[1];\n    uVar6 = *param_5;\n    uVar7 = dcgettext(0,\"Written by %s, %s, %s,\\n%s, and %s.\\n\",5);\nLAB_00403aec:\n    __fprintf_chk(param_1,1,uVar7,uVar6,uVar5,uVar4);\n    return uVar1;\n  case 6:\n    local_58 = param_5[1];\n    uVar4 = param_5[5];\n    uVar5 = param_5[4];\n    uVar6 = param_5[3];\n    uVar1 = param_5[2];\n    uVar7 = *param_5;\n    uVar3 = dcgettext(0,\"Written by %s, %s, %s,\\n%s, %s, and %s.\\n\",5);\n    goto LAB_00403b89;\n  case 7:\n    uVar1 = param_5[2];\n    uVar4 = param_5[5];\n    uVar5 = param_5[4];\n    uVar6 = param_5[3];\n    local_58 = param_5[1];\n    uVar7 = *param_5;\n    uVar3 = dcgettext(0,\"Written by %s, %s, %s,\\n%s, %s, %s, and %s.\\n\",5);\nLAB_00403b89:\n    uVar1 = __fprintf_chk(param_1,1,uVar3,uVar7,local_58,uVar1,uVar6,uVar5,uVar4);\n    return uVar1;\n  case 8:\n    local_48 = param_5[7];\n    local_58 = param_5[2];\n    local_50 = param_5[1];\n    uVar1 = param_5[6];\n    uVar4 = param_5[5];\n    uVar5 = param_5[4];\n    uVar6 = param_5[3];\n    uVar7 = *param_5;\n    uVar3 = dcgettext(0,\"Written by %s, %s, %s,\\n%s, %s, %s, %s,\\nand %s.\\n\",5);\n    goto LAB_0040396a;\n  case 9:\n    local_48 = param_5[7];\n    pcVar2 = \"Written by %s, %s, %s,\\n%s, %s, %s, %s,\\n%s, and %s.\\n\";\n    local_58 = param_5[2];\n    local_50 = param_5[1];\n    uVar1 = param_5[6];\n    uVar4 = param_5[5];\n    uVar5 = param_5[4];\n    uVar6 = param_5[3];\n    uVar7 = *param_5;\n    break;\n  default:\n    local_48 = param_5[7];\n    pcVar2 = \"Written by %s, %s, %s,\\n%s, %s, %s, %s,\\n%s, %s, and others.\\n\";\n    local_58 = param_5[2];\n    local_50 = param_5[1];\n    uVar1 = param_5[6];\n    uVar4 = param_5[5];\n    uVar5 = param_5[4];\n    uVar6 = param_5[3];\n    uVar7 = *param_5;\n  }\n  uVar3 = dcgettext(0,pcVar2,5);\nLAB_0040396a:\n  uVar1 = __fprintf_chk(param_1,1,uVar3,uVar7,local_50,local_58,uVar6,uVar5,uVar4,uVar1,local_48);\n  return uVar1;\n}\n\n",
+            "funcName": "FUN_00403870"
+        },
+        {
+            "funcStartAddr": "0x403c50",
+            "funcEndAddr": "0x403c70",
+            "decompiledFuncCode": "\nvoid FUN_00403c50(void)\n\n{\n  long lVar1;\n  long *in_R8;\n  long lVar2;\n  \n  lVar2 = 0;\n  lVar1 = *in_R8;\n  while (lVar1 != 0) {\n    lVar2 = lVar2 + 1;\n    lVar1 = in_R8[lVar2];\n  }\n  FUN_00403870();\n  return;\n}\n\n",
+            "funcName": "FUN_00403c50"
+        },
+        {
+            "funcStartAddr": "0x403c70",
+            "funcEndAddr": "0x403cc9",
+            "decompiledFuncCode": "\nvoid FUN_00403c70(void)\n\n{\n  uint uVar1;\n  long *plVar2;\n  long lVar3;\n  uint *in_R8;\n  long lVar4;\n  long local_58 [11];\n  \n  lVar4 = 0;\n  do {\n    uVar1 = *in_R8;\n    if (uVar1 < 0x30) {\n      *in_R8 = uVar1 + 8;\n      lVar3 = *(long *)((ulong)uVar1 + *(long *)(in_R8 + 4));\n      local_58[lVar4] = lVar3;\n    }\n    else {\n      plVar2 = *(long **)(in_R8 + 2);\n      *(long **)(in_R8 + 2) = plVar2 + 1;\n      lVar3 = *plVar2;\n      local_58[lVar4] = lVar3;\n    }\n  } while ((lVar3 != 0) && (lVar4 = lVar4 + 1, lVar4 != 10));\n  FUN_00403870();\n  return;\n}\n\n",
+            "funcName": "FUN_00403c70"
+        },
+        {
+            "funcStartAddr": "0x403cd0",
+            "funcEndAddr": "0x403d88",
+            "decompiledFuncCode": "\nvoid FUN_00403cd0(void)\n\n{\n  long lVar1;\n  undefined8 in_R8;\n  ulong uVar2;\n  undefined8 in_R9;\n  long lVar3;\n  long *plVar4;\n  long local_88 [10];\n  long local_38 [4];\n  long local_18 [3];\n  \n  local_18[0] = in_R8;\n  plVar4 = (long *)&stack0x00000008;\n  uVar2 = 0x20;\n  local_18[1] = in_R9;\n  lVar3 = 0;\n  do {\n    if ((uint)uVar2 < 0x30) {\n      lVar1 = *(long *)((long)local_38 + uVar2);\n      local_88[lVar3] = lVar1;\n      uVar2 = (ulong)((uint)uVar2 + 8);\n    }\n    else {\n      lVar1 = *plVar4;\n      local_88[lVar3] = lVar1;\n      plVar4 = plVar4 + 1;\n    }\n  } while ((lVar1 != 0) && (lVar3 = lVar3 + 1, lVar3 != 10));\n  FUN_00403870();\n  return;\n}\n\n",
+            "funcName": "FUN_00403cd0"
+        },
+        {
+            "funcStartAddr": "0x403d90",
+            "funcEndAddr": "0x403e04",
+            "decompiledFuncCode": "\nvoid FUN_00403d90(void)\n\n{\n  FILE *__stream;\n  undefined8 uVar1;\n  char *__s;\n  \n  uVar1 = dcgettext(0,\"\\nReport bugs to: %s\\n\",5);\n  __printf_chk(1,uVar1,\"bug-coreutils@gnu.org\");\n  uVar1 = dcgettext(0,\"%s home page: <%s>\\n\",5);\n  __printf_chk(1,uVar1,\"GNU coreutils\",\"https://www.gnu.org/software/coreutils/\");\n  __stream = stdout;\n  __s = (char *)dcgettext(0,\"General help using GNU software: <https://www.gnu.org/gethelp/>\\n\",5);\n  fputs_unlocked(__s,__stream);\n  return;\n}\n\n",
+            "funcName": "FUN_00403d90"
+        },
+        {
+            "funcStartAddr": "0x403e10",
+            "funcEndAddr": "0x403e2a",
+            "decompiledFuncCode": "\nvoid FUN_00403e10(size_t param_1)\n\n{\n  void *pvVar1;\n  \n  pvVar1 = malloc(param_1);\n  if ((pvVar1 == (void *)0x0) && (param_1 != 0)) {\n                    /* WARNING: Subroutine does not return */\n    FUN_00404060();\n  }\n  return;\n}\n\n",
+            "funcName": "FUN_00403e10"
+        },
+        {
+            "funcStartAddr": "0x403e30",
+            "funcEndAddr": "0x403e51",
+            "decompiledFuncCode": "\nvoid FUN_00403e30(ulong param_1,ulong param_2)\n\n{\n  if ((-1 < SUB168(ZEXT816(param_1) * ZEXT816(param_2),0)) &&\n     (SUB168(ZEXT816(param_1) * ZEXT816(param_2) >> 0x40,0) == 0)) {\n    FUN_00403e10();\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  FUN_00404060();\n}\n\n",
+            "funcName": "FUN_00403e30"
+        },
+        {
+            "funcStartAddr": "0x403e60",
+            "funcEndAddr": "0x403e62",
+            "decompiledFuncCode": "\nvoid thunk_FUN_00403e10(size_t param_1)\n\n{\n  void *pvVar1;\n  \n  pvVar1 = malloc(param_1);\n  if ((pvVar1 == (void *)0x0) && (param_1 != 0)) {\n                    /* WARNING: Subroutine does not return */\n    FUN_00404060();\n  }\n  return;\n}\n\n",
+            "funcName": "thunk_403e60"
+        },
+        {
+            "funcStartAddr": "0x403e70",
+            "funcEndAddr": "0x403ea0",
+            "decompiledFuncCode": "\nvoid * FUN_00403e70(void *param_1,size_t param_2)\n\n{\n  void *pvVar1;\n  \n  if ((param_2 == 0) && (param_1 != (void *)0x0)) {\n    free(param_1);\n    return (void *)0x0;\n  }\n  pvVar1 = realloc(param_1,param_2);\n  if ((pvVar1 == (void *)0x0) && (param_2 != 0)) {\n                    /* WARNING: Subroutine does not return */\n    FUN_00404060();\n  }\n  return pvVar1;\n}\n\n",
+            "funcName": "FUN_00403e70"
+        },
+        {
+            "funcStartAddr": "0x403eb0",
+            "funcEndAddr": "0x403ed1",
+            "decompiledFuncCode": "\nvoid FUN_00403eb0(undefined8 param_1,ulong param_2,ulong param_3)\n\n{\n  if ((-1 < SUB168(ZEXT816(param_2) * ZEXT816(param_3),0)) &&\n     (SUB168(ZEXT816(param_2) * ZEXT816(param_3) >> 0x40,0) == 0)) {\n    FUN_00403e70();\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  FUN_00404060();\n}\n\n",
+            "funcName": "FUN_00403eb0"
+        },
+        {
+            "funcStartAddr": "0x403ee0",
+            "funcEndAddr": "0x403f58",
+            "decompiledFuncCode": "\nvoid FUN_00403ee0(long param_1,ulong *param_2,ulong param_3)\n\n{\n  undefined auVar1 [16];\n  ulong uVar2;\n  ulong uVar3;\n  \n  uVar2 = *param_2;\n  if (param_1 == 0) {\n    if (uVar2 == 0) {\n      uVar2 = (ulong)(0x80 < param_3) +\n              SUB168((ZEXT816(0) << 0x40 | ZEXT816(0x80)) / ZEXT816(param_3),0);\n    }\n    uVar3 = (ulong)(SUB168(ZEXT816(uVar2) * ZEXT816(param_3) >> 0x40,0) != 0);\n    if ((SUB168(ZEXT816(uVar2) * ZEXT816(param_3),0) < 0) || (uVar3 != 0)) goto LAB_00403f3b;\n  }\n  else {\n    auVar1 = ZEXT816(0) << 0x40 | ZEXT816(0x5555555555555554);\n    uVar3 = SUB168(auVar1 % ZEXT816(param_3),0);\n    if (SUB168(auVar1 / ZEXT816(param_3),0) <= uVar2) {\nLAB_00403f3b:\n                    /* WARNING: Subroutine does not return */\n      FUN_00404060(param_1,param_2,uVar3);\n    }\n    uVar2 = (uVar2 >> 1) + 1 + uVar2;\n  }\n  *param_2 = uVar2;\n  FUN_00403e70(param_1,uVar2 * param_3);\n  return;\n}\n\n",
+            "funcName": "FUN_00403ee0"
+        },
+        {
+            "funcStartAddr": "0x403f70",
+            "funcEndAddr": "0x403fba",
+            "decompiledFuncCode": "\nvoid FUN_00403f70(long param_1,ulong *param_2)\n\n{\n  ulong uVar1;\n  \n  uVar1 = *param_2;\n  if (param_1 == 0) {\n    if (uVar1 == 0) {\n      *param_2 = 0x80;\n      FUN_00403e70(0,0x80);\n      return;\n    }\n    if ((long)uVar1 < 0) goto LAB_00403fba;\n  }\n  else {\n    if (0x5555555555555553 < uVar1) {\nLAB_00403fba:\n                    /* WARNING: Subroutine does not return */\n      FUN_00404060();\n    }\n    uVar1 = (uVar1 >> 1) + 1 + uVar1;\n  }\n  *param_2 = uVar1;\n  FUN_00403e70(param_1,uVar1);\n  return;\n}\n\n",
+            "funcName": "FUN_00403f70"
+        },
+        {
+            "funcStartAddr": "0x403fc0",
+            "funcEndAddr": "0x403fd7",
+            "decompiledFuncCode": "\nvoid FUN_00403fc0(size_t param_1)\n\n{\n  void *__s;\n  \n  __s = (void *)FUN_00403e10();\n  memset(__s,0,param_1);\n  return;\n}\n\n",
+            "funcName": "FUN_00403fc0"
+        },
+        {
+            "funcStartAddr": "0x403fe0",
+            "funcEndAddr": "0x40400e",
+            "decompiledFuncCode": "\nvoid FUN_00403fe0(size_t param_1,ulong param_2)\n\n{\n  void *pvVar1;\n  \n  if ((-1 < SUB168(ZEXT816(param_1) * ZEXT816(param_2),0)) &&\n     (SUB168(ZEXT816(param_1) * ZEXT816(param_2) >> 0x40,0) == 0)) {\n    pvVar1 = calloc(param_1,param_2);\n    if (pvVar1 != (void *)0x0) {\n      return;\n    }\n  }\n                    /* WARNING: Subroutine does not return */\n  FUN_00404060();\n}\n\n",
+            "funcName": "FUN_00403fe0"
+        },
+        {
+            "funcStartAddr": "0x404010",
+            "funcEndAddr": "0x404038",
+            "decompiledFuncCode": "\nvoid FUN_00404010(void *param_1,size_t param_2)\n\n{\n  void *__dest;\n  \n  __dest = (void *)FUN_00403e10(param_2);\n  memcpy(__dest,param_1,param_2);\n  return;\n}\n\n",
+            "funcName": "FUN_00404010"
+        },
+        {
+            "funcStartAddr": "0x404040",
+            "funcEndAddr": "0x404053",
+            "decompiledFuncCode": "\nvoid FUN_00404040(char *param_1)\n\n{\n  void *__dest;\n  size_t sVar1;\n  \n  sVar1 = strlen(param_1);\n  __dest = (void *)FUN_00403e10(sVar1 + 1);\n  memcpy(__dest,param_1,sVar1 + 1);\n  return;\n}\n\n",
+            "funcName": "FUN_00404040"
+        },
+        {
+            "funcStartAddr": "0x404060",
+            "funcEndAddr": "0x404091",
+            "decompiledFuncCode": "\nvoid FUN_00404060(void)\n\n{\n  undefined8 uVar1;\n  \n  uVar1 = dcgettext(0,\"memory exhausted\",5);\n  error(DAT_006081d8,0,\"%s\",uVar1);\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "FUN_00404060"
+        },
+        {
+            "funcStartAddr": "0x4040a0",
+            "funcEndAddr": "0x404175",
+            "decompiledFuncCode": "\nvoid FUN_004040a0(long param_1,int *param_2)\n\n{\n  int iVar1;\n  int iVar2;\n  int iVar3;\n  undefined8 uVar4;\n  undefined8 *puVar5;\n  long lVar6;\n  int iVar7;\n  int iVar8;\n  int iVar9;\n  int iVar10;\n  \n  iVar1 = param_2[0xb];\n  iVar2 = *param_2;\n  iVar3 = param_2[0xc];\n  iVar8 = iVar1;\n  iVar9 = iVar2;\n  while (iVar3 < iVar9) {\n    while( true ) {\n      if (iVar3 <= iVar8) goto LAB_0040411c;\n      iVar10 = iVar9 - iVar3;\n      iVar7 = iVar3 - iVar8;\n      if (iVar10 <= iVar7) break;\n      lVar6 = (long)iVar8;\n      iVar9 = iVar9 - iVar7;\n      puVar5 = (undefined8 *)(param_1 + lVar6 * 8);\n      do {\n        uVar4 = *puVar5;\n        *puVar5 = puVar5[iVar9 - lVar6];\n        puVar5[iVar9 - lVar6] = uVar4;\n        puVar5 = puVar5 + 1;\n      } while ((undefined8 *)(param_1 + 8 + ((ulong)(iVar7 - 1) + lVar6) * 8) != puVar5);\n      if (iVar9 <= iVar3) goto LAB_0040411c;\n    }\n    lVar6 = (long)iVar8;\n    puVar5 = (undefined8 *)(param_1 + lVar6 * 8);\n    do {\n      uVar4 = *puVar5;\n      *puVar5 = puVar5[iVar3 - lVar6];\n      puVar5[iVar3 - lVar6] = uVar4;\n      puVar5 = puVar5 + 1;\n    } while (puVar5 != (undefined8 *)(param_1 + 8 + ((ulong)(iVar10 - 1) + lVar6) * 8));\n    iVar8 = iVar8 + iVar10;\n  }\nLAB_0040411c:\n  param_2[0xc] = iVar2;\n  param_2[0xb] = iVar1 + (iVar2 - iVar3);\n  return;\n}\n\n",
+            "funcName": "FUN_004040a0"
+        },
+        {
+            "funcStartAddr": "0x404180",
+            "funcEndAddr": "0x40477e",
+            "decompiledFuncCode": "\nint FUN_00404180(int param_1,undefined8 *param_2,char *param_3,char **param_4,undefined4 *param_5,\n                int param_6,int *param_7,int param_8,undefined8 param_9)\n\n{\n  char cVar1;\n  undefined8 uVar2;\n  bool bVar3;\n  bool bVar4;\n  int iVar5;\n  int iVar6;\n  size_t sVar7;\n  undefined8 uVar8;\n  undefined8 uVar9;\n  char **ppcVar10;\n  char *pcVar11;\n  char **ppcVar12;\n  char *pcVar13;\n  char *__s1;\n  FILE *__stream;\n  ulong uVar14;\n  size_t sVar15;\n  char *__s1_00;\n  long lVar16;\n  char *local_70;\n  uint local_44;\n  \n  pcVar13 = *(char **)(param_7 + 8);\n  cVar1 = *pcVar13;\n  pcVar11 = pcVar13;\n  if ((cVar1 == '=') || (cVar1 == '\\0')) {\n    sVar15 = 0;\n  }\n  else {\n    do {\n      pcVar11 = pcVar11 + 1;\n      if (*pcVar11 == '\\0') break;\n    } while (*pcVar11 != '=');\n    sVar15 = (long)pcVar11 - (long)pcVar13;\n  }\n  uVar14 = 0;\n  __s1 = *param_4;\n  ppcVar10 = param_4;\n  __s1_00 = __s1;\n  if (__s1 != (char *)0x0) {\n    while( true ) {\n      iVar5 = strncmp(__s1_00,pcVar13,sVar15);\n      if ((iVar5 == 0) && (sVar7 = strlen(__s1_00), sVar7 == sVar15)) goto LAB_004043a0;\n      ppcVar10 = ppcVar10 + 4;\n      __s1_00 = *ppcVar10;\n      iVar5 = (int)uVar14 + 1;\n      if (__s1_00 == (char *)0x0) break;\n      uVar14 = (ulong)iVar5;\n    }\n    lVar16 = 0;\n    ppcVar10 = (char **)0x0;\n    local_44 = 0xffffffff;\n    bVar3 = false;\n    bVar4 = false;\n    local_70 = (char *)0x0;\n    ppcVar12 = param_4;\n    do {\n      iVar6 = strncmp(__s1,pcVar13,sVar15);\n      if (iVar6 == 0) {\n        if (ppcVar10 == (char **)0x0) {\n          local_44 = (uint)lVar16;\n          ppcVar10 = ppcVar12;\n        }\n        else if (((((param_6 != 0) || (*(int *)(ppcVar10 + 1) != *(int *)(ppcVar12 + 1))) ||\n                  (ppcVar10[2] != ppcVar12[2])) ||\n                 (*(int *)(ppcVar10 + 3) != *(int *)(ppcVar12 + 3))) && (!bVar3)) {\n          if (param_8 == 0) {\n            bVar3 = true;\n            if (local_70 == (char *)0x0) goto LAB_004042e0;\n          }\n          else if (local_70 == (char *)0x0) {\n            local_70 = (char *)calloc((long)iVar5,1);\n            if (local_70 == (char *)0x0) {\n              bVar3 = true;\n              goto LAB_004042e0;\n            }\n            bVar4 = true;\n            local_70[(int)local_44] = '\\x01';\n          }\n          local_70[lVar16] = '\\x01';\n        }\n      }\nLAB_004042e0:\n      ppcVar12 = ppcVar12 + 4;\n      __s1 = *ppcVar12;\n      lVar16 = lVar16 + 1;\n    } while (__s1 != (char *)0x0);\n    if ((local_70 != (char *)0x0) || (bVar3)) {\n      if (param_8 != 0) {\n        if (bVar3) {\n          uVar2 = *param_2;\n          uVar8 = dcgettext(0,\"%s: option \\'%s%s\\' is ambiguous\\n\",5);\n          __fprintf_chk(stderr,1,uVar8,uVar2,param_9,pcVar13);\n          pcVar13 = *(char **)(param_7 + 8);\n        }\n        else {\n          flockfile(stderr);\n          uVar2 = *(undefined8 *)(param_7 + 8);\n          uVar8 = *param_2;\n          uVar9 = dcgettext(0,\"%s: option \\'%s%s\\' is ambiguous; possibilities:\",5);\n          __fprintf_chk(stderr,1,uVar9,uVar8,param_9,uVar2);\n          pcVar13 = local_70;\n          __stream = stderr;\n          do {\n            if (*pcVar13 != '\\0') {\n              __fprintf_chk(__stream,1,&DAT_00406cd1,param_9,*param_4);\n              __stream = stderr;\n            }\n            pcVar13 = pcVar13 + 1;\n            param_4 = param_4 + 4;\n          } while (local_70 + uVar14 + 1 != pcVar13);\n          fputc(10,__stream);\n          funlockfile(stderr);\n          pcVar13 = *(char **)(param_7 + 8);\n        }\n      }\n      if (bVar4) {\n        free(local_70);\n      }\n      sVar15 = strlen(pcVar13);\n      *(char **)(param_7 + 8) = pcVar13 + sVar15;\n      *param_7 = *param_7 + 1;\n      param_7[2] = 0;\n      return 0x3f;\n    }\n    if (ppcVar10 != (char **)0x0) {\n      uVar14 = (ulong)local_44;\nLAB_004043a0:\n      iVar6 = *param_7;\n      *(undefined8 *)(param_7 + 8) = 0;\n      iVar5 = iVar6 + 1;\n      *param_7 = iVar5;\n      if (*pcVar11 == '\\0') {\n        if (*(int *)(ppcVar10 + 1) == 1) {\n          if (param_1 <= iVar5) {\n            if (param_8 != 0) {\n              pcVar13 = *ppcVar10;\n              uVar2 = *param_2;\n              uVar8 = dcgettext(0,\"%s: option \\'%s%s\\' requires an argument\\n\",5);\n              __fprintf_chk(stderr,1,uVar8,uVar2,param_9,pcVar13);\n            }\n            param_7[2] = *(int *)(ppcVar10 + 3);\n            return (uint)(*param_3 != ':') * 5 + 0x3a;\n          }\n          *param_7 = iVar6 + 2;\n          *(undefined8 *)(param_7 + 4) = param_2[iVar5];\n        }\n      }\n      else {\n        if (*(int *)(ppcVar10 + 1) == 0) {\n          if (param_8 != 0) {\n            pcVar13 = *ppcVar10;\n            uVar2 = *param_2;\n            uVar8 = dcgettext(0,\"%s: option \\'%s%s\\' doesn\\'t allow an argument\\n\",5);\n            __fprintf_chk(stderr,1,uVar8,uVar2,param_9,pcVar13);\n          }\n          param_7[2] = *(int *)(ppcVar10 + 3);\n          return 0x3f;\n        }\n        *(char **)(param_7 + 4) = pcVar11 + 1;\n      }\n      if (param_5 != (undefined4 *)0x0) {\n        *param_5 = (int)uVar14;\n      }\n      if ((int *)ppcVar10[2] == (int *)0x0) {\n        return *(int *)(ppcVar10 + 3);\n      }\n      *(int *)ppcVar10[2] = *(int *)(ppcVar10 + 3);\n      return 0;\n    }\n  }\n  if (((param_6 != 0) && (*(char *)(param_2[*param_7] + 1) != '-')) &&\n     (pcVar11 = strchr(param_3,(int)cVar1), pcVar11 != (char *)0x0)) {\n    return -1;\n  }\n  if (param_8 != 0) {\n    uVar2 = *param_2;\n    uVar8 = dcgettext(0,\"%s: unrecognized option \\'%s%s\\'\\n\",5);\n    __fprintf_chk(stderr,1,uVar8,uVar2,param_9,pcVar13);\n  }\n  *(undefined8 *)(param_7 + 8) = 0;\n  *param_7 = *param_7 + 1;\n  param_7[2] = 0;\n  return 0x3f;\n}\n\n",
+            "funcName": "FUN_00404180"
+        },
+        {
+            "funcStartAddr": "0x4047a0",
+            "funcEndAddr": "0x404d07",
+            "decompiledFuncCode": "\nuint FUN_004047a0(uint param_1,undefined8 *param_2,char *param_3,long param_4,undefined8 param_5,\n                 ulong param_6,uint *param_7,int param_8)\n\n{\n  undefined8 uVar1;\n  char cVar2;\n  uint uVar3;\n  char *pcVar4;\n  undefined8 uVar5;\n  long lVar6;\n  uint uVar7;\n  byte *pbVar8;\n  byte *pbVar9;\n  byte *pbVar10;\n  uint uVar11;\n  bool bVar12;\n  bool bVar13;\n  byte bVar14;\n  undefined1 *puVar15;\n  \n  bVar14 = 0;\n  uVar3 = param_7[1];\n  if ((int)param_1 < 1) {\n    return 0xffffffff;\n  }\n  uVar11 = *param_7;\n  *(undefined8 *)(param_7 + 4) = 0;\n  if (uVar11 == 0) {\n    *param_7 = 1;\n    uVar11 = 1;\nLAB_004047ea:\n    param_7[0xc] = uVar11;\n    param_7[0xb] = uVar11;\n    *(undefined8 *)(param_7 + 8) = 0;\n    if (*param_3 == '-') {\n      param_7[10] = 2;\n      param_3 = param_3 + 1;\n      pbVar8 = (byte *)0x0;\n    }\n    else if (*param_3 == '+') {\n      param_7[10] = 0;\n      param_3 = param_3 + 1;\n      pbVar8 = (byte *)0x0;\n    }\n    else {\n      pbVar8 = (byte *)0x0;\n      if (param_8 == 0) {\n        pcVar4 = getenv(\"POSIXLY_CORRECT\");\n        param_6 = param_6 & 0xffffffff;\n        if (pcVar4 == (char *)0x0) {\n          param_7[10] = 1;\n          pbVar8 = *(byte **)(param_7 + 8);\n          goto LAB_004048ed;\n        }\n        pbVar8 = *(byte **)(param_7 + 8);\n      }\n      param_7[10] = 0;\n    }\nLAB_004048ed:\n    param_7[6] = 1;\n    cVar2 = *param_3;\nLAB_004048f8:\n    if (cVar2 == ':') {\n      uVar3 = 0;\n    }\n    if (pbVar8 == (byte *)0x0) goto LAB_00404868;\nLAB_0040490c:\n    if (*pbVar8 == 0) goto LAB_00404868;\n  }\n  else {\n    if (param_7[6] == 0) goto LAB_004047ea;\n    cVar2 = *param_3;\n    pbVar8 = *(byte **)(param_7 + 8);\n    if ((cVar2 - 0x2bU & 0xfd) != 0) goto LAB_004048f8;\n    pcVar4 = param_3 + 1;\n    param_3 = param_3 + 1;\n    if (*pcVar4 == ':') {\n      uVar3 = 0;\n    }\n    if (pbVar8 != (byte *)0x0) goto LAB_0040490c;\nLAB_00404868:\n    uVar11 = *param_7;\n    if (param_7[0xc] != uVar11 && (int)uVar11 <= (int)param_7[0xc]) {\n      param_7[0xc] = uVar11;\n    }\n    if ((int)uVar11 < (int)param_7[0xb]) {\n      param_7[0xb] = uVar11;\n    }\n    if (param_7[10] == 1) {\n      uVar7 = param_7[0xc];\n      if (param_7[0xb] == uVar7) {\n        if (uVar11 != uVar7) {\n          param_7[0xb] = uVar11;\n          uVar7 = uVar11;\n        }\n      }\n      else if (uVar11 != uVar7) {\n        FUN_004040a0(param_2,param_7);\n        param_6 = param_6 & 0xffffffff;\n        uVar7 = *param_7;\n      }\n      uVar11 = uVar7;\n      uVar7 = uVar11;\n      if ((int)uVar11 < (int)param_1) {\n        lVar6 = (long)(int)uVar11;\n        do {\n          if ((*(char *)param_2[lVar6] == '-') && (((char *)param_2[lVar6])[1] != '\\0')) {\n            uVar11 = *param_7;\n            uVar7 = (uint)lVar6;\n            break;\n          }\n          uVar11 = (uint)lVar6 + 1;\n          lVar6 = lVar6 + 1;\n          *param_7 = uVar11;\n          uVar7 = uVar11;\n        } while ((int)lVar6 < (int)param_1);\n      }\n      param_7[0xc] = uVar7;\n    }\n    bVar12 = param_1 < uVar11;\n    bVar13 = param_1 == uVar11;\n    if (bVar13) {\n      param_1 = param_7[0xc];\n      uVar11 = param_7[0xb];\nLAB_004049d6:\n      if (uVar11 != param_1) {\n        *param_7 = uVar11;\n      }\n      return 0xffffffff;\n    }\n    lVar6 = 3;\n    pbVar8 = (byte *)param_2[(int)uVar11];\n    pbVar9 = pbVar8;\n    pbVar10 = &DAT_00406ce9;\n    do {\n      if (lVar6 == 0) break;\n      lVar6 = lVar6 + -1;\n      bVar12 = *pbVar9 < *pbVar10;\n      bVar13 = *pbVar9 == *pbVar10;\n      pbVar9 = pbVar9 + (ulong)bVar14 * -2 + 1;\n      pbVar10 = pbVar10 + (ulong)bVar14 * -2 + 1;\n    } while (bVar13);\n    if ((!bVar12 && !bVar13) == bVar12) {\n      uVar11 = uVar11 + 1;\n      *param_7 = uVar11;\n      if (param_7[0xb] == param_7[0xc]) {\n        param_7[0xb] = uVar11;\n      }\n      else {\n        bVar12 = uVar11 != param_7[0xc];\n        uVar11 = param_7[0xb];\n        if (bVar12) {\n          FUN_004040a0(param_2,param_7);\n          uVar11 = param_7[0xb];\n        }\n      }\n      param_7[0xc] = param_1;\n      *param_7 = param_1;\n      goto LAB_004049d6;\n    }\n    if ((*pbVar8 != 0x2d) || (bVar14 = pbVar8[1], bVar14 == 0)) {\n      if (param_7[10] == 0) {\n        return 0xffffffff;\n      }\n      *(byte **)(param_7 + 4) = pbVar8;\n      *param_7 = uVar11 + 1;\n      return 1;\n    }\n    if (param_4 != 0) {\n      if (bVar14 == 0x2d) {\n        *(byte **)(param_7 + 8) = pbVar8 + 2;\n        puVar15 = &DAT_00406ce9;\n        goto LAB_00404b35;\n      }\n      if ((int)param_6 != 0) {\n        if (pbVar8[2] == 0) {\n          pcVar4 = strchr(param_3,(int)(char)bVar14);\n          param_6 = param_6 & 0xffffffff;\n          if (pcVar4 != (char *)0x0) goto LAB_00404ae0;\n        }\n        *(byte **)(param_7 + 8) = pbVar8 + 1;\n        uVar11 = FUN_00404180(param_1,param_2,param_3,param_4,param_5,param_6,param_7,uVar3,\n                              &DAT_00406cea);\n        if (uVar11 != 0xffffffff) {\n          return uVar11;\n        }\n        pbVar8 = (byte *)param_2[(int)*param_7];\n      }\n    }\nLAB_00404ae0:\n    pbVar8 = pbVar8 + 1;\n  }\n  pbVar9 = pbVar8 + 1;\n  *(byte **)(param_7 + 8) = pbVar9;\n  bVar14 = *pbVar8;\n  uVar11 = (uint)(char)bVar14;\n  pcVar4 = strchr(param_3,uVar11);\n  if (pbVar8[1] == 0) {\n    *param_7 = *param_7 + 1;\n  }\n  if (((byte)(bVar14 - 0x3a) < 2) || (pcVar4 == (char *)0x0)) {\n    if (uVar3 != 0) {\n      uVar1 = *param_2;\n      uVar5 = dcgettext(0,\"%s: invalid option -- \\'%c\\'\\n\",5);\n      __fprintf_chk(stderr,1,uVar5,uVar1,uVar11);\n    }\n    param_7[2] = uVar11;\n    return 0x3f;\n  }\n  if (((*pcVar4 != 'W') || (param_4 == 0)) || (pcVar4[1] != ';')) {\n    if (pcVar4[1] == ':') {\n      if (pcVar4[2] == ':') {\n        if (pbVar8[1] == 0) {\n          *(undefined8 *)(param_7 + 4) = 0;\n        }\n        else {\n          *(byte **)(param_7 + 4) = pbVar9;\n          *param_7 = *param_7 + 1;\n        }\n      }\n      else {\n        uVar7 = *param_7;\n        if (pbVar8[1] == 0) {\n          if (param_1 == uVar7) {\n            if (uVar3 != 0) {\n              uVar1 = *param_2;\n              uVar5 = dcgettext(0,\"%s: option requires an argument -- \\'%c\\'\\n\",5);\n              __fprintf_chk(stderr,1,uVar5,uVar1,uVar11);\n            }\n            param_7[2] = uVar11;\n            uVar11 = (uint)(*param_3 != ':') * 5 + 0x3a;\n          }\n          else {\n            uVar1 = param_2[(int)uVar7];\n            *param_7 = uVar7 + 1;\n            *(undefined8 *)(param_7 + 4) = uVar1;\n          }\n        }\n        else {\n          *(byte **)(param_7 + 4) = pbVar9;\n          *param_7 = uVar7 + 1;\n        }\n      }\n      *(undefined8 *)(param_7 + 8) = 0;\n      return uVar11;\n    }\n    return uVar11;\n  }\n  if (pbVar8[1] == 0) {\n    if (*param_7 == param_1) {\n      if (uVar3 != 0) {\n        uVar1 = *param_2;\n        uVar5 = dcgettext(0,\"%s: option requires an argument -- \\'%c\\'\\n\",5);\n        __fprintf_chk(stderr,1,uVar5,uVar1,uVar11);\n      }\n      param_7[2] = uVar11;\n      return (uint)(*param_3 != ':') * 5 + 0x3a;\n    }\n    pbVar9 = (byte *)param_2[(int)*param_7];\n  }\n  *(byte **)(param_7 + 8) = pbVar9;\n  param_6 = 0;\n  *(undefined8 *)(param_7 + 4) = 0;\n  puVar15 = &DAT_00406d08;\nLAB_00404b35:\n  uVar3 = FUN_00404180(param_1,param_2,param_3,param_4,param_5,param_6,param_7,uVar3,puVar15);\n  return uVar3;\n}\n\n",
+            "funcName": "FUN_004047a0"
+        },
+        {
+            "funcStartAddr": "0x404d70",
+            "funcEndAddr": "0x404dc6",
+            "decompiledFuncCode": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_00404d70(void)\n\n{\n  DAT_006083e0 = DAT_00608238._4_4_;\n  _DAT_006083e4 = (undefined4)DAT_00608238;\n  FUN_004047a0();\n  DAT_00608238._4_4_ = DAT_006083e0;\n  _DAT_00608420 = DAT_006083f0;\n  _DAT_00608234 = DAT_006083e8;\n  return;\n}\n\n",
+            "funcName": "FUN_00404d70"
+        },
+        {
+            "funcStartAddr": "0x404dd0",
+            "funcEndAddr": "0x404de8",
+            "decompiledFuncCode": "\nvoid FUN_00404dd0(void)\n\n{\n  FUN_00404d70();\n  return;\n}\n\n",
+            "funcName": "FUN_00404dd0"
+        },
+        {
+            "funcStartAddr": "0x404df0",
+            "funcEndAddr": "0x404e03",
+            "decompiledFuncCode": "\nvoid FUN_00404df0(void)\n\n{\n  FUN_00404d70();\n  return;\n}\n\n",
+            "funcName": "FUN_00404df0"
+        },
+        {
+            "funcStartAddr": "0x404e10",
+            "funcEndAddr": "0x404e25",
+            "decompiledFuncCode": "\nvoid FUN_00404e10(void)\n\n{\n  FUN_004047a0();\n  return;\n}\n\n",
+            "funcName": "FUN_00404e10"
+        },
+        {
+            "funcStartAddr": "0x404e30",
+            "funcEndAddr": "0x404e46",
+            "decompiledFuncCode": "\nvoid FUN_00404e30(void)\n\n{\n  FUN_00404d70();\n  return;\n}\n\n",
+            "funcName": "FUN_00404e30"
+        },
+        {
+            "funcStartAddr": "0x404e50",
+            "funcEndAddr": "0x404e68",
+            "decompiledFuncCode": "\nvoid FUN_00404e50(void)\n\n{\n  FUN_004047a0();\n  return;\n}\n\n",
+            "funcName": "FUN_00404e50"
+        },
+        {
+            "funcStartAddr": "0x404e70",
+            "funcEndAddr": "0x404edf",
+            "decompiledFuncCode": "\nsize_t FUN_00404e70(wchar_t *param_1,byte *param_2,size_t param_3,mbstate_t *param_4)\n\n{\n  char cVar1;\n  size_t sVar2;\n  wchar_t local_1c;\n  \n  if (param_2 == (byte *)0x0) {\n    param_3 = 1;\n    param_2 = (byte *)0x406d07;\n  }\n  else {\n    if (param_3 == 0) {\n      return 0xfffffffffffffffe;\n    }\n    if (param_1 != (wchar_t *)0x0) goto LAB_00404e94;\n  }\n  param_1 = &local_1c;\nLAB_00404e94:\n  sVar2 = mbrtowc(param_1,(char *)param_2,param_3,param_4);\n  if ((0xfffffffffffffffd < sVar2) && (cVar1 = FUN_00404f50(0), cVar1 == '\\0')) {\n    sVar2 = 1;\n    *param_1 = (uint)*param_2;\n  }\n  return sVar2;\n}\n\n",
+            "funcName": "FUN_00404e70"
+        },
+        {
+            "funcStartAddr": "0x404ef0",
+            "funcEndAddr": "0x404f4c",
+            "decompiledFuncCode": "\nulong FUN_00404ef0(uint *param_1)\n\n{\n  uint uVar1;\n  long lVar2;\n  ulong uVar3;\n  int *piVar4;\n  \n  lVar2 = __fpending();\n  uVar1 = *param_1;\n  uVar3 = FUN_00405520(param_1);\n  if ((uVar1 & 0x20) == 0) {\n    if ((int)uVar3 == 0) {\n      return uVar3;\n    }\n    if (lVar2 == 0) {\n      piVar4 = __errno_location();\n      return (ulong)-(uint)(*piVar4 != 9);\n    }\n  }\n  else if ((int)uVar3 == 0) {\n    piVar4 = __errno_location();\n    *piVar4 = 0;\n    return 0xffffffff;\n  }\n  return 0xffffffff;\n}\n\n",
+            "funcName": "FUN_00404ef0"
+        },
+        {
+            "funcStartAddr": "0x404f50",
+            "funcEndAddr": "0x404fa6",
+            "decompiledFuncCode": "\nbool FUN_00404f50(int param_1)\n\n{\n  bool bVar1;\n  byte *pbVar2;\n  long lVar3;\n  byte *pbVar4;\n  byte *pbVar5;\n  bool bVar6;\n  bool bVar7;\n  bool bVar8;\n  byte bVar9;\n  \n  bVar9 = 0;\n  pbVar2 = (byte *)setlocale(param_1,(char *)0x0);\n  bVar1 = true;\n  bVar6 = false;\n  bVar8 = pbVar2 == (byte *)0x0;\n  if (!bVar8) {\n    lVar3 = 2;\n    pbVar4 = pbVar2;\n    pbVar5 = &DAT_00406d0c;\n    do {\n      if (lVar3 == 0) break;\n      lVar3 = lVar3 + -1;\n      bVar6 = *pbVar4 < *pbVar5;\n      bVar8 = *pbVar4 == *pbVar5;\n      pbVar4 = pbVar4 + (ulong)bVar9 * -2 + 1;\n      pbVar5 = pbVar5 + (ulong)bVar9 * -2 + 1;\n    } while (bVar8);\n    bVar1 = false;\n    bVar7 = false;\n    bVar6 = (!bVar6 && !bVar8) == bVar6;\n    if (!bVar6) {\n      lVar3 = 6;\n      pbVar4 = (byte *)\"POSIX\";\n      do {\n        if (lVar3 == 0) break;\n        lVar3 = lVar3 + -1;\n        bVar7 = *pbVar2 < *pbVar4;\n        bVar6 = *pbVar2 == *pbVar4;\n        pbVar2 = pbVar2 + (ulong)bVar9 * -2 + 1;\n        pbVar4 = pbVar4 + (ulong)bVar9 * -2 + 1;\n      } while (bVar6);\n      return (!bVar7 && !bVar6) != bVar7;\n    }\n  }\n  return bVar1;\n}\n\n",
+            "funcName": "FUN_00404f50"
+        },
+        {
+            "funcStartAddr": "0x404fb0",
+            "funcEndAddr": "0x405504",
+            "decompiledFuncCode": "\n/* WARNING: Could not reconcile some variable overlaps */\n\nchar * FUN_00404fb0(void)\n\n{\n  char cVar1;\n  int iVar2;\n  uint uVar3;\n  uint uVar4;\n  char *__s1;\n  size_t sVar5;\n  size_t sVar6;\n  char *pcVar7;\n  size_t __n;\n  char *__file;\n  FILE *__stream;\n  byte *pbVar8;\n  long lVar9;\n  undefined8 *puVar10;\n  long lVar11;\n  ulong uVar12;\n  undefined8 *puVar13;\n  char *__ptr;\n  bool bVar14;\n  long local_d0;\n  undefined8 local_c0;\n  undefined8 local_b8;\n  undefined auStack_80 [8];\n  undefined8 local_78;\n  \n  __s1 = nl_langinfo(0xe);\n  if (__s1 == (char *)0x0) {\n    __s1 = \"\";\n  }\n  if (DAT_00608418 != (char *)0x0) goto LAB_00404fea;\n  pcVar7 = getenv(\"CHARSETALIASDIR\");\n  if ((pcVar7 == (char *)0x0) || (*pcVar7 == '\\0')) {\n    sVar6 = 0x73;\n    sVar5 = 0x65;\n    __n = 100;\n    pcVar7 = \n    \"/home/dongkwan/data/scripts/gnu_packages/coreutils/coreutils-8.29_gcc-8.2.0_x86_64_O2_debug/gogo/lib\"\n    ;\nLAB_004050d5:\n    __file = (char *)malloc(sVar6);\n    if (__file != (char *)0x0) {\n      memcpy(__file,pcVar7,__n);\n      __file[__n] = '/';\n      goto LAB_004050f6;\n    }\n  }\n  else {\n    __n = strlen(pcVar7);\n    if (__n == 0) {\n      sVar6 = 0xe;\n    }\n    else {\n      if (pcVar7[__n - 1] != '/') {\n        sVar6 = __n + 0xf;\n        sVar5 = __n + 1;\n        goto LAB_004050d5;\n      }\n      sVar6 = __n + 0xe;\n    }\n    __file = (char *)malloc(sVar6);\n    if (__file != (char *)0x0) {\n      memcpy(__file,pcVar7,__n);\n      sVar5 = __n;\nLAB_004050f6:\n      puVar13 = (undefined8 *)(__file + sVar5);\n      *puVar13 = 0x2e74657372616863;\n      *(undefined2 *)((long)puVar13 + 0xc) = 0x73;\n      *(undefined4 *)(puVar13 + 1) = 0x61696c61;\n      iVar2 = open(__file,0);\n      if (-1 < iVar2) {\n        __stream = fdopen(iVar2,\"r\");\n        local_d0 = 0;\n        if (__stream != (FILE *)0x0) {\n          pcVar7 = (char *)0x0;\nLAB_00405190:\n          pbVar8 = (byte *)__stream->_IO_read_ptr;\n          if (__stream->_IO_read_end <= pbVar8) goto LAB_0040531c;\n          do {\n            __stream->_IO_read_ptr = (char *)(pbVar8 + 1);\n            uVar4 = (uint)*pbVar8;\n            __ptr = pcVar7;\n            while( true ) {\n              pcVar7 = __ptr;\n              if ((uVar4 - 9 < 2) || (uVar4 == 0x20)) goto LAB_00405190;\n              if (uVar4 == 0x23) goto LAB_00405381;\n              ungetc(uVar4,__stream);\n              iVar2 = fscanf(__stream,\"%50s %50s\",&local_b8,&local_78);\n              puVar13 = &local_b8;\n              if (iVar2 < 2) goto LAB_0040532f;\n              do {\n                puVar10 = puVar13;\n                uVar3 = *(uint *)puVar10 + 0xfefefeff & ~*(uint *)puVar10;\n                uVar4 = uVar3 & 0x80808080;\n                puVar13 = (undefined8 *)((long)puVar10 + 4);\n              } while (uVar4 == 0);\n              bVar14 = (uVar3 & 0x8080) == 0;\n              if (bVar14) {\n                uVar4 = uVar4 >> 0x10;\n              }\n              if (bVar14) {\n                puVar13 = (undefined8 *)((long)puVar10 + 6);\n              }\n              lVar11 = (long)puVar13 +\n                       ((-3 - (ulong)CARRY1((byte)uVar4,(byte)uVar4)) - (long)&local_b8);\n              puVar13 = &local_78;\n              do {\n                puVar10 = puVar13;\n                uVar3 = *(uint *)puVar10 + 0xfefefeff & ~*(uint *)puVar10;\n                uVar4 = uVar3 & 0x80808080;\n                puVar13 = (undefined8 *)((long)puVar10 + 4);\n              } while (uVar4 == 0);\n              bVar14 = (uVar3 & 0x8080) == 0;\n              if (bVar14) {\n                uVar4 = uVar4 >> 0x10;\n              }\n              if (bVar14) {\n                puVar13 = (undefined8 *)((long)puVar10 + 6);\n              }\n              local_c0 = (long)puVar13 +\n                         ((-3 - (ulong)CARRY1((byte)uVar4,(byte)uVar4)) - (long)&local_78);\n              lVar9 = lVar11 + local_c0;\n              if (local_d0 == 0) {\n                pcVar7 = (char *)malloc(lVar9 + 3);\n              }\n              else {\n                lVar9 = lVar9 + local_d0;\n                pcVar7 = (char *)realloc(__ptr,lVar9 + 3);\n              }\n              local_d0 = lVar9 + 2;\n              if (pcVar7 == (char *)0x0) {\n                pcVar7 = \"\";\n                free(__ptr);\n                FUN_00405520(__stream);\n                goto LAB_00405134;\n              }\n              uVar12 = lVar11 + 1;\n              puVar13 = (undefined8 *)(pcVar7 + (-2 - lVar11) + (local_d0 - local_c0));\n              uVar4 = (uint)uVar12;\n              if (uVar4 < 8) {\n                if ((uVar12 & 4) == 0) {\n                  if (uVar4 != 0) {\n                    *(undefined *)puVar13 = (undefined)local_b8;\n                    if ((uVar12 & 2) != 0) {\n                      *(undefined2 *)((long)puVar13 + ((uVar12 & 0xffffffff) - 2)) =\n                           *(undefined2 *)((long)&local_b8 + ((uVar12 & 0xffffffff) - 2));\n                    }\n                  }\n                }\n                else {\n                  *(undefined4 *)puVar13 = (undefined4)local_b8;\n                  *(undefined4 *)((long)puVar13 + ((uVar12 & 0xffffffff) - 4)) =\n                       *(undefined4 *)((long)&local_b8 + ((uVar12 & 0xffffffff) - 4));\n                }\n              }\n              else {\n                *puVar13 = CONCAT44(local_b8._4_4_,(undefined4)local_b8);\n                *(undefined8 *)((long)puVar13 + ((uVar12 & 0xffffffff) - 8)) =\n                     *(undefined8 *)((long)&local_b8 + ((uVar12 & 0xffffffff) - 8));\n                lVar11 = (long)puVar13 - ((ulong)(puVar13 + 1) & 0xfffffffffffffff8);\n                uVar4 = uVar4 + (int)lVar11 & 0xfffffff8;\n                if (7 < uVar4) {\n                  uVar3 = 0;\n                  do {\n                    uVar12 = (ulong)uVar3;\n                    uVar3 = uVar3 + 8;\n                    *(undefined8 *)(((ulong)(puVar13 + 1) & 0xfffffffffffffff8) + uVar12) =\n                         *(undefined8 *)((long)&local_b8 + (uVar12 - lVar11));\n                  } while (uVar3 < uVar4);\n                }\n              }\n              uVar12 = local_c0 + 1;\n              puVar13 = (undefined8 *)(pcVar7 + (local_d0 - local_c0) + -1);\n              uVar4 = (uint)uVar12;\n              if (uVar4 < 8) {\n                if ((uVar12 & 4) == 0) {\n                  if (uVar4 != 0) {\n                    *(undefined *)puVar13 = (undefined)local_78;\n                    if ((uVar12 & 2) != 0) {\n                      *(undefined2 *)((long)puVar13 + ((uVar12 & 0xffffffff) - 2)) =\n                           *(undefined2 *)((long)auStack_80 + (uVar12 & 0xffffffff) + 6);\n                    }\n                  }\n                }\n                else {\n                  *(undefined4 *)puVar13 = (undefined4)local_78;\n                  *(undefined4 *)((long)puVar13 + ((uVar12 & 0xffffffff) - 4)) =\n                       *(undefined4 *)((long)auStack_80 + (uVar12 & 0xffffffff) + 4);\n                }\n              }\n              else {\n                *puVar13 = CONCAT44(local_78._4_4_,(undefined4)local_78);\n                *(undefined8 *)((long)puVar13 + ((uVar12 & 0xffffffff) - 8)) =\n                     *(undefined8 *)((long)auStack_80 + (uVar12 & 0xffffffff));\n                lVar11 = (long)puVar13 - ((ulong)(puVar13 + 1) & 0xfffffffffffffff8);\n                uVar4 = uVar4 + (int)lVar11 & 0xfffffff8;\n                if (7 < uVar4) {\n                  uVar3 = 0;\n                  do {\n                    uVar12 = (ulong)uVar3;\n                    uVar3 = uVar3 + 8;\n                    *(undefined8 *)(((ulong)(puVar13 + 1) & 0xfffffffffffffff8) + uVar12) =\n                         *(undefined8 *)((long)&local_78 + (uVar12 - lVar11));\n                  } while (uVar3 < uVar4);\n                }\n              }\n              pbVar8 = (byte *)__stream->_IO_read_ptr;\n              if (pbVar8 < __stream->_IO_read_end) break;\nLAB_0040531c:\n              uVar4 = __uflow(__stream);\n              __ptr = pcVar7;\n              if (uVar4 == 0xffffffff) goto LAB_0040532f;\n            }\n          } while( true );\n        }\n        close(iVar2);\n      }\n      goto LAB_0040512e;\n    }\n  }\n  DAT_00608418 = \"\";\nLAB_00404fea:\n  cVar1 = *DAT_00608418;\n  pcVar7 = DAT_00608418;\n  do {\n    if (cVar1 == '\\0') {\nLAB_00405044:\n      if (*__s1 == '\\0') {\n        __s1 = \"ASCII\";\n      }\n      return __s1;\n    }\n    iVar2 = strcmp(__s1,pcVar7);\n    if ((iVar2 == 0) || ((cVar1 == '*' && (pcVar7[1] == '\\0')))) {\n      sVar6 = strlen(pcVar7);\n      __s1 = pcVar7 + sVar6 + 1;\n      goto LAB_00405044;\n    }\n    sVar6 = strlen(pcVar7);\n    sVar5 = strlen(pcVar7 + sVar6 + 1);\n    pcVar7 = pcVar7 + sVar6 + 1 + sVar5 + 1;\n    cVar1 = *pcVar7;\n  } while( true );\nLAB_00405381:\n  do {\n    pbVar8 = (byte *)__stream->_IO_read_ptr;\n    if (pbVar8 < __stream->_IO_read_end) {\n      __stream->_IO_read_ptr = (char *)(pbVar8 + 1);\n      uVar4 = (uint)*pbVar8;\n      bVar14 = true;\n    }\n    else {\n      uVar4 = __uflow(__stream);\n      bVar14 = uVar4 != 0xffffffff;\n    }\n  } while ((uVar4 != 10) && (bVar14));\n  if (uVar4 == 0xffffffff) goto LAB_0040532f;\n  goto LAB_00405190;\nLAB_0040532f:\n  FUN_00405520(__stream);\n  if (local_d0 == 0) {\nLAB_0040512e:\n    pcVar7 = \"\";\n  }\n  else {\n    pcVar7[local_d0] = '\\0';\n  }\nLAB_00405134:\n  free(__file);\n  DAT_00608418 = pcVar7;\n  goto LAB_00404fea;\n}\n\n",
+            "funcName": "FUN_00404fb0"
+        },
+        {
+            "funcStartAddr": "0x405520",
+            "funcEndAddr": "0x405598",
+            "decompiledFuncCode": "\nint FUN_00405520(FILE *param_1)\n\n{\n  int iVar1;\n  int iVar2;\n  int *piVar3;\n  __off_t _Var4;\n  \n  iVar1 = fileno(param_1);\n  if (-1 < iVar1) {\n    iVar1 = __freading();\n    if (iVar1 != 0) {\n      iVar1 = fileno(param_1);\n      _Var4 = lseek(iVar1,0,1);\n      if (_Var4 == -1) goto LAB_00405587;\n    }\n    iVar1 = FUN_004055a0(param_1);\n    if (iVar1 != 0) {\n      piVar3 = __errno_location();\n      iVar1 = *piVar3;\n      iVar2 = fclose(param_1);\n      if (iVar1 != 0) {\n        *piVar3 = iVar1;\n        iVar2 = -1;\n      }\n      return iVar2;\n    }\n  }\nLAB_00405587:\n  iVar1 = fclose(param_1);\n  return iVar1;\n}\n\n",
+            "funcName": "FUN_00405520"
+        },
+        {
+            "funcStartAddr": "0x4055a0",
+            "funcEndAddr": "0x4055db",
+            "decompiledFuncCode": "\nvoid FUN_004055a0(FILE *param_1)\n\n{\n  int iVar1;\n  \n  if (param_1 != (FILE *)0x0) {\n    iVar1 = __freading();\n    if ((iVar1 != 0) && ((param_1->_flags & 0x100U) != 0)) {\n      FUN_004055e0(param_1,0,1);\n      fflush(param_1);\n      return;\n    }\n  }\n  fflush(param_1);\n  return;\n}\n\n",
+            "funcName": "FUN_004055a0"
+        },
+        {
+            "funcStartAddr": "0x4055e0",
+            "funcEndAddr": "0x405636",
+            "decompiledFuncCode": "\nulong FUN_004055e0(FILE *param_1,__off_t param_2,int param_3)\n\n{\n  uint uVar1;\n  int __fd;\n  ulong uVar2;\n  \n  if (((param_1->_IO_read_end == param_1->_IO_read_ptr) &&\n      (param_1->_IO_write_ptr == param_1->_IO_write_base)) &&\n     (param_1->_IO_save_base == (char *)0x0)) {\n    __fd = fileno(param_1);\n    uVar2 = lseek(__fd,param_2,param_3);\n    if (uVar2 != 0xffffffffffffffff) {\n      param_1->_flags = param_1->_flags & 0xffffffef;\n      param_1->_offset = uVar2;\n      uVar2 = 0;\n    }\n    return uVar2;\n  }\n  uVar1 = fseeko(param_1,param_2,param_3);\n  return (ulong)uVar1;\n}\n\n",
+            "funcName": "FUN_004055e0"
+        },
+        {
+            "funcStartAddr": "0x405640",
+            "funcEndAddr": "0x40569d",
+            "decompiledFuncCode": "\n/* WARNING: Removing unreachable block (ram,0x00405673) */\n/* WARNING: Removing unreachable block (ram,0x00405678) */\n\nvoid FUN_00405640(void)\n\n{\n  __DT_INIT();\n  return;\n}\n\n",
+            "funcName": "FUN_00405640"
+        },
+        {
+            "funcStartAddr": "0x4056a0",
+            "funcEndAddr": "0x4056a1",
+            "decompiledFuncCode": "\nvoid FUN_004056a0(void)\n\n{\n  return;\n}\n\n",
+            "funcName": "FUN_004056a0"
+        },
+        {
+            "funcStartAddr": "0x4056b0",
+            "funcEndAddr": "0x4056c8",
+            "decompiledFuncCode": "\nvoid FUN_004056b0(undefined8 param_1)\n\n{\n  __cxa_atexit(param_1,0,DAT_006081c8);\n  return;\n}\n\n",
+            "funcName": "FUN_004056b0"
+        },
+        {
+            "funcStartAddr": "0x4056c8",
+            "funcEndAddr": "0x4056e8",
+            "decompiledFuncCode": "\nundefined8 FUN_004056c8(undefined8 param_1,undefined8 param_2,undefined8 param_3)\n\n{\n  code **ppcVar1;\n  \n  for (ppcVar1 = (code **)&DAT_00607e30; *ppcVar1 != (code *)0xffffffffffffffff;\n      ppcVar1 = ppcVar1 + -1) {\n    (**ppcVar1)();\n  }\n  return param_3;\n}\n\n",
+            "funcName": "FUN_004056c8"
+        }
+    ],
+    "decompilerName": "Ghidra",
+    "binaryName": "coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_hostid.elf",
+    "isStripped": "True",
+    "compilerName": "gcc",
+    "optLevel": "-O"
+}

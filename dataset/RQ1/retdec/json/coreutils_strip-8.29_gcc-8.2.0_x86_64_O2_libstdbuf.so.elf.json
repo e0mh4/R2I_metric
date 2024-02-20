@@ -1,0 +1,51 @@
+{
+    "funcInfo": [
+        {
+            "funcName": "entry_point",
+            "funcStartAddr": "810",
+            "funcEndAddr": "9b4",
+            "decompiledFuncCode": "int64_t entry_point(int64_t stream, int64_t str) {\n    char v1 = str;\n    int32_t mode = 2; // 0x825\n    int32_t size = 0; // 0x825\n    int64_t buf = 0; // 0x825\n    if (v1 != 48) {\n        // 0x82b\n        mode = 1;\n        size = 0;\n        buf = 0;\n        if (v1 != 76) {\n            int32_t str_as_ul = strtoul((char *)str, NULL, 10); // 0x85d\n            if (str_as_ul == 0) {\n                // 0x938\n                fileno((struct _IO_FILE *)stream);\n                char * v2 = dcgettext(NULL, \"invalid buffering mode %s for %s\\n\", 5); // 0x973\n                return __fprintf_chk((struct _IO_FILE *)*(int64_t *)g4, 1, v2);\n            }\n            int64_t * mem = malloc(str_as_ul); // 0x871\n            mode = 0;\n            size = str_as_ul;\n            buf = (int64_t)mem;\n            if (mem == NULL) {\n                char * v3 = dcgettext(NULL, \"failed to allocate a %lu byte stdio buffer\\n\", 5); // 0x88e\n                return __fprintf_chk((struct _IO_FILE *)*(int64_t *)g4, 1, v3);\n            }\n        }\n    }\n    struct _IO_FILE * stream2 = (struct _IO_FILE *)stream; // 0x842\n    if (setvbuf(stream2, (char *)buf, mode, size) == 0) {\n        // 0x84b\n        int64_t result; // 0x810\n        return result;\n    }\n    // 0x8b7\n    fileno(stream2);\n    char * v4 = dcgettext(NULL, \"could not set buffering of %s to mode %s\\n\", 5); // 0x8f6\n    __fprintf_chk((struct _IO_FILE *)*(int64_t *)g4, 1, v4);\n    free((int64_t *)buf);\n    return &g7;\n}\n"
+        },
+        {
+            "funcName": "function_9c0",
+            "funcStartAddr": "9c0",
+            "funcEndAddr": "a3f",
+            "decompiledFuncCode": "int64_t function_9c0(void) {\n    char * env_val = getenv(\"_STDBUF_E\"); // 0x9cb\n    char * env_val2 = getenv(\"_STDBUF_I\"); // 0x9da\n    char * env_val3 = getenv(\"_STDBUF_O\"); // 0x9e9\n    int64_t v1 = (int64_t)env_val3; // 0x9e9\n    int64_t v2 = v1; // 0x9f4\n    if (env_val != NULL) {\n        // 0x9f6\n        v2 = entry_point(*(int64_t *)g4, (int64_t)env_val);\n    }\n    int64_t result = v2; // 0xa0b\n    if (env_val2 != NULL) {\n        // 0xa0d\n        result = entry_point(*(int64_t *)*(int64_t *)0x200fd8, (int64_t)env_val2);\n    }\n    if (env_val3 == NULL) {\n        // 0xa3a\n        return result;\n    }\n    // 0xa24\n    return entry_point(*(int64_t *)*(int64_t *)0x200fd0, v1);\n}\n"
+        },
+        {
+            "funcName": "function_a3f",
+            "funcStartAddr": "a3f",
+            "funcEndAddr": "a61",
+            "decompiledFuncCode": "int64_t function_a3f(void) {\n    // 0xa3f\n    return &g5;\n}\n"
+        },
+        {
+            "funcName": "function_a61",
+            "funcStartAddr": "a61",
+            "funcEndAddr": "a9a",
+            "decompiledFuncCode": "int64_t function_a61(void) {\n    // 0xa61\n    return 0;\n}\n"
+        },
+        {
+            "funcName": "function_a9a",
+            "funcStartAddr": "a9a",
+            "funcEndAddr": "b09",
+            "decompiledFuncCode": "int64_t function_a9a(void) {\n    // 0xa9a\n    if (*(char *)&g5 != 0) {\n        // 0xb08\n        int64_t result; // 0xa9a\n        return result;\n    }\n    // 0xaa3\n    if (*(int64_t *)0x200ff0 != 0) {\n        // 0xab4\n        __cxa_finalize((int64_t *)*(int64_t *)0x201058);\n    }\n    int64_t v1 = g6; // 0xae5\n    int64_t result2; // 0xaf7\n    if (g6 >= ((int64_t)&g3 - (int64_t)&g2 >> 3) - 1) {\n        // 0xaf7\n        result2 = function_a3f();\n        *(char *)&g5 = 1;\n        return result2;\n    }\n    v1++;\n    while (v1 < ((int64_t)&g3 - (int64_t)&g2 >> 3) - 1) {\n        // 0xae7\n        v1++;\n    }\n    // 0xadb\n    g6 = v1;\n    // 0xaf7\n    result2 = function_a3f();\n    *(char *)&g5 = 1;\n    return result2;\n}\n"
+        },
+        {
+            "funcName": "function_b09",
+            "funcStartAddr": "b09",
+            "funcEndAddr": "b0e",
+            "decompiledFuncCode": "int64_t function_b09(void) {\n    // 0xb09\n    return function_a61();\n}\n"
+        },
+        {
+            "funcName": "function_b0e",
+            "funcStartAddr": "b0e",
+            "funcEndAddr": "b30",
+            "decompiledFuncCode": "int64_t function_b0e(int64_t a1, int64_t a2, int64_t result) {\n    int64_t v1 = &g1; // 0xb1a\n    while (*(int64_t *)v1 != -1) {\n        // 0xb1b\n        v1 -= 8;\n    }\n    // 0xb2c\n    return result;\n}\n"
+        }
+    ],
+    "isStripped": "True",
+    "decompilerName": "Retdec",
+    "compilerName": "gcc",
+    "optLevel": "-O",
+    "binaryName": "coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf"
+}

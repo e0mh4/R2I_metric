@@ -1,0 +1,51 @@
+{
+    "binaryInfo": {
+        "binaryName": "coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf",
+        "isStripped": "True"
+    },
+    "buildInfo": {
+        "decompilerName": "IDA Pro",
+        "compilerName": "gcc",
+        "compilerVersion": "9.4.0",
+        "Optlevel": "-O"
+    },
+    "funcInfo": [
+        {
+            "funcName": "sub_9C0",
+            "funcStartAddr": "0x9c0",
+            "funcEndAddr": "0xa3f",
+            "decompiledFuncCode": "void sub_9C0()\n{\n  char *v0; // r12\n  char *v1; // rbp\n  char *v2; // rbx\n\n  v0 = getenv(\"_STDBUF_E\");\n  v1 = getenv(\"_STDBUF_I\");\n  v2 = getenv(\"_STDBUF_O\");\n  if ( v0 )\n    start(stderr, v0);\n  if ( v1 )\n    start(stdin, v1);\n  if ( v2 )\n    start(stdout, v2);\n}\n"
+        },
+        {
+            "funcName": "sub_A3F",
+            "funcStartAddr": "0xa3f",
+            "funcEndAddr": "0xa61",
+            "decompiledFuncCode": "char *sub_A3F()\n{\n  return &_bss_start;\n}\n"
+        },
+        {
+            "funcName": "sub_A61",
+            "funcStartAddr": "0xa61",
+            "funcEndAddr": "0xa9a",
+            "decompiledFuncCode": "__int64 sub_A61()\n{\n  return 0LL;\n}\n"
+        },
+        {
+            "funcName": "sub_A9A",
+            "funcStartAddr": "0xa9a",
+            "funcEndAddr": "0xb09",
+            "decompiledFuncCode": "char *sub_A9A()\n{\n  char *result; // rax\n\n  if ( !_bss_start )\n  {\n    if ( &__cxa_finalize )\n      _cxa_finalize(off_201058);\n    while ( qword_201068 < (unsigned __int64)(&qword_200E10 - qword_200E08 - 1) )\n      ((void (*)(void))qword_200E08[++qword_201068])();\n    result = sub_A3F();\n    _bss_start = 1;\n  }\n  return result;\n}\n"
+        },
+        {
+            "funcName": "sub_B09",
+            "funcStartAddr": "0xb09",
+            "funcEndAddr": "0xb0e",
+            "decompiledFuncCode": "// attributes: thunk\n__int64 sub_B09()\n{\n  return sub_A61();\n}\n"
+        },
+        {
+            "funcName": "sub_B0E",
+            "funcStartAddr": "0xb0e",
+            "funcEndAddr": "0xb30",
+            "decompiledFuncCode": "__int64 __fastcall sub_B0E(__int64 a1, __int64 a2, __int64 a3)\n{\n  void (**i)(void); // rbx\n\n  for ( i = (void (**)(void))&qword_200DF8; *i != (void (*)(void))-1LL; --i )\n    (*i)();\n  return a3;\n}\n"
+        }
+    ],
+    "funcCount": 7
+}

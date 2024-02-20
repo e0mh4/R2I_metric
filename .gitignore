@@ -1,0 +1,5 @@
+.vscode/
+lextab.py
+yacctab.py
+*.log
+__pycache__/

@@ -1,0 +1,20 @@
+{
+    "binaryInfo": {
+        "binaryName": "ghidra",
+        "isStripped": "True"
+    },
+    "buildInfo": {
+        "decompilerName": "ghidra",
+        "compilerName": "gcc",
+        "compilerVersion": "9.4.0",
+        "Optlevel": "-O"
+    },
+    "funcInfo": [
+        {
+            "funcName": "FUN_00401c3d",
+            "funcStartAddr": "0x401c3d",
+            "funcEndAddr": "0x402dd4",
+            "decompiledFuncCode": "undefined8 FUN_00401c3d(void)\n{\nsize_t sVar1;\nundefined8 local_68;\nundefined8 local_60;\nundefined8 local_58;\nundefined8 local_50;\nundefined8 local_48;\nundefined8 local_40;\nundefined8 local_38;\nundefined8 local_30;\nundefined local_28;\nlong local_18;\nint local_10;\nuint local_c;\nlocal_68 = 0;\nlocal_60 = 0;\nlocal_58 = 0;\nlocal_50 = 0;\nlocal_48 = 0;\nlocal_40 = 0;\nlocal_38 = 0;\nlocal_30 = 0;\nlocal_28 = 0;\nprintf(\"Enter any binary number: \");\n__isoc99_scanf(&DAT_00403259,&local_18);\nlocal_c = (uint)local_18;\nfor (; 0 < local_18; local_18 = local_18 / 10000) {\nlocal_10 = (int)local_18 + (int)(local_18 / 10000) * -10000;\nif (local_10 == 0x457) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x46;\n}\nelse {\nif (local_10 < 0x458) {\nif (local_10 == 0x456) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x45;\n}\nelse {\nif (local_10 < 0x457) {\nif (local_10 == 0x44d) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x44;\n}\nelse {\nif (local_10 < 0x44e) {\nif (local_10 == 0x44c) {\nsVar1 = strlen((char )&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x43;\n}\nelse {\nif (local_10 < 0x44d) {\nif (local_10 == 0x3f3) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x42;\n}\nelse {\nif local_10 < 0x3f4) {\nif (local_10 == 0x3f2) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x41;\n}\nelse {\nif (local_10 < 0x3f3) {\nif (local_10 == 0x3e9) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x39;\n}\nelse {\nif (local_10 < 0x3ea) {\nif (local_10 == 1000) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x38;\n}\nelse {\nif (local_10 < 0x3e9) {\nif (local_10 == 0x6f) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x37;\n}\nelse {\nif (local_10 < 0x70) {\nif (local_10 == 0x6e) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x36;\n}\nelse {\nif (local_10 < 0x6f) {\nif (local_10 == 0x65) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x35;\n}\nelse {\nif (local_10 < 0x66) {\nif (local_10 == 100) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) = 0x34;\n}\nelse {\nif (local_10 < 0x65) {\nif (local_10 == 0xb) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) =\n0x33;\n}\nelse {\nif (local_10 < 0xc) {\nif (local_10 == 10) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)((long)&local_68 + sVar1) =\n0x32;\n}\nelse {\nif (local_10 < 0xb) {\nif (local_10 == 0) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)\n((long)&local_68 + sVar1) = 0x30;\n}\nelse {\nif (local_10 == 1) {\nsVar1 = strlen((char *)&local_68);\n*(undefined2 *)\n((long)&local_68 + sVar1) = 0x31;\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\nprintf(\"Binary number: %lld\\n\",(ulong)local_c);\nprintf(\"Hexadecimal number: %s\",&local_68);\nreturn 0;\n}\n"
+        }
+    ]
+}

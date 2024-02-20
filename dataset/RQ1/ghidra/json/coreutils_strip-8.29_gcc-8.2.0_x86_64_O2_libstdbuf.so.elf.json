@@ -1,0 +1,52 @@
+{
+    "funcCount": 7,
+    "funcInfo": [
+        {
+            "funcStartAddr": "0x100810",
+            "funcEndAddr": "0x1009b4",
+            "decompiledFuncCode": "\nundefined8 FUN_00100810(FILE *param_1,char *param_2)\n\n{\n  int iVar1;\n  ulong __size;\n  char *pcVar2;\n  undefined8 uVar3;\n  undefined8 extraout_RAX;\n  char *pcVar4;\n  undefined8 uStack_28;\n  \n  if (*param_2 == '0') {\n    __size = 0;\n    iVar1 = 2;\n    pcVar2 = (char *)0x0;\n  }\n  else if (*param_2 == 'L') {\n    __size = 0;\n    iVar1 = 1;\n    pcVar2 = (char *)0x0;\n  }\n  else {\n    __size = strtoul(param_2,(char **)0x0,10);\n    if (__size == 0) {\n      iVar1 = fileno(param_1);\n      if (iVar1 == 1) {\n        pcVar2 = \"stdout\";\n      }\n      else {\n        pcVar2 = \"stderr\";\n        if ((iVar1 != 2) && (pcVar2 = \"stdin\", iVar1 != 0)) {\n          pcVar2 = \"unknown\";\n        }\n      }\n      uVar3 = dcgettext(0,\"invalid buffering mode %s for %s\\n\",5);\n      uVar3 = __fprintf_chk(*(undefined8 *)PTR_stderr_00300ff8,1,uVar3,param_2,pcVar2,uStack_28);\n      return uVar3;\n    }\n    pcVar2 = (char *)malloc(__size);\n    iVar1 = 0;\n    if (pcVar2 == (char *)0x0) {\n      uVar3 = dcgettext(0,\"failed to allocate a %lu byte stdio buffer\\n\",5);\n      uVar3 = __fprintf_chk(*(undefined8 *)PTR_stderr_00300ff8,1,uVar3,__size);\n      return uVar3;\n    }\n  }\n  iVar1 = setvbuf(param_1,pcVar2,iVar1,__size);\n  if (iVar1 == 0) {\n    return uStack_28;\n  }\n  iVar1 = fileno(param_1);\n  if (iVar1 == 1) {\n    pcVar4 = \"stdout\";\n  }\n  else {\n    pcVar4 = \"stderr\";\n    if ((iVar1 != 2) && (pcVar4 = \"stdin\", iVar1 != 0)) {\n      pcVar4 = \"unknown\";\n    }\n  }\n  uVar3 = dcgettext(0,\"could not set buffering of %s to mode %s\\n\",5);\n  __fprintf_chk(*(undefined8 *)PTR_stderr_00300ff8,1,uVar3,pcVar4,param_2);\n  free(pcVar2);\n  return extraout_RAX;\n}\n\n",
+            "funcName": "FUN_00100810"
+        },
+        {
+            "funcStartAddr": "0x1009c0",
+            "funcEndAddr": "0x100a3f",
+            "decompiledFuncCode": "\nvoid FUN_001009c0(void)\n\n{\n  char *pcVar1;\n  char *pcVar2;\n  char *pcVar3;\n  \n  pcVar1 = getenv(\"_STDBUF_E\");\n  pcVar2 = getenv(\"_STDBUF_I\");\n  pcVar3 = getenv(\"_STDBUF_O\");\n  if (pcVar1 != (char *)0x0) {\n    FUN_00100810(*(undefined8 *)PTR_stderr_00300ff8,pcVar1);\n  }\n  if (pcVar2 != (char *)0x0) {\n    FUN_00100810(*(undefined8 *)PTR_stdin_00300fd8,pcVar2);\n  }\n  if (pcVar3 != (char *)0x0) {\n    FUN_00100810(*(undefined8 *)PTR_stdout_00300fd0,pcVar3);\n    return;\n  }\n  return;\n}\n\n",
+            "funcName": "FUN_001009c0"
+        },
+        {
+            "funcStartAddr": "0x100a3f",
+            "funcEndAddr": "0x100a61",
+            "decompiledFuncCode": "\n/* WARNING: Removing unreachable block (ram,0x00100a52) */\n/* WARNING: Removing unreachable block (ram,0x00100a5e) */\n\nvoid FUN_00100a3f(void)\n\n{\n  return;\n}\n\n",
+            "funcName": "FUN_00100a3f"
+        },
+        {
+            "funcStartAddr": "0x100a61",
+            "funcEndAddr": "0x100a9a",
+            "decompiledFuncCode": "\nvoid FUN_00100a61(void)\n\n{\n  long lVar1;\n  \n  lVar1 = SUB168(ZEXT816(0) / SEXT816(2),0);\n  if ((lVar1 != 0) && (PTR__ITM_registerTMCloneTable_00300fe8 != (undefined *)0x0)) {\n    (*(code *)PTR__ITM_registerTMCloneTable_00300fe8)\n              (&_edata,lVar1,SUB168(ZEXT816(0) % SEXT816(2),0));\n    return;\n  }\n  return;\n}\n\n",
+            "funcName": "FUN_00100a61"
+        },
+        {
+            "funcStartAddr": "0x100a9a",
+            "funcEndAddr": "0x100b09",
+            "decompiledFuncCode": "\n/* WARNING: Removing unreachable block (ram,0x00100ae7) */\n\nvoid FUN_00100a9a(void)\n\n{\n  if (_edata != '\\0') {\n    return;\n  }\n  if (PTR___cxa_finalize_00300ff0 != (undefined *)0x0) {\n    __cxa_finalize(PTR_LOOP_00301058);\n  }\n  FUN_00100a3f();\n  _edata = 1;\n  return;\n}\n\n",
+            "funcName": "FUN_00100a9a"
+        },
+        {
+            "funcStartAddr": "0x100b09",
+            "funcEndAddr": "0x100b0e",
+            "decompiledFuncCode": "\nvoid thunk_FUN_00100a61(void)\n\n{\n  long lVar1;\n  \n  lVar1 = SUB168(ZEXT816(0) / SEXT816(2),0);\n  if ((lVar1 != 0) && (PTR__ITM_registerTMCloneTable_00300fe8 != (undefined *)0x0)) {\n    (*(code *)PTR__ITM_registerTMCloneTable_00300fe8)\n              (&_edata,lVar1,SUB168(ZEXT816(0) % SEXT816(2),0));\n    return;\n  }\n  return;\n}\n\n",
+            "funcName": "thunk_100b09"
+        },
+        {
+            "funcStartAddr": "0x100b0e",
+            "funcEndAddr": "0x100b30",
+            "decompiledFuncCode": "\nundefined8 FUN_00100b0e(undefined8 param_1,undefined8 param_2,undefined8 param_3)\n\n{\n  code **ppcVar1;\n  \n  for (ppcVar1 = (code **)&DAT_00300df8; *ppcVar1 != (code *)0xffffffffffffffff;\n      ppcVar1 = ppcVar1 + -1) {\n    (**ppcVar1)();\n  }\n  return param_3;\n}\n\n",
+            "funcName": "FUN_00100b0e"
+        }
+    ],
+    "decompilerName": "Ghidra",
+    "binaryName": "coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf",
+    "isStripped": "True",
+    "compilerName": "gcc",
+    "optLevel": "-O"
+}

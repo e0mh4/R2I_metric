@@ -1,0 +1,424 @@
+{
+    "funcCount": 69,
+    "funcInfo": [
+        {
+            "funcStartAddr": "0x402300",
+            "funcEndAddr": "0x402305",
+            "decompiledFuncCode": "\nvoid _dl_relocate_static_pie(void)\n\n{\n  return;\n}\n\n",
+            "funcName": "_dl_relocate_static_pie"
+        },
+        {
+            "funcStartAddr": "0x4023c0",
+            "funcEndAddr": "0x40255b",
+            "decompiledFuncCode": "\nvoid usage(int status)\n\n{\n  int iVar1;\n  undefined8 uVar2;\n  char *pcVar3;\n  undefined8 uVar4;\n  \n  uVar2 = stderr;\n  if (status == 0) {\n    uVar2 = dcgettext(0,\"Usage: %s [OPTION]...\\n\",5);\n    __printf_chk(1,uVar2,program_name);\n    pcVar3 = (char *)dcgettext(0,\n                               \"Print the user name associated with the current effective user ID.\\nSame as id -un.\\n\\n\"\n                               ,5);\n    fputs_unlocked(pcVar3,stdout);\n    pcVar3 = (char *)dcgettext(0,\"      --help     display this help and exit\\n\",5);\n    fputs_unlocked(pcVar3,stdout);\n    pcVar3 = (char *)dcgettext(0,\"      --version  output version information and exit\\n\",5);\n    fputs_unlocked(pcVar3,stdout);\n    uVar2 = dcgettext(0,\"\\n%s online help: <%s>\\n\",5);\n    __printf_chk(1,uVar2,\"GNU coreutils\",\"https://www.gnu.org/software/coreutils/\");\n    pcVar3 = setlocale(5,(char *)0x0);\n    if (pcVar3 != (char *)0x0) {\n      iVar1 = strncmp(pcVar3,\"en_\",3);\n      if (iVar1 != 0) {\n        pcVar3 = (char *)dcgettext(0,\n                                   \"Report any translation bugs to <https://translationproject.org/team/>\\n\"\n                                   ,5);\n        fputs_unlocked(pcVar3,stdout);\n      }\n    }\n    uVar2 = dcgettext(0,\"Full documentation <%s%s>\\n\",5);\n    __printf_chk(1,uVar2,\"https://www.gnu.org/software/coreutils/\",\"whoami\");\n    uVar2 = dcgettext(0,\"or available locally via: info \\'(coreutils) %s%s\\'\\n\",5);\n    __printf_chk(1,uVar2,\"whoami\",\" invocation\");\n                    /* WARNING: Subroutine does not return */\n    exit(0);\n  }\n  uVar4 = dcgettext(0,\"Try \\'%s --help\\' for more information.\\n\",5);\n  __fprintf_chk(uVar2,1,uVar4,program_name);\n                    /* WARNING: Subroutine does not return */\n  exit(status);\n}\n\n",
+            "funcName": "usage"
+        },
+        {
+            "funcStartAddr": "0x402560",
+            "funcEndAddr": "0x402690",
+            "decompiledFuncCode": "\nint main(int argc,char **argv)\n\n{\n  __uid_t __uid;\n  int iVar1;\n  int *piVar2;\n  passwd *ppVar3;\n  undefined8 uVar4;\n  char *pcVar5;\n  \n  set_program_name(*argv);\n  setlocale(6,\"\");\n  bindtextdomain(\"coreutils\",\"/home/yujeong/binary_gen/coreutils-8.31/tmp/_install/share/locale\");\n  textdomain(\"coreutils\");\n  atexit(close_stdout);\n  parse_gnu_standard_options_only\n            (argc,argv,\"whoami\",\"GNU coreutils\",Version,true,usage,\"Richard Mlynarik\",0);\n  if (optind != argc) {\n    uVar4 = dcgettext(0,\"extra operand %s\",5);\n    pcVar5 = quote(argv[optind]);\n    error(0,0,uVar4,pcVar5);\n                    /* WARNING: Subroutine does not return */\n    usage(1);\n  }\n  piVar2 = __errno_location();\n  *piVar2 = 0;\n  __uid = geteuid();\n  if ((__uid != 0xffffffff) || (iVar1 = *piVar2, iVar1 == 0)) {\n    ppVar3 = getpwuid(__uid);\n    if (ppVar3 != (passwd *)0x0) {\n      puts(ppVar3->pw_name);\n      return 0;\n    }\n    iVar1 = *piVar2;\n  }\n  uVar4 = dcgettext(0,\"cannot find name for user ID %lu\",5);\n  pcVar5 = (char *)0x1;\n  iVar1 = error(1,iVar1,uVar4,__uid);\n  file_name = pcVar5;\n  return iVar1;\n}\n\n",
+            "funcName": "main"
+        },
+        {
+            "funcStartAddr": "0x402690",
+            "funcEndAddr": "0x402698",
+            "decompiledFuncCode": "\nvoid close_stdout_set_file_name(char *file)\n\n{\n  file_name = file;\n  return;\n}\n\n",
+            "funcName": "close_stdout_set_file_name"
+        },
+        {
+            "funcStartAddr": "0x4026a0",
+            "funcEndAddr": "0x4026a8",
+            "decompiledFuncCode": "\nvoid close_stdout_set_ignore_EPIPE(_Bool ignore)\n\n{\n  ignore_EPIPE = ignore;\n  return;\n}\n\n",
+            "funcName": "close_stdout_set_ignore_EPIPE"
+        },
+        {
+            "funcStartAddr": "0x4026b0",
+            "funcEndAddr": "0x402765",
+            "decompiledFuncCode": "\nvoid close_stdout(void)\n\n{\n  _Bool _Var1;\n  int iVar2;\n  int *piVar3;\n  undefined8 uVar4;\n  char *pcVar5;\n  \n  iVar2 = close_stream(stdout);\n  _Var1 = ignore_EPIPE;\n  if (iVar2 != 0) {\n    piVar3 = __errno_location();\n    if ((_Var1 == false) || (*piVar3 != 0x20)) {\n      uVar4 = dcgettext(0,\"write error\",5);\n      iVar2 = *piVar3;\n      if (file_name == (char *)0x0) {\n        error(0,iVar2,\"%s\",uVar4);\n                    /* WARNING: Subroutine does not return */\n        _exit(exit_failure);\n      }\n      pcVar5 = quotearg_colon(file_name);\n      error(0,iVar2,\"%s: %s\",pcVar5,uVar4);\n                    /* WARNING: Subroutine does not return */\n      _exit(exit_failure);\n    }\n  }\n  iVar2 = close_stream(stderr);\n  if (iVar2 == 0) {\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  _exit(exit_failure);\n}\n\n",
+            "funcName": "close_stdout"
+        },
+        {
+            "funcStartAddr": "0x402770",
+            "funcEndAddr": "0x402865",
+            "decompiledFuncCode": "\nvoid parse_long_options(int argc,char **argv,char *command_name,char *package,char *version,\n                       _func_void_int *usage_func,...)\n\n{\n  undefined4 uVar1;\n  char in_AL;\n  int iVar2;\n  undefined4 in_XMM0_Da;\n  undefined4 in_XMM1_Da;\n  undefined4 in_XMM2_Da;\n  undefined4 in_XMM3_Da;\n  undefined4 in_XMM4_Da;\n  undefined4 in_XMM5_Da;\n  undefined4 in_XMM6_Da;\n  undefined4 in_XMM7_Da;\n  __va_list_tag local_f8;\n  undefined local_d8 [48];\n  undefined4 local_a8;\n  undefined4 local_98;\n  undefined4 local_88;\n  undefined4 local_78;\n  undefined4 local_68;\n  undefined4 local_58;\n  undefined4 local_48;\n  undefined4 local_38;\n  \n  uVar1 = opterr;\n  if (in_AL != '\\0') {\n    local_a8 = in_XMM0_Da;\n    local_98 = in_XMM1_Da;\n    local_88 = in_XMM2_Da;\n    local_78 = in_XMM3_Da;\n    local_68 = in_XMM4_Da;\n    local_58 = in_XMM5_Da;\n    local_48 = in_XMM6_Da;\n    local_38 = in_XMM7_Da;\n  }\n  opterr = 0;\n  if (argc == 2) {\n    iVar2 = getopt_long(2,argv,&DAT_00406290,long_options,0);\n    if (iVar2 == 0x68) {\n      (*usage_func)(0);\n    }\n    else if (iVar2 == 0x76) {\n      local_f8.reg_save_area = local_d8;\n      local_f8.overflow_arg_area = &stack0x00000008;\n      local_f8.fp_offset = 0x30;\n      local_f8.gp_offset = 0x30;\n      version_etc_va(stdout,command_name,package,version,&local_f8);\n                    /* WARNING: Subroutine does not return */\n      exit(0);\n    }\n  }\n  opterr = uVar1;\n  optind = 0;\n  return;\n}\n\n",
+            "funcName": "parse_long_options"
+        },
+        {
+            "funcStartAddr": "0x402870",
+            "funcEndAddr": "0x40296b",
+            "decompiledFuncCode": "\nvoid parse_gnu_standard_options_only\n               (int argc,char **argv,char *command_name,char *package,char *version,_Bool scan_all,\n               _func_void_int *usage_func,...)\n\n{\n  undefined4 uVar1;\n  char in_AL;\n  int iVar2;\n  char *pcVar3;\n  int iVar4;\n  undefined4 in_XMM0_Da;\n  undefined4 in_XMM1_Da;\n  undefined4 in_XMM2_Da;\n  undefined4 in_XMM3_Da;\n  undefined4 in_XMM4_Da;\n  undefined4 in_XMM5_Da;\n  undefined4 in_XMM6_Da;\n  undefined4 in_XMM7_Da;\n  __va_list_tag local_f8;\n  undefined local_d8 [48];\n  undefined4 local_a8;\n  undefined4 local_98;\n  undefined4 local_88;\n  undefined4 local_78;\n  undefined4 local_68;\n  undefined4 local_58;\n  undefined4 local_48;\n  undefined4 local_38;\n  \n  uVar1 = opterr;\n  if (in_AL != '\\0') {\n    local_a8 = in_XMM0_Da;\n    local_98 = in_XMM1_Da;\n    local_88 = in_XMM2_Da;\n    local_78 = in_XMM3_Da;\n    local_68 = in_XMM4_Da;\n    local_58 = in_XMM5_Da;\n    local_48 = in_XMM6_Da;\n    local_38 = in_XMM7_Da;\n  }\n  opterr = 1;\n  pcVar3 = \"+\";\n  if (scan_all) {\n    pcVar3 = \"\";\n  }\n  iVar2 = getopt_long(_argc,argv,pcVar3,long_options,0);\n  if (iVar2 != -1) {\n    if (iVar2 == 0x68) {\n      iVar4 = 0;\n    }\n    else {\n      iVar4 = exit_failure;\n      if (iVar2 == 0x76) {\n        local_f8.reg_save_area = local_d8;\n        local_f8.overflow_arg_area = &stack0x00000010;\n        local_f8.fp_offset = 0x30;\n        local_f8.gp_offset = 0x30;\n        version_etc_va(stdout,command_name,package,version,&local_f8);\n                    /* WARNING: Subroutine does not return */\n        exit(0);\n      }\n    }\n    (*usage_func)(iVar4);\n  }\n  opterr = uVar1;\n  return;\n}\n\n",
+            "funcName": "parse_gnu_standard_options_only"
+        },
+        {
+            "funcStartAddr": "0x402970",
+            "funcEndAddr": "0x402a11",
+            "decompiledFuncCode": "\nvoid set_program_name(char *argv0)\n\n{\n  int iVar1;\n  char *pcVar2;\n  char *__s1;\n  \n  if (argv0 == (char *)0x0) {\n    fwrite(\"A NULL argv[0] was passed through an exec system call.\\n\",0x37,1,stderr);\n                    /* WARNING: Subroutine does not return */\n    abort();\n  }\n  pcVar2 = strrchr(argv0,0x2f);\n  __s1 = pcVar2 + 1;\n  if (pcVar2 == (char *)0x0) {\n    __s1 = argv0;\n  }\n  if (((6 < (long)__s1 - (long)argv0) && (iVar1 = strncmp(__s1 + -7,\"/.libs/\",7), iVar1 == 0)) &&\n     (iVar1 = strncmp(__s1,\"lt-\",3), argv0 = __s1, iVar1 == 0)) {\n    argv0 = __s1 + 3;\n    program_invocation_short_name = argv0;\n  }\n  program_name = argv0;\n  program_invocation_name = argv0;\n  return;\n}\n\n",
+            "funcName": "set_program_name"
+        },
+        {
+            "funcStartAddr": "0x402a20",
+            "funcEndAddr": "0x402a53",
+            "decompiledFuncCode": "\nquoting_options * clone_quoting_options(quoting_options *o)\n\n{\n  int iVar1;\n  int *piVar2;\n  quoting_options *pqVar3;\n  \n  piVar2 = __errno_location();\n  iVar1 = *piVar2;\n  if (o == (quoting_options *)0x0) {\n    o = &default_quoting_options;\n  }\n  pqVar3 = (quoting_options *)xmemdup(o,0x38);\n  *piVar2 = iVar1;\n  return pqVar3;\n}\n\n",
+            "funcName": "clone_quoting_options"
+        },
+        {
+            "funcStartAddr": "0x402a60",
+            "funcEndAddr": "0x402a6f",
+            "decompiledFuncCode": "\nquoting_style get_quoting_style(quoting_options *o)\n\n{\n  quoting_options *pqVar1;\n  \n  pqVar1 = &default_quoting_options;\n  if (o != (quoting_options *)0x0) {\n    pqVar1 = o;\n  }\n  return pqVar1->style;\n}\n\n",
+            "funcName": "get_quoting_style"
+        },
+        {
+            "funcStartAddr": "0x402a70",
+            "funcEndAddr": "0x402a7f",
+            "decompiledFuncCode": "\nvoid set_quoting_style(quoting_options *o,quoting_style s)\n\n{\n  quoting_options *pqVar1;\n  \n  pqVar1 = &default_quoting_options;\n  if (o != (quoting_options *)0x0) {\n    pqVar1 = o;\n  }\n  pqVar1->style = s;\n  return;\n}\n\n",
+            "funcName": "set_quoting_style"
+        },
+        {
+            "funcStartAddr": "0x402a80",
+            "funcEndAddr": "0x402ab6",
+            "decompiledFuncCode": "\nwchar_t set_char_quoting(quoting_options *o,char c,wchar_t i)\n\n{\n  quoting_options *pqVar1;\n  uint uVar2;\n  \n  pqVar1 = &default_quoting_options;\n  if (o != (quoting_options *)0x0) {\n    pqVar1 = o;\n  }\n  uVar2 = pqVar1->quote_these_too[(byte)c >> 5] >> (c & 0x1fU);\n  pqVar1->quote_these_too[(byte)c >> 5] =\n       ((uVar2 ^ i) & 1U) << (c & 0x1fU) ^ pqVar1->quote_these_too[(byte)c >> 5];\n  return uVar2 & 1;\n}\n\n",
+            "funcName": "set_char_quoting"
+        },
+        {
+            "funcStartAddr": "0x402ac0",
+            "funcEndAddr": "0x402ad3",
+            "decompiledFuncCode": "\nwchar_t set_quoting_flags(quoting_options *o,wchar_t i)\n\n{\n  wchar_t wVar1;\n  quoting_options *pqVar2;\n  \n  pqVar2 = &default_quoting_options;\n  if (o != (quoting_options *)0x0) {\n    pqVar2 = o;\n  }\n  wVar1 = pqVar2->flags;\n  pqVar2->flags = i;\n  return wVar1;\n}\n\n",
+            "funcName": "set_quoting_flags"
+        },
+        {
+            "funcStartAddr": "0x402ae0",
+            "funcEndAddr": "0x402b0b",
+            "decompiledFuncCode": "\nvoid set_custom_quoting(quoting_options *o,char *left_quote,char *right_quote)\n\n{\n  quoting_options *pqVar1;\n  \n  pqVar1 = &default_quoting_options;\n  if (o != (quoting_options *)0x0) {\n    pqVar1 = o;\n  }\n  pqVar1->style = custom_quoting_style;\n  if ((left_quote != (char *)0x0) && (right_quote != (char *)0x0)) {\n    pqVar1->left_quote = left_quote;\n    pqVar1->right_quote = right_quote;\n    return;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "set_custom_quoting"
+        },
+        {
+            "funcStartAddr": "0x402b10",
+            "funcEndAddr": "0x402b82",
+            "decompiledFuncCode": "\nsize_t quotearg_buffer(char *buffer,size_t buffersize,char *arg,size_t argsize,quoting_options *o)\n\n{\n  int iVar1;\n  int *piVar2;\n  size_t sVar3;\n  quoting_options *pqVar4;\n  wchar_t e;\n  \n  pqVar4 = &default_quoting_options;\n  if (o != (quoting_options *)0x0) {\n    pqVar4 = o;\n  }\n  piVar2 = __errno_location();\n  iVar1 = *piVar2;\n  sVar3 = quotearg_buffer_restyled\n                    (buffer,buffersize,arg,argsize,pqVar4->style,pqVar4->flags,\n                     pqVar4->quote_these_too,pqVar4->left_quote,pqVar4->right_quote);\n  *piVar2 = iVar1;\n  return sVar3;\n}\n\n",
+            "funcName": "quotearg_buffer"
+        },
+        {
+            "funcStartAddr": "0x402b90",
+            "funcEndAddr": "0x40392c",
+            "decompiledFuncCode": "\n/* WARNING: Type propagation algorithm not settling */\n\nsize_t quotearg_buffer_restyled\n                 (char *buffer,size_t buffersize,char *arg,size_t argsize,\n                 quoting_style quoting_style,wchar_t flags,uint *quote_these_too,char *left_quote,\n                 char *right_quote)\n\n{\n  ulong uVar1;\n  char cVar2;\n  byte bVar3;\n  long lVar4;\n  bool bVar5;\n  byte bVar6;\n  bool bVar7;\n  int iVar8;\n  ushort **ppuVar9;\n  size_t sVar10;\n  ulong uVar11;\n  byte bVar12;\n  ulong uVar13;\n  ulong uVar14;\n  quoting_style qVar15;\n  bool bVar16;\n  ulong uVar17;\n  bool bVar18;\n  byte bVar19;\n  byte bVar20;\n  byte bVar21;\n  ulong uVar22;\n  ulong uVar23;\n  bool bVar24;\n  bool bVar25;\n  ulong local_b8;\n  size_t local_a8;\n  char *local_a0;\n  ulong local_88;\n  char *local_80;\n  char *local_78;\n  mbstate_t local_70;\n  uint local_64;\n  uint local_60;\n  wchar_t local_5c;\n  char *local_58;\n  ulong local_50;\n  ulong local_48;\n  size_t local_40;\n  ulong local_38;\n  \n  local_78 = right_quote;\n  local_80 = left_quote;\n  local_40 = __ctype_get_mb_cur_max();\n  uVar23 = (ulong)((uint)flags >> 1) & 1;\n  local_60 = flags & 1;\n  local_64 = flags & 4;\n  bVar21 = 1;\n  local_88 = 0;\n  local_a0 = (char *)0x0;\n  local_a8 = 0;\n  bVar16 = false;\n  local_48 = 0;\n  local_b8 = argsize;\n  bVar5 = false;\n  do {\n    if (custom_quoting_style < quoting_style) {\n                    /* WARNING: Subroutine does not return */\n      abort();\n    }\n    uVar22 = 0;\n    uVar14 = 0;\n    qVar15 = escape_quoting_style;\n    bVar18 = true;\n    bVar24 = bVar5;\n    switch(quoting_style) {\n    case literal_quoting_style:\n      uVar22 = 0;\n      uVar14 = 0;\n      qVar15 = literal_quoting_style;\n      bVar18 = bVar5;\n      break;\n    case shell_escape_quoting_style:\n      bVar5 = true;\n    case shell_quoting_style:\n      uVar23 = 1;\n    case shell_escape_always_quoting_style:\n      bVar24 = true;\n      if ((uVar23 & 1) != 0) {\n        bVar24 = bVar5;\n      }\n    case shell_always_quoting_style:\n      qVar15 = shell_always_quoting_style;\n      if ((uVar23 & 1) == 0) {\n        if (buffersize != 0) {\n          *buffer = '\\'';\n        }\n        uVar22 = 1;\n      }\n      else {\n        uVar22 = 0;\n      }\n      local_a0 = \"\\'\";\n      goto LAB_00402de0;\n    case c_quoting_style:\n      qVar15 = c_quoting_style;\n      if ((uVar23 & 1) == 0) {\n        if (buffersize != 0) {\n          *buffer = '\\\"';\n        }\n        uVar22 = 1;\n      }\n      else {\n        uVar22 = 0;\n      }\n      local_a0 = \"\\\"\";\n      bVar24 = true;\nLAB_00402de0:\n      local_a8 = 1;\n      uVar14 = uVar23 & 0xff;\n      bVar18 = bVar24;\n      break;\n    case c_maybe_quoting_style:\n      uVar22 = 0;\n      local_a0 = \"\\\"\";\n      local_a8 = 1;\n      uVar14 = 1;\n      qVar15 = c_quoting_style;\n      bVar18 = true;\n      break;\n    case escape_quoting_style:\n      break;\n    default:\n      local_80 = gettext_quote(\"`\",quoting_style);\n      uVar14 = (ulong)quoting_style;\n      local_78 = gettext_quote(\"\\'\",quoting_style);\n    case custom_quoting_style:\n      if ((uVar23 & 1) == 0) {\n        uVar22 = 0;\n        cVar2 = *local_80;\n        while (cVar2 != '\\0') {\n          if (uVar22 < buffersize) {\n            buffer[uVar22] = cVar2;\n          }\n          lVar4 = uVar22 + 1;\n          uVar22 = uVar22 + 1;\n          cVar2 = local_80[lVar4];\n        }\n      }\n      else {\n        uVar22 = 0;\n      }\n      local_a8 = strlen(local_78);\n      local_a0 = local_78;\n      uVar14 = uVar14 & 0xffffffffffffff00 | uVar23 & 0xff;\n      qVar15 = quoting_style;\n      bVar18 = true;\n    }\n    quoting_style = qVar15;\n    bVar5 = quoting_style != shell_always_quoting_style;\n    bVar3 = (byte)uVar14;\n    bVar24 = (uVar14 & 1) != 0;\n    uVar23 = 0;\n    local_38 = uVar14;\n    if (local_b8 == 0xffffffffffffffff) goto LAB_00402e80;\nLAB_00402e70:\n    uVar13 = buffersize;\n    if (uVar23 != local_b8) {\nLAB_00402e8b:\n      if ((bVar5 & bVar18 & local_a8 != 0) == 0) {\nLAB_00402ed3:\n        bVar25 = false;\n      }\n      else {\n        if ((1 < local_a8) && (local_b8 == 0xffffffffffffffff)) {\n          local_b8 = strlen(arg);\n        }\n        if (local_b8 < uVar23 + local_a8) goto LAB_00402ed3;\n        iVar8 = memcmp(arg + uVar23,local_a0,local_a8);\n        bVar25 = iVar8 == 0;\n        if ((bVar25) && ((uVar14 & 1) != 0)) goto LAB_0040388a;\n      }\n      uVar17 = (ulong)(byte)arg[uVar23];\n      bVar20 = 0;\n      bVar19 = 1;\n      bVar12 = 0x61;\n      bVar6 = 0x6e;\n      uVar13 = uVar22;\n      uVar11 = uVar23;\n      switch(uVar17) {\n      case 0:\n        if (bVar18 == false) {\n          if (local_60 == 0) {\n            uVar17 = 0;\n            goto LAB_004035c4;\n          }\n          goto LAB_004033ce;\n        }\n        if ((uVar14 & 1) == 0) {\n          if ((quoting_style == shell_always_quoting_style) && (!bVar16)) {\n            if (uVar22 < buffersize) {\n              buffer[uVar22] = '\\'';\n            }\n            if (uVar22 + 1 < buffersize) {\n              buffer[uVar22 + 1] = '$';\n            }\n            if (uVar22 + 2 < buffersize) {\n              buffer[uVar22 + 2] = '\\'';\n            }\n            uVar22 = uVar22 + 3;\n            bVar16 = true;\n          }\n          if (uVar22 < buffersize) {\n            buffer[uVar22] = '\\\\';\n          }\n          uVar13 = uVar22 + 1;\n          bVar7 = true;\n          uVar17 = 0x30;\n          if (((quoting_style == shell_always_quoting_style) || (local_b8 <= uVar23 + 1)) ||\n             (9 < (byte)(arg[uVar23 + 1] - 0x30U))) goto LAB_004035c6;\n          if (uVar13 < buffersize) {\n            buffer[uVar13] = '0';\n          }\n          if (uVar22 + 2 < buffersize) {\n            buffer[uVar22 + 2] = '0';\n          }\n          uVar22 = uVar22 + 3;\n          bVar20 = 0;\n          goto joined_r0x00403144;\n        }\n        goto LAB_0040388a;\n      default:\n        local_50 = buffersize;\n        if (local_40 == 1) {\n          ppuVar9 = __ctype_b_loc();\n          bVar20 = (byte)((*ppuVar9)[uVar17] >> 0xe) & 1;\n          uVar13 = 1;\n        }\n        else {\n          local_70 = (mbstate_t)0x0;\n          if (local_b8 == 0xffffffffffffffff) {\n            local_b8 = strlen(arg);\n          }\n          local_58 = arg + uVar23;\n          bVar20 = 1;\n          uVar13 = 0;\n          do {\n            uVar11 = uVar13 + uVar23;\n            sVar10 = rpl_mbrtowc(&local_5c,arg + uVar11,local_b8 - uVar11,&local_70);\n            if (sVar10 == 0) break;\n            if (sVar10 == 0xffffffffffffffff) {\n              bVar20 = 0;\n              break;\n            }\n            if (sVar10 == 0xfffffffffffffffe) {\n              if (uVar11 < local_b8) goto LAB_00403775;\n              bVar20 = 0;\n              break;\n            }\n            if ((1 < sVar10 & quoting_style == shell_always_quoting_style & bVar3 & 1) == 1) {\n              uVar11 = 1;\n              do {\n                if (((int)local_58[uVar11 + uVar13] - 0x5bU < 0x22) &&\n                   ((0x20000002bU >> ((ulong)((int)local_58[uVar11 + uVar13] - 0x5bU) & 0x3f) & 1)\n                    != 0)) {\n                  quoting_style = shell_always_quoting_style;\n                  buffersize = local_50;\n                  goto LAB_0040388a;\n                }\n                uVar11 = uVar11 + 1;\n              } while (uVar11 < sVar10);\n            }\n            iVar8 = iswprint(local_5c);\n            if (iVar8 == 0) {\n              bVar20 = 0;\n            }\n            uVar13 = uVar13 + sVar10;\n            iVar8 = mbsinit((mbstate_t *)&local_70);\n          } while (iVar8 == 0);\n        }\n        goto LAB_004031d9;\n      case 7:\n        break;\n      case 8:\n        bVar12 = 0x62;\n        break;\n      case 9:\n        bVar6 = 0x74;\n      case 10:\n        goto switchD_00402eef_caseD_a;\n      case 0xb:\n        bVar12 = 0x76;\n        break;\n      case 0xc:\n        bVar12 = 0x66;\n        break;\n      case 0xd:\n        bVar6 = 0x72;\nswitchD_00402eef_caseD_a:\n        bVar12 = bVar6;\n        if (bVar24 && !bVar5) {\nLAB_0040387b:\n          quoting_style = shell_always_quoting_style;\n          goto LAB_0040388a;\n        }\n        break;\n      case 0x20:\n        goto switchD_00402eef_caseD_20;\n      case 0x21:\n      case 0x22:\n      case 0x24:\n      case 0x26:\n      case 0x28:\n      case 0x29:\n      case 0x2a:\n      case 0x3b:\n      case 0x3c:\n      case 0x3d:\n      case 0x3e:\n      case 0x5b:\n      case 0x5e:\n      case 0x60:\n      case 0x7c:\n        goto switchD_00402eef_caseD_21;\n      case 0x23:\n      case 0x7e:\n        if (uVar23 != 0) goto LAB_004035c4;\nswitchD_00402eef_caseD_20:\n        bVar20 = 1;\nswitchD_00402eef_caseD_21:\n        if (bVar24 && !bVar5) goto LAB_0040387b;\n        bVar7 = false;\n        goto joined_r0x00403144;\n      case 0x25:\n      case 0x2b:\n      case 0x2c:\n      case 0x2d:\n      case 0x2e:\n      case 0x2f:\n      case 0x30:\n      case 0x31:\n      case 0x32:\n      case 0x33:\n      case 0x34:\n      case 0x35:\n      case 0x36:\n      case 0x37:\n      case 0x38:\n      case 0x39:\n      case 0x3a:\n      case 0x41:\n      case 0x42:\n      case 0x43:\n      case 0x44:\n      case 0x45:\n      case 0x46:\n      case 0x47:\n      case 0x48:\n      case 0x49:\n      case 0x4a:\n      case 0x4b:\n      case 0x4c:\n      case 0x4d:\n      case 0x4e:\n      case 0x4f:\n      case 0x50:\n      case 0x51:\n      case 0x52:\n      case 0x53:\n      case 0x54:\n      case 0x55:\n      case 0x56:\n      case 0x57:\n      case 0x58:\n      case 0x59:\n      case 0x5a:\n      case 0x5d:\n      case 0x5f:\n      case 0x61:\n      case 0x62:\n      case 99:\n      case 100:\n      case 0x65:\n      case 0x66:\n      case 0x67:\n      case 0x68:\n      case 0x69:\n      case 0x6a:\n      case 0x6b:\n      case 0x6c:\n      case 0x6d:\n      case 0x6e:\n      case 0x6f:\n      case 0x70:\n      case 0x71:\n      case 0x72:\n      case 0x73:\n      case 0x74:\n      case 0x75:\n      case 0x76:\n      case 0x77:\n      case 0x78:\n      case 0x79:\n      case 0x7a:\n        goto switchD_00402eef_caseD_25;\n      case 0x27:\n        uVar17 = 0x27;\n        local_48 = 1;\n        uVar23 = buffersize;\n        if (quoting_style != shell_always_quoting_style) {\nLAB_0040313a:\n          bVar7 = false;\n          buffersize = uVar23;\n          bVar20 = 1;\n          goto joined_r0x00403144;\n        }\n        if ((uVar14 & 1) == 0) {\n          if (local_88 == 0 && buffersize != 0) {\n            uVar23 = 0;\n            local_88 = buffersize;\n          }\n          if (uVar22 < uVar23) {\n            buffer[uVar22] = '\\'';\n          }\n          if (uVar22 + 1 < uVar23) {\n            buffer[uVar22 + 1] = '\\\\';\n          }\n          if (uVar22 + 2 < uVar23) {\n            buffer[uVar22 + 2] = '\\'';\n          }\n          uVar22 = uVar22 + 3;\n          bVar16 = false;\n          goto LAB_0040313a;\n        }\n        goto LAB_0040387b;\n      case 0x3f:\n        uVar17 = 0x3f;\n        if (quoting_style != c_quoting_style) {\n          if ((quoting_style == shell_always_quoting_style) && ((uVar14 & 1) != 0))\n          goto LAB_0040387b;\nLAB_004035c4:\n          bVar7 = false;\n          goto LAB_004035c6;\n        }\n        if ((local_64 == 0) || ((uVar1 = uVar23 + 2, local_b8 <= uVar1 || (arg[uVar23 + 1] != '?')))\n           ) goto LAB_004035c4;\n        bVar20 = arg[uVar1];\n        bVar7 = false;\n        if (0x3e < (uint)(int)(char)bVar20) goto LAB_004035c6;\n        if ((0x7000a38200000000U >> ((ulong)(uint)(int)(char)bVar20 & 0x3f) & 1) != 0) {\n          if ((uVar14 & 1) != 0) {\n            quoting_style = c_quoting_style;\n            goto LAB_0040388a;\n          }\n          if (uVar22 < buffersize) {\n            buffer[uVar22] = '?';\n          }\n          if (uVar22 + 1 < buffersize) {\n            buffer[uVar22 + 1] = '\\\"';\n          }\n          if (uVar22 + 2 < buffersize) {\n            buffer[uVar22 + 2] = '\\\"';\n          }\n          if (uVar22 + 3 < buffersize) {\n            buffer[uVar22 + 3] = '?';\n          }\n          uVar22 = uVar22 + 4;\n          uVar17 = (ulong)bVar20;\n          uVar23 = uVar1;\n        }\n        bVar20 = 0;\n        goto joined_r0x004035b9;\n      case 0x5c:\n        if (quoting_style == shell_always_quoting_style) {\n          if ((uVar14 & 1) != 0) goto LAB_0040387b;\n        }\n        else {\n          bVar6 = 0x5c;\n          if ((bVar18 & bVar3 & local_a8 != 0) == 0) goto switchD_00402eef_caseD_a;\n        }\n        bVar7 = false;\n        bVar12 = 0x5c;\n        bVar20 = 0;\n        bVar6 = 0x5c;\n        bVar19 = 0;\n        if (bVar16) goto LAB_004032b2;\n        goto LAB_004032de;\n      case 0x7b:\n      case 0x7d:\n        bVar7 = false;\n        if (local_b8 == 0xffffffffffffffff) {\n          if ((uVar23 == 0) && (arg[1] == '\\0')) goto switchD_00402eef_caseD_20;\n          local_b8 = 0xffffffffffffffff;\n          bVar7 = false;\n        }\n        else if ((uVar23 == 0) && (local_b8 == 1)) goto switchD_00402eef_caseD_20;\nLAB_004035c6:\n        uVar22 = uVar13;\n        bVar20 = 0;\n        goto joined_r0x00403144;\n      }\n      bVar19 = 0;\n      bVar20 = 0;\n      if (bVar18 == false) {\nswitchD_00402eef_caseD_25:\n        bVar7 = false;\n        bVar20 = bVar19;\n        goto joined_r0x00403144;\n      }\n      goto joined_r0x004032f8;\n    }\nLAB_004037bc:\n    local_b8 = uVar23;\n    if (((uVar14 & 1) != 0) &&\n       (buffersize = uVar13, quoting_style == shell_always_quoting_style && uVar22 == 0)) {\nLAB_0040388a:\n      qVar15 = shell_escape_always_quoting_style;\n      if (bVar18 == false) {\n        qVar15 = quoting_style;\n      }\n      if (quoting_style != shell_always_quoting_style) {\n        qVar15 = quoting_style;\n      }\n      sVar10 = quotearg_buffer_restyled\n                         (buffer,buffersize,arg,local_b8,qVar15,flags & 0xfffffffd,(uint *)0x0,\n                          local_80,local_78);\n      return sVar10;\n    }\n    if (((local_48 & 1) == 0) || (quoting_style != shell_always_quoting_style || (uVar14 & 1) != 0))\n    {\nLAB_0040382e:\n      if ((local_a0 != (char *)0x0) && ((uVar14 & 1) == 0)) {\n        cVar2 = *local_a0;\n        while (cVar2 != '\\0') {\n          local_a0 = local_a0 + 1;\n          if (uVar22 < uVar13) {\n            buffer[uVar22] = cVar2;\n          }\n          uVar22 = uVar22 + 1;\n          cVar2 = *local_a0;\n        }\n      }\n      if (uVar13 <= uVar22) {\n        return uVar22;\n      }\n      buffer[uVar22] = '\\0';\n      return uVar22;\n    }\n    if (bVar21 != 0) {\n      sVar10 = quotearg_buffer_restyled\n                         (buffer,local_88,arg,local_b8,c_quoting_style,flags,quote_these_too,\n                          local_80,local_78);\n      return sVar10;\n    }\n    if ((local_88 == 0) ||\n       (uVar23 = local_38 & 0xffffffff, buffersize = local_88, bVar5 = bVar18, uVar13 != 0))\n    goto LAB_0040382e;\n  } while( true );\n  while (uVar11 = uVar23 + 1 + uVar13, uVar13 = uVar13 + 1, uVar11 < local_b8) {\nLAB_00403775:\n    if (local_58[uVar13] == '\\0') {\n      bVar20 = 0;\n      goto LAB_004031d9;\n    }\n  }\n  bVar20 = 0;\nLAB_004031d9:\n  bVar6 = bVar20 | !bVar18;\n  buffersize = local_50;\n  if ((1 < uVar13) || (bVar6 == 0)) {\n    uVar13 = uVar13 + uVar23;\n    bVar7 = false;\n    if (bVar6 != 0) goto LAB_00403726;\n    while ((uVar14 & 1) == 0) {\n      if ((quoting_style == shell_always_quoting_style) && (!bVar16)) {\n        if (uVar22 < local_50) {\n          buffer[uVar22] = '\\'';\n        }\n        if (uVar22 + 1 < local_50) {\n          buffer[uVar22 + 1] = '$';\n        }\n        if (uVar22 + 2 < local_50) {\n          buffer[uVar22 + 2] = '\\'';\n        }\n        uVar22 = uVar22 + 3;\n        bVar16 = true;\n      }\n      if (uVar22 < local_50) {\n        buffer[uVar22] = '\\\\';\n      }\n      if (uVar22 + 1 < local_50) {\n        buffer[uVar22 + 1] = (byte)(uVar17 >> 6) | 0x30;\n      }\n      if (uVar22 + 2 < local_50) {\n        buffer[uVar22 + 2] = (byte)(uVar17 >> 3) & 7 | 0x30;\n      }\n      uVar22 = uVar22 + 3;\n      uVar17 = uVar17 & 0xffffffffffffff07 | 0x30;\n      bVar7 = true;\n      uVar11 = uVar23;\n      while( true ) {\n        bVar12 = (byte)uVar17;\n        uVar23 = uVar11 + 1;\n        if (uVar13 <= uVar23) goto LAB_004032ac;\n        if ((bVar16) && (!bVar7)) {\n          if (uVar22 < local_50) {\n            buffer[uVar22] = '\\'';\n          }\n          if (uVar22 + 1 < local_50) {\n            buffer[uVar22 + 1] = '\\'';\n          }\n          uVar22 = uVar22 + 2;\n          bVar16 = false;\n        }\n        if (uVar22 < local_50) {\n          buffer[uVar22] = bVar12;\n        }\n        uVar22 = uVar22 + 1;\n        uVar17 = (ulong)(byte)arg[uVar11 + 1];\n        if (bVar6 == 0) break;\nLAB_00403726:\n        uVar11 = uVar23;\n        if (bVar25) {\n          if (uVar22 < local_50) {\n            buffer[uVar22] = '\\\\';\n          }\n          uVar22 = uVar22 + 1;\n          bVar25 = false;\n        }\n      }\n    }\n    goto LAB_0040388a;\n  }\njoined_r0x004035b9:\n  bVar7 = false;\n  uVar11 = uVar23;\njoined_r0x00403144:\n  bVar12 = (byte)uVar17;\n  uVar23 = uVar11;\n  if ((bVar5 & bVar18) == 0) {\n    if ((quote_these_too != (uint *)0x0 & bVar3 & 1) != 0) goto LAB_00403267;\nLAB_004032a0:\n    if (!bVar25) goto LAB_004032ac;\njoined_r0x004032f8:\n    if ((uVar14 & 1) != 0) goto LAB_0040388a;\n    if ((quoting_style == shell_always_quoting_style) && (!bVar16)) {\n      if (uVar22 < buffersize) {\n        buffer[uVar22] = '\\'';\n      }\n      if (uVar22 + 1 < buffersize) {\n        buffer[uVar22 + 1] = '$';\n      }\n      if (uVar22 + 2 < buffersize) {\n        buffer[uVar22 + 2] = '\\'';\n      }\n      uVar22 = uVar22 + 3;\n      bVar16 = true;\n    }\n    if (uVar22 < buffersize) {\n      buffer[uVar22] = '\\\\';\n    }\n    uVar22 = uVar22 + 1;\n    if (buffersize <= uVar22) goto LAB_004033c2;\n  }\n  else {\n    if (quote_these_too == (uint *)0x0) goto LAB_004032a0;\nLAB_00403267:\n    if ((bVar25) || ((1 << (bVar12 & 0x1f) & quote_these_too[uVar17 >> 5]) != 0))\n    goto joined_r0x004032f8;\nLAB_004032ac:\n    uVar23 = uVar11;\n    bVar6 = bVar12;\n    bVar19 = bVar20;\n    if (bVar16) {\nLAB_004032b2:\n      bVar20 = bVar19;\n      bVar12 = bVar6;\n      if (!bVar7) {\n        if (uVar22 < buffersize) {\n          buffer[uVar22] = '\\'';\n        }\n        if (uVar22 + 1 < buffersize) {\n          buffer[uVar22 + 1] = '\\'';\n        }\n        uVar22 = uVar22 + 2;\n        bVar16 = false;\n      }\n    }\nLAB_004032de:\n    if (buffersize <= uVar22) goto LAB_004033c2;\n  }\n  buffer[uVar22] = bVar12;\nLAB_004033c2:\n  uVar22 = uVar22 + 1;\n  bVar21 = -bVar20 & bVar21;\nLAB_004033ce:\n  uVar23 = uVar23 + 1;\n  if (local_b8 != 0xffffffffffffffff) goto LAB_00402e70;\nLAB_00402e80:\n  if (arg[uVar23] == '\\0') {\n    uVar23 = 0xffffffffffffffff;\n    uVar13 = buffersize;\n    goto LAB_004037bc;\n  }\n  goto LAB_00402e8b;\n}\n\n",
+            "funcName": "quotearg_buffer_restyled"
+        },
+        {
+            "funcStartAddr": "0x403960",
+            "funcEndAddr": "0x403a21",
+            "decompiledFuncCode": "\nchar * quotearg_alloc(char *arg,size_t argsize,quoting_options *o)\n\n{\n  int iVar1;\n  int *piVar2;\n  size_t sVar3;\n  char *buffer;\n  wchar_t flags;\n  quoting_options *pqVar4;\n  wchar_t e;\n  \n  pqVar4 = &default_quoting_options;\n  if (o != (quoting_options *)0x0) {\n    pqVar4 = o;\n  }\n  piVar2 = __errno_location();\n  iVar1 = *piVar2;\n  flags = pqVar4->flags | 1;\n  sVar3 = quotearg_buffer_restyled\n                    ((char *)0x0,0,arg,argsize,pqVar4->style,flags,pqVar4->quote_these_too,\n                     pqVar4->left_quote,pqVar4->right_quote);\n  buffer = (char *)xmalloc(sVar3 + 1);\n  quotearg_buffer_restyled\n            (buffer,sVar3 + 1,arg,argsize,pqVar4->style,flags,pqVar4->quote_these_too,\n             pqVar4->left_quote,pqVar4->right_quote);\n  *piVar2 = iVar1;\n  return buffer;\n}\n\n",
+            "funcName": "quotearg_alloc"
+        },
+        {
+            "funcStartAddr": "0x403a30",
+            "funcEndAddr": "0x403b1c",
+            "decompiledFuncCode": "\nchar * quotearg_alloc_mem(char *arg,size_t argsize,size_t *size,quoting_options *o)\n\n{\n  int iVar1;\n  int *piVar2;\n  size_t sVar3;\n  char *buffer;\n  wchar_t flags;\n  quoting_options *pqVar4;\n  wchar_t e;\n  \n  pqVar4 = &default_quoting_options;\n  if (o != (quoting_options *)0x0) {\n    pqVar4 = o;\n  }\n  piVar2 = __errno_location();\n  iVar1 = *piVar2;\n  flags = (uint)(size == (size_t *)0x0) | pqVar4->flags;\n  sVar3 = quotearg_buffer_restyled\n                    ((char *)0x0,0,arg,argsize,pqVar4->style,flags,pqVar4->quote_these_too,\n                     pqVar4->left_quote,pqVar4->right_quote);\n  buffer = (char *)xmalloc(sVar3 + 1);\n  quotearg_buffer_restyled\n            (buffer,sVar3 + 1,arg,argsize,pqVar4->style,flags,pqVar4->quote_these_too,\n             pqVar4->left_quote,pqVar4->right_quote);\n  *piVar2 = iVar1;\n  if (size != (size_t *)0x0) {\n    *size = sVar3;\n  }\n  return buffer;\n}\n\n",
+            "funcName": "quotearg_alloc_mem"
+        },
+        {
+            "funcStartAddr": "0x403b20",
+            "funcEndAddr": "0x403bb1",
+            "decompiledFuncCode": "\nvoid quotearg_free(void)\n\n{\n  slotvec *__ptr;\n  long lVar1;\n  char **ppcVar2;\n  \n  __ptr = slotvec;\n  if (L'\\x01' < nslots) {\n    ppcVar2 = &slotvec[1].val;\n    lVar1 = 1;\n    do {\n      free(*ppcVar2);\n      lVar1 = lVar1 + 1;\n      ppcVar2 = ppcVar2 + 2;\n    } while (lVar1 < nslots);\n  }\n  if (__ptr->val != slot0) {\n    free(__ptr->val);\n    slotvec0.size = 0x100;\n    slotvec0.val = slot0;\n  }\n  if (__ptr != &slotvec0) {\n    free(__ptr);\n    slotvec = &slotvec0;\n  }\n  nslots = L'\\x01';\n  return;\n}\n\n",
+            "funcName": "quotearg_free"
+        },
+        {
+            "funcStartAddr": "0x403bc0",
+            "funcEndAddr": "0x403bce",
+            "decompiledFuncCode": "\nchar * quotearg_n(wchar_t n,char *arg)\n\n{\n  char *pcVar1;\n  \n  pcVar1 = quotearg_n_options(n,arg,0xffffffffffffffff,&default_quoting_options);\n  return pcVar1;\n}\n\n",
+            "funcName": "quotearg_n"
+        },
+        {
+            "funcStartAddr": "0x403bd0",
+            "funcEndAddr": "0x403d8d",
+            "decompiledFuncCode": "\nchar * quotearg_n_options(wchar_t n,char *arg,size_t argsize,quoting_options *options)\n\n{\n  int iVar1;\n  size_t buffersize;\n  slotvec *psVar2;\n  int *piVar3;\n  slotvec *psVar4;\n  size_t sVar5;\n  char *buffer;\n  wchar_t flags;\n  \n  piVar3 = __errno_location();\n  psVar2 = slotvec;\n  if (n < L'\\0') {\n                    /* WARNING: Subroutine does not return */\n    abort();\n  }\n  iVar1 = *piVar3;\n  psVar4 = slotvec;\n  if (nslots <= n) {\n    if (n == L'\\x7fffffff') {\n                    /* WARNING: Subroutine does not return */\n      xalloc_die();\n    }\n    psVar4 = (slotvec *)0x0;\n    if (slotvec != &slotvec0) {\n      psVar4 = slotvec;\n    }\n    psVar4 = (slotvec *)xrealloc(psVar4,(long)n * 0x10 + 0x10);\n    slotvec = psVar4;\n    if (psVar2 == &slotvec0) {\n      *psVar4 = slotvec0;\n    }\n    memset(psVar4 + nslots,0,((long)(n + L'\\x01') - (long)nslots) * 0x10);\n    nslots = n + L'\\x01';\n  }\n  buffersize = psVar4[n].size;\n  buffer = psVar4[n].val;\n  flags = options->flags | 1;\n  sVar5 = quotearg_buffer_restyled\n                    (buffer,buffersize,arg,argsize,options->style,flags,options->quote_these_too,\n                     options->left_quote,options->right_quote);\n  if (buffersize <= sVar5) {\n    sVar5 = sVar5 + 1;\n    psVar4[n].size = sVar5;\n    if (buffer != slot0) {\n      free(buffer);\n    }\n    buffer = (char *)xmalloc(sVar5);\n    psVar4[n].val = buffer;\n    quotearg_buffer_restyled\n              (buffer,sVar5,arg,argsize,options->style,flags,options->quote_these_too,\n               options->left_quote,options->right_quote);\n  }\n  *piVar3 = iVar1;\n  return buffer;\n}\n\n",
+            "funcName": "quotearg_n_options"
+        },
+        {
+            "funcStartAddr": "0x403d90",
+            "funcEndAddr": "0x403d9a",
+            "decompiledFuncCode": "\nchar * quotearg_n_mem(wchar_t n,char *arg,size_t argsize)\n\n{\n  char *pcVar1;\n  \n  pcVar1 = quotearg_n_options(n,arg,argsize,&default_quoting_options);\n  return pcVar1;\n}\n\n",
+            "funcName": "quotearg_n_mem"
+        },
+        {
+            "funcStartAddr": "0x403da0",
+            "funcEndAddr": "0x403db9",
+            "decompiledFuncCode": "\nchar * quotearg(char *arg)\n\n{\n  char *pcVar1;\n  \n  pcVar1 = quotearg_n_options(L'\\0',arg,0xffffffffffffffff,&default_quoting_options);\n  return pcVar1;\n}\n\n",
+            "funcName": "quotearg"
+        },
+        {
+            "funcStartAddr": "0x403dc0",
+            "funcEndAddr": "0x403dd8",
+            "decompiledFuncCode": "\nchar * quotearg_mem(char *arg,size_t argsize)\n\n{\n  char *pcVar1;\n  \n  pcVar1 = quotearg_n_options(L'\\0',arg,argsize,&default_quoting_options);\n  return pcVar1;\n}\n\n",
+            "funcName": "quotearg_mem"
+        },
+        {
+            "funcStartAddr": "0x403de0",
+            "funcEndAddr": "0x403e4c",
+            "decompiledFuncCode": "\nchar * quotearg_n_style(wchar_t n,quoting_style s,char *arg)\n\n{\n  char *pcVar1;\n  undefined local_38 [44];\n  undefined4 uStack_c;\n  undefined4 uStack_8;\n  undefined4 local_4;\n  \n  if (s != custom_quoting_style) {\n    local_4 = 0;\n    local_38._36_4_ = 0;\n    local_38._40_4_ = 0;\n    uStack_c = 0;\n    uStack_8 = 0;\n    local_38._20_4_ = 0;\n    local_38._24_4_ = 0;\n    local_38._28_4_ = 0;\n    local_38._32_4_ = 0;\n    local_38._4_4_ = 0;\n    local_38._8_4_ = 0;\n    local_38._12_4_ = 0;\n    local_38._16_4_ = 0;\n    local_38._0_4_ = s;\n    pcVar1 = quotearg_n_options(n,arg,0xffffffffffffffff,(quoting_options *)local_38);\n    return pcVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "quotearg_n_style"
+        },
+        {
+            "funcStartAddr": "0x403e50",
+            "funcEndAddr": "0x403eb8",
+            "decompiledFuncCode": "\nchar * quotearg_n_style_mem(wchar_t n,quoting_style s,char *arg,size_t argsize)\n\n{\n  char *pcVar1;\n  undefined local_38 [44];\n  undefined4 uStack_c;\n  undefined4 uStack_8;\n  undefined4 local_4;\n  \n  if (s != custom_quoting_style) {\n    local_4 = 0;\n    local_38._36_4_ = 0;\n    local_38._40_4_ = 0;\n    uStack_c = 0;\n    uStack_8 = 0;\n    local_38._20_4_ = 0;\n    local_38._24_4_ = 0;\n    local_38._28_4_ = 0;\n    local_38._32_4_ = 0;\n    local_38._4_4_ = 0;\n    local_38._8_4_ = 0;\n    local_38._12_4_ = 0;\n    local_38._16_4_ = 0;\n    local_38._0_4_ = s;\n    pcVar1 = quotearg_n_options(n,arg,argsize,(quoting_options *)local_38);\n    return pcVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "quotearg_n_style_mem"
+        },
+        {
+            "funcStartAddr": "0x403ec0",
+            "funcEndAddr": "0x403f28",
+            "decompiledFuncCode": "\nchar * quotearg_style(quoting_style s,char *arg)\n\n{\n  char *pcVar1;\n  undefined local_38 [44];\n  undefined4 uStack_c;\n  undefined4 uStack_8;\n  undefined4 local_4;\n  \n  if (s != custom_quoting_style) {\n    local_4 = 0;\n    local_38._36_4_ = 0;\n    local_38._40_4_ = 0;\n    uStack_c = 0;\n    uStack_8 = 0;\n    local_38._20_4_ = 0;\n    local_38._24_4_ = 0;\n    local_38._28_4_ = 0;\n    local_38._32_4_ = 0;\n    local_38._4_4_ = 0;\n    local_38._8_4_ = 0;\n    local_38._12_4_ = 0;\n    local_38._16_4_ = 0;\n    local_38._0_4_ = s;\n    pcVar1 = quotearg_n_options(L'\\0',arg,0xffffffffffffffff,(quoting_options *)local_38);\n    return pcVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "quotearg_style"
+        },
+        {
+            "funcStartAddr": "0x403f30",
+            "funcEndAddr": "0x403f91",
+            "decompiledFuncCode": "\nchar * quotearg_style_mem(quoting_style s,char *arg,size_t argsize)\n\n{\n  char *pcVar1;\n  undefined local_38 [44];\n  undefined4 uStack_c;\n  undefined4 uStack_8;\n  undefined4 local_4;\n  \n  if (s != custom_quoting_style) {\n    local_4 = 0;\n    local_38._36_4_ = 0;\n    local_38._40_4_ = 0;\n    uStack_c = 0;\n    uStack_8 = 0;\n    local_38._20_4_ = 0;\n    local_38._24_4_ = 0;\n    local_38._28_4_ = 0;\n    local_38._32_4_ = 0;\n    local_38._4_4_ = 0;\n    local_38._8_4_ = 0;\n    local_38._12_4_ = 0;\n    local_38._16_4_ = 0;\n    local_38._0_4_ = s;\n    pcVar1 = quotearg_n_options(L'\\0',arg,argsize,(quoting_options *)local_38);\n    return pcVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "quotearg_style_mem"
+        },
+        {
+            "funcStartAddr": "0x403fa0",
+            "funcEndAddr": "0x40400d",
+            "decompiledFuncCode": "\nchar * quotearg_char_mem(char *arg,size_t argsize,char ch)\n\n{\n  char *pcVar1;\n  undefined local_38 [44];\n  undefined4 uStack_c;\n  char *local_8;\n  \n  local_8 = default_quoting_options.right_quote;\n  local_38._32_4_ = default_quoting_options.quote_these_too[6];\n  local_38._36_4_ = default_quoting_options.quote_these_too[7];\n  local_38._40_4_ = default_quoting_options.left_quote._0_4_;\n  uStack_c = default_quoting_options.left_quote._4_4_;\n  local_38._16_4_ = default_quoting_options.quote_these_too[2];\n  local_38._20_4_ = default_quoting_options.quote_these_too[3];\n  local_38._24_4_ = default_quoting_options.quote_these_too[4];\n  local_38._28_4_ = default_quoting_options.quote_these_too[5];\n  local_38._0_4_ = default_quoting_options.style;\n  local_38._4_4_ = default_quoting_options.flags;\n  local_38._8_4_ = default_quoting_options.quote_these_too[0];\n  local_38._12_4_ = default_quoting_options.quote_these_too[1];\n  *(uint *)(local_38 + (ulong)((byte)ch >> 5) * 4 + 8) =\n       (~(*(uint *)(local_38 + (ulong)((byte)ch >> 5) * 4 + 8) >> (ch & 0x1fU)) & 1) << (ch & 0x1fU)\n       ^ *(uint *)(local_38 + (ulong)((byte)ch >> 5) * 4 + 8);\n  pcVar1 = quotearg_n_options(L'\\0',arg,argsize,(quoting_options *)local_38);\n  return pcVar1;\n}\n\n",
+            "funcName": "quotearg_char_mem"
+        },
+        {
+            "funcStartAddr": "0x404010",
+            "funcEndAddr": "0x40407e",
+            "decompiledFuncCode": "\nchar * quotearg_char(char *arg,char ch)\n\n{\n  char *pcVar1;\n  undefined local_38 [44];\n  undefined4 uStack_c;\n  char *local_8;\n  \n  local_8 = default_quoting_options.right_quote;\n  local_38._32_4_ = default_quoting_options.quote_these_too[6];\n  local_38._36_4_ = default_quoting_options.quote_these_too[7];\n  local_38._40_4_ = default_quoting_options.left_quote._0_4_;\n  uStack_c = default_quoting_options.left_quote._4_4_;\n  local_38._16_4_ = default_quoting_options.quote_these_too[2];\n  local_38._20_4_ = default_quoting_options.quote_these_too[3];\n  local_38._24_4_ = default_quoting_options.quote_these_too[4];\n  local_38._28_4_ = default_quoting_options.quote_these_too[5];\n  local_38._0_4_ = default_quoting_options.style;\n  local_38._4_4_ = default_quoting_options.flags;\n  local_38._8_4_ = default_quoting_options.quote_these_too[0];\n  local_38._12_4_ = default_quoting_options.quote_these_too[1];\n  *(uint *)(local_38 + (ulong)((byte)ch >> 5) * 4 + 8) =\n       (~(*(uint *)(local_38 + (ulong)((byte)ch >> 5) * 4 + 8) >> (ch & 0x1fU)) & 1) << (ch & 0x1fU)\n       ^ *(uint *)(local_38 + (ulong)((byte)ch >> 5) * 4 + 8);\n  pcVar1 = quotearg_n_options(L'\\0',arg,0xffffffffffffffff,(quoting_options *)local_38);\n  return pcVar1;\n}\n\n",
+            "funcName": "quotearg_char"
+        },
+        {
+            "funcStartAddr": "0x404080",
+            "funcEndAddr": "0x4040d4",
+            "decompiledFuncCode": "\nchar * quotearg_colon(char *arg)\n\n{\n  char *pcVar1;\n  undefined local_38 [44];\n  undefined4 uStack_c;\n  char *local_8;\n  \n  local_8 = default_quoting_options.right_quote;\n  local_38._32_4_ = default_quoting_options.quote_these_too[6];\n  local_38._36_4_ = default_quoting_options.quote_these_too[7];\n  local_38._40_4_ = default_quoting_options.left_quote._0_4_;\n  uStack_c = default_quoting_options.left_quote._4_4_;\n  local_38._16_4_ = default_quoting_options.quote_these_too[2];\n  local_38._20_4_ = default_quoting_options.quote_these_too[3];\n  local_38._24_4_ = default_quoting_options.quote_these_too[4];\n  local_38._28_4_ = default_quoting_options.quote_these_too[5];\n  local_38._0_4_ = default_quoting_options.style;\n  local_38._4_4_ = default_quoting_options.flags;\n  local_38._8_4_ = default_quoting_options.quote_these_too[0];\n  local_38._12_4_ = default_quoting_options.quote_these_too[1] | 0x4000000;\n  pcVar1 = quotearg_n_options(L'\\0',arg,0xffffffffffffffff,(quoting_options *)local_38);\n  return pcVar1;\n}\n\n",
+            "funcName": "quotearg_colon"
+        },
+        {
+            "funcStartAddr": "0x4040e0",
+            "funcEndAddr": "0x404133",
+            "decompiledFuncCode": "\nchar * quotearg_colon_mem(char *arg,size_t argsize)\n\n{\n  char *pcVar1;\n  undefined local_38 [44];\n  undefined4 uStack_c;\n  char *local_8;\n  \n  local_8 = default_quoting_options.right_quote;\n  local_38._32_4_ = default_quoting_options.quote_these_too[6];\n  local_38._36_4_ = default_quoting_options.quote_these_too[7];\n  local_38._40_4_ = default_quoting_options.left_quote._0_4_;\n  uStack_c = default_quoting_options.left_quote._4_4_;\n  local_38._16_4_ = default_quoting_options.quote_these_too[2];\n  local_38._20_4_ = default_quoting_options.quote_these_too[3];\n  local_38._24_4_ = default_quoting_options.quote_these_too[4];\n  local_38._28_4_ = default_quoting_options.quote_these_too[5];\n  local_38._0_4_ = default_quoting_options.style;\n  local_38._4_4_ = default_quoting_options.flags;\n  local_38._8_4_ = default_quoting_options.quote_these_too[0];\n  local_38._12_4_ = default_quoting_options.quote_these_too[1] | 0x4000000;\n  pcVar1 = quotearg_n_options(L'\\0',arg,argsize,(quoting_options *)local_38);\n  return pcVar1;\n}\n\n",
+            "funcName": "quotearg_colon_mem"
+        },
+        {
+            "funcStartAddr": "0x404140",
+            "funcEndAddr": "0x4041d4",
+            "decompiledFuncCode": "\n/* WARNING: Could not reconcile some variable overlaps */\n\nchar * quotearg_n_style_colon(wchar_t n,quoting_style s,char *arg)\n\n{\n  char *pcVar1;\n  undefined local_78 [16];\n  undefined local_68 [16];\n  undefined local_58 [16];\n  undefined4 local_48;\n  undefined4 local_44;\n  undefined4 local_38;\n  undefined4 uStack_34;\n  undefined4 uStack_30;\n  undefined4 uStack_2c;\n  undefined4 local_28;\n  undefined4 uStack_24;\n  undefined4 uStack_20;\n  undefined4 uStack_1c;\n  undefined4 local_18;\n  undefined4 uStack_14;\n  undefined4 uStack_10;\n  undefined4 uStack_c;\n  undefined4 local_8;\n  \n  local_58 = ZEXT816(0);\n  local_68 = ZEXT816(0);\n  local_78 = ZEXT816(0);\n  local_48 = 0;\n  if (s != custom_quoting_style) {\n    local_8 = 0;\n    local_18 = 0;\n    uStack_14 = 0;\n    uStack_10 = 0;\n    uStack_c = 0;\n    local_28 = 0;\n    uStack_24 = 0;\n    uStack_20 = 0;\n    uStack_1c = 0;\n    local_38 = 0;\n    uStack_34 = 0;\n    uStack_30 = 0;\n    uStack_2c = 0;\n    local_44 = 0;\n    local_58._0_12_ = ZEXT412(0) << 0x40;\n    local_48 = 0;\n    local_68._0_12_ = ZEXT412(0) << 0x40;\n    local_58._4_12_ = local_58._0_12_ >> 0x20 & (undefined  [12])0xffffffffffffffff;\n    local_58 = ZEXT1216(local_58._4_12_) << 0x20;\n    local_68._4_12_ = local_68._0_12_ >> 0x20 & (undefined  [12])0xffffffffffffffff;\n    local_68 = ZEXT1216(local_68._4_12_) << 0x20;\n    local_78 = ZEXT416(s) | (undefined  [16])0x400000000000000;\n    pcVar1 = quotearg_n_options(n,arg,0xffffffffffffffff,(quoting_options *)local_78);\n    return pcVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "quotearg_n_style_colon"
+        },
+        {
+            "funcStartAddr": "0x4041e0",
+            "funcEndAddr": "0x40424d",
+            "decompiledFuncCode": "\nchar * quotearg_n_custom(wchar_t n,char *left_quote,char *right_quote,char *arg)\n\n{\n  char *pcVar1;\n  quoting_options local_38;\n  \n  local_38.right_quote = default_quoting_options.right_quote;\n  local_38.quote_these_too[6] = default_quoting_options.quote_these_too[6];\n  local_38.quote_these_too[7] = default_quoting_options.quote_these_too[7];\n  local_38.left_quote =\n       (char *)CONCAT44(default_quoting_options.left_quote._4_4_,\n                        default_quoting_options.left_quote._0_4_);\n  local_38.quote_these_too[2] = default_quoting_options.quote_these_too[2];\n  local_38.quote_these_too[3] = default_quoting_options.quote_these_too[3];\n  local_38.quote_these_too[4] = default_quoting_options.quote_these_too[4];\n  local_38.quote_these_too[5] = default_quoting_options.quote_these_too[5];\n  local_38.flags = default_quoting_options.flags;\n  local_38.quote_these_too[0] = default_quoting_options.quote_these_too[0];\n  local_38.quote_these_too[1] = default_quoting_options.quote_these_too[1];\n  local_38.style = custom_quoting_style;\n  if ((left_quote != (char *)0x0) && (right_quote != (char *)0x0)) {\n    local_38.left_quote = left_quote;\n    local_38.right_quote = right_quote;\n    pcVar1 = quotearg_n_options(n,arg,0xffffffffffffffff,&local_38);\n    return pcVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "quotearg_n_custom"
+        },
+        {
+            "funcStartAddr": "0x404250",
+            "funcEndAddr": "0x4042b9",
+            "decompiledFuncCode": "\nchar * quotearg_n_custom_mem(wchar_t n,char *left_quote,char *right_quote,char *arg,size_t argsize)\n\n{\n  char *pcVar1;\n  quoting_options local_38;\n  \n  local_38.right_quote = default_quoting_options.right_quote;\n  local_38.quote_these_too[6] = default_quoting_options.quote_these_too[6];\n  local_38.quote_these_too[7] = default_quoting_options.quote_these_too[7];\n  local_38.left_quote =\n       (char *)CONCAT44(default_quoting_options.left_quote._4_4_,\n                        default_quoting_options.left_quote._0_4_);\n  local_38.quote_these_too[2] = default_quoting_options.quote_these_too[2];\n  local_38.quote_these_too[3] = default_quoting_options.quote_these_too[3];\n  local_38.quote_these_too[4] = default_quoting_options.quote_these_too[4];\n  local_38.quote_these_too[5] = default_quoting_options.quote_these_too[5];\n  local_38.flags = default_quoting_options.flags;\n  local_38.quote_these_too[0] = default_quoting_options.quote_these_too[0];\n  local_38.quote_these_too[1] = default_quoting_options.quote_these_too[1];\n  local_38.style = custom_quoting_style;\n  if ((left_quote != (char *)0x0) && (right_quote != (char *)0x0)) {\n    local_38.left_quote = left_quote;\n    local_38.right_quote = right_quote;\n    pcVar1 = quotearg_n_options(n,arg,argsize,&local_38);\n    return pcVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "quotearg_n_custom_mem"
+        },
+        {
+            "funcStartAddr": "0x4042c0",
+            "funcEndAddr": "0x40432f",
+            "decompiledFuncCode": "\nchar * quotearg_custom(char *left_quote,char *right_quote,char *arg)\n\n{\n  char *pcVar1;\n  quoting_options local_38;\n  \n  local_38.right_quote = default_quoting_options.right_quote;\n  local_38.quote_these_too[6] = default_quoting_options.quote_these_too[6];\n  local_38.quote_these_too[7] = default_quoting_options.quote_these_too[7];\n  local_38.left_quote =\n       (char *)CONCAT44(default_quoting_options.left_quote._4_4_,\n                        default_quoting_options.left_quote._0_4_);\n  local_38.quote_these_too[2] = default_quoting_options.quote_these_too[2];\n  local_38.quote_these_too[3] = default_quoting_options.quote_these_too[3];\n  local_38.quote_these_too[4] = default_quoting_options.quote_these_too[4];\n  local_38.quote_these_too[5] = default_quoting_options.quote_these_too[5];\n  local_38.flags = default_quoting_options.flags;\n  local_38.quote_these_too[0] = default_quoting_options.quote_these_too[0];\n  local_38.quote_these_too[1] = default_quoting_options.quote_these_too[1];\n  local_38.style = custom_quoting_style;\n  if ((left_quote != (char *)0x0) && (right_quote != (char *)0x0)) {\n    local_38.left_quote = left_quote;\n    local_38.right_quote = right_quote;\n    pcVar1 = quotearg_n_options(L'\\0',arg,0xffffffffffffffff,&local_38);\n    return pcVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "quotearg_custom"
+        },
+        {
+            "funcStartAddr": "0x404330",
+            "funcEndAddr": "0x40439b",
+            "decompiledFuncCode": "\nchar * quotearg_custom_mem(char *left_quote,char *right_quote,char *arg,size_t argsize)\n\n{\n  char *pcVar1;\n  quoting_options local_38;\n  \n  local_38.right_quote = default_quoting_options.right_quote;\n  local_38.quote_these_too[6] = default_quoting_options.quote_these_too[6];\n  local_38.quote_these_too[7] = default_quoting_options.quote_these_too[7];\n  local_38.left_quote =\n       (char *)CONCAT44(default_quoting_options.left_quote._4_4_,\n                        default_quoting_options.left_quote._0_4_);\n  local_38.quote_these_too[2] = default_quoting_options.quote_these_too[2];\n  local_38.quote_these_too[3] = default_quoting_options.quote_these_too[3];\n  local_38.quote_these_too[4] = default_quoting_options.quote_these_too[4];\n  local_38.quote_these_too[5] = default_quoting_options.quote_these_too[5];\n  local_38.flags = default_quoting_options.flags;\n  local_38.quote_these_too[0] = default_quoting_options.quote_these_too[0];\n  local_38.quote_these_too[1] = default_quoting_options.quote_these_too[1];\n  local_38.style = custom_quoting_style;\n  if ((left_quote != (char *)0x0) && (right_quote != (char *)0x0)) {\n    local_38.left_quote = left_quote;\n    local_38.right_quote = right_quote;\n    pcVar1 = quotearg_n_options(L'\\0',arg,argsize,&local_38);\n    return pcVar1;\n  }\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "quotearg_custom_mem"
+        },
+        {
+            "funcStartAddr": "0x4043a0",
+            "funcEndAddr": "0x4043aa",
+            "decompiledFuncCode": "\nchar * quote_n_mem(wchar_t n,char *arg,size_t argsize)\n\n{\n  char *pcVar1;\n  \n  pcVar1 = quotearg_n_options(n,arg,argsize,&quote_quoting_options);\n  return pcVar1;\n}\n\n",
+            "funcName": "quote_n_mem"
+        },
+        {
+            "funcStartAddr": "0x4043b0",
+            "funcEndAddr": "0x4043c8",
+            "decompiledFuncCode": "\nchar * quote_mem(char *arg,size_t argsize)\n\n{\n  char *pcVar1;\n  \n  pcVar1 = quotearg_n_options(L'\\0',arg,argsize,&quote_quoting_options);\n  return pcVar1;\n}\n\n",
+            "funcName": "quote_mem"
+        },
+        {
+            "funcStartAddr": "0x4043d0",
+            "funcEndAddr": "0x4043e1",
+            "decompiledFuncCode": "\nchar * quote_n(wchar_t n,char *arg)\n\n{\n  char *pcVar1;\n  \n  pcVar1 = quotearg_n_options(n,arg,0xffffffffffffffff,&quote_quoting_options);\n  return pcVar1;\n}\n\n",
+            "funcName": "quote_n"
+        },
+        {
+            "funcStartAddr": "0x4043f0",
+            "funcEndAddr": "0x404409",
+            "decompiledFuncCode": "\nchar * quote(char *arg)\n\n{\n  char *pcVar1;\n  \n  pcVar1 = quotearg_n_options(L'\\0',arg,0xffffffffffffffff,&quote_quoting_options);\n  return pcVar1;\n}\n\n",
+            "funcName": "quote"
+        },
+        {
+            "funcStartAddr": "0x404410",
+            "funcEndAddr": "0x4044d5",
+            "decompiledFuncCode": "\nchar * gettext_quote(char *msgid,quoting_style s)\n\n{\n  char *pcVar1;\n  byte *pbVar2;\n  char *pcVar3;\n  bool bVar4;\n  \n  pcVar1 = (char *)dcgettext(0,msgid,5);\n  if (pcVar1 != msgid) {\n    return pcVar1;\n  }\n  pbVar2 = (byte *)locale_charset();\n  if ((*pbVar2 & 0xdf) == 0x47) {\n    if (((((pbVar2[1] & 0xdf) == 0x42) && (pbVar2[2] == 0x31)) && (pbVar2[3] == 0x38)) &&\n       (((pbVar2[4] == 0x30 && (pbVar2[5] == 0x33)) && ((pbVar2[6] == 0x30 && (pbVar2[7] == 0))))))\n    {\n      bVar4 = *msgid == '`';\n      pcVar3 = &DAT_00406884;\n      pcVar1 = &DAT_00406888;\n      goto LAB_004044bb;\n    }\n  }\n  else if ((((*pbVar2 & 0xdf) == 0x55) && ((pbVar2[1] & 0xdf) == 0x54)) &&\n          (((pbVar2[2] & 0xdf) == 0x46 &&\n           (((pbVar2[3] == 0x2d && (pbVar2[4] == 0x38)) && (pbVar2[5] == 0)))))) {\n    bVar4 = *msgid == '`';\n    pcVar3 = &DAT_0040687c;\n    pcVar1 = &DAT_00406880;\n    goto LAB_004044bb;\n  }\n  bVar4 = s == clocale_quoting_style;\n  pcVar3 = \"\\\"\";\n  pcVar1 = \"\\'\";\nLAB_004044bb:\n  if (bVar4) {\n    pcVar1 = pcVar3;\n  }\n  return pcVar1;\n}\n\n",
+            "funcName": "gettext_quote"
+        },
+        {
+            "funcStartAddr": "0x4044e0",
+            "funcEndAddr": "0x404838",
+            "decompiledFuncCode": "\nvoid version_etc_arn(FILE *stream,char *command_name,char *package,char *version,char **authors,\n                    size_t n_authors)\n\n{\n  undefined8 uVar1;\n  char *__s;\n  \n  if (command_name == (char *)0x0) {\n    __fprintf_chk(stream,1,\"%s %s\\n\",package,version);\n  }\n  else {\n    __fprintf_chk(stream,1,\"%s (%s) %s\\n\",command_name,package);\n  }\n  uVar1 = dcgettext(0,&DAT_004068f3,5);\n  __fprintf_chk(stream,1,\"Copyright %s %d Free Software Foundation, Inc.\",uVar1,0x7e3);\n  __s = (char *)dcgettext(0,\n                          \"\\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\\nThis is free software: you are free to change and redistribute it.\\nThere is NO WARRANTY, to the extent permitted by law.\\n\\n\"\n                          ,5);\n  fputs_unlocked(__s,(FILE *)stream);\n  switch(n_authors) {\n  case 0:\n    break;\n  case 1:\n    uVar1 = dcgettext(0,\"Written by %s.\\n\",5);\n    __fprintf_chk(stream,1,uVar1,*authors);\n    return;\n  case 2:\n    uVar1 = dcgettext(0,\"Written by %s and %s.\\n\",5);\n    __fprintf_chk(stream,1,uVar1,*authors,authors[1]);\n    return;\n  case 3:\n    uVar1 = dcgettext(0,\"Written by %s, %s, and %s.\\n\",5);\n    __fprintf_chk(stream,1,uVar1,*authors,authors[1],authors[2]);\n    return;\n  case 4:\n    uVar1 = dcgettext(0,\"Written by %s, %s, %s,\\nand %s.\\n\",5);\n    __fprintf_chk(stream,1,uVar1,*authors,authors[1],authors[2],authors[3]);\n    break;\n  case 5:\n    uVar1 = dcgettext(0,\"Written by %s, %s, %s,\\n%s, and %s.\\n\",5);\n    __fprintf_chk(stream,1,uVar1,*authors,authors[1],authors[2],authors[3],authors[4]);\n    break;\n  case 6:\n    uVar1 = dcgettext(0,\"Written by %s, %s, %s,\\n%s, %s, and %s.\\n\",5);\n    __fprintf_chk(stream,1,uVar1,*authors,authors[1],authors[2],authors[3],authors[4],authors[5]);\n    break;\n  case 7:\n    uVar1 = dcgettext(0,\"Written by %s, %s, %s,\\n%s, %s, %s, and %s.\\n\",5);\n    __fprintf_chk(stream,1,uVar1,*authors,authors[1],authors[2],authors[3],authors[4],authors[5],\n                  authors[6]);\n    break;\n  case 8:\n    uVar1 = dcgettext(0,\"Written by %s, %s, %s,\\n%s, %s, %s, %s,\\nand %s.\\n\",5);\n    __fprintf_chk(stream,1,uVar1,*authors,authors[1],authors[2],authors[3],authors[4],authors[5],\n                  authors[6],authors[7]);\n    break;\n  case 9:\n    uVar1 = dcgettext(0,\"Written by %s, %s, %s,\\n%s, %s, %s, %s,\\n%s, and %s.\\n\",5);\n    __fprintf_chk(stream,1,uVar1,*authors,authors[1],authors[2],authors[3],authors[4],authors[5],\n                  authors[6],authors[7],authors[8]);\n    break;\n  default:\n    uVar1 = dcgettext(0,\"Written by %s, %s, %s,\\n%s, %s, %s, %s,\\n%s, %s, and others.\\n\",5);\n    __fprintf_chk(stream,1,uVar1,*authors,authors[1],authors[2],authors[3],authors[4],authors[5],\n                  authors[6],authors[7],authors[8]);\n  }\n  return;\n}\n\n",
+            "funcName": "version_etc_arn"
+        },
+        {
+            "funcStartAddr": "0x404840",
+            "funcEndAddr": "0x404861",
+            "decompiledFuncCode": "\nvoid version_etc_ar(FILE *stream,char *command_name,char *package,char *version,char **authors)\n\n{\n  long lVar1;\n  size_t n_authors;\n  \n  n_authors = 0xffffffffffffffff;\n  do {\n    lVar1 = n_authors + 1;\n    n_authors = n_authors + 1;\n  } while (authors[lVar1] != (char *)0x0);\n  version_etc_arn(stream,command_name,package,version,authors,n_authors);\n  return;\n}\n\n",
+            "funcName": "version_etc_ar"
+        },
+        {
+            "funcStartAddr": "0x404870",
+            "funcEndAddr": "0x404a5e",
+            "decompiledFuncCode": "\nvoid version_etc_va(FILE *stream,char *command_name,char *package,char *version,\n                   __va_list_tag *authors)\n\n{\n  uint uVar1;\n  size_t n_authors;\n  char **ppcVar2;\n  long *plVar3;\n  char *authtab [10];\n  char *local_58;\n  long local_50;\n  long local_48;\n  long local_40;\n  long local_38;\n  long local_30;\n  long local_28;\n  long local_20;\n  long local_18;\n  long local_10;\n  \n  uVar1 = authors->gp_offset;\n  if ((ulong)(long)(int)uVar1 < 0x29) {\n    ppcVar2 = (char **)((long)(int)uVar1 + (long)authors->reg_save_area);\n    uVar1 = uVar1 + 8;\n    authors->gp_offset = uVar1;\n  }\n  else {\n    ppcVar2 = (char **)authors->overflow_arg_area;\n    authors->overflow_arg_area = ppcVar2 + 1;\n  }\n  local_58 = *ppcVar2;\n  if (local_58 == (char *)0x0) {\n    n_authors = 0;\n  }\n  else {\n    if (uVar1 < 0x29) {\n      plVar3 = (long *)((long)(int)uVar1 + (long)authors->reg_save_area);\n      uVar1 = uVar1 + 8;\n      authors->gp_offset = uVar1;\n    }\n    else {\n      plVar3 = (long *)authors->overflow_arg_area;\n      authors->overflow_arg_area = plVar3 + 1;\n    }\n    local_50 = *plVar3;\n    if (local_50 == 0) {\n      n_authors = 1;\n    }\n    else {\n      if (uVar1 < 0x29) {\n        plVar3 = (long *)((long)(int)uVar1 + (long)authors->reg_save_area);\n        uVar1 = uVar1 + 8;\n        authors->gp_offset = uVar1;\n      }\n      else {\n        plVar3 = (long *)authors->overflow_arg_area;\n        authors->overflow_arg_area = plVar3 + 1;\n      }\n      local_48 = *plVar3;\n      if (local_48 == 0) {\n        n_authors = 2;\n      }\n      else {\n        if (uVar1 < 0x29) {\n          plVar3 = (long *)((long)(int)uVar1 + (long)authors->reg_save_area);\n          uVar1 = uVar1 + 8;\n          authors->gp_offset = uVar1;\n        }\n        else {\n          plVar3 = (long *)authors->overflow_arg_area;\n          authors->overflow_arg_area = plVar3 + 1;\n        }\n        local_40 = *plVar3;\n        if (local_40 == 0) {\n          n_authors = 3;\n        }\n        else {\n          if (uVar1 < 0x29) {\n            plVar3 = (long *)((long)(int)uVar1 + (long)authors->reg_save_area);\n            uVar1 = uVar1 + 8;\n            authors->gp_offset = uVar1;\n          }\n          else {\n            plVar3 = (long *)authors->overflow_arg_area;\n            authors->overflow_arg_area = plVar3 + 1;\n          }\n          local_38 = *plVar3;\n          if (local_38 == 0) {\n            n_authors = 4;\n          }\n          else {\n            if (uVar1 < 0x29) {\n              plVar3 = (long *)((long)(int)uVar1 + (long)authors->reg_save_area);\n              authors->gp_offset = uVar1 + 8;\n            }\n            else {\n              plVar3 = (long *)authors->overflow_arg_area;\n              authors->overflow_arg_area = plVar3 + 1;\n            }\n            local_30 = *plVar3;\n            if (local_30 == 0) {\n              n_authors = 5;\n            }\n            else {\n              plVar3 = (long *)authors->overflow_arg_area;\n              authors->overflow_arg_area = plVar3 + 1;\n              local_28 = *plVar3;\n              if (local_28 == 0) {\n                n_authors = 6;\n              }\n              else {\n                plVar3 = (long *)authors->overflow_arg_area;\n                authors->overflow_arg_area = plVar3 + 1;\n                local_20 = *plVar3;\n                if (local_20 == 0) {\n                  n_authors = 7;\n                }\n                else {\n                  plVar3 = (long *)authors->overflow_arg_area;\n                  authors->overflow_arg_area = plVar3 + 1;\n                  local_18 = *plVar3;\n                  if (local_18 == 0) {\n                    n_authors = 8;\n                  }\n                  else {\n                    plVar3 = (long *)authors->overflow_arg_area;\n                    authors->overflow_arg_area = plVar3 + 1;\n                    local_10 = *plVar3;\n                    n_authors = 10 - (ulong)(local_10 == 0);\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n  version_etc_arn(stream,command_name,package,version,&local_58,n_authors);\n  return;\n}\n\n",
+            "funcName": "version_etc_va"
+        },
+        {
+            "funcStartAddr": "0x404a60",
+            "funcEndAddr": "0x404ae2",
+            "decompiledFuncCode": "\nvoid version_etc(FILE *stream,char *command_name,char *package,char *version,...)\n\n{\n  char in_AL;\n  undefined8 in_R8;\n  undefined8 in_R9;\n  undefined4 in_XMM0_Da;\n  undefined4 in_XMM1_Da;\n  undefined4 in_XMM2_Da;\n  undefined4 in_XMM3_Da;\n  undefined4 in_XMM4_Da;\n  undefined4 in_XMM5_Da;\n  undefined4 in_XMM6_Da;\n  undefined4 in_XMM7_Da;\n  va_list authors;\n  __va_list_tag local_d8;\n  undefined local_b8 [32];\n  undefined8 local_98;\n  undefined8 local_90;\n  undefined4 local_88;\n  undefined4 local_78;\n  undefined4 local_68;\n  undefined4 local_58;\n  undefined4 local_48;\n  undefined4 local_38;\n  undefined4 local_28;\n  undefined4 local_18;\n  \n  if (in_AL != '\\0') {\n    local_88 = in_XMM0_Da;\n    local_78 = in_XMM1_Da;\n    local_68 = in_XMM2_Da;\n    local_58 = in_XMM3_Da;\n    local_48 = in_XMM4_Da;\n    local_38 = in_XMM5_Da;\n    local_28 = in_XMM6_Da;\n    local_18 = in_XMM7_Da;\n  }\n  local_d8.reg_save_area = local_b8;\n  local_d8.overflow_arg_area = &authors[0].overflow_arg_area;\n  local_d8.fp_offset = 0x30;\n  local_d8.gp_offset = 0x20;\n  local_98 = in_R8;\n  local_90 = in_R9;\n  version_etc_va(stream,command_name,package,version,&local_d8);\n  return;\n}\n\n",
+            "funcName": "version_etc"
+        },
+        {
+            "funcStartAddr": "0x404af0",
+            "funcEndAddr": "0x404b64",
+            "decompiledFuncCode": "\nvoid emit_bug_reporting_address(void)\n\n{\n  undefined8 uVar1;\n  char *__s;\n  \n  uVar1 = dcgettext(0,\"\\nReport bugs to: %s\\n\",5);\n  __printf_chk(1,uVar1,\"bug-coreutils@gnu.org\");\n  uVar1 = dcgettext(0,\"%s home page: <%s>\\n\",5);\n  __printf_chk(1,uVar1,\"GNU coreutils\",\"https://www.gnu.org/software/coreutils/\");\n  __s = (char *)dcgettext(0,\"General help using GNU software: <https://www.gnu.org/gethelp/>\\n\",5);\n  fputs_unlocked(__s,stdout);\n  return;\n}\n\n",
+            "funcName": "emit_bug_reporting_address"
+        },
+        {
+            "funcStartAddr": "0x404b70",
+            "funcEndAddr": "0x404ba5",
+            "decompiledFuncCode": "\nvoid * xnmalloc(size_t n,size_t s)\n\n{\n  void *pvVar1;\n  \n  if (n <= SUB168((ZEXT816(0) << 0x40 | ZEXT816(0x7fffffffffffffff)) / ZEXT816(s),0)) {\n    pvVar1 = malloc(s * n);\n    if ((s * n == 0) || (pvVar1 != (void *)0x0)) {\n      return pvVar1;\n    }\n  }\n                    /* WARNING: Subroutine does not return */\n  xalloc_die();\n}\n\n",
+            "funcName": "xnmalloc"
+        },
+        {
+            "funcStartAddr": "0x404bb0",
+            "funcEndAddr": "0x404bca",
+            "decompiledFuncCode": "\nvoid * xmalloc(size_t n)\n\n{\n  void *pvVar1;\n  \n  pvVar1 = malloc(n);\n  if ((n != 0) && (pvVar1 == (void *)0x0)) {\n                    /* WARNING: Subroutine does not return */\n    xalloc_die();\n  }\n  return pvVar1;\n}\n\n",
+            "funcName": "xmalloc"
+        },
+        {
+            "funcStartAddr": "0x404bd0",
+            "funcEndAddr": "0x404c18",
+            "decompiledFuncCode": "\nvoid * xnrealloc(void *p,size_t n,size_t s)\n\n{\n  void *pvVar1;\n  size_t __size;\n  \n  if (n <= SUB168((ZEXT816(0) << 0x40 | ZEXT816(0x7fffffffffffffff)) / ZEXT816(s),0)) {\n    __size = s * n;\n    if ((p != (void *)0x0) && (__size == 0)) {\n      free(p);\n      return (void *)0x0;\n    }\n    pvVar1 = realloc(p,__size);\n    if ((__size == 0) || (pvVar1 != (void *)0x0)) {\n      return pvVar1;\n    }\n  }\n                    /* WARNING: Subroutine does not return */\n  xalloc_die();\n}\n\n",
+            "funcName": "xnrealloc"
+        },
+        {
+            "funcStartAddr": "0x404c20",
+            "funcEndAddr": "0x404c50",
+            "decompiledFuncCode": "\nvoid * xrealloc(void *p,size_t n)\n\n{\n  void *pvVar1;\n  \n  if ((p != (void *)0x0) && (n == 0)) {\n    free(p);\n    return (void *)0x0;\n  }\n  pvVar1 = realloc(p,n);\n  if ((n != 0) && (pvVar1 == (void *)0x0)) {\n                    /* WARNING: Subroutine does not return */\n    xalloc_die();\n  }\n  return pvVar1;\n}\n\n",
+            "funcName": "xrealloc"
+        },
+        {
+            "funcStartAddr": "0x404c50",
+            "funcEndAddr": "0x404ce7",
+            "decompiledFuncCode": "\nvoid * x2nrealloc(void *p,size_t *pn,size_t s)\n\n{\n  void *pvVar1;\n  ulong uVar2;\n  size_t __size;\n  \n  uVar2 = *pn;\n  if (p == (void *)0x0) {\n    if (uVar2 == 0) {\n      uVar2 = (ulong)(0x80 < s) + SUB168((ZEXT816(0) << 0x40 | ZEXT816(0x80)) / ZEXT816(s),0);\n    }\n    if (SUB168((ZEXT816(0) << 0x40 | ZEXT816(0x7fffffffffffffff)) / ZEXT816(s),0) < uVar2) {\n                    /* WARNING: Subroutine does not return */\n      xalloc_die();\n    }\n  }\n  else {\n    if (SUB168((ZEXT816(0) << 0x40 | ZEXT816(0x5555555555555554)) / ZEXT816(s),0) <= uVar2)\n    goto LAB_00404cdd;\n    uVar2 = uVar2 + 1 + (uVar2 >> 1);\n  }\n  *pn = uVar2;\n  __size = s * uVar2;\n  if ((p != (void *)0x0) && (__size == 0)) {\n    free(p);\n    return (void *)0x0;\n  }\n  pvVar1 = realloc(p,__size);\n  if ((__size == 0) || (pvVar1 != (void *)0x0)) {\n    return pvVar1;\n  }\nLAB_00404cdd:\n                    /* WARNING: Subroutine does not return */\n  xalloc_die();\n}\n\n",
+            "funcName": "x2nrealloc"
+        },
+        {
+            "funcStartAddr": "0x404cf0",
+            "funcEndAddr": "0x404d0a",
+            "decompiledFuncCode": "\nchar * xcharalloc(size_t n)\n\n{\n  char *pcVar1;\n  \n  pcVar1 = (char *)malloc(n);\n  if ((n != 0) && (pcVar1 == (char *)0x0)) {\n                    /* WARNING: Subroutine does not return */\n    xalloc_die();\n  }\n  return pcVar1;\n}\n\n",
+            "funcName": "xcharalloc"
+        },
+        {
+            "funcStartAddr": "0x404d10",
+            "funcEndAddr": "0x404d74",
+            "decompiledFuncCode": "\nvoid * x2realloc(void *p,size_t *pn)\n\n{\n  ulong uVar1;\n  void *pvVar2;\n  ulong __size;\n  \n  uVar1 = *pn;\n  if (p == (void *)0x0) {\n    __size = 0x80;\n    if (uVar1 != 0) {\n      __size = uVar1;\n    }\n    if ((long)__size < 0) goto LAB_00404d6a;\n    *pn = __size;\n  }\n  else {\n    if (0x5555555555555553 < uVar1) {\n                    /* WARNING: Subroutine does not return */\n      xalloc_die();\n    }\n    __size = (uVar1 >> 1) + uVar1 + 1;\n    *pn = __size;\n    if (__size == 0) {\n      free(p);\n      return (void *)0x0;\n    }\n  }\n  pvVar2 = realloc(p,__size);\n  if ((__size == 0) || (pvVar2 != (void *)0x0)) {\n    return pvVar2;\n  }\nLAB_00404d6a:\n                    /* WARNING: Subroutine does not return */\n  xalloc_die();\n}\n\n",
+            "funcName": "x2realloc"
+        },
+        {
+            "funcStartAddr": "0x404d80",
+            "funcEndAddr": "0x404db6",
+            "decompiledFuncCode": "\nvoid * xzalloc(size_t s)\n\n{\n  void *__s;\n  \n  __s = malloc(s);\n  if ((s != 0) && (__s == (void *)0x0)) {\n                    /* WARNING: Subroutine does not return */\n    xalloc_die();\n  }\n  memset(__s,0,s);\n  return __s;\n}\n\n",
+            "funcName": "xzalloc"
+        },
+        {
+            "funcStartAddr": "0x404dc0",
+            "funcEndAddr": "0x404de6",
+            "decompiledFuncCode": "\nvoid * xcalloc(size_t n,size_t s)\n\n{\n  void *pvVar1;\n  \n  if (n <= SUB168((ZEXT816(0) << 0x40 | ZEXT816(0x7fffffffffffffff)) / ZEXT816(s),0)) {\n    pvVar1 = rpl_calloc(n,s);\n    if (pvVar1 != (void *)0x0) {\n      return pvVar1;\n    }\n  }\n                    /* WARNING: Subroutine does not return */\n  xalloc_die();\n}\n\n",
+            "funcName": "xcalloc"
+        },
+        {
+            "funcStartAddr": "0x404df0",
+            "funcEndAddr": "0x404e2c",
+            "decompiledFuncCode": "\nvoid * xmemdup(void *p,size_t s)\n\n{\n  void *__dest;\n  \n  __dest = malloc(s);\n  if ((s != 0) && (__dest == (void *)0x0)) {\n                    /* WARNING: Subroutine does not return */\n    xalloc_die();\n  }\n  memcpy(__dest,p,s);\n  return __dest;\n}\n\n",
+            "funcName": "xmemdup"
+        },
+        {
+            "funcStartAddr": "0x404e30",
+            "funcEndAddr": "0x404e72",
+            "decompiledFuncCode": "\nchar * xstrdup(char *string)\n\n{\n  size_t sVar1;\n  char *__dest;\n  \n  sVar1 = strlen(string);\n  __dest = (char *)malloc(sVar1 + 1);\n  if ((sVar1 + 1 != 0) && (__dest == (char *)0x0)) {\n                    /* WARNING: Subroutine does not return */\n    xalloc_die();\n  }\n  memcpy(__dest,string,sVar1 + 1);\n  return __dest;\n}\n\n",
+            "funcName": "xstrdup"
+        },
+        {
+            "funcStartAddr": "0x404e80",
+            "funcEndAddr": "0x404eb0",
+            "decompiledFuncCode": "\nvoid xalloc_die(void)\n\n{\n  int iVar1;\n  undefined8 uVar2;\n  \n  iVar1 = exit_failure;\n  uVar2 = dcgettext(0,\"memory exhausted\",5);\n  error(iVar1,0,\"%s\",uVar2);\n                    /* WARNING: Subroutine does not return */\n  abort();\n}\n\n",
+            "funcName": "xalloc_die"
+        },
+        {
+            "funcStartAddr": "0x404eb0",
+            "funcEndAddr": "0x404efb",
+            "decompiledFuncCode": "\nvoid * rpl_calloc(size_t n,size_t s)\n\n{\n  size_t __size;\n  int *piVar1;\n  void *pvVar2;\n  size_t __nmemb;\n  \n  __size = 1;\n  if (n == 0) {\n    __nmemb = 1;\n  }\n  else {\n    __nmemb = 1;\n    if ((s != 0) && (__size = s, __nmemb = n, (s * n) / s != n)) {\n      piVar1 = __errno_location();\n      *piVar1 = 0xc;\n      return (void *)0x0;\n    }\n  }\n  pvVar2 = calloc(__nmemb,__size);\n  return pvVar2;\n}\n\n",
+            "funcName": "rpl_calloc"
+        },
+        {
+            "funcStartAddr": "0x404f00",
+            "funcEndAddr": "0x404f56",
+            "decompiledFuncCode": "\nsize_t rpl_mbrtowc(wchar_t *pwc,char *s,size_t n,mbstate_t *ps)\n\n{\n  _Bool _Var1;\n  size_t sVar2;\n  wchar_t *__pwc;\n  wchar_t local_24;\n  \n  __pwc = &local_24;\n  if (pwc != (wchar_t *)0x0) {\n    __pwc = pwc;\n  }\n  sVar2 = mbrtowc(__pwc,s,n,(mbstate_t *)ps);\n  if ((n != 0) && (0xfffffffffffffffd < sVar2)) {\n    _Var1 = hard_locale(0);\n    if (!_Var1) {\n      *__pwc = (uint)(byte)*s;\n      sVar2 = 1;\n    }\n  }\n  return sVar2;\n}\n\n",
+            "funcName": "rpl_mbrtowc"
+        },
+        {
+            "funcStartAddr": "0x404f60",
+            "funcEndAddr": "0x404fc0",
+            "decompiledFuncCode": "\nint close_stream(FILE *stream)\n\n{\n  uint uVar1;\n  int iVar2;\n  long lVar3;\n  int *piVar4;\n  int iVar5;\n  \n  lVar3 = __fpending();\n  uVar1 = stream->_flags;\n  iVar2 = rpl_fclose(stream);\n  if ((uVar1 & 0x20) == 0) {\n    iVar5 = -(uint)(iVar2 != 0);\n    if ((lVar3 == 0) && (iVar2 != 0)) {\n      piVar4 = __errno_location();\n      iVar5 = -1;\n      if (*piVar4 == 9) {\n        iVar5 = 0;\n      }\n    }\n  }\n  else {\n    iVar5 = -1;\n    if (iVar2 == 0) {\n      piVar4 = __errno_location();\n      *piVar4 = 0;\n    }\n  }\n  return iVar5;\n}\n\n",
+            "funcName": "close_stream"
+        },
+        {
+            "funcStartAddr": "0x404fc0",
+            "funcEndAddr": "0x405002",
+            "decompiledFuncCode": "\n_Bool hard_locale(int category)\n\n{\n  int iVar1;\n  char *__s1;\n  _Bool _Var2;\n  \n  __s1 = setlocale(category,(char *)0x0);\n  _Var2 = true;\n  if (__s1 != (char *)0x0) {\n    iVar1 = strcmp(__s1,\"C\");\n    if ((iVar1 != 0) && (iVar1 = strcmp(__s1,\"POSIX\"), iVar1 != 0)) {\n      return true;\n    }\n    _Var2 = false;\n  }\n  return _Var2;\n}\n\n",
+            "funcName": "hard_locale"
+        },
+        {
+            "funcStartAddr": "0x405010",
+            "funcEndAddr": "0x405035",
+            "decompiledFuncCode": "\nchar * locale_charset(void)\n\n{\n  char *pcVar1;\n  char *pcVar2;\n  \n  pcVar1 = nl_langinfo(0xe);\n  pcVar2 = \"\";\n  if (pcVar1 != (char *)0x0) {\n    pcVar2 = pcVar1;\n  }\n  pcVar1 = \"ASCII\";\n  if (*pcVar2 != '\\0') {\n    pcVar1 = pcVar2;\n  }\n  return pcVar1;\n}\n\n",
+            "funcName": "locale_charset"
+        },
+        {
+            "funcStartAddr": "0x405040",
+            "funcEndAddr": "0x4050b4",
+            "decompiledFuncCode": "\nint rpl_fclose(FILE *fp)\n\n{\n  int iVar1;\n  int iVar2;\n  __off_t _Var3;\n  int *piVar4;\n  \n  iVar1 = fileno((FILE *)fp);\n  if (-1 < iVar1) {\n    iVar1 = __freading(fp);\n    if (iVar1 != 0) {\n      iVar1 = fileno((FILE *)fp);\n      _Var3 = lseek(iVar1,0,1);\n      if (_Var3 == -1) goto LAB_004050a8;\n    }\n    iVar1 = rpl_fflush(fp);\n    if (iVar1 != 0) {\n      piVar4 = __errno_location();\n      iVar1 = *piVar4;\n      iVar2 = fclose((FILE *)fp);\n      if (iVar1 != 0) {\n        *piVar4 = iVar1;\n        iVar2 = -1;\n      }\n      return iVar2;\n    }\n  }\nLAB_004050a8:\n  iVar1 = fclose((FILE *)fp);\n  return iVar1;\n}\n\n",
+            "funcName": "rpl_fclose"
+        },
+        {
+            "funcStartAddr": "0x4050c0",
+            "funcEndAddr": "0x4050f3",
+            "decompiledFuncCode": "\nint rpl_fflush(FILE *stream)\n\n{\n  int iVar1;\n  \n  if (stream != (FILE *)0x0) {\n    iVar1 = __freading(stream);\n    if ((iVar1 != 0) && ((*(byte *)((long)&stream->_flags + 1) & 1) != 0)) {\n      rpl_fseeko(stream,0,1);\n    }\n  }\n  iVar1 = fflush((FILE *)stream);\n  return iVar1;\n}\n\n",
+            "funcName": "rpl_fflush"
+        },
+        {
+            "funcStartAddr": "0x405100",
+            "funcEndAddr": "0x40516d",
+            "decompiledFuncCode": "\nint rpl_fseeko(FILE *fp,off_t offset,int whence)\n\n{\n  int iVar1;\n  __off_t _Var2;\n  \n  if (((fp->_IO_read_end == fp->_IO_read_ptr) && (fp->_IO_write_ptr == fp->_IO_write_base)) &&\n     (fp->_IO_save_base == (char *)0x0)) {\n    iVar1 = fileno((FILE *)fp);\n    _Var2 = lseek(iVar1,offset,whence);\n    if (_Var2 == -1) {\n      iVar1 = -1;\n    }\n    else {\n      *(byte *)&fp->_flags = *(byte *)&fp->_flags & 0xef;\n      fp->_offset = _Var2;\n      iVar1 = 0;\n    }\n    return iVar1;\n  }\n  iVar1 = fseeko((FILE *)fp,offset,whence);\n  return iVar1;\n}\n\n",
+            "funcName": "rpl_fseeko"
+        },
+        {
+            "funcStartAddr": "0x4051f0",
+            "funcEndAddr": "0x405202",
+            "decompiledFuncCode": "\nint atexit(__func *__func)\n\n{\n  int iVar1;\n  \n  iVar1 = __cxa_atexit(__func,0,__dso_handle);\n  return iVar1;\n}\n\n",
+            "funcName": "atexit"
+        }
+    ],
+    "decompilerName": "Ghidra",
+    "binaryName": "whoami-amd64-clang-none_O2",
+    "isStripped": "True",
+    "compilerName": "gcc",
+    "optLevel": "-O"
+}

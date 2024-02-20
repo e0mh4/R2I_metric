@@ -1,0 +1,39 @@
+{
+    "binaryInfo": {
+        "isStripped": true,
+        "binaryName": "coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf"
+    },
+    "buildInfo": {
+        "decompilerName": "radare2",
+        "compilerName": "gcc",
+        "compilerVersion": "9.4.0",
+        "optLevel": "O"
+    },
+    "funcInfo": [
+        {
+            "funcName": "fcn_00000a3f",
+            "funcStartAddr": "0xa3f",
+            "funcEndAddr": "0xa61",
+            "decompiledFuncCode": "/* r2dec pseudo code output */\n/* ../dataset/coreutils_strip_8.2/coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf @ 0xa3f */\n#include <stdint.h>\n \nuint64_t fcn_00000a3f (void) {\n    rdi = loc__edata;\n    rax = loc__edata;\n    if (rax != rdi) {\n        rax = *(reloc._ITM_deregisterTMCloneTable);\n        if (rax == 0) {\n            goto label_0;\n        }\n        void (*rax)() ();\n    }\nlabel_0:\n    return rax;\n}\n"
+        },
+        {
+            "funcName": "fcn_00000a9a",
+            "funcStartAddr": "0xa9a",
+            "funcEndAddr": "0xb09",
+            "decompiledFuncCode": "/* r2dec pseudo code output */\n/* ../dataset/coreutils_strip_8.2/coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf @ 0xa9a */\n#include <stdint.h>\n \nuint64_t fcn_00000a9a (void) {\n    if (*(loc._edata) != 0) {\n        goto label_0;\n    }\n    if (*(reloc.__cxa_finalize) != 0) {\n        rdi = *(section..data);\n        cxa_finalize ();\n    }\n    rax = section__dtors;\n    rbx = 0x00200e10;\n    rbx -= rax;\n    r12 = rax;\n    rbx >>= 3;\n    rbx--;\n    do {\n        rax = imp._ITM_deregisterTMCloneTable;\n        if (rax >= rbx) {\n            goto label_1;\n        }\n        rax++;\n        *(0x00201068) = rax;\n        uint64_t (*r12 + rax*8)() ();\n    } while (1);\nlabel_1:\n    fcn_00000a3f ();\n    *(loc._edata) = 1;\n    return rax;\nlabel_0:\n    return rax;\n}\n"
+        },
+        {
+            "funcName": "fcn_00000b09",
+            "funcStartAddr": "0xb09",
+            "funcEndAddr": "0xbb6",
+            "decompiledFuncCode": "/* r2dec pseudo code output */\n/* ../dataset/coreutils_strip_8.2/coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf @ 0xb09 */\n#include <stdint.h>\n \nint64_t fcn_00000b09 (void) {\n    do {\n        rdi = loc__edata;\n        rsi = loc__edata;\n        ecx = 2;\n        rsi -= rdi;\n        rsi >>= 3;\n        rax = rsi;\n        __asm (\"cqo\");\n        rax = rdx:rax / rcx;\n        rdx = rdx:rax % rcx;\n        rsi = rax;\n        if (rax != 0) {\n            rax = *(reloc._ITM_registerTMCloneTable);\n            if (rax == 0) {\n                goto label_0;\n            }\n            void (*rax)() ();\n        }\nlabel_0:\n        return rax;\n    } while (1);\n}\n"
+        },
+        {
+            "funcName": "fcn_00000b0e",
+            "funcStartAddr": "0xb0e",
+            "funcEndAddr": "0xb30",
+            "decompiledFuncCode": "/* r2dec pseudo code output */\n/* ../dataset/coreutils_strip_8.2/coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf @ 0xb0e */\n#include <stdint.h>\n \nvoid fcn_00000b0e (int64_t arg3) {\n    rdx = arg3;\n    rbx = section__ctors;\n    do {\n        rax = *(rbx);\n        if (rax == -1) {\n            goto label_0;\n        }\n        void (*rax)() ();\n        rbx -= 8;\n    } while (1);\nlabel_0:\n}\n"
+        }
+    ],
+    "funcCount": 4
+}

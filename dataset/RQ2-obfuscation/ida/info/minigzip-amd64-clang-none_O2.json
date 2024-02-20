@@ -1,0 +1,57 @@
+{
+    "binaryInfo": {
+        "binaryName": "minigzip-amd64-clang-none_O2",
+        "isStripped": "True"
+    },
+    "buildInfo": {
+        "decompilerName": "IDA Pro",
+        "compilerName": "gcc",
+        "compilerVersion": "9.4.0",
+        "Optlevel": "-O"
+    },
+    "funcInfo": [
+        {
+            "funcName": "_dl_relocate_static_pie",
+            "funcStartAddr": "0x4011a0",
+            "funcEndAddr": "0x4011a5",
+            "decompiledFuncCode": "void dl_relocate_static_pie()\n{\n  ;\n}\n"
+        },
+        {
+            "funcName": "error",
+            "funcStartAddr": "0x401260",
+            "funcEndAddr": "0x401288",
+            "decompiledFuncCode": "void __fastcall __noreturn error(const char *msg)\n{\n  fprintf(stderr, \"%s: %s\\n\", prog, msg);\n  exit(1);\n}\n"
+        },
+        {
+            "funcName": "gz_compress",
+            "funcStartAddr": "0x401290",
+            "funcEndAddr": "0x40133f",
+            "decompiledFuncCode": "void __fastcall gz_compress(FILE *in, gzFile out)\n{\n  unsigned int v2; // ebx\n  const char *v3; // rax\n  char v4[4]; // [rsp+Ch] [rbp-402Ch] BYREF\n  char ptr[16424]; // [rsp+10h] [rbp-4028h] BYREF\n\n  while ( 1 )\n  {\n    v2 = fread(ptr, 1uLL, 0x4000uLL, in);\n    if ( ferror(in) )\n    {\n      perror(\"fread\");\n      exit(1);\n    }\n    if ( !v2 )\n      break;\n    if ( (unsigned int)gzwrite(out, ptr, v2) != v2 )\n    {\n      v3 = (const char *)gzerror(out, v4);\n      error(v3);\n    }\n  }\n  fclose(in);\n  if ( (unsigned int)gzclose(out) )\n    error(\"failed gzclose\");\n}\n"
+        },
+        {
+            "funcName": "gz_uncompress",
+            "funcStartAddr": "0x401340",
+            "funcEndAddr": "0x4013e7",
+            "decompiledFuncCode": "void __fastcall gz_uncompress(gzFile in, FILE *out)\n{\n  int v2; // eax\n  const char *v3; // rax\n  char v4[4]; // [rsp+Ch] [rbp-402Ch] BYREF\n  char ptr[16424]; // [rsp+10h] [rbp-4028h] BYREF\n\n  while ( 1 )\n  {\n    v2 = gzread(in, ptr, 0x4000LL);\n    if ( v2 < 0 )\n    {\n      v3 = (const char *)gzerror(in, v4);\n      error(v3);\n    }\n    if ( !v2 )\n      break;\n    if ( (unsigned int)fwrite(ptr, 1uLL, (unsigned int)v2, out) != v2 )\n      error(\"failed fwrite\");\n  }\n  if ( fclose(out) )\n    error(\"failed fclose\");\n  if ( (unsigned int)gzclose(in) )\n    error(\"failed gzclose\");\n}\n"
+        },
+        {
+            "funcName": "file_compress",
+            "funcStartAddr": "0x4013f0",
+            "funcEndAddr": "0x4014d2",
+            "decompiledFuncCode": "void __fastcall file_compress(char *file, char *mode)\n{\n  FILE *v2; // rbx\n  gzFile_s *v3; // rax\n  char v4[1048]; // [rsp+0h] [rbp-418h] BYREF\n\n  if ( strlen(file) + 3 >= 0x400 )\n  {\n    fprintf(stderr, \"%s: filename too long\\n\", prog);\n    exit(1);\n  }\n  snprintf(v4, 0x400uLL, \"%s%s\", file, \".gz\");\n  v2 = fopen(file, \"rb\");\n  if ( !v2 )\n  {\n    perror(file);\n    exit(1);\n  }\n  v3 = (gzFile_s *)gzopen(v4, mode);\n  if ( !v3 )\n  {\n    fprintf(stderr, \"%s: can't gzopen %s\\n\", prog, v4);\n    exit(1);\n  }\n  gz_compress(v2, v3);\n  unlink(file);\n}\n"
+        },
+        {
+            "funcName": "file_uncompress",
+            "funcStartAddr": "0x4014e0",
+            "funcEndAddr": "0x40160f",
+            "decompiledFuncCode": "void __fastcall file_uncompress(char *file)\n{\n  size_t v1; // rbx\n  char *v2; // r14\n  char *v3; // r12\n  gzFile_s *v4; // rbx\n  FILE *v5; // rax\n  char v6[3]; // [rsp+1h] [rbp-42Bh]\n  char s[1064]; // [rsp+4h] [rbp-428h] BYREF\n\n  v1 = strlen(file);\n  if ( v1 + 3 >= 0x400 )\n  {\n    fprintf(stderr, \"%s: filename too long\\n\", prog);\n    exit(1);\n  }\n  v2 = s;\n  snprintf(s, 0x400uLL, \"%s\", file);\n  if ( v1 >= 4 && !strcmp(&file[v1 - 3], \".gz\") )\n  {\n    v3 = s;\n    v6[v1] = 0;\n    v2 = file;\n  }\n  else\n  {\n    snprintf(&s[v1], 1024 - v1, \"%s\", \".gz\");\n    v3 = file;\n  }\n  v4 = (gzFile_s *)gzopen(v2, \"rb\");\n  if ( !v4 )\n  {\n    fprintf(stderr, \"%s: can't gzopen %s\\n\", prog, v2);\n    exit(1);\n  }\n  v5 = fopen(v3, \"wb\");\n  if ( !v5 )\n  {\n    perror(file);\n    exit(1);\n  }\n  gz_uncompress(v4, v5);\n  unlink(v2);\n}\n"
+        },
+        {
+            "funcName": "main",
+            "funcStartAddr": "0x401610",
+            "funcEndAddr": "0x4018f6",
+            "decompiledFuncCode": "int __cdecl main(int argc, const char **argv, const char **envp)\n{\n  int v3; // r14d\n  _BOOL4 v4; // r13d\n  const char *v5; // r12\n  char *v6; // rax\n  const char *v7; // r15\n  int v8; // r12d\n  int v9; // ebp\n  const char **v10; // rbx\n  const char *v11; // r15\n  char *v12; // rdi\n  gzFile_s *v13; // rax\n  FILE *v14; // r15\n  unsigned int v15; // eax\n  gzFile_s *v16; // rax\n  unsigned int v17; // eax\n  gzFile_s *v18; // rax\n  unsigned int v19; // eax\n  gzFile_s *v20; // rax\n  char v22[3]; // [rsp+0h] [rbp-48h] BYREF\n  char v23; // [rsp+3h] [rbp-45h]\n\n  v3 = argc;\n  v4 = 0;\n  snprintf(v22, 0x14uLL, \"%s\", \"wb6 \");\n  prog = (char *)*argv;\n  v5 = *argv;\n  v6 = strrchr(*argv, 47);\n  v7 = v6 + 1;\n  if ( !v6 )\n    v7 = v5;\n  if ( !strcmp(v7, \"gunzip\") )\n  {\n    v8 = 1;\n  }\n  else\n  {\n    v4 = strcmp(v7, \"zcat\") == 0;\n    v8 = v4;\n  }\n  v9 = argc - 1;\n  v10 = argv + 1;\n  if ( argc < 2 )\n  {\nLABEL_22:\n    if ( v23 != 32 )\n      goto LABEL_24;\n    goto LABEL_23;\n  }\n  while ( 1 )\n  {\n    v11 = *v10;\n    if ( !strcmp(*v10, \"-c\") )\n    {\n      v4 = 1;\n      goto LABEL_21;\n    }\n    if ( !strcmp(v11, \"-d\") )\n    {\n      v8 = 1;\n      goto LABEL_21;\n    }\n    if ( !strcmp(v11, \"-f\") )\n    {\n      v23 = 102;\n      goto LABEL_21;\n    }\n    if ( !strcmp(v11, \"-h\") )\n    {\n      v23 = 104;\n      goto LABEL_21;\n    }\n    if ( !strcmp(v11, \"-r\") )\n    {\n      v23 = 82;\n      goto LABEL_21;\n    }\n    if ( *v11 != 45 )\n      break;\n    if ( (unsigned __int8)(v11[1] - 49) > 8u || v11[2] )\n      goto LABEL_22;\n    v22[2] = v11[1];\nLABEL_21:\n    --v9;\n    ++v10;\n    if ( --v3 <= 1 )\n      goto LABEL_22;\n  }\n  v9 = v3 - 1;\n  if ( v23 == 32 )\nLABEL_23:\n    v23 = 0;\nLABEL_24:\n  if ( v9 )\n  {\n    do\n    {\n      v12 = (char *)*v10;\n      if ( v8 )\n      {\n        if ( v4 )\n        {\n          v13 = (gzFile_s *)gzopen(v12, \"rb\");\n          if ( v13 )\n            gz_uncompress(v13, stdout);\n          else\n            fprintf(stderr, \"%s: can't gzopen %s\\n\", prog, *v10);\n        }\n        else\n        {\n          file_uncompress(v12);\n        }\n      }\n      else if ( v4 )\n      {\n        v14 = fopen(v12, \"rb\");\n        if ( v14 )\n        {\n          v15 = fileno(stdout);\n          v16 = (gzFile_s *)gzdopen(v15, v22);\n          if ( !v16 )\n            goto LABEL_48;\n          gz_compress(v14, v16);\n        }\n        else\n        {\n          perror(*v10);\n        }\n      }\n      else\n      {\n        file_compress(v12, v22);\n      }\n      ++v10;\n      --v9;\n    }\n    while ( v9 );\n  }\n  else if ( v8 )\n  {\n    v17 = fileno(stdin);\n    v18 = (gzFile_s *)gzdopen(v17, \"rb\");\n    if ( !v18 )\n      error(\"can't gzdopen stdin\");\n    gz_uncompress(v18, stdout);\n  }\n  else\n  {\n    v19 = fileno(stdout);\n    v20 = (gzFile_s *)gzdopen(v19, v22);\n    if ( !v20 )\nLABEL_48:\n      error(\"can't gzdopen stdout\");\n    gz_compress(stdin, v20);\n  }\n  return 0;\n}\n"
+        }
+    ],
+    "funcCount": 7
+}

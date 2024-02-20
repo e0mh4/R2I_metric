@@ -1,0 +1,423 @@
+{
+    "funcInfo": [
+        {
+            "funcName": "function_4011f0",
+            "funcStartAddr": "4011f0",
+            "funcEndAddr": "4011f5",
+            "decompiledFuncCode": "int64_t function_4011f0(void) {\n    // 0x4011f0\n    abort();\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_4011f5",
+            "funcStartAddr": "4011f5",
+            "funcEndAddr": "4011fa",
+            "decompiledFuncCode": "int64_t function_4011f5(void) {\n    // 0x4011f5\n    abort();\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_4011fa",
+            "funcStartAddr": "4011fa",
+            "funcEndAddr": "4011ff",
+            "decompiledFuncCode": "int64_t function_4011fa(void) {\n    // 0x4011fa\n    abort();\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_4011ff",
+            "funcStartAddr": "4011ff",
+            "funcEndAddr": "401204",
+            "decompiledFuncCode": "int64_t function_4011ff(void) {\n    // 0x4011ff\n    abort();\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_401204",
+            "funcStartAddr": "401204",
+            "funcEndAddr": "401209",
+            "decompiledFuncCode": "int64_t function_401204(void) {\n    // 0x401204\n    abort();\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_401210",
+            "funcStartAddr": "401210",
+            "funcEndAddr": "401402",
+            "decompiledFuncCode": "int64_t function_401210(int64_t a1, int64_t a2) {\n    // 0x401210\n    function_4015b0((char *)(a2 == 0 ? (int64_t)\"bigram\" : a2));\n    setlocale(LC_ALL, (char *)&g2);\n    bindtextdomain(\"findutils\", \"/home/dongkwan/data/scripts/gnu_packages/findutils/findutils-4.6.0_gcc-8.2.0_x86_64_O2_debug/gogo/share/locale\");\n    textdomain(\"findutils\");\n    int64_t v1; // 0x401210\n    if ((int32_t)function_4038b0(0x401510, (int64_t)\"/home/dongkwan/data/scripts/gnu_packages/findutils/findutils-4.6.0_gcc-8.2.0_x86_64_O2_debug/gogo/share/locale\", v1) != 0) {\n        // 0x4013c9\n        error(1, *__errno_location(), dcgettext(NULL, \"The atexit library function failed\", 5));\n    }\n    int64_t v2 = 1026; // bp-48, 0x401270\n    int64_t v3 = function_402fd0(1026); // bp-56, 0x401283\n    int64_t v4 = function_402fd0(1026); // 0x401287\n    *(char *)v4 = 0;\n    int32_t v5 = __getdelim((char **)&v3, (int32_t *)&v2, 10, g21); // 0x4012ac\n    int64_t v6 = v3;\n    if (v5 < 1) {\n        // 0x4013a0\n        free((int64_t *)v6);\n        free((int64_t *)v4);\n        return (int32_t)&g35 ^ (int32_t)&g35;\n    }\n    *(char *)(v6 - 1 + (int64_t)v5) = 0;\n    int64_t v7 = v3; // 0x4012c4\n    char v8 = *(char *)v4; // 0x4012c8\n    char v9 = *(char *)v7; // 0x4012cc\n    int64_t v10 = v7; // 0x4012d1\n    int64_t v11 = 0; // 0x4012d1\n    char v12 = v9; // 0x4012d1\n    int64_t v13; // 0x401210\n    int64_t v14; // 0x4012f5\n    int64_t v15; // 0x4012f9\n    char v16; // 0x4012fd\n    int64_t v17; // 0x401308\n    if (v8 != 0 && v8 == v9) {\n        v14 = v4 + 1;\n        v15 = v10 + 1;\n        v16 = *(char *)v14;\n        v13 = v14;\n        v10 = v15;\n        while (!((v16 == 0 | *(char *)v15 != v16))) {\n            // 0x4012f5\n            v14 = v13 + 1;\n            v15 = v10 + 1;\n            v16 = *(char *)v14;\n            v13 = v14;\n            v10 = v15;\n        }\n        // 0x401305\n        v17 = 0x100000000 * (v14 - v4) >> 32;\n        v12 = *(char *)(v17 + v7);\n        v11 = v17;\n    }\n    char v18 = v12;\n    int64_t v19 = v7; // 0x401314\n    int64_t v20; // 0x401210\n    int64_t v21; // 0x401210\n    int64_t v22; // 0x401210\n    int64_t v23; // 0x401210\n    char v24; // 0x401210\n    int64_t v25; // 0x401210\n    int64_t v26; // 0x401371\n    char v27; // 0x401375\n    int64_t v28; // 0x401330\n    if (v18 != 0) {\n        // 0x401316\n        v25 = v11 + 1;\n        v22 = v11;\n        v24 = v18;\n        v20 = v25;\n        v19 = v7;\n        if (*(char *)(v25 + v7) != 0) {\n            v23 = v22;\n            v21 = v23 + 2;\n            _IO_putc((int32_t)v24, g20);\n            _IO_putc((int32_t)*(char *)(v3 + v20), g20);\n            _IO_putc(10, g20);\n            v26 = v3;\n            v27 = *(char *)(v26 + v21);\n            v19 = v26;\n            while (v27 != 0) {\n                // 0x401330\n                v28 = v23 + 3;\n                v22 = v21;\n                v24 = v27;\n                v20 = v28;\n                v19 = v26;\n                if (*(char *)(v26 + v28) == 0) {\n                    // break -> 0x40137e\n                    break;\n                }\n                v23 = v22;\n                v21 = v23 + 2;\n                _IO_putc((int32_t)v24, g20);\n                _IO_putc((int32_t)*(char *)(v3 + v20), g20);\n                _IO_putc(10, g20);\n                v26 = v3;\n                v27 = *(char *)(v26 + v21);\n                v19 = v26;\n            }\n        }\n    }\n    int64_t v29 = v19;\n    int64_t v30 = v2; // 0x40137e\n    v3 = v4;\n    v2 = 1026;\n    int32_t v31 = __getdelim((char **)&v3, (int32_t *)&v2, 10, g21); // 0x4012ac\n    int64_t v32 = v3;\n    int64_t v33 = v29; // 0x4012b3\n    int64_t v34 = v32; // 0x4012b3\n    while (v31 >= 1) {\n        int64_t v35 = v29;\n        int64_t v36 = v30;\n        *(char *)(v32 - 1 + (int64_t)v31) = 0;\n        v7 = v3;\n        v8 = *(char *)v35;\n        v9 = *(char *)v7;\n        v13 = v35;\n        v10 = v7;\n        v11 = 0;\n        v12 = v9;\n        if (v8 != 0 && v8 == v9) {\n            v14 = v13 + 1;\n            v15 = v10 + 1;\n            v16 = *(char *)v14;\n            v13 = v14;\n            v10 = v15;\n            while (!((v16 == 0 | *(char *)v15 != v16))) {\n                // 0x4012f5\n                v14 = v13 + 1;\n                v15 = v10 + 1;\n                v16 = *(char *)v14;\n                v13 = v14;\n                v10 = v15;\n            }\n            // 0x401305\n            v17 = 0x100000000 * (v14 - v35) >> 32;\n            v12 = *(char *)(v17 + v7);\n            v11 = v17;\n        }\n        // 0x401311\n        v18 = v12;\n        v19 = v7;\n        if (v18 != 0) {\n            // 0x401316\n            v25 = v11 + 1;\n            v22 = v11;\n            v24 = v18;\n            v20 = v25;\n            v19 = v7;\n            if (*(char *)(v25 + v7) != 0) {\n                v23 = v22;\n                v21 = v23 + 2;\n                _IO_putc((int32_t)v24, g20);\n                _IO_putc((int32_t)*(char *)(v3 + v20), g20);\n                _IO_putc(10, g20);\n                v26 = v3;\n                v27 = *(char *)(v26 + v21);\n                v19 = v26;\n                while (v27 != 0) {\n                    // 0x401330\n                    v28 = v23 + 3;\n                    v22 = v21;\n                    v24 = v27;\n                    v20 = v28;\n                    v19 = v26;\n                    if (*(char *)(v26 + v28) == 0) {\n                        // break -> 0x40137e\n                        break;\n                    }\n                    v23 = v22;\n                    v21 = v23 + 2;\n                    _IO_putc((int32_t)v24, g20);\n                    _IO_putc((int32_t)*(char *)(v3 + v20), g20);\n                    _IO_putc(10, g20);\n                    v26 = v3;\n                    v27 = *(char *)(v26 + v21);\n                    v19 = v26;\n                }\n            }\n        }\n        // 0x40137e\n        v29 = v19;\n        v30 = v2;\n        v3 = v35;\n        v2 = v36;\n        v31 = __getdelim((char **)&v3, (int32_t *)&v2, 10, g21);\n        v32 = v3;\n        v33 = v29;\n        v34 = v32;\n    }\n    // 0x4013a0\n    free((int64_t *)v34);\n    free((int64_t *)v33);\n    return (int32_t)&g35 ^ (int32_t)&g35;\n}\n"
+        },
+        {
+            "funcName": "entry_point",
+            "funcStartAddr": "401410",
+            "funcEndAddr": "40143b",
+            "decompiledFuncCode": "int64_t entry_point(int64_t a1, int64_t a2, int64_t a3, int64_t a4) {\n    // 0x401410\n    int64_t v1; // 0x401410\n    __libc_start_main(0x401210, (int32_t)a4, (char **)&v1, (void (*)())0x403840, (void (*)())0x4038a0, (void (*)())a3);\n    __asm_hlt();\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_40143b",
+            "funcStartAddr": "40143b",
+            "funcEndAddr": "40145a",
+            "decompiledFuncCode": "int64_t function_40143b(void) {\n    // 0x40143b\n    return 0x6061d8;\n}\n"
+        },
+        {
+            "funcName": "function_40145a",
+            "funcStartAddr": "40145a",
+            "funcEndAddr": "401491",
+            "decompiledFuncCode": "int64_t function_40145a(void) {\n    // 0x40145a\n    return 0;\n}\n"
+        },
+        {
+            "funcName": "function_401491",
+            "funcStartAddr": "401491",
+            "funcEndAddr": "4014e8",
+            "decompiledFuncCode": "int64_t function_401491(void) {\n    // 0x401491\n    if (g24 != 0) {\n        // 0x4014e7\n        int64_t result; // 0x401491\n        return result;\n    }\n    int64_t v1 = g25; // 0x4014c4\n    int64_t result2; // 0x4014d6\n    if (g25 >= ((int64_t)&g10 - (int64_t)&g9 >> 3) - 1) {\n        // 0x4014d6\n        result2 = function_40143b();\n        g24 = 1;\n        return result2;\n    }\n    v1++;\n    while (v1 < ((int64_t)&g10 - (int64_t)&g9 >> 3) - 1) {\n        // 0x4014c6\n        v1++;\n    }\n    // 0x4014ba\n    g25 = v1;\n    // 0x4014d6\n    result2 = function_40143b();\n    g24 = 1;\n    return result2;\n}\n"
+        },
+        {
+            "funcName": "function_4014e8",
+            "funcStartAddr": "4014e8",
+            "funcEndAddr": "4014ed",
+            "decompiledFuncCode": "int64_t function_4014e8(void) {\n    // 0x4014e8\n    return function_40145a();\n}\n"
+        },
+        {
+            "funcName": "function_4014f0",
+            "funcStartAddr": "4014f0",
+            "funcEndAddr": "4014f8",
+            "decompiledFuncCode": "int64_t function_4014f0(int64_t a1) {\n    // 0x4014f0\n    g27 = a1;\n    int64_t result; // 0x4014f0\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_401500",
+            "funcStartAddr": "401500",
+            "funcEndAddr": "401508",
+            "decompiledFuncCode": "int64_t function_401500(int64_t a1) {\n    // 0x401500\n    g26 = a1;\n    int64_t result; // 0x401500\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_401510",
+            "funcStartAddr": "401510",
+            "funcEndAddr": "4015ae",
+            "decompiledFuncCode": "int64_t function_401510(void) {\n    // 0x401510\n    int32_t * err_num; // 0x401526\n    if ((int32_t)function_403260((int64_t)g20) == 0) {\n        goto lab_0x40153c;\n    } else {\n        // 0x401526\n        err_num = __errno_location();\n        if (g26 == 0) {\n            goto lab_0x401553;\n        } else {\n            // 0x401537\n            if (*err_num != 32) {\n                goto lab_0x401553;\n            } else {\n                goto lab_0x40153c;\n            }\n        }\n    }\n  lab_0x40153c:;\n    int64_t result = function_403260((int64_t)g23); // 0x401543\n    if ((int32_t)result == 0) {\n        // 0x40154c\n        return result;\n    }\n    // 0x40158e\n    _exit(g13);\n    // UNREACHABLE\n  lab_0x401553:;\n    char * v1 = dcgettext(NULL, \"write error\", 5); // 0x40155f\n    if (g27 == 0) {\n        // 0x401599\n        error(0, *err_num, \"%s\", v1);\n    } else {\n        // 0x401573\n        error(0, *err_num, \"%s: %s\", (char *)function_402e00((int64_t)g27), v1);\n    }\n    // 0x40158e\n    _exit(g13);\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_4015b0",
+            "funcStartAddr": "4015b0",
+            "funcEndAddr": "401649",
+            "decompiledFuncCode": "int64_t function_4015b0(char * str) {\n    // 0x4015b0\n    if (str == NULL) {\n        // 0x401629\n        fwrite((int64_t *)\"A NULL argv[0] was passed through an exec system call.\\n\", 1, 55, g23);\n        abort();\n        // UNREACHABLE\n    }\n    int64_t v1 = (int64_t)str;\n    char * found_char_pos = strrchr(str, 47); // 0x4015be\n    int64_t result = (int64_t)found_char_pos; // 0x4015be\n    if (found_char_pos == NULL) {\n        // 0x401619\n        g28 = v1;\n        g22 = v1;\n        return result;\n    }\n    int64_t v2 = result + 1; // 0x4015c8\n    if (v2 - v1 < 7) {\n        // 0x401619\n        g28 = v1;\n        g22 = v1;\n        return result;\n    }\n    // 0x4015d8\n    bool v3; // 0x4015b0\n    int64_t v4 = v3 ? -1 : 1;\n    int64_t v5 = (int64_t)\"/.libs/\"; // 0x4015b0\n    int64_t v6 = result - 6; // 0x4015b0\n    int64_t v7 = 7; // 0x4015e6\n    unsigned char v8 = *(char *)v6; // 0x4015e6\n    char v9 = *(char *)v5; // 0x4015e6\n    char v10 = v9; // 0x4015e6\n    bool v11 = false; // 0x4015e6\n    while (v8 == v9) {\n        v7--;\n        v5 += v4;\n        v6 += v4;\n        v10 = v8;\n        v11 = true;\n        if (v7 == 0) {\n            // break -> \n            break;\n        }\n        v8 = *(char *)v6;\n        v9 = *(char *)v5;\n        v10 = v9;\n        v11 = false;\n    }\n    unsigned char v12 = v10;\n    int64_t v13 = (int64_t)\"lt-\"; // 0x4015f0\n    int64_t v14 = v2; // 0x4015f0\n    int64_t v15 = 3; // 0x4015f0\n    if ((v8 >= v12 && !v11) != v8 < v12) {\n        // 0x401619\n        g28 = v1;\n        g22 = v1;\n        return result;\n    }\n    unsigned char v16 = *(char *)v14; // 0x401602\n    char v17 = *(char *)v13; // 0x401602\n    char v18 = v17; // 0x401602\n    bool v19 = false; // 0x401602\n    while (v16 == v17) {\n        // 0x4015f2\n        v15--;\n        v13 += v4;\n        v14 += v4;\n        v18 = v16;\n        v19 = true;\n        if (v15 == 0) {\n            // break -> \n            break;\n        }\n        v16 = *(char *)v14;\n        v17 = *(char *)v13;\n        v18 = v17;\n        v19 = false;\n    }\n    unsigned char v20 = v18;\n    int64_t v21 = v2; // 0x40160c\n    if ((v16 >= v20 && !v19) == v16 < v20) {\n        // 0x40160e\n        v21 = result + 4;\n        g19 = v21;\n    }\n    // 0x401619\n    g28 = v21;\n    g22 = v21;\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_401650",
+            "funcStartAddr": "401650",
+            "funcEndAddr": "401742",
+            "decompiledFuncCode": "int64_t function_401650(int64_t a1, int64_t a2) {\n    char * v1 = dcgettext(NULL, (char *)a1, 5); // 0x401664\n    int64_t result = (int64_t)v1; // 0x401664\n    if (result != a1) {\n        // 0x401671\n        return result;\n    }\n    int64_t v2 = function_4032d0(); // 0x401680\n    char v3 = *(char *)v2 & -33;\n    int64_t result2; // 0x401736\n    if (v3 == 85) {\n        // 0x401690\n        if ((*(char *)(v2 + 1) & -33) != 84 || (*(char *)(v2 + 2) & -33) != 70 || *(char *)(v2 + 3) != 45 || *(char *)(v2 + 4) != 56 || *(char *)(v2 + 5) != 0) {\n            // 0x401728\n            result2 = (int32_t)a2 != 9 ? (int64_t)&g7 : (int64_t)&g1;\n            return result2;\n        }\n        char v4 = *v1; // 0x4016be\n        int64_t result3 = v4 != 96 ? (int64_t)&g3 : (int64_t)&g6; // 0x4016cb\n        // 0x401671\n        return result3;\n    }\n    if (v3 != 71 || (*(char *)(v2 + 1) & -33) != 66 || *(char *)(v2 + 2) != 49 || *(char *)(v2 + 3) != 56 || *(char *)(v2 + 4) != 48 || *(char *)(v2 + 5) != 51 || *(char *)(v2 + 6) != 48 || *(char *)(v2 + 7) != 0) {\n        // 0x401728\n        result2 = (int32_t)a2 != 9 ? (int64_t)&g7 : (int64_t)&g1;\n        return result2;\n    }\n    char v5 = *v1; // 0x40170d\n    int64_t result4 = v5 != 96 ? (int64_t)&g4 : (int64_t)&g5; // 0x40171a\n    // 0x401671\n    return result4;\n}\n"
+        },
+        {
+            "funcName": "function_401750",
+            "funcStartAddr": "401750",
+            "funcEndAddr": "4017a9",
+            "decompiledFuncCode": "int64_t function_401750(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int32_t a6) {\n    // 0x401750\n    __ctype_get_mb_cur_max();\n    if ((uint32_t)(int32_t)a5 < 11) {\n        // 0x40179a\n        return a5 & 0xffffffff;\n    }\n    abort();\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_4017b0",
+            "funcStartAddr": "4017b0",
+            "funcEndAddr": "402753",
+            "decompiledFuncCode": "int64_t function_4017b0(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t str) {\n    int64_t v1 = 0; // 0x4017ed\n    int64_t v2 = 0; // 0x4017ed\n    char v3; // 0x4017b0\n    int64_t v4; // 0x4017b0\n    int64_t v5; // 0x4017b0\n    int64_t v6; // 0x4017b0\n    int64_t v7; // 0x4017b0\n    int64_t v8; // 0x4017b0\n    int64_t v9; // 0x4017b0\n    int64_t v10; // 0x4017b0\n    int64_t v11; // 0x4017b0\n    int64_t v12; // 0x4017b0\n    int64_t v13; // 0x4017b0\n    int64_t v14; // 0x4017b0\n    int64_t v15; // 0x4017b0\n    int64_t v16; // 0x4017b0\n    int64_t v17; // 0x4017b0\n    int64_t v18; // 0x4017b0\n    int64_t v19; // 0x4017b0\n    int64_t v20; // 0x4017b0\n    int64_t v21; // 0x4017b0\n    int64_t v22; // 0x4017b0\n    int64_t v23; // 0x4017b0\n    int64_t v24; // 0x4017b0\n    int64_t v25; // 0x4017b0\n    int64_t result; // 0x4017b0\n    int64_t v26; // 0x4017b0\n    int64_t v27; // 0x4017b0\n    int64_t v28; // 0x4017b0\n    int64_t ps; // bp+120, 0x4017b0\n    char v29; // 0x401ee0\n    int64_t v30; // 0x401ee0\n    int32_t wc; // 0x4017b0\n    int64_t v31; // 0x4017b0\n    while (true) {\n      lab_0x4017f0_2:\n        // 0x4017f0\n        v21 = v20;\n        v15 = v14;\n        v6 = v5;\n        result = v1;\n        int64_t v32 = v2; // 0x4017b0\n        int64_t v33; // 0x401824\n        while (true) {\n          lab_0x4017f0:\n            // 0x4017f0\n            v13 = v32;\n            bool v34 = v6 == v13; // 0x4017fb\n            if (v6 == -1) {\n                // 0x4017fd\n                v34 = *(char *)(v13 + str) == 0;\n            }\n            // 0x40180b\n            if (v34) {\n                // break (via goto) -> 0x402200\n                goto lab_0x402200;\n            }\n            // 0x401814\n            v33 = v13 + str;\n            v29 = *(char *)v33;\n            v30 = v29;\n            g34 = v30;\n            v7 = v6;\n            v19 = v15;\n            v25 = v21;\n            v4 = v6;\n            v17 = v15;\n            v23 = v21;\n            switch (v29) {\n                case 0: {\n                    if (wc % 2 == 0) {\n                        // 0x401ff1\n                        v9 = v6;\n                        v18 = v15;\n                        v24 = v21;\n                        v3 = 0;\n                        v8 = v6;\n                        v16 = v15;\n                        v22 = v21;\n                        if (v31 == 0) {\n                            goto lab_0x401e62;\n                        } else {\n                            goto lab_0x401909;\n                        }\n                    }\n                    // 0x402410\n                    v32 = v13 + 1;\n                    goto lab_0x4017f0;\n                }\n                case 7: {\n                    goto lab_0x401bb8;\n                }\n                case 8: {\n                    goto lab_0x401bb8;\n                }\n                case 9: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 10: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 11: {\n                    goto lab_0x401bb8;\n                }\n                case 12: {\n                    goto lab_0x401bb8;\n                }\n                case 13: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 32: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 33: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 34: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 35: {\n                    goto lab_0x401ba1;\n                }\n                case 36: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 37: {\n                    goto lab_0x401bb8;\n                }\n                case 38: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 39: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 40: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 41: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 42: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 43: {\n                    goto lab_0x401bb8;\n                }\n                case 44: {\n                    goto lab_0x401bb8;\n                }\n                case 45: {\n                    goto lab_0x401bb8;\n                }\n                case 46: {\n                    goto lab_0x401bb8;\n                }\n                case 47: {\n                    goto lab_0x401bb8;\n                }\n                case 48: {\n                    goto lab_0x401bb8;\n                }\n                case 49: {\n                    goto lab_0x401bb8;\n                }\n                case 50: {\n                    goto lab_0x401bb8;\n                }\n                case 51: {\n                    goto lab_0x401bb8;\n                }\n                case 52: {\n                    goto lab_0x401bb8;\n                }\n                case 53: {\n                    goto lab_0x401bb8;\n                }\n                case 54: {\n                    goto lab_0x401bb8;\n                }\n                case 55: {\n                    goto lab_0x401bb8;\n                }\n                case 56: {\n                    goto lab_0x401bb8;\n                }\n                case 57: {\n                    goto lab_0x401bb8;\n                }\n                case 58: {\n                    goto lab_0x401bb8;\n                }\n                case 59: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 60: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 61: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 62: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 63: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 65: {\n                    goto lab_0x401bb8;\n                }\n                case 66: {\n                    goto lab_0x401bb8;\n                }\n                case 67: {\n                    goto lab_0x401bb8;\n                }\n                case 68: {\n                    goto lab_0x401bb8;\n                }\n                case 69: {\n                    goto lab_0x401bb8;\n                }\n                case 70: {\n                    goto lab_0x401bb8;\n                }\n                case 71: {\n                    goto lab_0x401bb8;\n                }\n                case 72: {\n                    goto lab_0x401bb8;\n                }\n                case 73: {\n                    goto lab_0x401bb8;\n                }\n                case 74: {\n                    goto lab_0x401bb8;\n                }\n                case 75: {\n                    goto lab_0x401bb8;\n                }\n                case 76: {\n                    goto lab_0x401bb8;\n                }\n                case 77: {\n                    goto lab_0x401bb8;\n                }\n                case 78: {\n                    goto lab_0x401bb8;\n                }\n                case 79: {\n                    goto lab_0x401bb8;\n                }\n                case 80: {\n                    goto lab_0x401bb8;\n                }\n                case 81: {\n                    goto lab_0x401bb8;\n                }\n                case 82: {\n                    goto lab_0x401bb8;\n                }\n                case 83: {\n                    goto lab_0x401bb8;\n                }\n                case 84: {\n                    goto lab_0x401bb8;\n                }\n                case 85: {\n                    goto lab_0x401bb8;\n                }\n                case 86: {\n                    goto lab_0x401bb8;\n                }\n                case 87: {\n                    goto lab_0x401bb8;\n                }\n                case 88: {\n                    goto lab_0x401bb8;\n                }\n                case 89: {\n                    goto lab_0x401bb8;\n                }\n                case 90: {\n                    goto lab_0x401bb8;\n                }\n                case 91: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 92: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 93: {\n                    goto lab_0x401bb8;\n                }\n                case 94: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 95: {\n                    goto lab_0x401bb8;\n                }\n                case 96: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 97: {\n                    goto lab_0x401bb8;\n                }\n                case 98: {\n                    goto lab_0x401bb8;\n                }\n                case 99: {\n                    goto lab_0x401bb8;\n                }\n                case 100: {\n                    goto lab_0x401bb8;\n                }\n                case 101: {\n                    goto lab_0x401bb8;\n                }\n                case 102: {\n                    goto lab_0x401bb8;\n                }\n                case 103: {\n                    goto lab_0x401bb8;\n                }\n                case 104: {\n                    goto lab_0x401bb8;\n                }\n                case 105: {\n                    goto lab_0x401bb8;\n                }\n                case 106: {\n                    goto lab_0x401bb8;\n                }\n                case 107: {\n                    goto lab_0x401bb8;\n                }\n                case 108: {\n                    goto lab_0x401bb8;\n                }\n                case 109: {\n                    goto lab_0x401bb8;\n                }\n                case 110: {\n                    goto lab_0x401bb8;\n                }\n                case 111: {\n                    goto lab_0x401bb8;\n                }\n                case 112: {\n                    goto lab_0x401bb8;\n                }\n                case 113: {\n                    goto lab_0x401bb8;\n                }\n                case 114: {\n                    goto lab_0x401bb8;\n                }\n                case 115: {\n                    goto lab_0x401bb8;\n                }\n                case 116: {\n                    goto lab_0x401bb8;\n                }\n                case 117: {\n                    goto lab_0x401bb8;\n                }\n                case 118: {\n                    goto lab_0x401bb8;\n                }\n                case 119: {\n                    goto lab_0x401bb8;\n                }\n                case 120: {\n                    goto lab_0x401bb8;\n                }\n                case 121: {\n                    goto lab_0x401bb8;\n                }\n                case 122: {\n                    goto lab_0x401bb8;\n                }\n                case 123: {\n                    goto lab_0x401b7d;\n                }\n                case 124: {\n                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                }\n                case 125: {\n                    goto lab_0x401b7d;\n                }\n                case 126: {\n                    goto lab_0x401ba1;\n                }\n                default: {\n                    goto lab_0x401e7d;\n                }\n            }\n        }\n      lab_0x401e7d:\n        if (v31 != 1) {\n            // 0x402270\n            ps = 0;\n            int64_t len = v6; // 0x40227d\n            if (v6 == -1) {\n                // 0x40227f\n                len = strlen((char *)str);\n            }\n            // 0x4022ab\n            v10 = len;\n            v26 = 0;\n            while (true) {\n              lab_0x402308:\n                // 0x402308\n                v27 = v26;\n                uint64_t v35 = v27 + v13; // 0x40230d\n                switch (str) {\n                    case 0: {\n                        goto lab_0x40261f;\n                    }\n                    case -1: {\n                        // 0x4025e3\n                        v11 = 0x100000000 * v10 >> 32;\n                        goto lab_0x402610;\n                    }\n                    case -2: {\n                        int64_t v36 = 0x100000000 * v10 >> 32; // 0x402653\n                        v11 = v36;\n                        if (v35 >= v36) {\n                            goto lab_0x402610;\n                        } else {\n                            // 0x40268e\n                            v11 = v36;\n                            if (*(char *)(v35 - 2) != 0) {\n                                int64_t v37 = 1; // 0x40269f\n                                v28 = v37;\n                                v12 = v36;\n                                while (v36 > v37 + v13) {\n                                    // 0x402698\n                                    v28 = v37;\n                                    v12 = v36;\n                                    int64_t v38 = v37; // 0x40269d\n                                    if (*(char *)(v37 + v33) == 0) {\n                                        // break -> 0x402610\n                                        break;\n                                    }\n                                    v37 = v38 + 1;\n                                    v28 = v37;\n                                    v12 = v36;\n                                }\n                                goto lab_0x402610_2;\n                            } else {\n                                goto lab_0x402610;\n                            }\n                        }\n                    }\n                    case 1: {\n                        goto lab_0x4022e0;\n                    }\n                    default: {\n                        int64_t v39; // 0x4017b0\n                        char v40; // 0x40238d\n                        unsigned char v41; // 0x4017b0\n                        if (*(char *)v39 < 125) {\n                            // 0x402398\n                            v41 = (v40 + 37) % 64;\n                            if (v41 != 0 != ((1 << (int64_t)v41 & 0x20000002b) == 0)) {\n                                // 0x4023b2\n                                v4 = 0x100000000 * v10 >> 32;\n                                v17 = 0x100000000 * v15 >> 32;\n                                v23 = 0x100000000 * v21 >> 32;\n                                return function_401750(v23, v17, str, v4, 2, wc & -3);\n                            }\n                        }\n                        int64_t v42 = v39 + 1; // 0x402380\n                        v39 = v42;\n                        // 0x402368\n                        int64_t v43; // 0x402376\n                        while (v43 != v42) {\n                            // 0x40238d\n                            v40 = *(char *)v39;\n                            if (v40 < 125) {\n                                // 0x402398\n                                v41 = (v40 + 37) % 64;\n                                if (v41 != 0 != ((1 << (int64_t)v41 & 0x20000002b) == 0)) {\n                                    // 0x4023b2\n                                    v4 = 0x100000000 * v10 >> 32;\n                                    v17 = 0x100000000 * v15 >> 32;\n                                    v23 = 0x100000000 * v21 >> 32;\n                                    return function_401750(v23, v17, str, v4, 2, wc & -3);\n                                }\n                            }\n                            // 0x402380\n                            v42 = v39 + 1;\n                            v39 = v42;\n                        }\n                        goto lab_0x4022e0;\n                    }\n                }\n            }\n          lab_0x40261f:\n            // 0x40261f\n            v11 = 0x100000000 * v10 >> 32;\n            goto lab_0x402610;\n        } else {\n            // 0x401ec8\n            __ctype_b_loc();\n            v7 = 0x100000000000000 * v6 >> 56;\n            v19 = v15;\n            v25 = v21;\n            goto lab_0x401bb8;\n        }\n    }\n  lab_0x402200:\n    // 0x402200\n    v4 = v6;\n    v17 = v15;\n    v23 = v21;\n    if (result != 0) {\n        // 0x402255\n        if (result < v15) {\n            // 0x40225e\n            *(char *)(v21 + result) = 0;\n        }\n        // 0x401f7c\n        return result;\n    }\n    return function_401750(v23, v17, str, v4, 2, wc & -3);\n  lab_0x401f42_2:\n    // 0x401f7c\n    return function_401750(v23, v17, str, v4, 2, wc & -3);\n  lab_0x4022e0:\n    // 0x4022e0\n    iswprint(wc);\n    int64_t v44 = v27 + str; // 0x4022f8\n    int32_t v45 = mbsinit((struct _TYPEDEF___mbstate_t *)&ps); // 0x4022fb\n    v26 = v44;\n    if (v45 != 0) {\n        // 0x4026ba\n        v28 = v44;\n        v12 = 0x100000000 * v10 >> 32;\n        goto lab_0x402610_2;\n    }\n    goto lab_0x402308;\n  lab_0x401bb8:\n    // 0x401bb8\n    v9 = v7;\n    v18 = v19;\n    v24 = v25;\n    v3 = v29;\n    v8 = v7;\n    v16 = v19;\n    v22 = v25;\n    if (v31 == 0) {\n        goto lab_0x401e62;\n    } else {\n        goto lab_0x401909;\n    }\n  lab_0x401ba1:\n    // 0x401ba1\n    v7 = v6;\n    v19 = v15;\n    v25 = v21;\n    v4 = v6;\n    v17 = v15;\n    v23 = v21;\n    if (v13 == 0) {\n        goto lab_0x401f42_2;\n    }\n    goto lab_0x401bb8;\n  lab_0x401b7d:;\n    bool v46 = v6 == 1; // 0x401b88\n    if (v6 == -1) {\n        // 0x401b8a\n        v46 = *(char *)(str + 1) == 0;\n    }\n    // 0x401b96\n    v7 = v6;\n    v19 = v15;\n    v25 = v21;\n    if (!v46) {\n        goto lab_0x401bb8;\n    } else {\n        goto lab_0x401ba1;\n    }\n  lab_0x402610:\n    // 0x402610\n    v7 = v11;\n    v19 = 0x100000000 * v15 >> 32;\n    v25 = 0x100000000 * v21 >> 32;\n    goto lab_0x401bb8;\n  lab_0x401e62:;\n    int64_t v47 = result; // 0x401e6c\n    int64_t v48 = v8; // 0x401e6c\n    char v49 = v3; // 0x401e6c\n    v2 = v13 + 1;\n    int64_t v50 = v16; // 0x401e6c\n    int64_t v51 = v22; // 0x401e6c\n    goto lab_0x401987;\n  lab_0x401909:\n    // 0x401909\n    v3 = v29;\n    v8 = v9;\n    v16 = v18;\n    v22 = v24;\n    v4 = v9;\n    v17 = v18;\n    v23 = v24;\n    if ((*(int32_t *)((v30 / 8 & 28) + v31) & 1 << (int32_t)(v29 % 32)) != 0) {\n        goto lab_0x401f42_2;\n    }\n    goto lab_0x401e62;\n  lab_0x401987:;\n    int64_t v52 = v51;\n    uint64_t v53 = v47;\n    if (v53 < v50) {\n        // 0x40198c\n        *(char *)(v52 + v53) = v49;\n    }\n    // 0x401990\n    v1 = v53 + 1;\n    v5 = v48;\n    v14 = v50;\n    v20 = v52;\n    goto lab_0x4017f0_2;\n  lab_0x402610_2:;\n    int64_t v54 = v12;\n    uint64_t v55 = v28;\n    int64_t v56 = 0x100000000 * v15 >> 32;\n    int64_t v57 = 0x100000000 * v21 >> 32;\n    v7 = v54;\n    v19 = v56;\n    v25 = v57;\n    if (v55 < 2) {\n        goto lab_0x401bb8;\n    } else {\n        uint64_t v58 = v55 + v13; // 0x40241e\n        int64_t v59 = v13 + 1; // 0x402514\n        v47 = result;\n        v48 = v54;\n        v49 = v29;\n        v2 = v59;\n        v50 = v56;\n        v51 = v57;\n        int64_t v60 = v59; // 0x40251b\n        int64_t v61 = result; // 0x40251b\n        char v62 = v29; // 0x40251b\n        if (v59 < v58) {\n            uint64_t v63 = v61;\n            if (v63 < v56) {\n                // 0x4024e4\n                *(char *)(v63 + v57) = v62;\n            }\n            char v64 = *(char *)(v60 + str); // 0x4024e8\n            int64_t v65 = v63 + 1; // 0x4024ed\n            int64_t v66 = v60 + 1; // 0x402514\n            v47 = v65;\n            v48 = v54;\n            v49 = v64;\n            v2 = v66;\n            v50 = v56;\n            v51 = v57;\n            v60 = v66;\n            while (v66 < v58) {\n                // 0x4024df\n                v63 = v65;\n                if (v63 < v56) {\n                    // 0x4024e4\n                    *(char *)(v63 + v57) = v64;\n                }\n                // 0x4024e8\n                v64 = *(char *)(v60 + str);\n                v65 = v63 + 1;\n                v66 = v60 + 1;\n                v47 = v65;\n                v48 = v54;\n                v49 = v64;\n                v2 = v66;\n                v50 = v56;\n                v51 = v57;\n                v60 = v66;\n            }\n        }\n        goto lab_0x401987;\n    }\n}\n"
+        },
+        {
+            "funcName": "function_402760",
+            "funcStartAddr": "402760",
+            "funcEndAddr": "4028fb",
+            "decompiledFuncCode": "int64_t function_402760(int64_t a1, int64_t a2, int64_t a3, int64_t * a4) {\n    int64_t v1 = 0x100000000 * a1;\n    int64_t v2 = v1 >> 32; // 0x402762\n    int32_t * v3 = __errno_location(); // 0x40277c\n    int64_t v4 = (int64_t)g15; // 0x402781\n    int32_t v5 = *v3; // 0x40278b\n    int64_t v6 = v4; // 0x4027a1\n    if (*(int32_t *)0x6061d0 <= (int32_t)v2) {\n        int64_t v7 = v2 + 1; // 0x4027a3\n        int64_t v8 = 16 * v7 & 0xffffffff0; // 0x4027ad\n        int64_t v9; // 0x402760\n        if (g15 == &g16) {\n            int64_t v10 = function_403020(0, v8); // 0x4028d7\n            int128_t v11 = __asm_movdqa(*(int128_t *)&g16); // 0x4028dc\n            *(int64_t *)&g15 = v10;\n            __asm_movups(*(int128_t *)v10, v11);\n            v9 = v10;\n        } else {\n            int64_t v12 = function_403020(v4, v8); // 0x4027c6\n            *(int64_t *)&g15 = v12;\n            v9 = v12;\n        }\n        // 0x4027da\n        v6 = v9;\n        uint32_t v13 = *(int32_t *)&g18; // 0x4027da\n        int32_t v14 = v7;\n        memset((int64_t *)(16 * (int64_t)v13 + v6), 0, 16 * (v14 - v13));\n        *(int32_t *)&g18 = v14;\n    }\n    int64_t v15 = v6 + (v1 >> 28); // 0x40280b\n    int32_t v16 = *(int32_t *)((int64_t)a4 + 4) | 1; // 0x402815\n    int64_t * v17 = (int64_t *)v15; // 0x402818\n    uint64_t v18 = *v17; // 0x402818\n    int64_t * v19 = (int64_t *)(v15 + 8); // 0x40281b\n    int64_t result = *v19; // 0x40281b\n    int64_t v20; // 0x402760\n    uint64_t v21 = function_401750(result, v18, a2, a3, v20 & 0xffffffff, v16); // 0x40283e\n    if (v18 > v21) {\n        // 0x4028b5\n        *v3 = v5;\n        return result;\n    }\n    int64_t v22 = v21 + 1; // 0x402851\n    *v17 = v22;\n    if (result != (int64_t)&g29) {\n        // 0x402861\n        free((int64_t *)result);\n    }\n    int64_t result2 = function_402fd0(v22); // 0x40287b\n    *v19 = result2;\n    int64_t v23; // 0x402760\n    function_401750(result2, v22, a2, a3, (int64_t)*(int32_t *)&v23, v16);\n    // 0x4028b5\n    *v3 = v5;\n    return result2;\n}\n"
+        },
+        {
+            "funcName": "function_402900",
+            "funcStartAddr": "402900",
+            "funcEndAddr": "402934",
+            "decompiledFuncCode": "int64_t function_402900(int64_t a1) {\n    int32_t * v1 = __errno_location(); // 0x402907\n    int64_t result = function_403190(a1 == 0 ? (int64_t)&g30 : a1, 56); // 0x402926\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_402940",
+            "funcStartAddr": "402940",
+            "funcEndAddr": "40294f",
+            "decompiledFuncCode": "int64_t function_402940(int64_t a1) {\n    uint32_t result = *(int32_t *)(a1 == 0 ? (int64_t)&g30 : a1); // 0x40294c\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_402950",
+            "funcStartAddr": "402950",
+            "funcEndAddr": "40295f",
+            "decompiledFuncCode": "int64_t function_402950(int64_t a1, int64_t a2) {\n    int64_t v1 = a1 == 0 ? (int64_t)&g30 : a1; // 0x402958\n    *(int32_t *)v1 = (int32_t)a2;\n    return (int64_t)&g30;\n}\n"
+        },
+        {
+            "funcName": "function_402960",
+            "funcStartAddr": "402960",
+            "funcEndAddr": "402993",
+            "decompiledFuncCode": "int64_t function_402960(int64_t a1, uint64_t a2, int64_t a3) {\n    int64_t v1 = a1 == 0 ? (int64_t)&g30 + 8 : a1 + 8; // 0x402979\n    int32_t * v2 = (int32_t *)((a2 / 8 & 28) + v1); // 0x40297e\n    uint32_t v3 = *v2; // 0x40297e\n    uint32_t v4 = (int32_t)a2 % 32; // 0x402982\n    uint32_t v5 = v3 >> v4;\n    *v2 = (v5 ^ (int32_t)a3) % 2 << v4 ^ v3;\n    return v5 % 2;\n}\n"
+        },
+        {
+            "funcName": "function_4029a0",
+            "funcStartAddr": "4029a0",
+            "funcEndAddr": "4029b3",
+            "decompiledFuncCode": "int64_t function_4029a0(int64_t a1, int64_t a2) {\n    int32_t * v1 = (int32_t *)(a1 == 0 ? (int64_t)&g30 + 4 : a1 + 4); // 0x4029ac\n    *v1 = (int32_t)a2;\n    return (int64_t)*v1;\n}\n"
+        },
+        {
+            "funcName": "function_4029c0",
+            "funcStartAddr": "4029c0",
+            "funcEndAddr": "4029eb",
+            "decompiledFuncCode": "int64_t function_4029c0(int64_t a1, int64_t a2, int64_t a3) {\n    int64_t v1 = a1 == 0 ? (int64_t)&g30 : a1; // 0x4029c8\n    *(int32_t *)v1 = 10;\n    if (a2 == 0 || a3 == 0) {\n        // 0x4029e5\n        abort();\n        // UNREACHABLE\n    }\n    // 0x4029dc\n    *(int64_t *)(v1 + 40) = a2;\n    *(int64_t *)(v1 + 48) = a3;\n    return (int64_t)&g30;\n}\n"
+        },
+        {
+            "funcName": "function_4029f0",
+            "funcStartAddr": "4029f0",
+            "funcEndAddr": "402a62",
+            "decompiledFuncCode": "int64_t function_4029f0(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5) {\n    int64_t v1 = a5 == 0 ? (int64_t)&g30 : a5; // 0x402a12\n    int32_t * v2 = __errno_location(); // 0x402a1b\n    uint32_t v3 = *(int32_t *)v1; // 0x402a3b\n    int64_t result = function_401750(a1, a2, a3, a4, (int64_t)v3, *(int32_t *)(v1 + 4)); // 0x402a4a\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_402a70",
+            "funcStartAddr": "402a70",
+            "funcEndAddr": "402b51",
+            "decompiledFuncCode": "int64_t function_402a70(int64_t a1, int64_t a2, int32_t a3, int64_t a4) {\n    int64_t v1 = a4 == 0 ? (int64_t)&g30 : a4; // 0x402a92\n    int32_t * v2 = __errno_location(); // 0x402a98\n    int32_t v3 = *(int32_t *)(v1 + 4) | (int32_t)(a3 == 0); // 0x402ab7\n    int32_t * v4 = (int32_t *)v1; // 0x402aba\n    int64_t v5 = function_401750(0, 0, a1, a2, (int64_t)*v4, v3); // 0x402ad5\n    int64_t v6 = v5 + 1; // 0x402ada\n    int64_t result = function_402fd0(v6); // 0x402aef\n    function_401750(result, v6, a1, a2, (int64_t)*v4, v3);\n    if (a3 != 0) {\n        // 0x402b34\n        *(int64_t *)(int64_t)a3 = v5;\n    }\n    // 0x402b3d\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_402b60",
+            "funcStartAddr": "402b60",
+            "funcEndAddr": "402b6a",
+            "decompiledFuncCode": "int64_t function_402b60(int64_t a1, int64_t a2, int64_t a3) {\n    // 0x402b60\n    return function_402a70(a1, a2, 0, a3);\n}\n"
+        },
+        {
+            "funcName": "function_402b70",
+            "funcStartAddr": "402b70",
+            "funcEndAddr": "402c05",
+            "decompiledFuncCode": "int64_t function_402b70(void) {\n    uint32_t v1 = *(int32_t *)&g18; // 0x402b70\n    int64_t v2 = v1; // 0x402b70\n    int64_t v3 = v2; // 0x402b84\n    if (v1 >= 2) {\n        int64_t v4 = &g18;\n        int64_t v5 = v4 + 16; // 0x402ba3\n        free((int64_t *)*(int64_t *)v4);\n        v3 = &g35;\n        while (v5 != (int64_t)g15 + 40 + (16 * v2 + 0xfffffffe0 & 0xffffffff0)) {\n            // 0x402ba0\n            v4 = v5;\n            v5 = v4 + 16;\n            free((int64_t *)*(int64_t *)v4);\n            v3 = &g35;\n        }\n    }\n    int64_t v6 = v3; // 0x402bbd\n    if (g16 != 0x606240) {\n        // 0x402bbf\n        free((int64_t *)g16);\n        g16 = 256;\n        *(int64_t *)&g17 = (int64_t)&g29;\n        v6 = &g35;\n    }\n    int64_t result = v6; // 0x402be1\n    if (g15 != &g16) {\n        // 0x402be3\n        free(g15);\n        *(int64_t *)&g15 = (int64_t)&g16;\n        result = &g35;\n    }\n    // 0x402bf6\n    *(int32_t *)&g18 = 1;\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_402c10",
+            "funcStartAddr": "402c10",
+            "funcEndAddr": "402c21",
+            "decompiledFuncCode": "int64_t function_402c10(void) {\n    // 0x402c10\n    int64_t v1; // 0x402c10\n    return function_402760(v1, v1, -1, (int64_t *)&g30);\n}\n"
+        },
+        {
+            "funcName": "function_402c30",
+            "funcStartAddr": "402c30",
+            "funcEndAddr": "402c3a",
+            "decompiledFuncCode": "int64_t function_402c30(void) {\n    // 0x402c30\n    int64_t v1; // 0x402c30\n    return function_402760(v1, v1, v1, (int64_t *)&g30);\n}\n"
+        },
+        {
+            "funcName": "function_402c40",
+            "funcStartAddr": "402c40",
+            "funcEndAddr": "402c56",
+            "decompiledFuncCode": "int64_t function_402c40(int64_t a1) {\n    // 0x402c40\n    return function_402760(0, a1, -1, (int64_t *)&g30);\n}\n"
+        },
+        {
+            "funcName": "function_402c60",
+            "funcStartAddr": "402c60",
+            "funcEndAddr": "402c72",
+            "decompiledFuncCode": "int64_t function_402c60(int64_t a1, int64_t a2) {\n    // 0x402c60\n    return function_402760(0, a1, a2, (int64_t *)&g30);\n}\n"
+        },
+        {
+            "funcName": "function_402c80",
+            "funcStartAddr": "402c80",
+            "funcEndAddr": "402ce8",
+            "decompiledFuncCode": "int64_t function_402c80(int32_t a1, int64_t a2, int64_t a3) {\n    int64_t v1 = 0x100000000 * a2 >> 32; // bp-72, 0x402c90\n    return function_402760((int64_t)a1, a3, -1, &v1);\n}\n"
+        },
+        {
+            "funcName": "function_402cf0",
+            "funcStartAddr": "402cf0",
+            "funcEndAddr": "402d54",
+            "decompiledFuncCode": "int64_t function_402cf0(int32_t a1, int64_t a2, int64_t a3, int64_t a4) {\n    int64_t v1 = 0x100000000 * a2 >> 32; // bp-72, 0x402d00\n    return function_402760((int64_t)a1, a3, a4, &v1);\n}\n"
+        },
+        {
+            "funcName": "function_402d60",
+            "funcStartAddr": "402d60",
+            "funcEndAddr": "402d6c",
+            "decompiledFuncCode": "int64_t function_402d60(int64_t a1, int64_t a2) {\n    // 0x402d60\n    return function_402c80(0, a1 & 0xffffffff, a2);\n}\n"
+        },
+        {
+            "funcName": "function_402d70",
+            "funcStartAddr": "402d70",
+            "funcEndAddr": "402d7f",
+            "decompiledFuncCode": "int64_t function_402d70(int64_t a1, int64_t a2, int64_t a3) {\n    // 0x402d70\n    return function_402cf0(0, a1 & 0xffffffff, a2, a3);\n}\n"
+        },
+        {
+            "funcName": "function_402d80",
+            "funcStartAddr": "402d80",
+            "funcEndAddr": "402df0",
+            "decompiledFuncCode": "int64_t function_402d80(int64_t a1, int64_t a2, uint64_t a3) {\n    int128_t v1 = __asm_movdqa(*(int128_t *)&g30); // 0x402d8d\n    int128_t v2 = __asm_movdqa(g31); // 0x402d95\n    int128_t v3 = __asm_movdqa(g32); // 0x402d9d\n    int64_t v4 = __asm_movaps(v1); // bp-72, 0x402db2\n    __asm_movaps(v2);\n    __asm_movaps(v3);\n    int32_t * v5 = (int32_t *)((a3 / 8 & 28) + 8 + (int64_t)&v4); // 0x402dc8\n    uint32_t v6 = *v5; // 0x402dc8\n    uint32_t v7 = (int32_t)a3 % 32; // 0x402dcd\n    *v5 = ((v6 >> v7) % 2 ^ 1) << v7 ^ v6;\n    return function_402760(0, a1, a2, &v4);\n}\n"
+        },
+        {
+            "funcName": "function_402df0",
+            "funcStartAddr": "402df0",
+            "funcEndAddr": "402dfd",
+            "decompiledFuncCode": "int64_t function_402df0(int64_t a1, int64_t a2) {\n    // 0x402df0\n    return function_402d80(a1, -1, 0x100000000000000 * a2 >> 56);\n}\n"
+        },
+        {
+            "funcName": "function_402e00",
+            "funcStartAddr": "402e00",
+            "funcEndAddr": "402e11",
+            "decompiledFuncCode": "int64_t function_402e00(int64_t a1) {\n    // 0x402e00\n    return function_402d80(a1, -1, 58);\n}\n"
+        },
+        {
+            "funcName": "function_402e20",
+            "funcStartAddr": "402e20",
+            "funcEndAddr": "402e2a",
+            "decompiledFuncCode": "int64_t function_402e20(void) {\n    // 0x402e20\n    int64_t v1; // 0x402e20\n    return function_402d80(v1, v1, 58);\n}\n"
+        },
+        {
+            "funcName": "function_402e30",
+            "funcStartAddr": "402e30",
+            "funcEndAddr": "402e9e",
+            "decompiledFuncCode": "int64_t function_402e30(int64_t a1, int64_t a2, int64_t a3) {\n    int64_t v1 = 0x100000000 * a2 >> 32; // bp-72, 0x402e4a\n    return function_402760(a1, a3, -1, &v1);\n}\n"
+        },
+        {
+            "funcName": "function_402ea0",
+            "funcStartAddr": "402ea0",
+            "funcEndAddr": "402f0c",
+            "decompiledFuncCode": "int64_t function_402ea0(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5) {\n    int128_t v1 = __asm_movdqa(*(int128_t *)&g30); // 0x402ea7\n    int128_t v2 = __asm_movdqa(g31); // 0x402eaf\n    int128_t v3 = __asm_movdqa(g32); // 0x402eb7\n    __asm_movaps(v1);\n    __asm_movaps(v2);\n    __asm_movaps(v3);\n    int64_t v4 = 10; // bp-72, 0x402ed9\n    if (a2 == 0 || a3 == 0) {\n        // 0x402f07\n        abort();\n        // UNREACHABLE\n    }\n    // 0x402eea\n    return function_402760(a1, a4, a5, &v4);\n}\n"
+        },
+        {
+            "funcName": "function_402f10",
+            "funcStartAddr": "402f10",
+            "funcEndAddr": "402f19",
+            "decompiledFuncCode": "int64_t function_402f10(void) {\n    // 0x402f10\n    int64_t v1; // 0x402f10\n    return function_402ea0(v1, v1, v1, v1, -1);\n}\n"
+        },
+        {
+            "funcName": "function_402f20",
+            "funcStartAddr": "402f20",
+            "funcEndAddr": "402f37",
+            "decompiledFuncCode": "int64_t function_402f20(int64_t a1, int64_t a2, int64_t a3) {\n    // 0x402f20\n    return function_402ea0(0, a1, a2, a3, -1);\n}\n"
+        },
+        {
+            "funcName": "function_402f40",
+            "funcStartAddr": "402f40",
+            "funcEndAddr": "402f53",
+            "decompiledFuncCode": "int64_t function_402f40(int64_t a1, int64_t a2, int64_t a3, int64_t a4) {\n    // 0x402f40\n    return function_402ea0(0, a1, a2, a3, a4);\n}\n"
+        },
+        {
+            "funcName": "function_402f60",
+            "funcStartAddr": "402f60",
+            "funcEndAddr": "402f6a",
+            "decompiledFuncCode": "int64_t function_402f60(void) {\n    // 0x402f60\n    int64_t v1; // 0x402f60\n    return function_402760(v1, v1, v1, &g14);\n}\n"
+        },
+        {
+            "funcName": "function_402f70",
+            "funcStartAddr": "402f70",
+            "funcEndAddr": "402f82",
+            "decompiledFuncCode": "int64_t function_402f70(int64_t a1, int64_t a2) {\n    // 0x402f70\n    return function_402760(0, a1, a2, &g14);\n}\n"
+        },
+        {
+            "funcName": "function_402f90",
+            "funcStartAddr": "402f90",
+            "funcEndAddr": "402fa1",
+            "decompiledFuncCode": "int64_t function_402f90(void) {\n    // 0x402f90\n    int64_t v1; // 0x402f90\n    return function_402760(v1, v1, -1, &g14);\n}\n"
+        },
+        {
+            "funcName": "function_402fb0",
+            "funcStartAddr": "402fb0",
+            "funcEndAddr": "402fc6",
+            "decompiledFuncCode": "int64_t function_402fb0(int64_t a1) {\n    // 0x402fb0\n    return function_402760(0, a1, -1, &g14);\n}\n"
+        },
+        {
+            "funcName": "function_402fd0",
+            "funcStartAddr": "402fd0",
+            "funcEndAddr": "402fea",
+            "decompiledFuncCode": "int64_t function_402fd0(int64_t size) {\n    int64_t * mem = malloc((int32_t)size); // 0x402fd4\n    if (size != 0 != (mem == NULL)) {\n        // 0x402fe3\n        return (int64_t)mem;\n    }\n    // 0x402fe5\n    function_4031f0(size);\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_402ff0",
+            "funcStartAddr": "402ff0",
+            "funcEndAddr": "403003",
+            "decompiledFuncCode": "int64_t function_402ff0(uint64_t a1, uint64_t a2) {\n    uint128_t v1 = (int128_t)a2 * (int128_t)a1; // 0x402ff3\n    if (v1 <= 0xffffffffffffffff) {\n        // 0x402ff8\n        return function_402fd0((int64_t)v1);\n    }\n    // 0x402ffd\n    function_4031f0(a1);\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_403010",
+            "funcStartAddr": "403010",
+            "funcEndAddr": "403012",
+            "decompiledFuncCode": "int64_t function_403010(void) {\n    // 0x403010\n    int64_t v1; // 0x403010\n    return function_402fd0(v1);\n}\n"
+        },
+        {
+            "funcName": "function_403020",
+            "funcStartAddr": "403020",
+            "funcEndAddr": "403056",
+            "decompiledFuncCode": "int64_t function_403020(int64_t a1, int64_t a2) {\n    int64_t * v1 = (int64_t *)a1;\n    if (a2 == 0 == (a1 != 0)) {\n        // 0x403048\n        free(v1);\n        return (int32_t)&g35 ^ (int32_t)&g35;\n    }\n    int64_t * mem = realloc(v1, (int32_t)a2); // 0x403031\n    if (a2 != 0 != (mem == NULL)) {\n        // 0x403040\n        return (int64_t)mem;\n    }\n    // 0x403051\n    function_4031f0(a1);\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_403060",
+            "funcStartAddr": "403060",
+            "funcEndAddr": "403073",
+            "decompiledFuncCode": "int64_t function_403060(int64_t a1, uint64_t a2, uint64_t a3) {\n    uint128_t v1 = (int128_t)a3 * (int128_t)a2; // 0x403063\n    if (v1 <= 0xffffffffffffffff) {\n        // 0x403068\n        return function_403020(a1, (int64_t)v1);\n    }\n    // 0x40306d\n    function_4031f0(a1);\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_403080",
+            "funcStartAddr": "403080",
+            "funcEndAddr": "4030f6",
+            "decompiledFuncCode": "int64_t function_403080(int64_t a1, uint64_t a2, uint64_t a3, int64_t a4, int64_t a5) {\n    int64_t v1; // 0x403080\n    if (a1 != 0) {\n        if (0xaaaaaaaaaaaaaaaa / a3 <= a2) {\n            // 0x4030f0\n            function_4031f0(a1);\n            // UNREACHABLE\n        }\n        // 0x4030aa\n        v1 = a2 + 1 + a2 / 2;\n        *(int64_t *)a2 = v1;\n        return function_403020(a1, v1 * a3);\n    }\n    // 0x4030c0\n    if (a2 == 0) {\n        int64_t v2 = 128 / a3 + (int64_t)(a3 >= 129); // 0x4030dd\n        *(int64_t *)a2 = v2;\n        return function_403020(0, v2 * a3);\n    }\n    // 0x4030aa\n    v1 = a2;\n    *(int64_t *)a2 = v1;\n    return function_403020(a1, v1 * a3);\n}\n"
+        },
+        {
+            "funcName": "function_403100",
+            "funcStartAddr": "403100",
+            "funcEndAddr": "40314d",
+            "decompiledFuncCode": "int64_t function_403100(int64_t a1, uint64_t a2) {\n    if (a1 == 0) {\n        int64_t v1 = a2 == 0 ? 128 : a2; // 0x403138\n        *(int64_t *)a2 = v1;\n        return function_403020(0, v1);\n    }\n    if (a2 >= 0xaaaaaaaaaaaaaaaa) {\n        // 0x403147\n        function_4031f0(a1);\n        // UNREACHABLE\n    }\n    int64_t v2 = a2 + 1 + a2 / 2; // 0x40311d\n    *(int64_t *)a2 = v2;\n    return function_403020(a1, v2);\n}\n"
+        },
+        {
+            "funcName": "function_403150",
+            "funcStartAddr": "403150",
+            "funcEndAddr": "403167",
+            "decompiledFuncCode": "int64_t function_403150(int64_t a1, int64_t a2) {\n    // 0x403150\n    return (int64_t)memset((int64_t *)function_402fd0(a1), 0, (int32_t)a1);\n}\n"
+        },
+        {
+            "funcName": "function_403170",
+            "funcStartAddr": "403170",
+            "funcEndAddr": "403188",
+            "decompiledFuncCode": "int64_t function_403170(void) {\n    // 0x403170\n    int64_t nmemb; // 0x403170\n    int64_t * mem = calloc((int32_t)nmemb, (int32_t)nmemb); // 0x403174\n    if (mem != NULL) {\n        // 0x40317e\n        return (int64_t)mem;\n    }\n    // 0x403183\n    function_4031f0(nmemb);\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_403190",
+            "funcStartAddr": "403190",
+            "funcEndAddr": "4031b8",
+            "decompiledFuncCode": "int64_t function_403190(int64_t a1, int64_t a2) {\n    int64_t v1 = function_402fd0(a2); // 0x40319f\n    return (int64_t)memcpy((int64_t *)v1, (int64_t *)a1, (int32_t)a2);\n}\n"
+        },
+        {
+            "funcName": "function_4031c0",
+            "funcStartAddr": "4031c0",
+            "funcEndAddr": "4031ee",
+            "decompiledFuncCode": "int64_t function_4031c0(int64_t str) {\n    int64_t v1 = (int64_t)strlen((char *)str) + 1; // 0x4031ce\n    int64_t v2 = function_402fd0(v1); // 0x4031d5\n    return (int64_t)memcpy((int64_t *)v2, (int64_t *)str, (int32_t)v1);\n}\n"
+        },
+        {
+            "funcName": "function_4031f0",
+            "funcStartAddr": "4031f0",
+            "funcEndAddr": "403221",
+            "decompiledFuncCode": "int64_t function_4031f0(int64_t a1) {\n    // 0x4031f0\n    error(g13, (int32_t)\"memory exhausted\" ^ (int32_t)\"memory exhausted\", \"%s\", dcgettext(NULL, \"memory exhausted\", 5));\n    abort();\n    // UNREACHABLE\n}\n"
+        },
+        {
+            "funcName": "function_403230",
+            "funcStartAddr": "403230",
+            "funcEndAddr": "403259",
+            "decompiledFuncCode": "int64_t function_403230(int64_t pwc, int64_t wstr2, int64_t n) {\n    // 0x403230\n    int64_t ps; // 0x403230\n    int32_t result; // 0x403254\n    if (wstr2 == 0) {\n        int64_t wstr = (int64_t)&g2;\n        result = mbrtowc((int32_t *)0, (char *)wstr, (int32_t)1, (struct _TYPEDEF___mbstate_t *)ps);\n        return result;\n    }\n    // 0x403235\n    if (n == 0) {\n        // 0x40323a\n        return -2;\n    }\n    // 0x403254\n    result = mbrtowc((int32_t *)pwc, (char *)wstr2, (int32_t)n, (struct _TYPEDEF___mbstate_t *)ps);\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_403260",
+            "funcStartAddr": "403260",
+            "funcEndAddr": "4032c5",
+            "decompiledFuncCode": "int64_t function_403260(int64_t a1) {\n    struct _IO_FILE * stream = (struct _IO_FILE *)a1; // 0x403267\n    int32_t v1 = __fpending(stream); // 0x403267\n    int32_t is_ferror = ferror(stream); // 0x403272\n    int32_t v2 = fclose(stream); // 0x40327c\n    if (is_ferror != 0) {\n        // 0x4032a8\n        if (v2 == 0) {\n            // 0x4032ac\n            *__errno_location() = 0;\n        }\n        // 0x40329e\n        return 0xffffffff;\n    }\n    // 0x403285\n    if (v2 == 0) {\n        // 0x40329e\n        return 0;\n    }\n    int64_t result = 0xffffffff; // 0x40328c\n    if (v1 == 0) {\n        // 0x40328e\n        result = *__errno_location() != 9 ? 0xffffffff : 0;\n    }\n    // 0x40329e\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_4032d0",
+            "funcStartAddr": "4032d0",
+            "funcEndAddr": "403832",
+            "decompiledFuncCode": "int64_t function_4032d0(void) {\n    char * v1 = nl_langinfo(14); // 0x4032e6\n    char * v2 = g33; // 0x4032eb\n    char * v3; // 0x4032d0\n    int64_t v4; // 0x4032d0\n    int64_t v5; // 0x4032d0\n    int64_t v6; // 0x4032d0\n    int64_t v7; // 0x4032d0\n    int32_t size; // 0x4032d0\n    int32_t size2; // 0x4032d0\n    int32_t len; // 0x4033a2\n    int64_t v8; // 0x4033a2\n    char * env_val; // 0x40338d\n    if (v2 == NULL) {\n        // 0x403388\n        env_val = getenv(\"CHARSETALIASDIR\");\n        size = 116;\n        v4 = 102;\n        v5 = (int64_t)\"/home/dongkwan/data/scripts/gnu_packages/findutils/findutils-4.6.0_gcc-8.2.0_x86_64_O2_debug/gogo/lib\";\n        v6 = 101;\n        if (env_val == NULL) {\n            goto lab_0x4033f5;\n        } else {\n            // 0x40339a\n            size = 116;\n            v4 = 102;\n            v5 = (int64_t)\"/home/dongkwan/data/scripts/gnu_packages/findutils/findutils-4.6.0_gcc-8.2.0_x86_64_O2_debug/gogo/lib\";\n            v6 = 101;\n            if (*env_val == 0) {\n                goto lab_0x4033f5;\n            } else {\n                // 0x40339f\n                len = strlen(env_val);\n                v8 = len;\n                size2 = 14;\n                if (len != 0) {\n                    int64_t v9 = (int64_t)env_val; // 0x40338d\n                    if (*(char *)(v9 - 1 + v8) != 47) {\n                        // 0x403825\n                        size = len + 15;\n                        v4 = v8 + 1;\n                        v5 = v9;\n                        v6 = v8;\n                        goto lab_0x4033f5;\n                    } else {\n                        // 0x403799\n                        size2 = len + 14;\n                        goto lab_0x4033bb;\n                    }\n                } else {\n                    goto lab_0x4033bb;\n                }\n            }\n        }\n    } else {\n        // 0x4032d0\n        v3 = v2;\n        v7 = (int64_t)v2;\n        goto lab_0x40330a;\n    }\n  lab_0x40363c:;\n    // 0x40363c\n    int64_t v10; // 0x4032d0\n    int64_t v11 = v10;\n    int64_t v12; // 0x4032d0\n    int64_t v13 = v12;\n    struct _IO_FILE * stream; // 0x40347b\n    int32_t v14 = __uflow(stream); // 0x40363f\n    int64_t v15 = v13; // 0x403649\n    int32_t v16 = v14; // 0x403649\n    int64_t v17 = v11; // 0x403649\n    int64_t v18 = v13; // 0x403649\n    int64_t v19 = v11; // 0x403649\n    if (v14 == -1) {\n        // break -> 0x40364f\n        goto lab_0x40364f;\n    }\n    goto lab_0x4034c9;\n  lab_0x4034be:;\n    // 0x4034be\n    int64_t v116; // 0x4032d0\n    int64_t v137 = v116;\n    int64_t v115; // 0x4032d0\n    int64_t v138 = v115;\n    int64_t v114; // 0x4032d0\n    int64_t v139 = v114;\n    int64_t * v30; // 0x4034b0\n    *v30 = v138 + 1;\n    unsigned char v140 = *(char *)v138; // 0x4034c6\n    v15 = v139;\n    v16 = v140;\n    v17 = v137;\n    goto lab_0x4034c9;\n  lab_0x4034c9:;\n    int64_t v20 = v17;\n    int32_t c = v16;\n    int64_t v21 = v15;\n    int64_t v22; // 0x4032d0\n    int32_t v23; // bp-120, 0x4032d0\n    int32_t v24; // bp-184, 0x4032d0\n    int64_t v25; // 0x4032d0\n    int64_t v26; // 0x403498\n    int64_t v27; // 0x40349d\n    int64_t * v28; // 0x4034b4\n    switch (c) {\n        case 32: {\n            // 0x4034b0\n            v25 = v21;\n            v22 = v20;\n            goto lab_0x4034b0_2;\n        }\n        case 10: {\n            // 0x4034b0\n            v25 = v21;\n            v22 = v20;\n            goto lab_0x4034b0_2;\n        }\n        case 9: {\n            // 0x4034b0\n            v25 = v21;\n            v22 = v20;\n            goto lab_0x4034b0_2;\n        }\n        case 35: {\n            uint64_t v29 = *v30; // 0x4036a1\n            uint64_t v31 = *v28; // 0x4036a5\n            int32_t v32; // 0x4032d0\n            char v33; // 0x4032d0\n            unsigned char v34; // 0x403688\n            int32_t v35; // 0x4036ae\n            if (v29 < v31) {\n                // 0x403680\n                *v30 = v29 + 1;\n                v34 = *(char *)v29;\n                v32 = v34;\n                v33 = 1;\n            } else {\n                // 0x4036ab\n                v35 = __uflow(stream);\n                v32 = v35;\n                v33 = v35 != -1;\n            }\n            char v36 = v33;\n            int32_t v37 = v32;\n            while (v37 != 10 && v36 != 0) {\n                // 0x4036a1\n                v29 = *v30;\n                v31 = *v28;\n                if (v29 < v31) {\n                    // 0x403680\n                    *v30 = v29 + 1;\n                    v34 = *(char *)v29;\n                    v32 = v34;\n                    v33 = 1;\n                } else {\n                    // 0x4036ab\n                    v35 = __uflow(stream);\n                    v32 = v35;\n                    v33 = v35 != -1;\n                }\n                // 0x403690\n                v36 = v33;\n                v37 = v32;\n            }\n            // 0x40377f\n            v18 = v21;\n            v19 = v20;\n            if (v37 == -1) {\n                // break -> 0x40364f\n                break;\n            }\n            // 0x4034b0\n            v25 = v21;\n            v22 = v20;\n            goto lab_0x4034b0_2;\n        }\n        default: {\n            // 0x4034df\n            ungetc(c, stream);\n            int32_t items_assigned = fscanf(stream, \"%50s %50s\", &v24, &v23); // 0x4034f7\n            int64_t v38 = v27; // 0x4034ff\n            v18 = v21;\n            v19 = v20;\n            if (items_assigned < 2) {\n                // break -> 0x40364f\n                break;\n            }\n            int64_t v39 = v38;\n            int32_t v40 = *(int32_t *)v39; // 0x403508\n            int64_t v41 = v39 + 4; // 0x40350a\n            int32_t v42 = v40 - 0x1010101 & (v40 ^ -0x7f7f7f80); // 0x403516\n            uint32_t v43 = v42 & -0x7f7f7f80; // 0x403518\n            v38 = v41;\n            while (v43 == 0) {\n                // 0x403508\n                v39 = v38;\n                v40 = *(int32_t *)v39;\n                v41 = v39 + 4;\n                v42 = v40 - 0x1010101 & (v40 ^ -0x7f7f7f80);\n                v43 = v42 & -0x7f7f7f80;\n                v38 = v41;\n            }\n            int32_t v44 = (v42 & 0x8080) == 0 ? v43 / 0x10000 : v43; // 0x403529\n            int64_t v45 = v39 + 6; // 0x40352c\n            unsigned char v46 = (char)v44; // 0x403536\n            int64_t v47 = -1 - v46 < v46 ? 4 : 3; // 0x40353b\n            int64_t v48 = v26; // 0x40353f\n            int64_t v49 = v48;\n            int32_t v50 = *(int32_t *)v49; // 0x403542\n            int64_t v51 = v49 + 4; // 0x403544\n            int32_t v52 = v50 - 0x1010101 & (v50 ^ -0x7f7f7f80); // 0x403550\n            uint32_t v53 = v52 & -0x7f7f7f80; // 0x403552\n            v48 = v51;\n            while (v53 == 0) {\n                // 0x403542\n                v49 = v48;\n                v50 = *(int32_t *)v49;\n                v51 = v49 + 4;\n                v52 = v50 - 0x1010101 & (v50 ^ -0x7f7f7f80);\n                v53 = v52 & -0x7f7f7f80;\n                v48 = v51;\n            }\n            int64_t v54 = (v42 & 0x8080) == 0 ? v45 : v41; // 0x403530\n            int64_t v55 = v54 - v47 - v27; // 0x40353f\n            int32_t v56 = (v52 & 0x8080) == 0 ? v53 / 0x10000 : v53; // 0x403568\n            int64_t v57 = (v52 & 0x8080) == 0 ? v49 + 6 : v51; // 0x40356f\n            unsigned char v58 = (char)v56; // 0x403575\n            int64_t v59 = -1 - v58 < v58 ? 4 : 3; // 0x403578\n            int64_t v60 = v57 - v59 - v26; // 0x40357c\n            int64_t v61 = v60 + v55; // 0x403585\n            int64_t * v62; // 0x4032d0\n            int64_t v63; // 0x4032d0\n            if (v21 != 0) {\n                int64_t v64 = v61 + v21; // 0x4036bb\n                int64_t * mem = realloc((int64_t *)v20, (int32_t)v64 + 3); // 0x4036d0\n                v63 = v64;\n                v62 = mem;\n            } else {\n                int64_t * mem2 = malloc((int32_t)v61 + 3); // 0x4035a1\n                v63 = v61;\n                v62 = mem2;\n            }\n            int64_t * v65 = v62;\n            if (v65 == NULL) {\n                // 0x4037dc\n                free((int64_t *)v20);\n                fclose(stream);\n                goto lab_0x403454;\n            }\n            int64_t v66 = v63;\n            int64_t v67 = (int64_t)v65;\n            int64_t v68 = v66 + 2;\n            int64_t v69 = v55 + 1; // 0x4035c8\n            int64_t v70 = v68 - v60 + v67;\n            int64_t v71 = -2 - v55 + v70; // 0x4035d2\n            uint32_t v72 = (int32_t)v69; // 0x4035d5\n            if (v72 >= 8) {\n                int32_t v73 = v24; // 0x4036e4\n                *(int64_t *)v71 = (int64_t)v73;\n                int64_t v74 = (v69 & 0xffffffff) - 8;\n                int64_t v75 = *(int64_t *)(v74 + v27); // 0x4036ed\n                *(int64_t *)(v71 + v74) = v75;\n                int64_t v76 = v71 + 8 & -8; // 0x4036fe\n                int64_t v77 = v71 - v76; // 0x403702\n                uint32_t v78 = (int32_t)(v77 + v69); // 0x40370d\n                if (v78 >= 8) {\n                    int64_t v79 = v27 - v77; // 0x403707\n                    uint32_t v80 = v78 & -8; // 0x403729\n                    int64_t v81 = 0; // 0x4032d0\n                    int64_t v82 = v81;\n                    int64_t v83 = v82 + 8; // 0x40371e\n                    int64_t v84 = *(int64_t *)(v79 + v82); // 0x403721\n                    *(int64_t *)(v82 + v76) = v84;\n                    v81 = v83 & 0xffffffff;\n                    while (v80 > (int32_t)v83) {\n                        // 0x40371b\n                        v82 = v81;\n                        v83 = v82 + 8;\n                        v84 = *(int64_t *)(v79 + v82);\n                        *(int64_t *)(v82 + v76) = v84;\n                        v81 = v83 & 0xffffffff;\n                    }\n                }\n            } else {\n                if ((v69 & 4) != 0) {\n                    int32_t v85 = v24; // 0x4037af\n                    *(int32_t *)v71 = v85;\n                    int64_t v86 = (v69 & 0xffffffff) - 4;\n                    int32_t v87 = *(int32_t *)(v86 + v27); // 0x4037b7\n                    *(int32_t *)(v71 + v86) = v87;\n                } else {\n                    if (v72 != 0) {\n                        int32_t v88 = v24; // 0x4035eb\n                        *(char *)v71 = (char)v88;\n                        if ((v69 & 2) != 0) {\n                            int64_t v89 = (v69 & 0xffffffff) - 2;\n                            int16_t v90 = *(int16_t *)(v89 + v27); // 0x403802\n                            *(int16_t *)(v71 + v89) = v90;\n                        }\n                    }\n                }\n            }\n            int64_t v91 = v60 + 1; // 0x4035fb\n            int64_t v92 = v70 - 1; // 0x4035ff\n            uint32_t v93 = (int32_t)v91; // 0x403604\n            if (v93 >= 8) {\n                int32_t v94 = v23; // 0x403732\n                *(int64_t *)v92 = (int64_t)v94;\n                int64_t v95 = (v91 & 0xffffffff) - 8;\n                int64_t v96 = *(int64_t *)(v95 + v26); // 0x40373e\n                *(int64_t *)(v92 + v95) = v96;\n                int64_t v97 = v70 + 7 & -8; // 0x40374c\n                int64_t v98 = v92 - v97; // 0x403750\n                uint32_t v99 = (int32_t)(v98 + v91); // 0x40375b\n                if (v99 >= 8) {\n                    int64_t v100 = v26 - v98; // 0x403755\n                    uint32_t v101 = v99 & -8; // 0x403776\n                    int64_t v102 = 0; // 0x4032d0\n                    int64_t v103 = v102;\n                    int64_t v104 = v103 + 8; // 0x40376b\n                    int64_t v105 = *(int64_t *)(v100 + v103); // 0x40376e\n                    *(int64_t *)(v103 + v97) = v105;\n                    v102 = v104 & 0xffffffff;\n                    while (v101 > (int32_t)v104) {\n                        // 0x403769\n                        v103 = v102;\n                        v104 = v103 + 8;\n                        v105 = *(int64_t *)(v100 + v103);\n                        *(int64_t *)(v103 + v97) = v105;\n                        v102 = v104 & 0xffffffff;\n                    }\n                }\n            } else {\n                if ((v91 & 4) != 0) {\n                    int32_t v106 = v23; // 0x4037c6\n                    *(int32_t *)v92 = v106;\n                    int64_t v107 = (v91 & 0xffffffff) - 4;\n                    int32_t v108 = *(int32_t *)(v107 + v26); // 0x4037ce\n                    *(int32_t *)(v92 + v107) = v108;\n                } else {\n                    if (v93 != 0) {\n                        int32_t v109 = v23; // 0x40361a\n                        *(char *)v92 = (char)v109;\n                        if ((v91 & 2) != 0) {\n                            int64_t v110 = (v91 & 0xffffffff) - 2;\n                            int16_t v111 = *(int16_t *)(v110 + v26); // 0x403815\n                            *(int16_t *)(v92 + v110) = v111;\n                        }\n                    }\n                }\n            }\n            uint64_t v112 = *v30; // 0x40362e\n            uint64_t v113 = *v28; // 0x403632\n            v114 = v68;\n            v115 = v112;\n            v116 = v67;\n            v12 = v68;\n            v10 = v67;\n            if (v112 < v113) {\n                goto lab_0x4034be;\n            } else {\n                goto lab_0x40363c;\n            }\n        }\n    }\n  lab_0x4033f5:;\n    int64_t * mem3 = malloc(size); // 0x4033f5\n    int64_t v117 = (int64_t)&g2; // 0x403400\n    int64_t v118; // 0x4032d0\n    int64_t path; // 0x4032d0\n    if (mem3 == NULL) {\n        goto lab_0x4033d2;\n    } else {\n        int64_t v119 = (int64_t)mem3; // 0x4033f5\n        memcpy(mem3, (int64_t *)v5, (int32_t)v6);\n        *(char *)(v6 + v119) = 47;\n        path = v119;\n        v118 = v4;\n        goto lab_0x403416;\n    }\n  lab_0x40330a:;\n    int64_t str = v1 == NULL ? (int64_t)&g2 : (int64_t)v1; // 0x4032fd\n    char v120 = *v3; // 0x40330a\n    int64_t v121; // 0x4032d0\n    if (v120 == 0) {\n        // 0x403364\n        v121 = str;\n        return *(char *)v121 == 0 ? (int64_t)\"ASCII\" : v121;\n    }\n    char v122 = v120; // 0x4032d0\n    int64_t v123 = v7;\n    char * str2 = (char *)v123;\n    int64_t v124; // 0x4032d0\n    while (strcmp((char *)str, str2) != 0) {\n        int64_t v125 = v123 + 1;\n        if (v122 == 42) {\n            // 0x403350\n            v124 = v125;\n            if (*(char *)v125 == 0) {\n                goto lab_0x403357;\n            }\n        }\n        int64_t str3 = v125 + (int64_t)strlen(str2); // 0x403320\n        int64_t v126 = str3 + 1 + (int64_t)strlen((char *)str3); // 0x40332d\n        char v127 = *(char *)v126; // 0x403332\n        v122 = v127;\n        if (v127 == 0) {\n            // 0x403364\n            v121 = str;\n            return *(char *)v121 == 0 ? (int64_t)\"ASCII\" : v121;\n        }\n        v123 = v126;\n        str2 = (char *)v123;\n    }\n    // 0x40333b\n    v124 = v123 + 1;\n  lab_0x403357:\n    // 0x403364\n    v121 = v124 + (int64_t)strlen(str2);\n    return *(char *)v121 == 0 ? (int64_t)\"ASCII\" : v121;\n  lab_0x4033d2:;\n    char * v128 = (char *)v117;\n    g33 = v128;\n    v3 = v128;\n    v7 = v117;\n    goto lab_0x40330a;\n  lab_0x403416:;\n    int64_t v129 = v118 + path; // 0x403416\n    *(int64_t *)v129 = 0x2e74657372616863;\n    *(int16_t *)(v129 + 12) = 115;\n    *(int32_t *)(v129 + 8) = 0x61696c61;\n    if (open((char *)path, O_RDONLY) >= 0) {\n        // 0x403471\n        int32_t fd; // 0x403442\n        stream = fdopen(fd, \"r\");\n        if (stream == NULL) {\n            // 0x4037a2\n            close(fd);\n        } else {\n            int64_t v130 = (int64_t)stream; // 0x40347b\n            v26 = &v23;\n            v27 = &v24;\n            v30 = (int64_t *)(v130 + 8);\n            v28 = (int64_t *)(v130 + 16);\n            v25 = 0;\n            v22 = 0;\n            while (true) {\n              lab_0x4034b0_2:;\n                int64_t v131 = v22;\n                int64_t v132 = v25;\n                uint64_t v133 = *v30; // 0x4034b0\n                uint64_t v134 = *v28; // 0x4034b4\n                v114 = v132;\n                v115 = v133;\n                v116 = v131;\n                v12 = v132;\n                v10 = v131;\n                if (v133 >= v134) {\n                    goto lab_0x40363c;\n                } else {\n                    goto lab_0x4034be;\n                }\n            }\n          lab_0x40364f:;\n            int64_t v135 = v18;\n            fclose(stream);\n            if (v135 != 0) {\n                int64_t v136 = v19;\n                *(char *)(v136 + v135) = 0;\n            }\n        }\n    }\n    goto lab_0x403454;\n  lab_0x4033bb:;\n    int64_t * mem4 = malloc(size2); // 0x4033bb\n    v117 = (int64_t)&g2;\n    if (mem4 != NULL) {\n        // 0x403461\n        memcpy(mem4, (int64_t *)env_val, len);\n        path = (int64_t)mem4;\n        v118 = v8;\n        goto lab_0x403416;\n    } else {\n        goto lab_0x4033d2;\n    }\n  lab_0x403454:\n    // 0x403454\n    free((int64_t *)path);\n    v117 = (int64_t)&g2;\n    goto lab_0x4033d2;\n}\n"
+        },
+        {
+            "funcName": "function_403840",
+            "funcStartAddr": "403840",
+            "funcEndAddr": "40389d",
+            "decompiledFuncCode": "int64_t function_403840(int64_t a1, int64_t a2, int64_t a3) {\n    // 0x403840\n    return function_400f58();\n}\n"
+        },
+        {
+            "funcName": "function_4038a0",
+            "funcStartAddr": "4038a0",
+            "funcEndAddr": "4038a1",
+            "decompiledFuncCode": "int64_t function_4038a0(void) {\n    // 0x4038a0\n    int64_t result; // 0x4038a0\n    return result;\n}\n"
+        },
+        {
+            "funcName": "function_4038b0",
+            "funcStartAddr": "4038b0",
+            "funcEndAddr": "4038c8",
+            "decompiledFuncCode": "int64_t function_4038b0(int64_t a1, int64_t a2, int64_t a3) {\n    // 0x4038b0\n    return __cxa_atexit((void (*)(int64_t *))a1, NULL, (int64_t *)g12);\n}\n"
+        },
+        {
+            "funcName": "function_4038c8",
+            "funcStartAddr": "4038c8",
+            "funcEndAddr": "4038e8",
+            "decompiledFuncCode": "int64_t function_4038c8(int64_t a1, int64_t a2, int64_t result) {\n    int64_t v1 = &g8; // 0x4038d2\n    while (*(int64_t *)v1 != -1) {\n        // 0x4038d3\n        v1 -= 8;\n    }\n    // 0x4038e4\n    return result;\n}\n"
+        }
+    ],
+    "isStripped": "True",
+    "decompilerName": "Retdec",
+    "compilerName": "gcc",
+    "optLevel": "-O",
+    "binaryName": "findutils_strip-4.6.0_gcc-8.2.0_x86_64_O2_bigram.elf"
+}

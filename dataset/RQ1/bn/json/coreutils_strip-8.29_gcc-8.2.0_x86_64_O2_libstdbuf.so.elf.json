@@ -1,0 +1,100 @@
+{
+    "decompilerName": "binaryNinja",
+    "binaryName": "coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf",
+    "isStripped": "True",
+    "compilerName": "gcc",
+    "optLevel": "-O",
+    "funcCount": 15,
+    "funcInfo": [
+        {
+            "funcName": "sub_770",
+            "funcStartAddr": "0x770",
+            "funcEndAddr": "0x77c",
+            "decompiledFuncCode": "int64_t sub_770()\n{\n    int64_t var_8 = data_201008;\n    /* jump -> data_201010 */\n}\n\n"
+        },
+        {
+            "funcName": "sub_786",
+            "funcStartAddr": "0x786",
+            "funcEndAddr": "0x790",
+            "decompiledFuncCode": "int64_t sub_786()\n{\n    int64_t var_8 = 0;\n    /* tailcall */\n    return sub_770();\n}\n\n"
+        },
+        {
+            "funcName": "sub_796",
+            "funcStartAddr": "0x796",
+            "funcEndAddr": "0x7a0",
+            "decompiledFuncCode": "int64_t sub_796()\n{\n    int64_t var_8 = 1;\n    /* tailcall */\n    return sub_770();\n}\n\n"
+        },
+        {
+            "funcName": "sub_7a6",
+            "funcStartAddr": "0x7a6",
+            "funcEndAddr": "0x7b0",
+            "decompiledFuncCode": "int64_t sub_7a6()\n{\n    int64_t var_8 = 2;\n    /* tailcall */\n    return sub_770();\n}\n\n"
+        },
+        {
+            "funcName": "sub_7b6",
+            "funcStartAddr": "0x7b6",
+            "funcEndAddr": "0x7c0",
+            "decompiledFuncCode": "int64_t sub_7b6()\n{\n    int64_t var_8 = 3;\n    /* tailcall */\n    return sub_770();\n}\n\n"
+        },
+        {
+            "funcName": "sub_7c6",
+            "funcStartAddr": "0x7c6",
+            "funcEndAddr": "0x7d0",
+            "decompiledFuncCode": "int64_t sub_7c6()\n{\n    int64_t var_8 = 4;\n    /* tailcall */\n    return sub_770();\n}\n\n"
+        },
+        {
+            "funcName": "sub_7d6",
+            "funcStartAddr": "0x7d6",
+            "funcEndAddr": "0x7e0",
+            "decompiledFuncCode": "int64_t sub_7d6()\n{\n    int64_t var_8 = 5;\n    /* tailcall */\n    return sub_770();\n}\n\n"
+        },
+        {
+            "funcName": "sub_7e6",
+            "funcStartAddr": "0x7e6",
+            "funcEndAddr": "0x7f0",
+            "decompiledFuncCode": "int64_t sub_7e6()\n{\n    int64_t var_8 = 6;\n    /* tailcall */\n    return sub_770();\n}\n\n"
+        },
+        {
+            "funcName": "_start",
+            "funcStartAddr": "0x810",
+            "funcEndAddr": "0x9b4",
+            "decompiledFuncCode": "int64_t _start(FILE* arg1, char* arg2)\n{\n    char rax = *arg2;\n    int64_t var_28;\n    int32_t rdx;\n    uint64_t rbp;\n    char* r13;\n    if (rax == 0x30)\n    {\n        rbp = 0;\n        rdx = 2;\n        r13 = nullptr;\n    }\n    else if (rax == 0x4c)\n    {\n        rbp = 0;\n        rdx = 1;\n        r13 = nullptr;\n    }\n    else\n    {\n        uint64_t rax_3 = strtoul(arg2, nullptr, 0xa);\n        rbp = rax_3;\n        if (rax_3 == 0)\n        {\n            int32_t rax_12 = fileno(arg1);\n            char* const rbp_2;\n            if (rax_12 == 1)\n            {\n                rbp_2 = \"stdout\";\n            }\n            else\n            {\n                rbp_2 = \"stderr\";\n                if (rax_12 != 2)\n                {\n                    rbp_2 = \"stdin\";\n                    if (rax_12 != 0)\n                    {\n                        rbp_2 = \"unknown\";\n                    }\n                }\n            }\n            /* tailcall */\n            return __fprintf_chk(*stderr, 1, dcgettext(nullptr, \"invalid buffering mode %s for %s\u2026\", 5), arg2, rbp_2, var_28);\n        }\n        char* rax_4 = malloc(rax_3);\n        rdx = 0;\n        r13 = rax_4;\n        if (rax_4 == 0)\n        {\n            /* tailcall */\n            return __fprintf_chk(*stderr, 1, dcgettext(nullptr, \"failed to allocate a %lu byte st\u2026\", 5), rbp);\n        }\n    }\n    if (setvbuf(arg1, r13, rdx, rbp) == 0)\n    {\n        return var_28;\n    }\n    int32_t rax_8 = fileno(arg1);\n    char* const rbp_1;\n    if (rax_8 == 1)\n    {\n        rbp_1 = \"stdout\";\n    }\n    else\n    {\n        rbp_1 = \"stderr\";\n        if (rax_8 != 2)\n        {\n            rbp_1 = \"stdin\";\n            if (rax_8 != 0)\n            {\n                rbp_1 = \"unknown\";\n            }\n        }\n    }\n    __fprintf_chk(*stderr, 1, dcgettext(nullptr, \"could not set buffering of %s to\u2026\", 5), rbp_1, arg2);\n    /* tailcall */\n    return free(r13);\n}\n\n"
+        },
+        {
+            "funcName": "sub_9c0",
+            "funcStartAddr": "0x9c0",
+            "funcEndAddr": "0xa3f",
+            "decompiledFuncCode": "char* sub_9c0()\n{\n    char* rax = getenv(\"_STDBUF_E\");\n    char* rax_1 = getenv(\"_STDBUF_I\");\n    char* rax_2 = getenv(\"_STDBUF_O\");\n    char* rbx = rax_2;\n    if (rax != 0)\n    {\n        rax_2 = _start(*stderr, rax);\n    }\n    if (rax_1 != 0)\n    {\n        rax_2 = _start(*stdin, rax_1);\n    }\n    if (rbx == 0)\n    {\n        return rax_2;\n    }\n    /* tailcall */\n    return _start(*stdout, rbx);\n}\n\n"
+        },
+        {
+            "funcName": "sub_a3f",
+            "funcStartAddr": "0xa3f",
+            "funcEndAddr": "0xa61",
+            "decompiledFuncCode": "void sub_a3f()\n{\n    return;\n}\n\n"
+        },
+        {
+            "funcName": "sub_a61",
+            "funcStartAddr": "0xa61",
+            "funcEndAddr": "0xa9a",
+            "decompiledFuncCode": "int64_t sub_a61()\n{\n    int64_t rax;\n    int64_t rdx;\n    rdx = HIGHD(0);\n    rax = LOWD(0);\n    int64_t temp0 = (COMBINE(rdx, rax) / 2);\n    if ((temp0 != 0 && _ITM_registerTMCloneTable != 0))\n    {\n        /* tailcall */\n        return _ITM_registerTMCloneTable();\n    }\n    return temp0;\n}\n\n"
+        },
+        {
+            "funcName": "sub_a9a",
+            "funcStartAddr": "0xa9a",
+            "funcEndAddr": "0xb09",
+            "decompiledFuncCode": "void sub_a9a()\n{\n    if (__bss_start != 0)\n    {\n        return;\n    }\n    if (__cxa_finalize != 0)\n    {\n        __cxa_finalize(data_201058);\n    }\n    while (true)\n    {\n        int64_t rax_1 = data_201068;\n        if (rax_1 >= 0)\n        {\n            break;\n        }\n        data_201068 = (rax_1 + 1);\n        *(&data_200e08 + ((rax_1 + 1) << 3))();\n    }\n    sub_a3f();\n    __bss_start = 1;\n}\n\n"
+        },
+        {
+            "funcName": "thunk_b09",
+            "funcStartAddr": "0xb09",
+            "funcEndAddr": "0xb0e",
+            "decompiledFuncCode": "int64_t j_sub_a61()\n{\n    /* tailcall */\n    return sub_a61();\n}\n\n"
+        },
+        {
+            "funcName": "sub_b0e",
+            "funcStartAddr": "0xb0e",
+            "funcEndAddr": "0xb30",
+            "decompiledFuncCode": "int64_t sub_b0e(int64_t arg1, int64_t arg2, int64_t arg3)\n{\n    void* const rbx = &data_200df8;\n    while (true)\n    {\n        int64_t rax_1 = *rbx;\n        if (rax_1 == -1)\n        {\n            break;\n        }\n        rax_1();\n        rbx = (rbx - 8);\n    }\n    return arg3;\n}\n\n"
+        }
+    ]
+}

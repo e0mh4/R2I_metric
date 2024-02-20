@@ -1,0 +1,375 @@
+{
+    "funcInfo": [
+        {
+            "funcName": "sub_4029c0",
+            "funcStartAddr": "0x4029c0",
+            "funcEndAddr": "0x4029eb",
+            "decompiledFuncCode": "extern char g_606340;\n\nint sub_4029c0()\n{\n    void tmp_2;  // tmp #2\n    void tmp_11;  // tmp #11\n    unsigned long v0;  // [bp-0x8]\n    unsigned long v2;  // rdi\n    unsigned long long v3[7];  // rdi\n    unsigned long v4;  // rsi\n    unsigned long v5;  // rdx\n\n    tmp_2 = v2;\n    tmp_11 = v2 == 0;\n    v3 = (v2 == 0? &g_606340 : v2);\n    *((int *)(tmp_11? &g_606340 : tmp_2)) = 10;\n    if (v4 != 0 && v5 != 0)\n    {\n        v3[5] = v4;\n        v3[6] = v5;\n        return &g_606340;\n    }\n    if (v5 == 0 || v4 == 0)\n    {\n        v0 = &g_606340;\n        abort(); /* do not return */\n    }\n}\n"
+        },
+        {
+            "funcName": "sub_402b60",
+            "funcStartAddr": "0x402b60",
+            "funcEndAddr": "0x402b6a",
+            "decompiledFuncCode": "int sub_402b60()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402b70",
+            "funcStartAddr": "0x402b70",
+            "funcEndAddr": "0x402c05",
+            "decompiledFuncCode": "extern struct_0 *g_6061b8;\nextern unsigned long long g_6061c0;\nextern unsigned long long g_6061c8;\nextern unsigned int g_6061d0;\nextern unsigned long long g_606240;\n\nint sub_402b70()\n{\n    unsigned long long v1;  // rax\n    unsigned long long *v2;  // rbx\n    void *v3;  // rdi\n\n    v1 = g_6061d0;\n    if (g_6061d0 > 1)\n    {\n        v2 = &g_6061b8[1].field_8;\n        while (true)\n        {\n            v3 = *(v2);\n            v2 = &v2[2];\n            v1 = free(v3);\n            if (v2 == &g_6061b8[(unsigned long long)(g_6061d0 - 2) + 2].field_8)\n            {\n                break;\n            }\n        }\n    }\n    if (g_6061b8->field_8 != 6316608)\n    {\n        v1 = free(g_6061b8->field_8);\n        g_6061c0 = 0x100;\n        g_6061c8 = &g_606240;\n    }\n    if (g_6061b8 != 6316480)\n    {\n        v1 = free(g_6061b8);\n        g_6061b8 = &g_6061c0;\n    }\n    g_6061d0 = 1;\n    return v1;\n}\n"
+        },
+        {
+            "funcName": "sub_4038b0",
+            "funcStartAddr": "0x4038b0",
+            "funcEndAddr": "0x4038c8",
+            "decompiledFuncCode": "extern int512_t g_606168;\n\nint sub_4038b0()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_403100",
+            "funcStartAddr": "0x403100",
+            "funcEndAddr": "0x40314a",
+            "decompiledFuncCode": "int sub_403100()\n{\n    unsigned long v0;  // [bp-0x8]\n    unsigned long v2;  // rdi\n    unsigned long long *v3;  // rsi\n    unsigned long long *v4;  // rsi\n\n    if (!(v2 != 0))\n    {\n        *((int *)v3) = (*(v4) == 0? 128 : *(v4));\n    }\n    else if (*(v4) <= 12297829382473034409)\n    {\n        *(v4) = (*(v4) >> 1) + *(v4) + 1;\n    }\n    else\n    {\n        v0 = *(v4);\n        sub_4031f0(); /* do not return */\n    }\n}\n"
+        },
+        {
+            "funcName": "sub_402950",
+            "funcStartAddr": "0x402950",
+            "funcEndAddr": "0x40295f",
+            "decompiledFuncCode": "extern int512_t g_606340;\n\nint sub_402950()\n{\n    unsigned long v1;  // rdi\n    unsigned int v2;  // esi\n\n    *((unsigned int *)(v1 == 0? &g_606340 : v1)) = v2;\n    return &g_606340;\n}\n"
+        },
+        {
+            "funcName": "sub_402f20",
+            "funcStartAddr": "0x402f20",
+            "funcEndAddr": "0x402f37",
+            "decompiledFuncCode": "int sub_402f20()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402d70",
+            "funcStartAddr": "0x402d70",
+            "funcEndAddr": "0x402d7f",
+            "decompiledFuncCode": "int sub_402d70()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_401510",
+            "funcStartAddr": "0x401510",
+            "funcEndAddr": "0x4015ae",
+            "decompiledFuncCode": "extern unsigned int g_4039ab;\nextern unsigned int g_606170;\nextern char g_606218;\nextern unsigned long long g_606220;\n\nint sub_401510()\n{\n    unsigned long long v1;  // rax\n    unsigned int *v2;  // rbx\n    unsigned long long v3;  // rax\n    unsigned long long v4;  // rbp\n\n    v1 = sub_403260();\n    if (v1 != 0)\n    {\n        v2 = __errno_location();\n        if (g_606218 == 0 || *(v2) != 32)\n        {\n            v4 = dcgettext(0x0, 0x4039ab, 0x5);\n            if (g_606220 != 0)\n            {\n                sub_402e00();\n                error(0x0, *(v2), \"%s: \");\n            }\n        }\n    }\n    if (v1 == 0 || *(v2) == 32 && g_606218 != 0)\n    {\n        v3 = sub_403260();\n    }\n    if ((unsigned int)v3 == 0 && (v1 == 0 || *(v2) == 32) && (v1 == 0 || g_606218 != 0))\n    {\n        return v3;\n    }\n    while (true)\n    {\n        _exit(g_606170);\n        error(0x0, *(v2), \"%s\");\n    }\n}\n"
+        },
+        {
+            "funcName": "sub_402960",
+            "funcStartAddr": "0x402960",
+            "funcEndAddr": "0x402993",
+            "decompiledFuncCode": "extern int512_t g_606340;\n\nint sub_402960()\n{\n    void tmp_2;  // tmp #2\n    void tmp_52;  // tmp #52\n    void tmp_123;  // tmp #123\n    unsigned long v1;  // rdi\n    unsigned long v2;  // rsi\n    unsigned long long v3;  // rcx\n    unsigned long long v5;  // rsi\n    unsigned long v6;  // rdx\n\n    tmp_2 = v1;\n    tmp_52 = v1 == 0;\n    v3 = (unsigned int)v2 & 31;\n    v5 = (unsigned int)*((int *)((tmp_52? &g_606340 : tmp_2) + v2 % 32 * 4 + 8));\n    tmp_123 = ((unsigned int)v6 ^ (unsigned int)(v5 >> (v3 & 31))) & 1;\n    *((unsigned int *)((v1 == 0? &g_606340 : v1) + v2 % 32 * 4 + 8)) = (unsigned int)(tmp_123 << (v3 & 31)) ^ (unsigned int)v5;\n    return (unsigned int)(v5 >> (v3 & 31)) & 1;\n}\n"
+        },
+        {
+            "funcName": "sub_403190",
+            "funcStartAddr": "0x403190",
+            "funcEndAddr": "0x4031b8",
+            "decompiledFuncCode": "int sub_403190()\n{\n    unsigned long v0;  // [bp-0x10]\n    unsigned long v2;  // rbx\n\n    v0 = v2;\n    sub_402fd0();\n}\n"
+        },
+        {
+            "funcName": "sub_4014e8",
+            "funcStartAddr": "0x4014e8",
+            "funcEndAddr": "0x401524",
+            "decompiledFuncCode": "int sub_4014e8() { crash_skku;\n}"
+        },
+        {
+            "funcName": "sub_4015b0",
+            "funcStartAddr": "0x4015b0",
+            "funcEndAddr": "0x401649",
+            "decompiledFuncCode": "extern unsigned long long __progname_full;\nextern unsigned long long g_606228;\nextern unsigned long long program_invocation_short_name;\nextern unsigned long long stderr;\n\nint sub_4015b0()\n{\n    unsigned long long v1;  // rdi\n    unsigned long long v3;  // rbx\n    unsigned long long v4;  // rax\n    unsigned long long v5;  // r8\n    unsigned long long v6;  // cc_dep1\n    unsigned long long v7;  // cc_dep2\n    unsigned long v8;  // d\n    char *v9;  // rdi\n    char *v10;  // rsi\n    unsigned long long v11;  // rcx\n    char *v13;  // rdi\n    unsigned long long v14;  // rcx\n    char *v15;  // rsi\n    unsigned long long v16;  // cc_dep1\n    unsigned long long v17;  // cc_dep2\n\n    if (v1 != 0)\n    {\n        v3 = v1;\n        v4 = strrchr();\n        if (v4 != 0)\n        {\n            v5 = v4 + 1;\n            if (v4 + 1 - v1 > 6)\n            {\n                v10 = v4 - 6;\n                v9 = \"/.libs/\";\n                v11 = 7;\n                while (v11 != 0)\n                {\n                    v11 -= 1;\n                    v6 = *(v10);\n                    v7 = *(v9);\n                    v9 = &v9[v8];\n                    v10 = &v10[v8];\n                    break;\n                }\n                if ((v6 > v7) - 0 - (v6 < v7) == 0)\n                {\n                    v13 = \"lt-\";\n                    v14 = 3;\n                    v15 = v5;\n                    v3 = v5;\n                    while (v14 != 0)\n                    {\n                        v14 -= 1;\n                        v16 = *(v15);\n                        v17 = *(v13);\n                        v13 = &v13[v8];\n                        v15 = &v15[v8];\n                        break;\n                    }\n                    if ((v16 > v17) - 0 - (v16 < v17) == 0)\n                    {\n                        v3 = v4 + 4;\n                        program_invocation_short_name = v4 + 4;\n                    }\n                }\n            }\n        }\n        g_606228 = v3;\n        __progname_full = v3;\n        return v4;\n    }\n    fwrite(\"A NULL argv[0] was passed through an exec system call.\\n\", 0x1, 0x37, stderr);\n    abort(); /* do not return */\n}\n"
+        },
+        {
+            "funcName": "sub_402f60",
+            "funcStartAddr": "0x402f60",
+            "funcEndAddr": "0x402f6a",
+            "decompiledFuncCode": "int sub_402f60()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402c30",
+            "funcStartAddr": "0x402c30",
+            "funcEndAddr": "0x402c3a",
+            "decompiledFuncCode": "int sub_402c30()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402c10",
+            "funcStartAddr": "0x402c10",
+            "funcEndAddr": "0x402c21",
+            "decompiledFuncCode": "int sub_402c10()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_4013f3",
+            "funcStartAddr": "0x4013f3",
+            "funcEndAddr": "0x4013f8",
+            "decompiledFuncCode": "int sub_4013f3()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_401750",
+            "funcStartAddr": "0x401750",
+            "funcEndAddr": "0x40265b",
+            "decompiledFuncCode": "int sub_401750() { crash_skku;\n}"
+        },
+        {
+            "funcName": "sub_403060",
+            "funcStartAddr": "0x403060",
+            "funcEndAddr": "0x403073",
+            "decompiledFuncCode": "int sub_403060()\n{\n    void tmp_8;  // tmp #8\n    unsigned long v0;  // [bp-0x8]\n    unsigned long v2;  // rsi\n    unsigned long v3;  // rdx\n    unsigned long v4;  // rdx\n\n    v4 = v2 * v3 >> 64;\n    if ((char)[D] amd64g_calculate_condition(0x0<64>, 0x30<64>, rsi<8>, rdx<8>, cc_ndep<8>))\n    {\n        v0 = tmp_8;\n        sub_4031f0(); /* do not return */\n    }\n}\n"
+        },
+        {
+            "funcName": "sub_402c60",
+            "funcStartAddr": "0x402c60",
+            "funcEndAddr": "0x402c72",
+            "decompiledFuncCode": "int sub_402c60()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402f90",
+            "funcStartAddr": "0x402f90",
+            "funcEndAddr": "0x402fa1",
+            "decompiledFuncCode": "int sub_402f90()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402e20",
+            "funcStartAddr": "0x402e20",
+            "funcEndAddr": "0x402e2a",
+            "decompiledFuncCode": "int sub_402e20()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_403230",
+            "funcStartAddr": "0x403230",
+            "funcEndAddr": "0x403253",
+            "decompiledFuncCode": "int sub_403230()\n{\n    unsigned long v1;  // rsi\n    unsigned long v2;  // rdx\n\n    if (v1 != 0 && v2 == 0)\n    {\n        return -2;\n    }\n}\n"
+        },
+        {
+            "funcName": "sub_4031f0",
+            "funcStartAddr": "0x4031f0",
+            "funcEndAddr": "0x403221",
+            "decompiledFuncCode": "extern unsigned int g_404758;\nextern unsigned int g_606170;\n\nint sub_4031f0()\n{\n    dcgettext(0x0, 0x404758, 0x5);\n    error(g_606170, 0x0, \"%s\");\n    abort(); /* do not return */\n}\n"
+        },
+        {
+            "funcName": "sub_402940",
+            "funcStartAddr": "0x402940",
+            "funcEndAddr": "0x40294f",
+            "decompiledFuncCode": "extern int512_t g_606340;\n\nint sub_402940()\n{\n    unsigned long v1;  // rdi\n\n    return *((int *)(v1 == 0? &g_606340 : v1));\n}\n"
+        },
+        {
+            "funcName": "sub_402ea0",
+            "funcStartAddr": "0x402ea0",
+            "funcEndAddr": "0x402f0c",
+            "decompiledFuncCode": "extern uint128_t g_606340;\nextern uint128_t g_606350;\nextern uint128_t g_606360;\nextern unsigned long long g_606370;\n\nint sub_402ea0()\n{\n    void|unsigned int v0;  // [bp-0x48]\n    void v1;  // [bp-0x38]\n    void v2;  // [bp-0x28]\n    unsigned long v3;  // [bp-0x20]\n    unsigned long v4;  // [bp-0x18]\n    unsigned long v6;  // rsi\n    unsigned long v7;  // rdx\n\n    *((uint128_t *)&v0) = g_606340;\n    *((uint128_t *)&v1) = g_606350;\n    *((uint128_t *)&v2) = g_606360;\n    v4 = g_606370;\n    v0 = 10;\n    if (v6 != 0 && v7 != 0)\n    {\n        v3 = v6;\n        v4 = v7;\n        return sub_402760();\n    }\n    if (v7 == 0 || v6 == 0)\n    {\n        abort(); /* do not return */\n    }\n}\n"
+        },
+        {
+            "funcName": "sub_401491",
+            "funcStartAddr": "0x401491",
+            "funcEndAddr": "0x4014e8",
+            "decompiledFuncCode": "extern char g_606208;\nextern unsigned long long g_606210;\n\nint sub_401491()\n{\n    unsigned long long v0;  // [bp-0x18]\n    unsigned long long v1;  // [bp-0x10]\n    unsigned long v2;  // [bp-0x8]\n    unsigned long v4;  // rax\n    unsigned long long v5;  // r12\n    unsigned long long v6;  // rbx\n    unsigned long long v7;  // rax\n    unsigned long long v9;  // rbx\n    unsigned long long v10;  // r12\n\n    if (g_606208 == 0)\n    {\n        v2 = stack_base + 0;\n        v1 = v5;\n        v0 = v6;\n        while (true)\n        {\n            if (g_606210 >= 0)\n            {\n                break;\n            }\n            g_606210 = g_606210 + 1;\n            *((long long *)(6315584 + (v7 + 1) * 8))();\n        }\n        v9 = v0;\n        v10 = v1;\n        g_606208 = 1;\n        return sub_40143b();\n    }\n    return v4;\n}\n"
+        },
+        {
+            "funcName": "sub_402ff0",
+            "funcStartAddr": "0x402ff0",
+            "funcEndAddr": "0x403003",
+            "decompiledFuncCode": "int sub_402ff0()\n{\n    unsigned long v0;  // [bp-0x8]\n    unsigned long v2;  // rdi\n    unsigned long v3;  // rsi\n\n    if ((char)[D] amd64g_calculate_condition(0x0<64>, 0x30<64>, rdi<8>, rsi<8>, cc_ndep<8>))\n    {\n        v0 = v2 * v3;\n        sub_4031f0(); /* do not return */\n    }\n}\n"
+        },
+        {
+            "funcName": "sub_402df0",
+            "funcStartAddr": "0x402df0",
+            "funcEndAddr": "0x402dfd",
+            "decompiledFuncCode": "int sub_402df0()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_403080",
+            "funcStartAddr": "0x403080",
+            "funcEndAddr": "0x4030ef",
+            "decompiledFuncCode": "int sub_403080() { crash_skku;\n}"
+        },
+        {
+            "funcName": "sub_4038c8",
+            "funcStartAddr": "0x4038c8",
+            "funcEndAddr": "0x4038e8",
+            "decompiledFuncCode": "extern unsigned long long g_605e30;\n\nint sub_4038c8()\n{\n    unsigned long long *v1;  // rbx\n    unsigned long long v2;  // rax\n    unsigned long v4;  // rdx\n\n    v1 = &g_605e30;\n    while (true)\n    {\n        v2 = *(v1);\n        if (*(v1) == -1)\n        {\n            break;\n        }\n        rax<8>();\n        v1 = &v1[-1];\n    }\n    return v4;\n}\n"
+        },
+        {
+            "funcName": "sub_402cf0",
+            "funcStartAddr": "0x402cf0",
+            "funcEndAddr": "0x402d59",
+            "decompiledFuncCode": "int sub_402cf0()\n{\n    unsigned int v0;  // [bp-0x48]\n    unsigned int v1;  // [bp-0x44]\n    unsigned long long v2;  // [bp-0x40]\n    unsigned long long v3;  // [bp-0x38]\n    unsigned long long v4;  // [bp-0x30]\n    unsigned long long v5;  // [bp-0x28]\n    unsigned long long v6;  // [bp-0x20]\n    unsigned long long v7;  // [bp-0x18]\n    unsigned int v9;  // esi\n\n    if (v9 == 10)\n    {\n        abort(); /* do not return */\n    }\n    v0 = v9;\n    v1 = 0;\n    v2 = 0;\n    v3 = 0;\n    v4 = 0;\n    v5 = 0;\n    v6 = 0;\n    v7 = 0;\n    return sub_402760();\n}\n"
+        },
+        {
+            "funcName": "main",
+            "funcStartAddr": "0x401210",
+            "funcEndAddr": "0x4013e1",
+            "decompiledFuncCode": "extern unsigned int g_40390b;\nextern unsigned int g_403918;\nextern unsigned int g_403988;\nextern unsigned int g_403a05;\nextern unsigned long long stdin;\nextern unsigned long long stdout;\n\nint main()\n{\n    unsigned long long v0;  // [bp-0x38]\n    unsigned long long v1;  // [bp-0x30]\n    char v2;  // [bp+0x0]\n    unsigned long long v7;  // rbp\n    unsigned long long v8;  // rax\n    unsigned long long v9;  // rax\n    unsigned long long v10;  // rax\n    unsigned long long v11;  // rbx\n    unsigned long long v12;  // rax\n    unsigned long long v13;  // rcx\n    unsigned long long v14;  // rsi\n    unsigned long v15;  // rdi\n    unsigned long long v16;  // r13\n    unsigned long long v17;  // rbx\n    unsigned long long v21;  // rdx\n\n    sub_4015b0();\n    setlocale(0x6, 0x403a05);\n    bindtextdomain(0x40390b, 0x403918);\n    textdomain(0x40390b);\n    if (sub_4038b0() == 0)\n    {\n        v1 = 1026;\n        v0 = (unsigned int)sub_402fd0();\n        v2 = 0;\n        v7 = (unsigned int)sub_402fd0();\n        while (true)\n        {\n            v8 = __getdelim(&v0, &v1, 0xa, stdin);\n            if ((unsigned int)v8 <= 0)\n            {\n                break;\n            }\n            *((char *)(v0 + v8 - 1)) = 0;\n            v21 = v0;\n            v9 = (char)*((char *)v7);\n            v15 = (char)*((char *)v0);\n            if (v9 == v15 && *((char *)v7) != 0)\n            {\n                v13 = v0;\n                v12 = v7;\n                do\n                {\n                    v12 += 1;\n                    v13 += 1;\n                    v14 = (char)*((char *)v12);\n                }\n                while (*((char *)v13) == *((char *)v12) && v14 != 0);\n                v11 = v12 - v7;\n                v10 = v12 - v7;\n                v15 = (char)*((char *)(v21 + v11));\n            }\n            if (*((char *)v7) == 0 || v9 != v15)\n            {\n                v10 = 0;\n                v11 = 0;\n            }\n            if (v15 != 0)\n            {\n                v16 = v10 + 1;\n                if (*((char *)(v21 + v10 + 1)) != 0)\n                {\n                    v17 = v11 + 2;\n                    do\n                    {\n                        _IO_putc(v15, stdout);\n                        _IO_putc((char)*((char *)(v0 + v16)), stdout);\n                        _IO_putc(0xa, stdout);\n                        v21 = v0;\n                        v15 = (char)*((char *)(v0 + v17));\n                        if (*((char *)(v0 + v17)) == 0)\n                        {\n                            break;\n                        }\n                        v16 = v17 + 1;\n                        v17 += 2;\n                    }\n                    while (*((char *)(v0 + v16)) != 0);\n                }\n            }\n            v0 = v7;\n            v7 = v21;\n            v1 = 1026;\n        }\n        free(v0);\n        free(v7);\n        return 0;\n    }\n    error(0x1, *(__errno_location()), (unsigned long long)dcgettext(0x0, 0x403988, 0x5));\n}\n"
+        },
+        {
+            "funcName": "sub_402f70",
+            "funcStartAddr": "0x402f70",
+            "funcEndAddr": "0x402f82",
+            "decompiledFuncCode": "int sub_402f70()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402900",
+            "funcStartAddr": "0x402900",
+            "funcEndAddr": "0x402934",
+            "decompiledFuncCode": "int sub_402900()\n{\n    unsigned int v1;  // [bp+0x100008]\n\n    *(__errno_location()) = v1;\n    return sub_403190();\n}\n"
+        },
+        {
+            "funcName": "sub_401650",
+            "funcStartAddr": "0x401650",
+            "funcEndAddr": "0x40172f",
+            "decompiledFuncCode": "extern int512_t g_403a06;\nextern int512_t g_403a0a;\n\nint sub_401650()\n{\n    unsigned long v1;  // rdi\n    char *v2;  // rbx\n    char v3[8];  // rax\n    unsigned long long v4;  // rdx\n    unsigned long v5;  // rsi\n    char *v6;  // rax\n\n    v2 = (unsigned long long)dcgettext(0x0, v1, 0x5);\n    if (v1 == v2)\n    {\n        v3 = sub_4032d0();\n        v4 = v3[0] & 4294967007;\n        if ((v3[0] & 223) == 85)\n        {\n            if ((v3[1] & 223) == 84 && (v3[2] & 223) == 70 && v3[3] == 45 && v3[4] == 56 && v3[5] == 0)\n            {\n                v2 = (*(v2) != 96? &g_403a06 : 4209169);\n            }\n        }\n        else\n        {\n            if (v4 == 71 && (v3[1] & 223) == 66 && v3[2] == 49 && v3[3] == 56 && v3[4] == 48 && v3[5] == 51 && v3[6] == 48 && v3[7] == 0)\n            {\n                v2 = (*(v2) != 96? &g_403a0a : 4209165);\n            }\n        }\n    }\n    if (...)\n    {\n        return ((unsigned int)v5 != 9? \"'\" : \"\\\"\");\n    }\n    if (v3[5] == 0 && v3[3] == 45 && (v3[0] & 223) == 85 && v3[4] == 56 && (v3[1] & 223) == 84 && v1 == v2 && (v3[2] & 223) == 70 || (v3[1] & 223) == 66 && v3[3] == 56 && v4 == 71 && v3[2] == 49 && v1 == v2 && v3[4] == 48 && (v3[0] & 223) != 85 && v3[5] == 51 && v3[6] == 48 && v3[7] == 0 || v1 != v2)\n    {\n        v6 = v2;\n        return v6;\n    }\n}\n"
+        },
+        {
+            "funcName": "sub_40143b",
+            "funcStartAddr": "0x40143b",
+            "funcEndAddr": "0x40145a",
+            "decompiledFuncCode": "extern unsigned long long g_6061d8;\n\nint sub_40143b()\n{\n    unsigned long long v1;  // rax\n\n    v1 = &g_6061d8;\n    if (false)\n    {\n        v1 = 0;\n    }\n    return v1;\n}\n"
+        },
+        {
+            "funcName": "sub_403010",
+            "funcStartAddr": "0x403010",
+            "funcEndAddr": "0x403012",
+            "decompiledFuncCode": "int sub_403010()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402e30",
+            "funcStartAddr": "0x402e30",
+            "funcEndAddr": "0x402ea3",
+            "decompiledFuncCode": "int sub_402e30()\n{\n    unsigned int v0;  // [bp-0x48]\n    unsigned int v1;  // [bp-0x44]\n    unsigned long long v2;  // [bp-0x40]\n    unsigned long long v3;  // [bp-0x38]\n    unsigned long long v4;  // [bp-0x30]\n    unsigned long long v5;  // [bp-0x28]\n    unsigned long long v6;  // [bp-0x20]\n    unsigned long long v7;  // [bp-0x18]\n    unsigned int v9;  // esi\n\n    if (v9 == 10)\n    {\n        abort(); /* do not return */\n    }\n    v0 = v9;\n    v2 = 0x400000000000000;\n    v1 = 0;\n    v3 = 0;\n    v4 = 0;\n    v5 = 0;\n    v6 = 0;\n    v7 = 0;\n    return sub_402760();\n}\n"
+        },
+        {
+            "funcName": "sub_402f10",
+            "funcStartAddr": "0x402f10",
+            "funcEndAddr": "0x402f19",
+            "decompiledFuncCode": "int sub_402f10()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402f40",
+            "funcStartAddr": "0x402f40",
+            "funcEndAddr": "0x402f53",
+            "decompiledFuncCode": "int sub_402f40()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_4031c0",
+            "funcStartAddr": "0x4031c0",
+            "funcEndAddr": "0x4031ee",
+            "decompiledFuncCode": "int sub_4031c0()\n{\n    unsigned long v0;  // [bp-0x10]\n    unsigned long v2;  // rbx\n    char *v3;  // rdi\n\n    v0 = v2;\n    strlen(v3);\n    sub_402fd0();\n}\n"
+        },
+        {
+            "funcName": "sub_4032d0",
+            "funcStartAddr": "0x4032d0",
+            "funcEndAddr": "0x403824",
+            "decompiledFuncCode": "typedef struct struct_1 {\n    unsigned long long field_0;\n    unsigned int field_8;\n    unsigned short field_c;\n} struct_1;\n\nextern char g_403a05;\nextern char g_606378[2];\n\nint sub_4032d0()\n{\n    unsigned long|unsigned long long v0;  // [bp-0xd0]\n    void tmp_12;  // tmp #12\n    void tmp_56;  // tmp #56\n    void tmp_1;  // tmp #1\n    void tmp_10;  // tmp #10\n    void tmp_3;  // tmp #3\n    void tmp_28;  // tmp #28\n    unsigned long long v1;  // [bp-0xc8]\n    unsigned long long v2;  // [bp-0xc0]\n    char v3;  // [bp-0xb8]\n    char v4;  // [bp-0xb4]\n    char v5;  // [bp-0x78]\n    char v6;  // [bp-0x74]\n    unsigned int v7;  // [bp-0x4]\n    unsigned long long|char [2] v9;  // r15\n    unsigned long|char * v10;  // rbx\n    unsigned long v11;  // rax\n    unsigned long long v12;  // rdi\n    unsigned long long v13;  // r12\n    char *v14;  // r13\n    unsigned long long v15;  // r14\n    unsigned long long v16;  // rbp\n    struct_1 *v19;  // r12\n    unsigned short v20;  // dx\n    unsigned long long v21;  // rax\n    void *v24;  // rbx\n    unsigned long long v27;  // rax\n    unsigned int *v28;  // rcx\n    unsigned int v29;  // eax\n    unsigned long v30;  // rax\n    unsigned int *v31;  // rdx\n    unsigned long long v32;  // rcx\n    unsigned long long v33;  // rax\n    unsigned long v34;  // rax\n    unsigned long long v35;  // rax\n    unsigned long long v36;  // rax\n    unsigned long v37;  // rsi\n    unsigned long long v38;  // rcx\n    unsigned long long v39;  // rdx\n    unsigned long long v40;  // rcx\n    unsigned long long v41;  // rsi\n    unsigned long long v42;  // r9\n    unsigned long long v43;  // r10\n    unsigned int v44;  // ecx\n    unsigned long long v46;  // r8\n    void *v47;  // rcx\n    unsigned long long v49;  // rcx\n    unsigned int v51;  // edx\n    unsigned long long v54;  // rcx\n    unsigned long long v55;  // rsi\n    char *v56;  // rax\n    unsigned long long v57;  // rdi\n    char *v58;  // rax\n    unsigned long long v59;  // rdx\n    unsigned long long v60;  // r13\n    void *v61;  // rdi\n    unsigned long long v65;  // rbp\n    unsigned long long v66;  // rax\n    unsigned long long v67;  // rax\n    unsigned long long v68;  // rbp\n    unsigned long long v69;  // rax\n\n    v9 = g_606378;\n    v10 = ((unsigned long long)nl_langinfo(0xe) == 0? &g_403a05 : (unsigned long long)nl_langinfo(0xe));\n    if (g_606378 == 0)\n    {\n        v14 = getenv(\"CHARSETALIASDIR\");\n        if (v14 != 0 && *(v14) != 0)\n        {\n            v11 = strlen(v14);\n            v13 = v11;\n            v15 = v11;\n            if (v11 == 0)\n            {\n                v12 = 14;\n            }\n            else if (v14[v11 + -1] == 47)\n            {\n                v12 = v11 + 14;\n            }\n            else\n            {\n                v12 = v11 + 15;\n                v13 += 1;\n            }\n            if (v11 == 0 || v14[v11 + -1] == 47)\n            {\n                v16 = malloc(v12);\n                if (v16 != 0)\n                {\n                    memcpy(v16, v14, v15);\n                }\n            }\n        }\n        if (v14 == 0 || *(v14) == 0)\n        {\n            v12 = 116;\n            v13 = 102;\n            v15 = 101;\n            v14 = \"/home/dongkwan/data/scripts/gnu_packages/findutils/findutils-4.6.0_gcc-8.2.0_x86_64_O2_debug/gogo/lib\";\n        }\n        if (v14 == 0 || *(v14) == 0 || v11 != 0 && v14[v11 + -1] != 47)\n        {\n            v16 = malloc(v12);\n        }\n        if (v16 == 0 || v16 == 0)\n        {\n            v9 = &g_403a05;\n        }\n        if (v16 != 0 && (v14 == 0 || *(v14) == 0 || v11 != 0) && (v14 == 0 || *(v14) == 0 || v14[v11 + -1] != 47))\n        {\n            memcpy(v16, v14, v15);\n            *((char *)(v16 + v15)) = 47;\n        }\n        if (v14 == 0 && v16 != 0 || *(v14) == 0 && v16 != 0 || v11 != 0 && v14[v11 + -1] != 47 && v16 != 0 || v11 == 0 && v14 != 0 && v16 != 0 && *(v14) != 0 || v14[v11 + -1] == 47 && v14 != 0 && v16 != 0 && *(v14) != 0)\n        {\n            v19 = v13 + v16;\n            v19->field_0 = 3347411969557751907;\n            v19->field_c = 115;\n            v19->field_8 = 1634298977;\n            v21 = open(v16, 0x0, v20);\n            if ((unsigned int)v21 >= 0)\n            {\n                v9 = 0;\n                v0 = 0;\n                if (v10 != 0)\n                {\n                    v10 = fdopen(v21, \"r\");\n                    while (true)\n                    {\n                        v56 = *((long long *)(v12 + 8));\n                        if (*((long long *)(v12 + 8)) < *((long long *)(v12 + 16)) || *((long long *)(v12 + 8)) < *((long long *)(v12 + 16)))\n                        {\n                            *((char **)(v12 + 8)) = &v56[1];\n                            v57 = *(v56);\n                        }\n                        if (*((long long *)(v12 + 8)) < *((long long *)(v12 + 16)) || *((long long *)(v12 + 8)) < *((long long *)(v12 + 16)) || (unsigned int)v12 != -1)\n                        {\n                            if ((unsigned int)v12 != 35 && (unsigned int)v12 != 32)\n                            {\n                                ungetc(v12, v12);\n                                v27 = fscanf(v12, \"%50s %50s\", (unsigned int)&v3, (unsigned int)&v5);\n                                if (v27 > 1)\n                                {\n                                    v28 = &v3;\n                                    do\n                                    {\n                                        tmp_12 = (unsigned int)*((int *)&v3);\n                                        v28 = &v4;\n                                        v29 = (unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152;\n                                    }\n                                    while (((unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152) == 0);\n                                    v30 = (unsigned int)(((unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152 & 32896) == 0? (unsigned int)(rax<8> >> 16) : (unsigned int)rax<8>);\n                                    v31 = &v5;\n                                    v32 = -3 + (((unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152 & 32896) == 0? (unsigned int *)((char *)v28 + 2) : v28) + -1 * ((v30 + v30 <= v30? 1 : 0) & 1) + -0x1 * &v3;\n                                    do\n                                    {\n                                        tmp_12 = (unsigned int)*((int *)&v5);\n                                        v31 = &v6;\n                                        v33 = (unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152;\n                                    }\n                                    while (((unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152) == 0);\n                                    v1 = v32;\n                                    tmp_56 = (unsigned int)v33 % 0x10000;\n                                    v34 = (unsigned int)(((unsigned int)v33 & 32896) == 0? (unsigned int)(v33 >> 16) : (unsigned int)v33);\n                                    v35 = &((char *)(-3 + (((unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152 & 32896) == 0? (unsigned int *)&((char *)v31)[2] : v31) + -1 * ((v34 + v34 <= v34? 1 : 0) & 1) + -0x1 * &v5))[v1];\n                                    v2 = -3 + (((unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152 & 32896) == 0? (unsigned int *)&((char *)v31)[2] : v31) + -1 * (((unsigned int)((((unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152 & 32896) == 0? tmp_56 : (unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152) + (((unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152 & 32896) == 0? tmp_56 : (unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152)) <= (unsigned long long)(unsigned int)(((unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152 & 32896) == 0? tmp_56 : (unsigned int)(tmp_12 - 16843009) & !((unsigned int)tmp_12) & 2155905152)? 1 : 0) & 1) + -0x1 * &v5;\n                                    if (v0 == 0)\n                                    {\n                                        v0 = v35 + 2;\n                                        v36 = malloc(v35 + 3);\n                                        v38 = v1;\n                                        v39 = v2;\n                                    }\n                                    else\n                                    {\n                                        v37 = v35 + v0 + 3;\n                                        v0 = v35 + v0 + 2;\n                                        v36 = realloc(NULL, v37);\n                                        v39 = v2;\n                                        v38 = v1;\n                                    }\n                                    if (v36 != 0)\n                                    {\n                                        tmp_1 = -2 - v38;\n                                        v40 = v38 + 1;\n                                        v12 = v0 - v39;\n                                        v41 = tmp_1 + v0 - v39 + v36;\n                                        if ((unsigned int)v40 >= 8)\n                                        {\n                                            *((long long *)v41) = *((long long *)&v3);\n                                            *((long long *)(v41 + v40 - 8)) = *((long long *)&(&v3)[v40 + -8]);\n                                            v42 = v41 + 8 & -8;\n                                            v41 -= v41 + 8 & -8;\n                                            v43 = &(&v3)[-1 * v41];\n                                            v44 = (unsigned int)(v40 + v41) & -8;\n                                            if (v44 >= 8)\n                                            {\n                                                v41 = 0;\n                                                do\n                                                {\n                                                    v46 = v41;\n                                                    v41 = (unsigned int)v41 + 8;\n                                                    *((long long *)(v42 + v46)) = *((long long *)(v43 + v46));\n                                                }\n                                                while ((unsigned int)v41 < (v44 & -8));\n                                            }\n                                        }\n                                        else if ((v40 & 4) != 0)\n                                        {\n                                            *((int *)v41) = *((int *)&v3);\n                                            *((int *)(v41 + v40 - 4)) = *((int *)&(&v3)[v40 + -4]);\n                                        }\n                                        else if ((unsigned int)v40 != 0)\n                                        {\n                                            *((char *)v41) = v3;\n                                            if ((v40 & 2) != 0)\n                                            {\n                                                *((short *)(v41 + v40 - 2)) = *((short *)&(&v3)[v40 + -2]);\n                                            }\n                                        }\n                                        v59 = v39 + 1;\n                                        v47 = v36 + v12 - 1;\n                                        if ((unsigned int)v41 >= 8)\n                                        {\n                                            *((long long *)v47) = *((long long *)&v5);\n                                            v41 = v59;\n                                            *((long long *)&((char *)v47)[v41 + -8]) = *((long long *)&(&v5)[v41 + -8]);\n                                            v12 = v47 + 8 & -8;\n                                            v49 = v47 - (v47 + 8 & -8);\n                                            v51 = (unsigned int)(v41 + v49) & -8;\n                                            if (v51 >= 8)\n                                            {\n                                                v54 = 0;\n                                                do\n                                                {\n                                                    v55 = v54;\n                                                    v54 = (unsigned int)v54 + 8;\n                                                    *((long long *)(v12 + v55)) = *((long long *)&(&v5)[v55 + -1 * v49]);\n                                                }\n                                                while ((unsigned int)v54 < (v51 & -8));\n                                            }\n                                        }\n                                        else if (((char)v41 & 4) != 0)\n                                        {\n                                            *((int *)v47) = *((int *)&v5);\n                                            *((unsigned int *)&((char *)v47)[(unsigned long long)v7 + -4]) = v7;\n                                        }\n                                        else if ((unsigned int)v41 != 0)\n                                        {\n                                            *((char *)v47) = v5;\n                                            if ((v5 & 2) != 0)\n                                            {\n                                                *((short *)&((char *)v47)[(unsigned long long)v5 + -2]) = v7;\n                                            }\n                                        }\n                                        v9 = v36;\n                                        v56 = *((long long *)(v12 + 8));\n                                    }\n                                    else\n                                    {\n                                        v60 = v12;\n                                        v9 = &g_403a05;\n                                        v10 = (tmp_10 == 0? &g_403a05 : tmp_10);\n                                        free(NULL);\n                                        fclose(v60);\n                                    }\n                                }\n                            }\n                            if ((unsigned int)v12 == 35)\n                            {\n                                do\n                                {\n                                    v58 = *((long long *)(v12 + 8));\n                                    if (*((long long *)(v12 + 8)) < *((long long *)(v12 + 16)))\n                                    {\n                                        *((char **)(v12 + 8)) = &v58[1];\n                                        v58 = (unsigned int)*(v58);\n                                        v59 = 1;\n                                    }\n                                    else\n                                    {\n                                        v58 = __uflow(v12);\n                                        v59 = (char)((unsigned int)v58 != -1);\n                                    }\n                                }\n                                while (v58 != 10 && v59 != 0);\n                            }\n                        }\n                        if (*((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) && (unsigned int)v12 != 35 && (unsigned int)v12 != 32 && v27 > 1 && v36 != 0)\n                        {\n                            v12 = __uflow(v12);\n                        }\n                        if (((unsigned int)v12 == -1 || (unsigned int)v12 != 32) && ((unsigned int)v12 == 35 || (unsigned int)v12 == -1 || v27 <= 1) && ((unsigned int)v12 != 32 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16))) && ((unsigned int)v12 == -1 || v58 == -1 || (unsigned int)v12 != 35) && (v58 == -1 || (unsigned int)v12 != 35 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16))) && ((unsigned int)v12 == 35 || v27 <= 1 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16))) && ((unsigned int)v12 == 35 || v27 <= 1 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || v36 != 0))\n                        {\n                            v12 = v24;\n                            v10 = (tmp_10 == 0? &g_403a05 : tmp_10);\n                            fclose(v61);\n                            if (v0 == 0)\n                            {\n                                break;\n                            }\n                            *((char *)(v9 + v0)) = 0;\n                        }\n                    }\n                    if (((unsigned int)v12 == -1 || (unsigned int)v12 != 32) && ((unsigned int)v12 == -1 || (unsigned int)(v12 - 9) > 1) && ((unsigned int)v12 == 35 || (unsigned int)v12 == -1 || v27 <= 1) && ((unsigned int)v12 == -1 || v58 == -1 || (unsigned int)v12 != 35) && (*((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || (unsigned int)v12 != 32 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16))) && (*((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || (unsigned int)(v12 - 9) > 1) && ((unsigned int)v12 == 35 || v27 <= 1 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16))) && (v58 == -1 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || (unsigned int)v12 != 35 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16))))\n                    {\n                        v9 = &g_403a05;\n                    }\n                    else if (v36 == 0 && (unsigned int)v12 != 35 && (unsigned int)v12 != 32 && v27 > 1 && (unsigned int)(v12 - 9) > 1 || ((unsigned int)v12 == -1 || (unsigned int)v12 != 32) && ((unsigned int)v12 == -1 || (unsigned int)(v12 - 9) > 1) && ((unsigned int)v12 == 35 || (unsigned int)v12 == -1 || v27 <= 1) && ((unsigned int)v12 == -1 || v58 == -1 || (unsigned int)v12 != 35) && (*((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || (unsigned int)v12 != 32 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16))) && (*((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || (unsigned int)(v12 - 9) > 1) && ((unsigned int)v12 == 35 || v27 <= 1 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16))) && (v58 == -1 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16)) || (unsigned int)v12 != 35 || *((long long *)(v12 + 8)) >= *((long long *)(v12 + 16))) && v0 != 0)\n                    {\n                        free(v16);\n                    }\n                }\n                else\n                {\n                    close(v21);\n                }\n            }\n            v9 = &g_403a05;\n            free(v16);\n        }\n        *((char *[2])&g_606378[0]) = v9;\n    }\n    v65 = v9[0];\n    if (v9[0] != 0)\n    {\n        while (true)\n        {\n            v66 = strcmp((tmp_10 == 0? &g_403a05 : tmp_10), v9);\n            if (v66 != 0 && (v65 != 42 || v9[1] != 0))\n            {\n                v67 = strlen(v9);\n                v68 = &((char [2])&v9[v67])[1];\n                v69 = strlen(&((char [2])&v9[v67])[1]);\n                v9 = v68 + v69 + 1;\n                v65 = (char)*((char *)(v68 + v69 + 1));\n                if (v65 == 0)\n                {\n                    break;\n                }\n            }\n            if (v66 == 0 || v65 == 42 && v9[1] == 0)\n            {\n                v10 = &((char [2])&v9[strlen(v9)])[1];\n            }\n        }\n    }\n    tmp_3 = v10;\n    tmp_28 = *(v10) == 0;\n    return (tmp_28? \"ASCII\" : tmp_3);\n}\n"
+        },
+        {
+            "funcName": "sub_4014f0",
+            "funcStartAddr": "0x4014f0",
+            "funcEndAddr": "0x4014f8",
+            "decompiledFuncCode": "extern unsigned long long g_606220;\n\nint sub_4014f0()\n{\n    unsigned long long v1;  // rdi\n    unsigned long v2;  // rax\n\n    g_606220 = v1;\n    return v2;\n}\n"
+        },
+        {
+            "funcName": "sub_402c40",
+            "funcStartAddr": "0x402c40",
+            "funcEndAddr": "0x402c56",
+            "decompiledFuncCode": "int sub_402c40()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402fb0",
+            "funcStartAddr": "0x402fb0",
+            "funcEndAddr": "0x402fc6",
+            "decompiledFuncCode": "int sub_402fb0()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402e00",
+            "funcStartAddr": "0x402e00",
+            "funcEndAddr": "0x402e11",
+            "decompiledFuncCode": "int sub_402e00()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402760",
+            "funcStartAddr": "0x402760",
+            "funcEndAddr": "0x4028ff",
+            "decompiledFuncCode": "typedef struct struct_0 {\n    char padding_0[4];\n    unsigned int field_4;\n    char padding_8[32];\n    unsigned long long field_28;\n    unsigned long long field_30;\n} struct_0;\n\nextern uint128_t *g_6061b8;\nextern uint128_t g_6061c0;\nextern unsigned int g_6061d0;\nextern int512_t g_606240;\n\nint sub_402760()\n{\n    unsigned long v0;  // [bp-0x78]\n    unsigned long v1;  // [bp-0x70]\n    unsigned long v2;  // [bp-0x68]\n    unsigned long v3;  // [bp-0x50]\n    unsigned long|unsigned long long v4;  // [bp-0x48]\n    unsigned int v5;  // [bp-0x40]\n    unsigned int v6;  // [bp-0x3c]\n    unsigned long long v8;  // rcx\n    struct_0 *v9;  // rbp\n    unsigned long v10;  // rsi\n    unsigned int *v11;  // r13\n    unsigned long v13;  // rdi\n    uint128_t *v14;  // rax\n    unsigned long long v15;  // rax\n    uint128_t *v16;  // rbx\n    unsigned long long v17;  // rdx\n    unsigned long v18;  // rdx\n    unsigned long long v20[2];  // rbx\n    void *v21;  // r12\n    unsigned long long v22;  // rax\n    unsigned long long v23;  // rsi\n    unsigned long long v25;  // rax\n\n    v9 = v8;\n    v3 = v10;\n    v16 = g_6061b8;\n    v11 = __errno_location();\n    v5 = *(v11);\n    if ((unsigned int)v13 < 0)\n    {\n        abort(); /* do not return */\n    }\n    if (g_6061d0 <= (unsigned int)v13)\n    {\n        if (g_6061b8 != 6316480)\n        {\n            v4 = v13 + 1;\n            v15 = sub_403020();\n            v17 = v4;\n            g_6061b8 = v15;\n            v16 = v15;\n        }\n        else\n        {\n            v4 = v13 + 1;\n            v14 = sub_403020();\n            v17 = v4;\n            v16 = v14;\n            g_6061b8 = v14;\n            *(v14) = g_6061c0;\n        }\n        v18 = (v17 - g_6061d0) * 16;\n        memset(&v16[(unsigned long long)g_6061d0], 0x0, v18);\n        g_6061d0 = (unsigned int)v13 + 1;\n    }\n    v20 = &v16[v13];\n    v21 = v20[1];\n    v6 = v9->field_4 | 1;\n    v2 = v9->field_30;\n    v1 = v9->field_28;\n    v0 = &v9->padding_8;\n    *((unsigned long long [2])&v4) = *(v20);\n    v22 = sub_401750();\n    if (v4 <= v22)\n    {\n        v23 = v22 + 1;\n        v20[0] = v22 + 1;\n        if (v21 != 6316608)\n        {\n            v4 = v23;\n            free(v21);\n            v23 = v4;\n        }\n        v4 = v23;\n        v20[1] = v21;\n        v21 = (unsigned long long)(unsigned int)sub_402fd0();\n        v2 = v9->field_30;\n        v1 = v9->field_28;\n        v0 = v8 + 8;\n        sub_401750();\n    }\n    *(v11) = v5;\n    v25 = v21;\n    return v25;\n}\n"
+        },
+        {
+            "funcName": "sub_4029a0",
+            "funcStartAddr": "0x4029a0",
+            "funcEndAddr": "0x4029b3",
+            "decompiledFuncCode": "extern int512_t g_606340;\n\nint sub_4029a0()\n{\n    unsigned long v1;  // rdi\n    unsigned long long v2;  // rax\n    unsigned int v3;  // esi\n\n    v2 = (unsigned int)*((int *)((v1 == 0? &g_606340 : v1) + 4));\n    *((unsigned int *)((v1 == 0? &g_606340 : v1) + 4)) = v3;\n    return v2;\n}\n"
+        },
+        {
+            "funcName": "sub_4029f0",
+            "funcStartAddr": "0x4029f0",
+            "funcEndAddr": "0x402a62",
+            "decompiledFuncCode": "extern int512_t g_606340;\n\nint sub_4029f0()\n{\n    unsigned long v0;  // [bp-0x68]\n    unsigned long v1;  // [bp-0x60]\n    unsigned long v2;  // [bp-0x58]\n    unsigned long v3;  // [bp-0x40]\n    unsigned int v5;  // [bp+0x100008]\n    unsigned long v6;  // r8\n    unsigned long long v7[7];  // rbx\n    unsigned long v8;  // rcx\n\n    v7 = (v6 == 0? &g_606340 : v6);\n    v3 = v8;\n    *((unsigned long long [7])&v2) = v7[6];\n    *((unsigned long long [7])&v1) = v7[5];\n    v0 = &v7[1];\n    *(__errno_location()) = v5;\n    return sub_401750();\n}\n"
+        },
+        {
+            "funcName": "sub_403170",
+            "funcStartAddr": "0x403170",
+            "funcEndAddr": "0x403188",
+            "decompiledFuncCode": "int sub_403170()\n{\n    unsigned int v1;  // rdi\n    unsigned int v2;  // rsi\n    unsigned long long v3;  // rax\n\n    v3 = calloc(v1, v2);\n    if (v3 != 0)\n    {\n        return v3;\n    }\n    sub_4031f0(); /* do not return */\n}\n"
+        },
+        {
+            "funcName": "sub_402a8b",
+            "funcStartAddr": "0x402a8b",
+            "funcEndAddr": "0x402b51",
+            "decompiledFuncCode": "int sub_402a8b()\n{\n    unsigned long v0;  // [bp-0x58]\n    unsigned long v1;  // [bp-0x50]\n    unsigned long v2;  // [bp-0x48]\n    unsigned int v3;  // [bp-0x2c]\n    unsigned long v4;  // [bp-0x28]\n    unsigned long v5;  // [bp-0x20]\n    unsigned long v6;  // [bp-0x18]\n    unsigned long v7;  // [bp-0x10]\n    unsigned long long v8;  // [bp+0x0]\n    unsigned long long v10;  // [bp+0x10]\n    unsigned long long v11;  // [bp+0x18]\n    unsigned long long v12;  // [bp+0x20]\n    unsigned long long v13;  // [bp+0x28]\n    unsigned long v14;  // rcx\n    unsigned long v15;  // rax\n    unsigned long long v17[7];  // rbx\n    unsigned int *v18;  // r13\n    unsigned long long *v20;  // r12\n    unsigned long long v21;  // rbx\n    unsigned long long v22;  // r12\n    unsigned long long v23;  // r13\n    unsigned long long v24;  // r14\n    unsigned long long v25;  // r15\n\n    v17 = (v14 == 0? v15 : rbx<8>);\n    v18 = __errno_location();\n    v3 = *(v18);\n    *((unsigned long long [7])&v2) = v17[6];\n    *((unsigned long long [7])&v1) = v17[5];\n    v0 = &v17[1];\n    v6 = &v17[1];\n    v7 = (unsigned int)sub_401750();\n    v5 = v7 + 1;\n    v4 = (unsigned int)sub_402fd0();\n    *((unsigned long long [7])&v2) = v17[6];\n    *((unsigned long long [7])&v1) = v17[5];\n    v0 = v6;\n    sub_401750();\n    *(v18) = v3;\n    if (v20 != 0)\n    {\n        *(v20) = v7;\n    }\n    v21 = v8;\n    v22 = v10;\n    v23 = v11;\n    v24 = v12;\n    v25 = v13;\n    return v4;\n}\n"
+        },
+        {
+            "funcName": "sub_403150",
+            "funcStartAddr": "0x403150",
+            "funcEndAddr": "0x403167",
+            "decompiledFuncCode": "int sub_403150()\n{\n    unsigned long v0;  // [bp-0x8]\n    unsigned long v2;  // rbx\n\n    v0 = v2;\n    sub_402fd0();\n}\n"
+        },
+        {
+            "funcName": "sub_402d60",
+            "funcStartAddr": "0x402d60",
+            "funcEndAddr": "0x402d6c",
+            "decompiledFuncCode": "int sub_402d60()\n{\n}\n"
+        },
+        {
+            "funcName": "sub_402d7f",
+            "funcStartAddr": "0x402d7f",
+            "funcEndAddr": "0x402df0",
+            "decompiledFuncCode": "extern uint128_t g_606340;\nextern uint128_t g_606350;\nextern uint128_t g_606360;\nextern unsigned long long g_606370;\n\nint sub_402d7f()\n{\n    void v0;  // [bp-0x48]\n    void v1;  // [bp-0x38]\n    void v2;  // [bp-0x28]\n    unsigned long v3;  // [bp-0x18]\n    unsigned long v5;  // rdx\n\n    v3 = g_606370;\n    *((uint128_t *)&v0) = g_606340;\n    *((uint128_t *)&v1) = g_606350;\n    *((uint128_t *)&v2) = g_606360;\n    *((unsigned int *)&((char *)stack_base)[4 * v5 % 32 + -64]) = (unsigned int)((unsigned long long)(!((unsigned int)((unsigned long long)(unsigned int)*((int *)&((char *)stack_base)[4 * v5 % 32 + -64]) >> ((char)((unsigned int)v5 & 31) & 31))) & 1) << ((char)((unsigned int)v5 & 31) & 31)) ^ *((int *)&((char *)stack_base)[4 * v5 % 32 + -64]);\n    return sub_402760();\n}\n"
+        },
+        {
+            "funcName": "sub_403260",
+            "funcStartAddr": "0x403260",
+            "funcEndAddr": "0x4032c0",
+            "decompiledFuncCode": "int sub_403260()\n{\n    unsigned long long v1;  // r12\n    unsigned int v2;  // edi\n    unsigned int v3;  // ebp\n    void *v4;  // rdi\n    unsigned long long v5;  // rax\n\n    v1 = __fpending();\n    v3 = ferror(v2);\n    v5 = fclose(v4);\n    if (v3 == 0)\n    {\n        if ((unsigned int)v5 != 0 && v1 == 0)\n        {\n            v5 = 0 - (unsigned int)(char)(*(__errno_location()) != 9);\n        }\n    }\n    else\n    {\n        if ((unsigned int)v5 == 0)\n        {\n            *(__errno_location()) = 0;\n            v5 = -18446744069414584321;\n        }\n    }\n    if ((unsigned int)v5 != 0 && (v1 != 0 || v3 != 0))\n    {\n        v5 = -18446744069414584321;\n    }\n    return v5;\n}\n"
+        },
+        {
+            "funcName": "sub_401500",
+            "funcStartAddr": "0x401500",
+            "funcEndAddr": "0x401508",
+            "decompiledFuncCode": "extern char g_606218;\n\nint sub_401500()\n{\n    char v1;  // dil\n    unsigned long v2;  // rax\n\n    g_606218 = v1;\n    return v2;\n}\n"
+        },
+        {
+            "funcName": "sub_402fd0",
+            "funcStartAddr": "0x402fd0",
+            "funcEndAddr": "0x402fea",
+            "decompiledFuncCode": "int sub_402fd0()\n{\n    unsigned int v1;  // rdi\n    unsigned long long v2;  // rax\n\n    v2 = malloc(v1);\n    if (v2 == 0 && v1 != 0)\n    {\n        sub_4031f0(); /* do not return */\n    }\n    if (v1 == 0 || v2 != 0)\n    {\n        return v2;\n    }\n}\n"
+        },
+        {
+            "funcName": "sub_402a62",
+            "funcStartAddr": "0x402a62",
+            "funcEndAddr": "0x402a8b",
+            "decompiledFuncCode": "int sub_402a62()\n{\n    unsigned long v0;  // [bp-0x30]\n    unsigned long v1;  // [bp-0x28]\n    unsigned long v2;  // [bp-0x20]\n    unsigned long v3;  // [bp-0x18]\n    unsigned long v4;  // [bp-0x10]\n    unsigned long v5;  // [bp-0x8]\n    unsigned long v7;  // r15\n    unsigned long v8;  // r14\n    unsigned long v9;  // r13\n    unsigned long v10;  // r12\n    unsigned long v11;  // rbx\n\n    v5 = v7;\n    v4 = v8;\n    v3 = v9;\n    v2 = v10;\n    v1 = stack_base + 0;\n    v0 = v11;\n}\n"
+        },
+        {
+            "funcName": "sub_402c80",
+            "funcStartAddr": "0x402c80",
+            "funcEndAddr": "0x402ced",
+            "decompiledFuncCode": "int sub_402c80()\n{\n    unsigned int v0;  // [bp-0x48]\n    unsigned int v1;  // [bp-0x44]\n    unsigned long long v2;  // [bp-0x40]\n    unsigned long long v3;  // [bp-0x38]\n    unsigned long long v4;  // [bp-0x30]\n    unsigned long long v5;  // [bp-0x28]\n    unsigned long long v6;  // [bp-0x20]\n    unsigned long long v7;  // [bp-0x18]\n    unsigned int v9;  // esi\n\n    if (v9 == 10)\n    {\n        abort(); /* do not return */\n    }\n    v0 = v9;\n    v1 = 0;\n    v2 = 0;\n    v3 = 0;\n    v4 = 0;\n    v5 = 0;\n    v6 = 0;\n    v7 = 0;\n    return sub_402760();\n}\n"
+        },
+        {
+            "funcName": "sub_403020",
+            "funcStartAddr": "0x403020",
+            "funcEndAddr": "0x403050",
+            "decompiledFuncCode": "int sub_403020()\n{\n    unsigned int v1;  // rsi\n    void *v2;  // rdi\n    unsigned long long v3;  // rax\n\n    if (v1 == 0 && v2 != 0)\n    {\n        free(v2);\n        return 0;\n    }\n    if (v2 == 0 || v1 != 0)\n    {\n        v3 = realloc(v2, v1);\n        if (v3 == 0 && v1 != 0)\n        {\n            sub_4031f0(); /* do not return */\n        }\n        if (v1 == 0 || v3 != 0)\n        {\n            return v3;\n        }\n    }\n}\n"
+        }
+    ],
+    "isStripped": "True",
+    "decompilerName": "Angr",
+    "compilerName": "gcc",
+    "optLevel": "-O",
+    "binaryName": "findutils_strip-4.6.0_gcc-8.2.0_x86_64_O2_bigram.elf"
+}

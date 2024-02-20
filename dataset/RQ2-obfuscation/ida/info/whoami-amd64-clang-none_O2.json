@@ -1,0 +1,429 @@
+{
+    "binaryInfo": {
+        "binaryName": "whoami-amd64-clang-none_O2",
+        "isStripped": "True"
+    },
+    "buildInfo": {
+        "decompilerName": "IDA Pro",
+        "compilerName": "gcc",
+        "compilerVersion": "9.4.0",
+        "Optlevel": "-O"
+    },
+    "funcInfo": [
+        {
+            "funcName": "_dl_relocate_static_pie",
+            "funcStartAddr": "0x402300",
+            "funcEndAddr": "0x402305",
+            "decompiledFuncCode": "void dl_relocate_static_pie()\n{\n  ;\n}\n"
+        },
+        {
+            "funcName": "usage",
+            "funcStartAddr": "0x4023c0",
+            "funcEndAddr": "0x40255b",
+            "decompiledFuncCode": "void __fastcall __noreturn usage(int status)\n{\n  char *v1; // rax\n  char *v2; // rax\n  char *v3; // rax\n  char *v4; // rax\n  char *v5; // rax\n  char *v6; // rax\n  char *v7; // rax\n  char *v8; // rax\n  char *v9; // rax\n  FILE *v10; // rbx\n  char *v11; // rax\n\n  if ( !status )\n  {\n    v1 = dcgettext(0LL, \"Usage: %s [OPTION]...\\n\", 5);\n    __printf_chk(1LL, v1, program_name);\n    v2 = dcgettext(0LL, \"Print the user name associated with the current effective user ID.\\nSame as id -un.\\n\\n\", 5);\n    fputs_unlocked(v2, stdout);\n    v3 = dcgettext(0LL, \"      --help     display this help and exit\\n\", 5);\n    fputs_unlocked(v3, stdout);\n    v4 = dcgettext(0LL, \"      --version  output version information and exit\\n\", 5);\n    fputs_unlocked(v4, stdout);\n    v5 = dcgettext(0LL, \"\\n%s online help: <%s>\\n\", 5);\n    __printf_chk(1LL, v5, \"GNU coreutils\");\n    v6 = setlocale(5, 0LL);\n    if ( v6 )\n    {\n      if ( strncmp(v6, \"en_\", 3uLL) )\n      {\n        v7 = dcgettext(0LL, \"Report any translation bugs to <https://translationproject.org/team/>\\n\", 5);\n        fputs_unlocked(v7, stdout);\n      }\n    }\n    v8 = dcgettext(0LL, \"Full documentation <%s%s>\\n\", 5);\n    __printf_chk(1LL, v8, \"https://www.gnu.org/software/coreutils/\");\n    v9 = dcgettext(0LL, \"or available locally via: info '(coreutils) %s%s'\\n\", 5);\n    __printf_chk(1LL, v9, \"whoami\");\n    exit(status);\n  }\n  v10 = stderr;\n  v11 = dcgettext(0LL, \"Try '%s --help' for more information.\\n\", 5);\n  __fprintf_chk(v10, 1LL, v11, program_name);\n  exit(status);\n}\n"
+        },
+        {
+            "funcName": "main",
+            "funcStartAddr": "0x402560",
+            "funcEndAddr": "0x40268c",
+            "decompiledFuncCode": "int __cdecl main(int argc, const char **argv, const char **envp)\n{\n  int *v3; // rbp\n  __uid_t v4; // eax\n  __uid_t v5; // ebx\n  int v6; // r14d\n  struct passwd *v7; // rax\n  char *v9; // rbp\n  const char *v10; // rax\n  char *v11; // rax\n\n  set_program_name(*argv);\n  setlocale(6, \"\");\n  bindtextdomain(\"coreutils\", \"/home/yujeong/binary_gen/coreutils-8.31/tmp/_install/share/locale\");\n  textdomain(\"coreutils\");\n  atexit(close_stdout);\n  parse_gnu_standard_options_only(\n    argc,\n    (char **)argv,\n    \"whoami\",\n    \"GNU coreutils\",\n    Version,\n    1,\n    (void (*)(int))usage,\n    \"Richard Mlynarik\",\n    0LL);\n  if ( optind != argc )\n  {\n    v9 = dcgettext(0LL, \"extra operand %s\", 5);\n    v10 = quote(argv[optind]);\n    error(0, 0, v9, v10);\n    usage(1);\n  }\n  v3 = __errno_location();\n  *v3 = 0;\n  v4 = geteuid();\n  v5 = v4;\n  if ( v4 == -1 )\n  {\n    v6 = *v3;\n    if ( *v3 )\n    {\nLABEL_8:\n      v11 = dcgettext(0LL, \"cannot find name for user ID %lu\", 5);\n      error(1, v6, v11, v5);\n      JUMPOUT(0x40268CLL);\n    }\n  }\n  v7 = getpwuid(v4);\n  if ( !v7 )\n  {\n    v6 = *v3;\n    goto LABEL_8;\n  }\n  puts(v7->pw_name);\n  return 0;\n}\n"
+        },
+        {
+            "funcName": "close_stdout_set_file_name",
+            "funcStartAddr": "0x402690",
+            "funcEndAddr": "0x402698",
+            "decompiledFuncCode": "void __fastcall close_stdout_set_file_name(const char *file)\n{\n  file_name = file;\n}\n"
+        },
+        {
+            "funcName": "close_stdout_set_ignore_EPIPE",
+            "funcStartAddr": "0x4026a0",
+            "funcEndAddr": "0x4026a8",
+            "decompiledFuncCode": "void __fastcall close_stdout_set_ignore_EPIPE(bool ignore)\n{\n  ignore_EPIPE = ignore;\n}\n"
+        },
+        {
+            "funcName": "close_stdout",
+            "funcStartAddr": "0x4026b0",
+            "funcEndAddr": "0x402765",
+            "decompiledFuncCode": "void __cdecl close_stdout()\n{\n  bool v0; // bl\n  int *v1; // rax\n  int *v2; // rbp\n  char *v3; // rbx\n  int v4; // ebp\n  char *v5; // rax\n\n  if ( close_stream(stdout) )\n  {\n    v0 = ignore_EPIPE;\n    v1 = __errno_location();\n    v2 = v1;\n    if ( !v0 || *v1 != 32 )\n    {\n      v3 = dcgettext(0LL, \"write error\", 5);\n      v4 = *v2;\n      if ( !file_name )\n      {\n        error(0, v4, \"%s\", v3);\n        _exit(exit_failure);\n      }\n      v5 = quotearg_colon(file_name);\n      error(0, v4, \"%s: %s\", v5, v3);\n      _exit(exit_failure);\n    }\n  }\n  if ( close_stream(stderr) )\n    _exit(exit_failure);\n}\n"
+        },
+        {
+            "funcName": "parse_long_options",
+            "funcStartAddr": "0x402770",
+            "funcEndAddr": "0x402865",
+            "decompiledFuncCode": "void parse_long_options(\n        int argc,\n        char **argv,\n        const char *command_name,\n        const char *package,\n        const char *version,\n        void (*usage_func)(int),\n        ...)\n{\n  int v10; // ebp\n  int v11; // eax\n  va_list va; // [rsp+0h] [rbp-F8h] BYREF\n\n  v10 = opterr;\n  opterr = 0;\n  if ( argc == 2 )\n  {\n    v11 = getopt_long(2, argv, \"+\", long_options, 0LL);\n    if ( v11 == 104 )\n    {\n      usage_func(0);\n    }\n    else if ( v11 == 118 )\n    {\n      va_start(va, usage_func);\n      version_etc_va(stdout, command_name, package, version, va);\n      exit(0);\n    }\n  }\n  opterr = v10;\n  optind = 0;\n}\n"
+        },
+        {
+            "funcName": "parse_gnu_standard_options_only",
+            "funcStartAddr": "0x402870",
+            "funcEndAddr": "0x40296b",
+            "decompiledFuncCode": "void parse_gnu_standard_options_only(\n        int argc,\n        char **argv,\n        const char *command_name,\n        const char *package,\n        const char *version,\n        bool scan_all,\n        void (*usage_func)(int),\n        ...)\n{\n  int v10; // ebp\n  const char *v11; // rdx\n  int v12; // eax\n  __int64 v13; // rdi\n  va_list va; // [rsp+0h] [rbp-F8h] BYREF\n\n  v10 = opterr;\n  opterr = 1;\n  v11 = \"+\";\n  if ( scan_all )\n    v11 = \"\";\n  v12 = getopt_long(argc, argv, v11, long_options, 0LL);\n  if ( v12 != -1 )\n  {\n    if ( v12 == 104 )\n    {\n      v13 = 0LL;\n    }\n    else\n    {\n      if ( v12 == 118 )\n      {\n        va_start(va, usage_func);\n        version_etc_va(stdout, command_name, package, version, va);\n        exit(0);\n      }\n      v13 = (unsigned int)exit_failure;\n    }\n    usage_func(v13);\n  }\n  opterr = v10;\n}\n"
+        },
+        {
+            "funcName": "set_program_name",
+            "funcStartAddr": "0x402970",
+            "funcEndAddr": "0x402a11",
+            "decompiledFuncCode": "void __fastcall set_program_name(const char *argv0)\n{\n  const char *v1; // rbx\n  char *v2; // rax\n  const char *v3; // r14\n\n  v1 = argv0;\n  if ( !argv0 )\n  {\n    fwrite(\"A NULL argv[0] was passed through an exec system call.\\n\", 0x37uLL, 1uLL, stderr);\n    abort();\n  }\n  v2 = strrchr(argv0, 47);\n  v3 = v2 + 1;\n  if ( !v2 )\n    v3 = argv0;\n  if ( v3 - argv0 >= 7 && !strncmp(v3 - 7, \"/.libs/\", 7uLL) )\n  {\n    if ( !strncmp(v3, \"lt-\", 3uLL) )\n    {\n      v3 += 3;\n      _bss_start = (__int64)v3;\n    }\n    v1 = v3;\n  }\n  program_name = v1;\n  program_invocation_name = (__int64)v1;\n}\n"
+        },
+        {
+            "funcName": "clone_quoting_options",
+            "funcStartAddr": "0x402a20",
+            "funcEndAddr": "0x402a53",
+            "decompiledFuncCode": "quoting_options *__fastcall clone_quoting_options(quoting_options *o)\n{\n  quoting_options *v1; // rbx\n  int *v2; // r14\n  int v3; // ebp\n  quoting_options *result; // rax\n\n  v1 = o;\n  v2 = __errno_location();\n  v3 = *v2;\n  if ( !o )\n    v1 = &default_quoting_options;\n  result = (quoting_options *)xmemdup(v1, 0x38uLL);\n  *v2 = v3;\n  return result;\n}\n"
+        },
+        {
+            "funcName": "get_quoting_style",
+            "funcStartAddr": "0x402a60",
+            "funcEndAddr": "0x402a6f",
+            "decompiledFuncCode": "quoting_style __fastcall get_quoting_style(const quoting_options *o)\n{\n  const quoting_options *v1; // rax\n\n  v1 = &default_quoting_options;\n  if ( o )\n    v1 = o;\n  return v1->style;\n}\n"
+        },
+        {
+            "funcName": "set_quoting_style",
+            "funcStartAddr": "0x402a70",
+            "funcEndAddr": "0x402a7f",
+            "decompiledFuncCode": "void __fastcall set_quoting_style(quoting_options *o, quoting_style s)\n{\n  quoting_options *v2; // rax\n\n  v2 = &default_quoting_options;\n  if ( o )\n    v2 = o;\n  v2->style = s;\n}\n"
+        },
+        {
+            "funcName": "set_char_quoting",
+            "funcStartAddr": "0x402a80",
+            "funcEndAddr": "0x402ab6",
+            "decompiledFuncCode": "int __fastcall set_char_quoting(quoting_options *o, char c, int i)\n{\n  quoting_options *v4; // rsi\n  __int64 v5; // r8\n  int result; // eax\n\n  v4 = &default_quoting_options;\n  if ( o )\n    v4 = o;\n  v5 = (unsigned __int8)c >> 5;\n  result = (v4->quote_these_too[v5] >> c) & 1;\n  v4->quote_these_too[v5] ^= (((unsigned __int8)i ^ (unsigned __int8)(v4->quote_these_too[v5] >> c)) & 1) << c;\n  return result;\n}\n"
+        },
+        {
+            "funcName": "set_quoting_flags",
+            "funcStartAddr": "0x402ac0",
+            "funcEndAddr": "0x402ad3",
+            "decompiledFuncCode": "int __fastcall set_quoting_flags(quoting_options *o, int i)\n{\n  quoting_options *v2; // rcx\n  int result; // eax\n\n  v2 = &default_quoting_options;\n  if ( o )\n    v2 = o;\n  result = v2->flags;\n  v2->flags = i;\n  return result;\n}\n"
+        },
+        {
+            "funcName": "set_custom_quoting",
+            "funcStartAddr": "0x402ae0",
+            "funcEndAddr": "0x402b0b",
+            "decompiledFuncCode": "void __fastcall set_custom_quoting(quoting_options *o, const char *left_quote, const char *right_quote)\n{\n  quoting_options *v3; // rax\n\n  v3 = &default_quoting_options;\n  if ( o )\n    v3 = o;\n  v3->style = custom_quoting_style;\n  if ( !left_quote || !right_quote )\n    abort();\n  v3->left_quote = left_quote;\n  v3->right_quote = right_quote;\n}\n"
+        },
+        {
+            "funcName": "quotearg_buffer",
+            "funcStartAddr": "0x402b10",
+            "funcEndAddr": "0x402b82",
+            "decompiledFuncCode": "size_t __fastcall quotearg_buffer(\n        char *buffer,\n        size_t buffersize,\n        const char *arg,\n        size_t argsize,\n        const quoting_options *o)\n{\n  const quoting_options *v7; // rbp\n  int *v8; // rbx\n  size_t result; // rax\n  int v10; // [rsp+0h] [rbp-34h]\n\n  v7 = &default_quoting_options;\n  if ( o )\n    v7 = o;\n  v8 = __errno_location();\n  v10 = *v8;\n  result = quotearg_buffer_restyled(\n             buffer,\n             buffersize,\n             arg,\n             argsize,\n             v7->style,\n             v7->flags,\n             v7->quote_these_too,\n             v7->left_quote,\n             v7->right_quote);\n  *v8 = v10;\n  return result;\n}\n"
+        },
+        {
+            "funcName": "quotearg_buffer_restyled",
+            "funcStartAddr": "0x402b90",
+            "funcEndAddr": "0x403959",
+            "decompiledFuncCode": "size_t __fastcall quotearg_buffer_restyled(\n        char *buffer,\n        size_t buffersize,\n        const char *arg,\n        size_t argsize,\n        unsigned int quoting_style,\n        int flags,\n        const unsigned int *quote_these_too,\n        char *left_quote,\n        const char *right_quote)\n{\n  char v12; // r15\n  char v13; // di\n  char v14; // al\n  int v15; // r9d\n  size_t v16; // r11\n  quoting_style v17; // r8d\n  unsigned __int64 i; // r14\n  char v19; // r13\n  __int64 v20; // rsi\n  const char *v21; // r10\n  size_t v22; // rbp\n  size_t v23; // rbx\n  int v24; // ebp\n  const char *v25; // rax\n  char v26; // al\n  size_t v27; // rbx\n  size_t v28; // rax\n  char v29; // cl\n  size_t v30; // r15\n  size_t v31; // rbp\n  int v32; // r13d\n  size_t v33; // rax\n  bool v34; // si\n  __int64 v35; // r12\n  char v36; // dl\n  char v37; // r13\n  char v38; // cl\n  char v39; // bl\n  __int64 v40; // rax\n  size_t v41; // r13\n  int v42; // ebp\n  size_t v43; // rbx\n  int v44; // eax\n  unsigned __int64 v45; // rcx\n  size_t v46; // rdx\n  bool v47; // zf\n  const unsigned __int16 **v48; // rax\n  bool v49; // r13\n  unsigned __int64 v50; // rbx\n  size_t v51; // rax\n  unsigned __int64 v52; // rbx\n  size_t v53; // rax\n  size_t v54; // rbp\n  __int64 v55; // rsi\n  __int64 v56; // rcx\n  unsigned __int64 v57; // rdx\n  int v58; // eax\n  unsigned __int64 v59; // rdx\n  bool v60; // bl\n  __int64 v61; // rsi\n  unsigned __int64 v62; // rbx\n  unsigned __int64 v63; // rax\n  char *v64; // rcx\n  char v65; // al\n  char *v66; // rdx\n  int v67; // eax\n  int v68; // r9d\n  quoting_style v69; // r8d\n  char v72; // [rsp+Fh] [rbp-D9h]\n  char v74; // [rsp+1Bh] [rbp-CDh]\n  int v75; // [rsp+1Ch] [rbp-CCh]\n  bool v76; // [rsp+20h] [rbp-C8h]\n  char v77; // [rsp+21h] [rbp-C7h]\n  bool v78; // [rsp+22h] [rbp-C6h]\n  unsigned __int8 v79; // [rsp+23h] [rbp-C5h]\n  char v80; // [rsp+24h] [rbp-C4h]\n  char v81; // [rsp+25h] [rbp-C3h]\n  unsigned __int8 v82; // [rsp+26h] [rbp-C2h]\n  size_t v85; // [rsp+30h] [rbp-B8h]\n  quoting_style s; // [rsp+38h] [rbp-B0h]\n  size_t n; // [rsp+40h] [rbp-A8h]\n  const char *s2; // [rsp+48h] [rbp-A0h]\n  int v89; // [rsp+50h] [rbp-98h]\n  int v90; // [rsp+50h] [rbp-98h]\n  bool v91; // [rsp+54h] [rbp-94h]\n  unsigned __int64 v92; // [rsp+58h] [rbp-90h]\n  size_t v93; // [rsp+60h] [rbp-88h]\n  mbstate_t ps; // [rsp+78h] [rbp-70h] BYREF\n  int v97; // [rsp+84h] [rbp-64h]\n  int v98; // [rsp+88h] [rbp-60h]\n  wchar_t pwc; // [rsp+8Ch] [rbp-5Ch] BYREF\n  const char *v100; // [rsp+90h] [rbp-58h]\n  size_t v101; // [rsp+98h] [rbp-50h]\n  __int64 v102; // [rsp+A0h] [rbp-48h]\n  size_t mb_cur_max; // [rsp+A8h] [rbp-40h]\n  __int64 v104; // [rsp+B0h] [rbp-38h]\n\n  mb_cur_max = __ctype_get_mb_cur_max();\n  v12 = (flags & 2) != 0;\n  v98 = flags & 1;\n  v75 = flags;\n  v97 = flags & 4;\n  v13 = 1;\n  v93 = 0LL;\n  s2 = 0LL;\n  n = 0LL;\n  v14 = 0;\n  v15 = 0;\n  v102 = 0LL;\nLABEL_2:\n  v16 = buffersize;\n  v17 = escape_quoting_style;\n  i = 0LL;\n  v19 = 1;\n  v20 = 0LL;\n  v21 = arg;\n  v22 = argsize;\n  switch ( quoting_style )\n  {\n    case 0u:\n      v17 = literal_quoting_style;\n      i = 0LL;\n      v19 = v14;\n      v20 = 0LL;\n      goto LABEL_32;\n    case 1u:\n      goto LABEL_14;\n    case 2u:\n      goto LABEL_18;\n    case 3u:\n      v14 = 1;\nLABEL_14:\n      v12 = 1;\n      goto LABEL_15;\n    case 4u:\nLABEL_15:\n      v29 = 1;\n      if ( (v12 & 1) != 0 )\n        v29 = v14;\n      v14 = v29;\nLABEL_18:\n      v17 = shell_always_quoting_style;\n      if ( (v12 & 1) != 0 )\n      {\n        i = 0LL;\n      }\n      else\n      {\n        if ( v16 )\n          *buffer = 39;\n        i = 1LL;\n      }\n      s2 = \"'\";\n      n = 1LL;\n      v19 = v14;\n      goto LABEL_31;\n    case 5u:\n      v17 = c_quoting_style;\n      if ( (v12 & 1) != 0 )\n      {\n        i = 0LL;\n      }\n      else\n      {\n        if ( v16 )\n          *buffer = 34;\n        i = 1LL;\n      }\n      s2 = \"\\\"\";\n      n = 1LL;\n      v19 = 1;\nLABEL_31:\n      LOBYTE(v20) = v12;\n      goto LABEL_32;\n    case 6u:\n      v19 = 1;\n      v17 = c_quoting_style;\n      i = 0LL;\n      s2 = \"\\\"\";\n      n = 1LL;\n      LOBYTE(v20) = 1;\n      goto LABEL_32;\n    case 7u:\n      goto LABEL_32;\n    case 8u:\n    case 9u:\n      v23 = v16;\n      v24 = v15;\n      left_quote = (char *)gettext_quote(\"`\", (quoting_style)quoting_style);\n      v20 = quoting_style;\n      v25 = gettext_quote(\"'\", (quoting_style)quoting_style);\n      v15 = v24;\n      v16 = v23;\n      right_quote = v25;\n      goto LABEL_4;\n    case 0xAu:\nLABEL_4:\n      v89 = v15;\n      if ( (v12 & 1) != 0 )\n      {\n        i = 0LL;\n      }\n      else\n      {\n        v26 = *left_quote;\n        for ( i = 0LL; v26; ++i )\n        {\n          if ( i < v16 )\n            buffer[i] = v26;\n          v26 = left_quote[i + 1];\n        }\n      }\n      v27 = v16;\n      v28 = strlen(right_quote);\n      v16 = v27;\n      n = v28;\n      v17 = quoting_style;\n      s2 = right_quote;\n      v19 = 1;\n      LOBYTE(v20) = v12;\n      v21 = arg;\n      v22 = argsize;\n      v15 = v89;\nLABEL_32:\n      v78 = (v19 & 1) == 0;\n      v74 = v19 & 1;\n      v82 = v19 & 1 & (v17 != shell_always_quoting_style);\n      v79 = v20 & 1 & (v17 == shell_always_quoting_style);\n      v72 = v20 & 1;\n      v81 = v20 & 1 & (quote_these_too != 0LL);\n      v76 = v17 != shell_always_quoting_style || (v20 & 1) == 0;\n      v80 = v19;\n      v104 = v20;\n      v77 = (n != 0) & v20 & v19;\n      v30 = 0LL;\n      s = v17;\n      if ( v22 != -1LL )\n        goto LABEL_33;\n      break;\n    default:\n      abort();\n  }\nLABEL_35:\n  if ( !v21[v30] )\n  {\n    v22 = -1LL;\n    goto LABEL_239;\n  }\n  if ( (v82 & (n != 0)) == 0 )\n    goto LABEL_41;\nLABEL_36:\n  if ( n >= 2 && v22 == -1LL )\n  {\n    v31 = v16;\n    v32 = v15;\n    v33 = strlen(v21);\n    v15 = v32;\n    v17 = s;\n    v16 = v31;\n    v21 = arg;\n    v22 = v33;\n  }\n  if ( v30 + n <= v22 )\n  {\n    v41 = v22;\n    v42 = v15;\n    v43 = v16;\n    v44 = memcmp(&v21[v30], s2, n);\n    v34 = v44 == 0;\n    if ( v44 )\n    {\n      v21 = arg;\n      v16 = v43;\n      v17 = s;\n      v15 = v42;\n      v22 = v41;\n    }\n    else\n    {\n      v21 = arg;\n      v16 = v43;\n      v17 = s;\n      v15 = v42;\n      v22 = v41;\n      if ( v72 )\n        goto LABEL_256;\n    }\n  }\n  else\n  {\nLABEL_41:\n    v34 = 0;\n  }\n  v35 = (unsigned __int8)v21[v30];\n  v36 = 0;\n  v37 = 1;\n  v38 = 110;\n  v39 = 97;\n  v40 = 0LL;\n  switch ( v21[v30] )\n  {\n    case 0:\n      if ( !v74 )\n      {\n        if ( v98 )\n          goto LABEL_155;\n        LOBYTE(v35) = 0;\n        goto LABEL_190;\n      }\n      if ( v72 )\n        goto LABEL_256;\n      if ( v17 == shell_always_quoting_style && (v15 & 1) == 0 )\n      {\n        if ( i < v16 )\n          buffer[i] = 39;\n        if ( i + 1 < v16 )\n          buffer[i + 1] = 36;\n        if ( i + 2 < v16 )\n          buffer[i + 2] = 39;\n        i += 3LL;\n        LOBYTE(v15) = 1;\n      }\n      v45 = i;\n      if ( i < v16 )\n        buffer[i] = 92;\n      ++i;\n      LOBYTE(v40) = 1;\n      LOBYTE(v35) = 48;\n      if ( v17 == shell_always_quoting_style || v30 + 1 >= v22 || (unsigned __int8)(v21[v30 + 1] - 48) > 9u )\n        goto LABEL_191;\n      if ( i < v16 )\n        buffer[i] = 48;\n      if ( v45 + 2 < v16 )\n        buffer[v45 + 2] = 48;\n      v37 = 0;\n      i = v45 + 3;\n      if ( v82 )\n        goto LABEL_44;\n      goto LABEL_116;\n    case 7:\n      goto LABEL_139;\n    case 8:\n      v39 = 98;\n      goto LABEL_139;\n    case 9:\n      v38 = 116;\n      goto LABEL_138;\n    case 0xA:\n      goto LABEL_138;\n    case 0xB:\n      v39 = 118;\n      goto LABEL_139;\n    case 0xC:\n      v39 = 102;\n      goto LABEL_139;\n    case 0xD:\n      v38 = 114;\n      goto LABEL_138;\n    case 0x20:\n      goto LABEL_113;\n    case 0x21:\n    case 0x22:\n    case 0x24:\n    case 0x26:\n    case 0x28:\n    case 0x29:\n    case 0x2A:\n    case 0x3B:\n    case 0x3C:\n    case 0x3D:\n    case 0x3E:\n    case 0x5B:\n    case 0x5E:\n    case 0x60:\n    case 0x7C:\n      goto LABEL_114;\n    case 0x23:\n    case 0x7E:\n      if ( !v30 )\n        goto LABEL_113;\n      goto LABEL_190;\n    case 0x25:\n    case 0x2B:\n    case 0x2C:\n    case 0x2D:\n    case 0x2E:\n    case 0x2F:\n    case 0x30:\n    case 0x31:\n    case 0x32:\n    case 0x33:\n    case 0x34:\n    case 0x35:\n    case 0x36:\n    case 0x37:\n    case 0x38:\n    case 0x39:\n    case 0x3A:\n    case 0x41:\n    case 0x42:\n    case 0x43:\n    case 0x44:\n    case 0x45:\n    case 0x46:\n    case 0x47:\n    case 0x48:\n    case 0x49:\n    case 0x4A:\n    case 0x4B:\n    case 0x4C:\n    case 0x4D:\n    case 0x4E:\n    case 0x4F:\n    case 0x50:\n    case 0x51:\n    case 0x52:\n    case 0x53:\n    case 0x54:\n    case 0x55:\n    case 0x56:\n    case 0x57:\n    case 0x58:\n    case 0x59:\n    case 0x5A:\n    case 0x5D:\n    case 0x5F:\n    case 0x61:\n    case 0x62:\n    case 0x63:\n    case 0x64:\n    case 0x65:\n    case 0x66:\n    case 0x67:\n    case 0x68:\n    case 0x69:\n    case 0x6A:\n    case 0x6B:\n    case 0x6C:\n    case 0x6D:\n    case 0x6E:\n    case 0x6F:\n    case 0x70:\n    case 0x71:\n    case 0x72:\n    case 0x73:\n    case 0x74:\n    case 0x75:\n    case 0x76:\n    case 0x77:\n    case 0x78:\n    case 0x79:\n    case 0x7A:\n      goto LABEL_43;\n    case 0x27:\n      LOBYTE(v35) = 39;\n      LOBYTE(v40) = 1;\n      v102 = v40;\n      if ( v17 != shell_always_quoting_style )\n        goto LABEL_96;\n      if ( v72 )\n        goto LABEL_254;\n      v46 = v93;\n      v47 = v16 != 0 && v93 == 0;\n      if ( v16 != 0 && v93 == 0 )\n        v46 = v16;\n      v93 = v46;\n      if ( v47 )\n        v16 = 0LL;\n      if ( i < v16 )\n        buffer[i] = 39;\n      if ( i + 1 < v16 )\n        buffer[i + 1] = 92;\n      if ( i + 2 < v16 )\n        buffer[i + 2] = 39;\n      i += 3LL;\n      v15 = 0;\nLABEL_96:\n      LOBYTE(v40) = 0;\n      v37 = 1;\n      if ( !v82 )\n        goto LABEL_116;\n      goto LABEL_44;\n    case 0x3F:\n      LOBYTE(v35) = 63;\n      if ( v17 != c_quoting_style )\n      {\n        if ( v17 == shell_always_quoting_style && v72 )\n          goto LABEL_254;\nLABEL_190:\n        LOBYTE(v40) = 0;\nLABEL_191:\n        v37 = 0;\n        if ( v82 )\n          goto LABEL_44;\n        goto LABEL_116;\n      }\n      if ( !v97 || v30 + 2 >= v22 || v21[v30 + 1] != 63 )\n        goto LABEL_190;\n      v59 = (unsigned int)v21[v30 + 2];\n      LOBYTE(v40) = 0;\n      if ( (unsigned int)v59 > 0x3E )\n        goto LABEL_191;\n      v60 = v34;\n      v61 = 0x7000A38200000000LL;\n      if ( _bittest64(&v61, v59) )\n      {\n        if ( v72 )\n        {\n          v67 = 5;\nLABEL_255:\n          s = v67;\nLABEL_256:\n          v68 = v75;\n          goto LABEL_257;\n        }\n        if ( i < v16 )\n          buffer[i] = 63;\n        if ( i + 1 < v16 )\n          buffer[i + 1] = 34;\n        if ( i + 2 < v16 )\n          buffer[i + 2] = 34;\n        if ( i + 3 < v16 )\n          buffer[i + 3] = 63;\n        i += 4LL;\n        LOBYTE(v40) = 0;\n        v30 += 2LL;\n        LOBYTE(v35) = v59;\n      }\n      v37 = 0;\n      v34 = v60;\n      if ( v82 )\n        goto LABEL_44;\n      goto LABEL_116;\n    case 0x5C:\n      if ( v17 == shell_always_quoting_style )\n      {\n        if ( v72 )\n          goto LABEL_254;\n        LOBYTE(v35) = 92;\n        LOBYTE(v40) = 0;\nLABEL_136:\n        v37 = 0;\n        if ( (v15 & 1) != 0 )\n          goto LABEL_122;\n        goto LABEL_128;\n      }\n      v38 = 92;\n      if ( v77 )\n      {\n        LOBYTE(v40) = 0;\n        LOBYTE(v35) = 92;\n        goto LABEL_136;\n      }\nLABEL_138:\n      v39 = v38;\n      if ( !v76 )\n        goto LABEL_254;\nLABEL_139:\n      LOBYTE(v40) = 0;\n      v37 = 0;\n      if ( v74 )\n        goto LABEL_140;\nLABEL_43:\n      if ( !v82 )\n        goto LABEL_116;\n      goto LABEL_44;\n    case 0x7B:\n    case 0x7D:\n      LOBYTE(v40) = 0;\n      if ( v22 == -1LL )\n      {\n        if ( v30 || v21[1] )\n        {\n          v22 = -1LL;\n          goto LABEL_191;\n        }\n      }\n      else if ( v30 || v22 != 1 )\n      {\n        goto LABEL_191;\n      }\nLABEL_113:\n      v36 = 1;\nLABEL_114:\n      if ( !v76 )\n      {\nLABEL_254:\n        v67 = 2;\n        goto LABEL_255;\n      }\n      LOBYTE(v40) = 0;\n      v37 = v36;\n      if ( !v82 )\n        goto LABEL_116;\n      goto LABEL_44;\n    default:\n      v91 = v34;\n      v90 = v15;\n      v101 = v16;\n      if ( mb_cur_max == 1 )\n      {\n        v48 = __ctype_b_loc();\n        v21 = arg;\n        v49 = ((*v48)[v35] & 0x4000) != 0;\n        v50 = 1LL;\n        goto LABEL_107;\n      }\n      ps = 0LL;\n      if ( v22 == -1LL )\n      {\n        v51 = strlen(v21);\n        v21 = arg;\n        v22 = v51;\n      }\n      v100 = &v21[v30];\n      v49 = 1;\n      v50 = 0LL;\n      v85 = v22;\n      break;\n  }\n  while ( 1 )\n  {\n    v92 = v50;\n    v52 = v50 + v30;\n    v53 = rpl_mbrtowc(&pwc, &v21[v52], v22 - v52, &ps);\n    v54 = v53;\n    if ( !v53 )\n      goto LABEL_229;\n    v55 = 0x20000002BLL;\n    if ( v53 == -1LL )\n    {\n      v49 = 0;\nLABEL_229:\n      v21 = arg;\n      v22 = v85;\n      goto LABEL_236;\n    }\n    if ( v53 == -2LL )\n    {\n      v22 = v85;\n      v21 = arg;\n      if ( v85 <= v52 )\n      {\n        v49 = 0;\nLABEL_236:\n        v50 = v92;\n        goto LABEL_107;\n      }\n      v50 = v92;\n      while ( v100[v50] )\n      {\n        v63 = v30 + v50++ + 1;\n        if ( v63 >= v85 )\n        {\n          v49 = 0;\n          goto LABEL_107;\n        }\n      }\n      v49 = 0;\nLABEL_107:\n      v37 = v49;\n      v16 = v101;\n      v17 = s;\n      v15 = v90;\n      v34 = v91;\n      if ( v50 > 1 || !(v78 | (unsigned __int8)v37) )\n      {\n        v62 = v30 + v50;\n        LOBYTE(v40) = 0;\n        if ( !(v78 | (unsigned __int8)v37) )\n        {\nLABEL_204:\n          if ( !v72 )\n          {\n            if ( s == shell_always_quoting_style && (v15 & 1) == 0 )\n            {\n              if ( i < v16 )\n                buffer[i] = 39;\n              if ( i + 1 < v16 )\n                buffer[i + 1] = 36;\n              if ( i + 2 < v16 )\n                buffer[i + 2] = 39;\n              i += 3LL;\n              LOBYTE(v15) = 1;\n            }\n            if ( i < v16 )\n              buffer[i] = 92;\n            if ( i + 1 < v16 )\n              buffer[i + 1] = ((unsigned __int8)v35 >> 6) | 0x30;\n            if ( i + 2 < v16 )\n              buffer[i + 2] = ((unsigned __int8)v35 >> 3) & 7 | 0x30;\n            i += 3LL;\n            LOBYTE(v35) = v35 & 7 | 0x30;\n            LOBYTE(v40) = 1;\n            goto LABEL_226;\n          }\n          goto LABEL_256;\n        }\n        while ( 1 )\n        {\n          if ( v34 )\n          {\n            if ( i < v16 )\n              buffer[i] = 92;\n            ++i;\n            v34 = 0;\n          }\nLABEL_226:\n          if ( v62 <= v30 + 1 )\n            goto LABEL_121;\n          if ( (v15 & 1) != 0 && (v40 & 1) == 0 )\n          {\n            if ( i < v16 )\n              buffer[i] = 39;\n            if ( i + 1 < v16 )\n              buffer[i + 1] = 39;\n            i += 2LL;\n            v15 = 0;\n          }\n          if ( i < v16 )\n            buffer[i] = v35;\n          ++i;\n          LOBYTE(v35) = v21[++v30];\n          if ( !(v78 | (unsigned __int8)v37) )\n            goto LABEL_204;\n        }\n      }\n      LOBYTE(v40) = 0;\n      if ( v82 )\n      {\nLABEL_44:\n        if ( !quote_these_too )\n          goto LABEL_120;\n      }\n      else\n      {\nLABEL_116:\n        if ( !v81 )\n        {\nLABEL_120:\n          v39 = v35;\n          if ( !v34 )\n            goto LABEL_121;\nLABEL_140:\n          if ( v72 )\n            goto LABEL_256;\nLABEL_141:\n          if ( v17 == shell_always_quoting_style && (v15 & 1) == 0 )\n          {\n            if ( i < v16 )\n              buffer[i] = 39;\n            if ( i + 1 < v16 )\n              buffer[i + 1] = 36;\n            if ( i + 2 < v16 )\n              buffer[i + 2] = 39;\n            i += 3LL;\n            LOBYTE(v15) = 1;\n          }\n          if ( i < v16 )\n            buffer[i] = 92;\n          if ( ++i >= v16 )\n            goto LABEL_154;\nLABEL_153:\n          buffer[i] = v39;\n          goto LABEL_154;\n        }\n      }\n      if ( v34 )\n      {\n        v39 = v35;\n        if ( v72 )\n          goto LABEL_256;\n        goto LABEL_141;\n      }\n      v39 = v35;\n      if ( (quote_these_too[(unsigned __int8)v35 >> 5] & (1 << v35)) != 0 )\n        goto LABEL_140;\nLABEL_121:\n      if ( (v15 & 1) != 0 )\n      {\nLABEL_122:\n        if ( (v40 & 1) == 0 )\n        {\n          if ( i < v16 )\n            buffer[i] = 39;\n          if ( i + 1 < v16 )\n            buffer[i + 1] = 39;\n          i += 2LL;\n          v15 = 0;\n        }\n      }\nLABEL_128:\n      v39 = v35;\n      if ( i < v16 )\n        goto LABEL_153;\nLABEL_154:\n      ++i;\n      v13 &= -v37;\nLABEL_155:\n      ++v30;\n      if ( v22 == -1LL )\n        goto LABEL_35;\nLABEL_33:\n      if ( v30 == v22 )\n      {\n        v22 = v30;\nLABEL_239:\n        if ( v72 && i == 0 && v17 == shell_always_quoting_style )\n          goto LABEL_256;\n        argsize = v22;\n        if ( (v102 & 1) == 0 || v72 != 0 || v17 != shell_always_quoting_style )\n          goto LABEL_246;\n        if ( (v13 & 1) != 0 )\n          return quotearg_buffer_restyled(\n                   buffer,\n                   v93,\n                   arg,\n                   v22,\n                   c_quoting_style,\n                   v75,\n                   quote_these_too,\n                   left_quote,\n                   right_quote);\n        if ( !v93 || (quoting_style = v17, v14 = v80, v12 = v104, buffersize = v93, v16) )\n        {\nLABEL_246:\n          if ( s2 )\n          {\n            v64 = buffer;\n            if ( !v72 )\n            {\n              v65 = *s2;\n              if ( *s2 )\n              {\n                v66 = (char *)(s2 + 1);\n                do\n                {\n                  if ( i < v16 )\n                    buffer[i] = v65;\n                  ++i;\n                  v65 = *v66++;\n                }\n                while ( v65 );\n              }\n            }\n          }\n          else\n          {\n            v64 = buffer;\n          }\n          if ( i < v16 )\n            v64[i] = 0;\n          return i;\n        }\n        goto LABEL_2;\n      }\n      goto LABEL_36;\n    }\n    v21 = arg;\n    v16 = v101;\n    if ( (v79 & (v53 > 1)) == 1 )\n      break;\nLABEL_168:\n    if ( !iswprint(pwc) )\n      v49 = 0;\n    v50 = v54 + v92;\n    v58 = mbsinit(&ps);\n    v21 = arg;\n    v22 = v85;\n    if ( v58 )\n      goto LABEL_107;\n  }\n  v56 = 1LL;\n  while ( 1 )\n  {\n    v57 = (unsigned int)(v100[v92 + v56] - 91);\n    if ( (unsigned int)v57 <= 0x21 )\n    {\n      if ( _bittest64(&v55, v57) )\n        break;\n    }\n    if ( ++v56 >= v53 )\n      goto LABEL_168;\n  }\n  s = shell_always_quoting_style;\n  v68 = v75;\n  v22 = v85;\nLABEL_257:\n  v69 = shell_escape_always_quoting_style;\n  if ( !v74 )\n    v69 = s;\n  if ( s != shell_always_quoting_style )\n    v69 = s;\n  return quotearg_buffer_restyled(buffer, v16, v21, v22, v69, v68 & 0xFFFFFFFD, 0LL, left_quote, right_quote);\n}\n"
+        },
+        {
+            "funcName": "quotearg_alloc",
+            "funcStartAddr": "0x403960",
+            "funcEndAddr": "0x403a21",
+            "decompiledFuncCode": "char *__fastcall quotearg_alloc(const char *arg, size_t argsize, const quoting_options *o)\n{\n  const quoting_options *v3; // r14\n  int v4; // ebp\n  size_t v5; // rbx\n  char *v6; // r13\n  int v8; // [rsp+4h] [rbp-44h]\n  int *v9; // [rsp+10h] [rbp-38h]\n\n  v3 = &default_quoting_options;\n  if ( o )\n    v3 = o;\n  v9 = __errno_location();\n  v8 = *v9;\n  v4 = v3->flags | 1;\n  v5 = quotearg_buffer_restyled(\n         0LL,\n         0LL,\n         arg,\n         argsize,\n         v3->style,\n         v4,\n         v3->quote_these_too,\n         (char *)v3->left_quote,\n         v3->right_quote)\n     + 1;\n  v6 = (char *)xmalloc(v5);\n  quotearg_buffer_restyled(\n    v6,\n    v5,\n    arg,\n    argsize,\n    v3->style,\n    v4,\n    v3->quote_these_too,\n    (char *)v3->left_quote,\n    v3->right_quote);\n  *v9 = v8;\n  return v6;\n}\n"
+        },
+        {
+            "funcName": "quotearg_alloc_mem",
+            "funcStartAddr": "0x403a30",
+            "funcEndAddr": "0x403b1c",
+            "decompiledFuncCode": "char *__fastcall quotearg_alloc_mem(const char *arg, size_t argsize, size_t *size, const quoting_options *o)\n{\n  const quoting_options *v5; // r12\n  int v6; // ebp\n  size_t v7; // rbx\n  char *v8; // r14\n  int v10; // [rsp+4h] [rbp-54h]\n  int *v12; // [rsp+20h] [rbp-38h]\n\n  v5 = &default_quoting_options;\n  if ( o )\n    v5 = o;\n  v12 = __errno_location();\n  v10 = *v12;\n  v6 = v5->flags | (size == 0LL);\n  v7 = quotearg_buffer_restyled(\n         0LL,\n         0LL,\n         arg,\n         argsize,\n         v5->style,\n         v6,\n         v5->quote_these_too,\n         (char *)v5->left_quote,\n         v5->right_quote);\n  v8 = (char *)xmalloc(v7 + 1);\n  quotearg_buffer_restyled(\n    v8,\n    v7 + 1,\n    arg,\n    argsize,\n    v5->style,\n    v6,\n    v5->quote_these_too,\n    (char *)v5->left_quote,\n    v5->right_quote);\n  *v12 = v10;\n  if ( size )\n    *size = v7;\n  return v8;\n}\n"
+        },
+        {
+            "funcName": "quotearg_free",
+            "funcStartAddr": "0x403b20",
+            "funcEndAddr": "0x403bb1",
+            "decompiledFuncCode": "void __cdecl quotearg_free()\n{\n  slotvec *v0; // r14\n  void **p_val; // r15\n  __int64 v2; // rbx\n  char *val; // rdi\n\n  v0 = slotvec_0;\n  if ( nslots >= 2 )\n  {\n    p_val = (void **)&slotvec_0[1].val;\n    v2 = 1LL;\n    do\n    {\n      free(*p_val);\n      ++v2;\n      p_val += 2;\n    }\n    while ( v2 < nslots );\n  }\n  val = v0->val;\n  if ( val != slot0 )\n  {\n    free(val);\n    slotvec0.size = 256LL;\n    slotvec0.val = slot0;\n  }\n  if ( v0 != &slotvec0 )\n  {\n    free(v0);\n    slotvec_0 = &slotvec0;\n  }\n  nslots = 1;\n}\n"
+        },
+        {
+            "funcName": "quotearg_n",
+            "funcStartAddr": "0x403bc0",
+            "funcEndAddr": "0x403bce",
+            "decompiledFuncCode": "char *__fastcall quotearg_n(int n, const char *arg)\n{\n  return quotearg_n_options(n, arg, 0xFFFFFFFFFFFFFFFFLL, &default_quoting_options);\n}\n"
+        },
+        {
+            "funcName": "quotearg_n_options",
+            "funcStartAddr": "0x403bd0",
+            "funcEndAddr": "0x403d8d",
+            "decompiledFuncCode": "char *__fastcall quotearg_n_options(int n, const char *arg, size_t argsize, const quoting_options *options)\n{\n  int *v7; // rax\n  slotvec *v8; // rbp\n  slotvec *v9; // rdi\n  slotvec *v10; // rax\n  slotvec *v11; // r14\n  __int64 v12; // r13\n  size_t size; // r12\n  char *val; // r14\n  unsigned int style; // r8d\n  unsigned int *quote_these_too; // rbx\n  size_t v17; // rax\n  int *v18; // rax\n  int v19; // ebp\n  char **p_val; // r12\n  size_t v21; // r15\n  char *left_quote; // [rsp-18h] [rbp-70h]\n  const char *right_quote; // [rsp-10h] [rbp-68h]\n  int v25; // [rsp+0h] [rbp-58h]\n  int v26; // [rsp+4h] [rbp-54h]\n  size_t v27; // [rsp+8h] [rbp-50h]\n  const quoting_options *v28; // [rsp+10h] [rbp-48h]\n  int *v29; // [rsp+18h] [rbp-40h]\n\n  v7 = __errno_location();\n  if ( n < 0 )\n    abort();\n  v8 = slotvec_0;\n  v29 = v7;\n  v25 = *v7;\n  v28 = options;\n  v27 = argsize;\n  if ( nslots <= n )\n  {\n    if ( n == 0x7FFFFFFF )\n      xalloc_die();\n    v9 = 0LL;\n    if ( slotvec_0 != &slotvec0 )\n      v9 = slotvec_0;\n    v10 = (slotvec *)xrealloc(v9, 16LL * n + 16);\n    v11 = v10;\n    slotvec_0 = v10;\n    if ( v8 == &slotvec0 )\n      *v10 = slotvec0;\n    memset(&v10[nslots], 0, 16 * (n + 1 - (__int64)nslots));\n    nslots = n + 1;\n    v8 = v11;\n  }\n  v12 = n;\n  size = v8[v12].size;\n  val = v8[v12].val;\n  style = options->style;\n  v26 = options->flags | 1;\n  right_quote = options->right_quote;\n  left_quote = (char *)options->left_quote;\n  quote_these_too = options->quote_these_too;\n  v17 = quotearg_buffer_restyled(val, size, arg, argsize, style, v26, quote_these_too, left_quote, right_quote);\n  if ( size <= v17 )\n  {\n    p_val = &v8[v12].val;\n    v21 = v17 + 1;\n    v8[v12].size = v17 + 1;\n    v19 = v25;\n    if ( val != slot0 )\n      free(val);\n    val = (char *)xmalloc(v21);\n    *p_val = val;\n    quotearg_buffer_restyled(\n      val,\n      v21,\n      arg,\n      v27,\n      v28->style,\n      v26,\n      quote_these_too,\n      (char *)v28->left_quote,\n      v28->right_quote);\n    v18 = v29;\n  }\n  else\n  {\n    v18 = v29;\n    v19 = v25;\n  }\n  *v18 = v19;\n  return val;\n}\n"
+        },
+        {
+            "funcName": "quotearg_n_mem",
+            "funcStartAddr": "0x403d90",
+            "funcEndAddr": "0x403d9a",
+            "decompiledFuncCode": "char *__fastcall quotearg_n_mem(int n, const char *arg, size_t argsize)\n{\n  return quotearg_n_options(n, arg, argsize, &default_quoting_options);\n}\n"
+        },
+        {
+            "funcName": "quotearg",
+            "funcStartAddr": "0x403da0",
+            "funcEndAddr": "0x403db9",
+            "decompiledFuncCode": "char *__fastcall quotearg(const char *arg)\n{\n  return quotearg_n_options(0, arg, 0xFFFFFFFFFFFFFFFFLL, &default_quoting_options);\n}\n"
+        },
+        {
+            "funcName": "quotearg_mem",
+            "funcStartAddr": "0x403dc0",
+            "funcEndAddr": "0x403dd8",
+            "decompiledFuncCode": "char *__fastcall quotearg_mem(const char *arg, size_t argsize)\n{\n  return quotearg_n_options(0, arg, argsize, &default_quoting_options);\n}\n"
+        },
+        {
+            "funcName": "quotearg_n_style",
+            "funcStartAddr": "0x403de0",
+            "funcEndAddr": "0x403e4c",
+            "decompiledFuncCode": "char *__fastcall quotearg_n_style(int n, quoting_style s, const char *arg)\n{\n  quoting_options options; // [rsp+40h] [rbp-38h] BYREF\n\n  if ( s == custom_quoting_style )\n    abort();\n  options.style = s;\n  memset(&options.flags, 0, 52);\n  return quotearg_n_options(n, arg, 0xFFFFFFFFFFFFFFFFLL, &options);\n}\n"
+        },
+        {
+            "funcName": "quotearg_n_style_mem",
+            "funcStartAddr": "0x403e50",
+            "funcEndAddr": "0x403eb8",
+            "decompiledFuncCode": "char *__fastcall quotearg_n_style_mem(int n, quoting_style s, const char *arg, size_t argsize)\n{\n  quoting_options options; // [rsp+40h] [rbp-38h] BYREF\n\n  if ( s == custom_quoting_style )\n    abort();\n  options.style = s;\n  memset(&options.flags, 0, 52);\n  return quotearg_n_options(n, arg, argsize, &options);\n}\n"
+        },
+        {
+            "funcName": "quotearg_style",
+            "funcStartAddr": "0x403ec0",
+            "funcEndAddr": "0x403f28",
+            "decompiledFuncCode": "char *__fastcall quotearg_style(quoting_style s, const char *arg)\n{\n  quoting_options options; // [rsp+40h] [rbp-38h] BYREF\n\n  if ( s == custom_quoting_style )\n    abort();\n  options.style = s;\n  memset(&options.flags, 0, 52);\n  return quotearg_n_options(0, arg, 0xFFFFFFFFFFFFFFFFLL, &options);\n}\n"
+        },
+        {
+            "funcName": "quotearg_style_mem",
+            "funcStartAddr": "0x403f30",
+            "funcEndAddr": "0x403f91",
+            "decompiledFuncCode": "char *__fastcall quotearg_style_mem(quoting_style s, const char *arg, size_t argsize)\n{\n  quoting_options options; // [rsp+40h] [rbp-38h] BYREF\n\n  if ( s == custom_quoting_style )\n    abort();\n  options.style = s;\n  memset(&options.flags, 0, 52);\n  return quotearg_n_options(0, arg, argsize, &options);\n}\n"
+        },
+        {
+            "funcName": "quotearg_char_mem",
+            "funcStartAddr": "0x403fa0",
+            "funcEndAddr": "0x40400d",
+            "decompiledFuncCode": "char *__fastcall quotearg_char_mem(const char *arg, size_t argsize, char ch_0)\n{\n  quoting_options v4; // [rsp+0h] [rbp-38h] BYREF\n\n  v4 = default_quoting_options;\n  v4.quote_these_too[(unsigned __int8)ch_0 >> 5] ^= (((v4.quote_these_too[(unsigned __int8)ch_0 >> 5] >> ch_0) & 1) == 0) << ch_0;\n  return quotearg_n_options(0, arg, argsize, &v4);\n}\n"
+        },
+        {
+            "funcName": "quotearg_char",
+            "funcStartAddr": "0x404010",
+            "funcEndAddr": "0x40407e",
+            "decompiledFuncCode": "char *__fastcall quotearg_char(const char *arg, char ch_0)\n{\n  quoting_options v3; // [rsp+0h] [rbp-38h] BYREF\n\n  v3 = default_quoting_options;\n  v3.quote_these_too[(unsigned __int8)ch_0 >> 5] ^= (((v3.quote_these_too[(unsigned __int8)ch_0 >> 5] >> ch_0) & 1) == 0) << ch_0;\n  return quotearg_n_options(0, arg, 0xFFFFFFFFFFFFFFFFLL, &v3);\n}\n"
+        },
+        {
+            "funcName": "quotearg_colon",
+            "funcStartAddr": "0x404080",
+            "funcEndAddr": "0x4040d4",
+            "decompiledFuncCode": "char *__fastcall quotearg_colon(const char *arg)\n{\n  quoting_options v2; // [rsp+0h] [rbp-38h] BYREF\n\n  v2 = default_quoting_options;\n  HIBYTE(v2.quote_these_too[1]) = HIBYTE(default_quoting_options.quote_these_too[1]) | 4;\n  return quotearg_n_options(0, arg, 0xFFFFFFFFFFFFFFFFLL, &v2);\n}\n"
+        },
+        {
+            "funcName": "quotearg_colon_mem",
+            "funcStartAddr": "0x4040e0",
+            "funcEndAddr": "0x404133",
+            "decompiledFuncCode": "char *__fastcall quotearg_colon_mem(const char *arg, size_t argsize)\n{\n  quoting_options v3; // [rsp+0h] [rbp-38h] BYREF\n\n  v3 = default_quoting_options;\n  HIBYTE(v3.quote_these_too[1]) = HIBYTE(default_quoting_options.quote_these_too[1]) | 4;\n  return quotearg_n_options(0, arg, argsize, &v3);\n}\n"
+        },
+        {
+            "funcName": "quotearg_n_style_colon",
+            "funcStartAddr": "0x404140",
+            "funcEndAddr": "0x4041d4",
+            "decompiledFuncCode": "char *__fastcall quotearg_n_style_colon(int n, quoting_style s, const char *arg)\n{\n  quoting_options v4; // [rsp+0h] [rbp-78h] BYREF\n  __int128 v5; // [rsp+40h] [rbp-38h]\n  __int128 v6; // [rsp+50h] [rbp-28h]\n  __int128 v7; // [rsp+60h] [rbp-18h]\n  int right_quote; // [rsp+70h] [rbp-8h]\n\n  memset(&v4, 0, 52);\n  if ( s == custom_quoting_style )\n    abort();\n  right_quote = (int)v4.right_quote;\n  v7 = *(_OWORD *)&v4.quote_these_too[6];\n  v6 = *(_OWORD *)&v4.quote_these_too[2];\n  v5 = *(_OWORD *)&v4.style;\n  v4.style = s;\n  HIDWORD(v4.right_quote) = v4.right_quote;\n  *(_OWORD *)&v4.quote_these_too[7] = *(_OWORD *)&v4.quote_these_too[6];\n  *(_OWORD *)&v4.quote_these_too[3] = *(_OWORD *)&v4.quote_these_too[2];\n  *(_OWORD *)&v4.flags = v5;\n  HIBYTE(v4.quote_these_too[1]) = BYTE11(v5) | 4;\n  return quotearg_n_options(n, arg, 0xFFFFFFFFFFFFFFFFLL, &v4);\n}\n"
+        },
+        {
+            "funcName": "quotearg_n_custom",
+            "funcStartAddr": "0x4041e0",
+            "funcEndAddr": "0x40424d",
+            "decompiledFuncCode": "char *__fastcall quotearg_n_custom(int n, const char *left_quote, const char *right_quote, const char *arg)\n{\n  quoting_options v5; // [rsp+0h] [rbp-38h] BYREF\n\n  v5 = default_quoting_options;\n  v5.style = custom_quoting_style;\n  if ( !left_quote || !right_quote )\n    abort();\n  v5.left_quote = left_quote;\n  v5.right_quote = right_quote;\n  return quotearg_n_options(n, arg, 0xFFFFFFFFFFFFFFFFLL, &v5);\n}\n"
+        },
+        {
+            "funcName": "quotearg_n_custom_mem",
+            "funcStartAddr": "0x404250",
+            "funcEndAddr": "0x4042b9",
+            "decompiledFuncCode": "char *__fastcall quotearg_n_custom_mem(\n        int n,\n        const char *left_quote,\n        const char *right_quote,\n        const char *arg,\n        size_t argsize)\n{\n  quoting_options v6; // [rsp+0h] [rbp-38h] BYREF\n\n  v6 = default_quoting_options;\n  v6.style = custom_quoting_style;\n  if ( !left_quote || !right_quote )\n    abort();\n  v6.left_quote = left_quote;\n  v6.right_quote = right_quote;\n  return quotearg_n_options(n, arg, argsize, &v6);\n}\n"
+        },
+        {
+            "funcName": "quotearg_custom",
+            "funcStartAddr": "0x4042c0",
+            "funcEndAddr": "0x40432f",
+            "decompiledFuncCode": "char *__fastcall quotearg_custom(const char *left_quote, const char *right_quote, const char *arg)\n{\n  quoting_options v4; // [rsp+0h] [rbp-38h] BYREF\n\n  v4 = default_quoting_options;\n  v4.style = custom_quoting_style;\n  if ( !left_quote || !right_quote )\n    abort();\n  v4.left_quote = left_quote;\n  v4.right_quote = right_quote;\n  return quotearg_n_options(0, arg, 0xFFFFFFFFFFFFFFFFLL, &v4);\n}\n"
+        },
+        {
+            "funcName": "quotearg_custom_mem",
+            "funcStartAddr": "0x404330",
+            "funcEndAddr": "0x40439b",
+            "decompiledFuncCode": "char *__fastcall quotearg_custom_mem(const char *left_quote, const char *right_quote, const char *arg, size_t argsize)\n{\n  quoting_options v5; // [rsp+0h] [rbp-38h] BYREF\n\n  v5 = default_quoting_options;\n  v5.style = custom_quoting_style;\n  if ( !left_quote || !right_quote )\n    abort();\n  v5.left_quote = left_quote;\n  v5.right_quote = right_quote;\n  return quotearg_n_options(0, arg, argsize, &v5);\n}\n"
+        },
+        {
+            "funcName": "quote_n_mem",
+            "funcStartAddr": "0x4043a0",
+            "funcEndAddr": "0x4043aa",
+            "decompiledFuncCode": "const char *__fastcall quote_n_mem(int n, const char *arg, size_t argsize)\n{\n  return quotearg_n_options(n, arg, argsize, &quote_quoting_options);\n}\n"
+        },
+        {
+            "funcName": "quote_mem",
+            "funcStartAddr": "0x4043b0",
+            "funcEndAddr": "0x4043c8",
+            "decompiledFuncCode": "const char *__fastcall quote_mem(const char *arg, size_t argsize)\n{\n  return quotearg_n_options(0, arg, argsize, &quote_quoting_options);\n}\n"
+        },
+        {
+            "funcName": "quote_n",
+            "funcStartAddr": "0x4043d0",
+            "funcEndAddr": "0x4043e1",
+            "decompiledFuncCode": "const char *__fastcall quote_n(int n, const char *arg)\n{\n  return quotearg_n_options(n, arg, 0xFFFFFFFFFFFFFFFFLL, &quote_quoting_options);\n}\n"
+        },
+        {
+            "funcName": "quote",
+            "funcStartAddr": "0x4043f0",
+            "funcEndAddr": "0x404409",
+            "decompiledFuncCode": "const char *__fastcall quote(const char *arg)\n{\n  return quotearg_n_options(0, arg, 0xFFFFFFFFFFFFFFFFLL, &quote_quoting_options);\n}\n"
+        },
+        {
+            "funcName": "gettext_quote",
+            "funcStartAddr": "0x404410",
+            "funcEndAddr": "0x4044d5",
+            "decompiledFuncCode": "const char *__fastcall gettext_quote(const char *msgid, quoting_style s)\n{\n  const char *result; // rax\n  const char *v3; // rax\n  unsigned int v4; // ecx\n  bool v5; // zf\n  const char *v6; // rcx\n\n  result = dcgettext(0LL, msgid, 5);\n  if ( result == msgid )\n  {\n    v3 = locale_charset();\n    v4 = *v3 & 0xFFFFFFDF;\n    if ( v4 == 71 )\n    {\n      if ( (v3[1] & 0xFFFFFFDF) == 66\n        && v3[2] == 49\n        && v3[3] == 56\n        && v3[4] == 48\n        && v3[5] == 51\n        && v3[6] == 48\n        && !v3[7] )\n      {\n        v5 = *msgid == 96;\n        v6 = (const char *)&unk_406884;\n        result = (const char *)&unk_406888;\nLABEL_18:\n        if ( v5 )\n          return v6;\n        return result;\n      }\n    }\n    else if ( v4 == 85\n           && (v3[1] & 0xFFFFFFDF) == 84\n           && (v3[2] & 0xFFFFFFDF) == 70\n           && v3[3] == 45\n           && v3[4] == 56\n           && !v3[5] )\n    {\n      v5 = *msgid == 96;\n      v6 = (const char *)&unk_40687C;\n      result = (const char *)&unk_406880;\n      goto LABEL_18;\n    }\n    v5 = s == clocale_quoting_style;\n    v6 = \"\\\"\";\n    result = \"'\";\n    goto LABEL_18;\n  }\n  return result;\n}\n"
+        },
+        {
+            "funcName": "version_etc_arn",
+            "funcStartAddr": "0x4044e0",
+            "funcEndAddr": "0x404838",
+            "decompiledFuncCode": "void __fastcall version_etc_arn(\n        FILE *stream,\n        const char *command_name,\n        const char *package,\n        const char *version,\n        const char *const *authors,\n        size_t n_authors)\n{\n  char *v8; // rax\n  char *v9; // rax\n  char *v10; // rax\n  char *v11; // rax\n  char *v12; // rax\n  char *v13; // rax\n  char *v14; // rax\n  char *v15; // rax\n  char *v16; // rax\n  char *v17; // rax\n  char *v18; // rax\n  char *v19; // rax\n\n  if ( command_name )\n    __fprintf_chk(stream, 1LL, \"%s (%s) %s\\n\", command_name);\n  else\n    __fprintf_chk(stream, 1LL, \"%s %s\\n\", package);\n  v8 = dcgettext(0LL, \"(C)\", 5);\n  __fprintf_chk(stream, 1LL, \"Copyright %s %d Free Software Foundation, Inc.\", v8);\n  v9 = dcgettext(\n         0LL,\n         \"\\n\"\n         \"License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\\n\"\n         \"This is free software: you are free to change and redistribute it.\\n\"\n         \"There is NO WARRANTY, to the extent permitted by law.\\n\"\n         \"\\n\",\n         5);\n  fputs_unlocked(v9, stream);\n  switch ( n_authors )\n  {\n    case 0uLL:\n      return;\n    case 1uLL:\n      v11 = dcgettext(0LL, \"Written by %s.\\n\", 5);\n      __fprintf_chk(stream, 1LL, v11, *authors);\n      break;\n    case 2uLL:\n      v12 = dcgettext(0LL, \"Written by %s and %s.\\n\", 5);\n      __fprintf_chk(stream, 1LL, v12, *authors);\n      break;\n    case 3uLL:\n      v13 = dcgettext(0LL, \"Written by %s, %s, and %s.\\n\", 5);\n      __fprintf_chk(stream, 1LL, v13, *authors);\n      break;\n    case 4uLL:\n      v14 = dcgettext(0LL, \"Written by %s, %s, %s,\\nand %s.\\n\", 5);\n      __fprintf_chk(stream, 1LL, v14, *authors);\n      break;\n    case 5uLL:\n      v15 = dcgettext(0LL, \"Written by %s, %s, %s,\\n%s, and %s.\\n\", 5);\n      __fprintf_chk(stream, 1LL, v15, *authors);\n      break;\n    case 6uLL:\n      v16 = dcgettext(0LL, \"Written by %s, %s, %s,\\n%s, %s, and %s.\\n\", 5);\n      __fprintf_chk(stream, 1LL, v16, *authors);\n      break;\n    case 7uLL:\n      v17 = dcgettext(0LL, \"Written by %s, %s, %s,\\n%s, %s, %s, and %s.\\n\", 5);\n      __fprintf_chk(stream, 1LL, v17, *authors);\n      break;\n    case 8uLL:\n      v19 = dcgettext(0LL, \"Written by %s, %s, %s,\\n%s, %s, %s, %s,\\nand %s.\\n\", 5);\n      __fprintf_chk(stream, 1LL, v19, *authors);\n      break;\n    case 9uLL:\n      v18 = dcgettext(0LL, \"Written by %s, %s, %s,\\n%s, %s, %s, %s,\\n%s, and %s.\\n\", 5);\n      __fprintf_chk(stream, 1LL, v18, *authors);\n      break;\n    default:\n      v10 = dcgettext(0LL, \"Written by %s, %s, %s,\\n%s, %s, %s, %s,\\n%s, %s, and others.\\n\", 5);\n      __fprintf_chk(stream, 1LL, v10, *authors);\n      break;\n  }\n}\n"
+        },
+        {
+            "funcName": "version_etc_ar",
+            "funcStartAddr": "0x404840",
+            "funcEndAddr": "0x404861",
+            "decompiledFuncCode": "void __fastcall version_etc_ar(\n        FILE *stream,\n        const char *command_name,\n        const char *package,\n        const char *version,\n        const char *const *authors)\n{\n  size_t v5; // r9\n\n  v5 = -1LL;\n  while ( authors[++v5] != 0LL )\n    ;\n  version_etc_arn(stream, command_name, package, version, authors, v5);\n}\n"
+        },
+        {
+            "funcName": "version_etc_va",
+            "funcStartAddr": "0x404870",
+            "funcEndAddr": "0x404a5e",
+            "decompiledFuncCode": "void __fastcall version_etc_va(\n        FILE *stream,\n        const char *command_name,\n        const char *package,\n        const char *version,\n        __va_list_tag *authors)\n{\n  unsigned __int64 gp_offset; // r9\n  const char **overflow_arg_area; // r10\n  _QWORD *v7; // r10\n  size_t v8; // r9\n  _QWORD *v9; // r10\n  _QWORD *v10; // r10\n  _QWORD *v11; // r10\n  _QWORD *v12; // r10\n  _QWORD *v13; // r9\n  _QWORD *v14; // r9\n  _QWORD *v15; // r9\n  __int64 *v16; // r9\n  const char *v17; // [rsp+0h] [rbp-58h] BYREF\n  __int64 v26; // [rsp+48h] [rbp-10h]\n\n  gp_offset = (int)authors->gp_offset;\n  if ( gp_offset > 0x28 )\n  {\n    overflow_arg_area = (const char **)authors->overflow_arg_area;\n    authors->overflow_arg_area = overflow_arg_area + 1;\n  }\n  else\n  {\n    overflow_arg_area = (const char **)((char *)authors->reg_save_area + gp_offset);\n    LODWORD(gp_offset) = gp_offset + 8;\n    authors->gp_offset = gp_offset;\n  }\n  v17 = *overflow_arg_area;\n  if ( v17 )\n  {\n    if ( (unsigned int)gp_offset >= 0x29 )\n    {\n      v7 = authors->overflow_arg_area;\n      authors->overflow_arg_area = v7 + 1;\n    }\n    else\n    {\n      v7 = (char *)authors->reg_save_area + (int)gp_offset;\n      LODWORD(gp_offset) = gp_offset + 8;\n      authors->gp_offset = gp_offset;\n    }\n    if ( *v7 )\n    {\n      if ( (unsigned int)gp_offset >= 0x29 )\n      {\n        v9 = authors->overflow_arg_area;\n        authors->overflow_arg_area = v9 + 1;\n      }\n      else\n      {\n        v9 = (char *)authors->reg_save_area + (int)gp_offset;\n        LODWORD(gp_offset) = gp_offset + 8;\n        authors->gp_offset = gp_offset;\n      }\n      if ( *v9 )\n      {\n        if ( (unsigned int)gp_offset >= 0x29 )\n        {\n          v10 = authors->overflow_arg_area;\n          authors->overflow_arg_area = v10 + 1;\n        }\n        else\n        {\n          v10 = (char *)authors->reg_save_area + (int)gp_offset;\n          LODWORD(gp_offset) = gp_offset + 8;\n          authors->gp_offset = gp_offset;\n        }\n        if ( *v10 )\n        {\n          if ( (unsigned int)gp_offset >= 0x29 )\n          {\n            v11 = authors->overflow_arg_area;\n            authors->overflow_arg_area = v11 + 1;\n          }\n          else\n          {\n            v11 = (char *)authors->reg_save_area + (int)gp_offset;\n            LODWORD(gp_offset) = gp_offset + 8;\n            authors->gp_offset = gp_offset;\n          }\n          if ( *v11 )\n          {\n            if ( (unsigned int)gp_offset >= 0x29 )\n            {\n              v12 = authors->overflow_arg_area;\n              authors->overflow_arg_area = v12 + 1;\n            }\n            else\n            {\n              v12 = (char *)authors->reg_save_area + (int)gp_offset;\n              authors->gp_offset = gp_offset + 8;\n            }\n            if ( *v12 )\n            {\n              v13 = authors->overflow_arg_area;\n              authors->overflow_arg_area = v13 + 1;\n              if ( *v13 )\n              {\n                v14 = authors->overflow_arg_area;\n                authors->overflow_arg_area = v14 + 1;\n                if ( *v14 )\n                {\n                  v15 = authors->overflow_arg_area;\n                  authors->overflow_arg_area = v15 + 1;\n                  if ( *v15 )\n                  {\n                    v16 = (__int64 *)authors->overflow_arg_area;\n                    authors->overflow_arg_area = v16 + 1;\n                    v26 = *v16;\n                    v8 = 9 - ((v26 == 0) - 1LL);\n                  }\n                  else\n                  {\n                    v8 = 8LL;\n                  }\n                }\n                else\n                {\n                  v8 = 7LL;\n                }\n              }\n              else\n              {\n                v8 = 6LL;\n              }\n            }\n            else\n            {\n              v8 = 5LL;\n            }\n          }\n          else\n          {\n            v8 = 4LL;\n          }\n        }\n        else\n        {\n          v8 = 3LL;\n        }\n      }\n      else\n      {\n        v8 = 2LL;\n      }\n    }\n    else\n    {\n      v8 = 1LL;\n    }\n  }\n  else\n  {\n    v8 = 0LL;\n  }\n  version_etc_arn(stream, command_name, package, version, &v17, v8);\n}\n"
+        },
+        {
+            "funcName": "version_etc",
+            "funcStartAddr": "0x404a60",
+            "funcEndAddr": "0x404ae2",
+            "decompiledFuncCode": "void version_etc(FILE *stream, const char *command_name, const char *package, const char *version, ...)\n{\n  va_list va; // [rsp+0h] [rbp-D8h] BYREF\n\n  va_start(va, version);\n  version_etc_va(stream, command_name, package, version, va);\n}\n"
+        },
+        {
+            "funcName": "emit_bug_reporting_address",
+            "funcStartAddr": "0x404af0",
+            "funcEndAddr": "0x404b64",
+            "decompiledFuncCode": "void __cdecl emit_bug_reporting_address()\n{\n  char *v0; // rax\n  char *v1; // rax\n  char *v2; // rdi\n\n  v0 = dcgettext(0LL, \"\\nReport bugs to: %s\\n\", 5);\n  __printf_chk(1LL, v0, \"bug-coreutils@gnu.org\");\n  v1 = dcgettext(0LL, \"%s home page: <%s>\\n\", 5);\n  __printf_chk(1LL, v1, \"GNU coreutils\");\n  v2 = dcgettext(0LL, \"General help using GNU software: <https://www.gnu.org/gethelp/>\\n\", 5);\n  fputs_unlocked(v2, stdout);\n}\n"
+        },
+        {
+            "funcName": "xnmalloc",
+            "funcStartAddr": "0x404b70",
+            "funcEndAddr": "0x404ba5",
+            "decompiledFuncCode": "void *__fastcall xnmalloc(size_t n, size_t s)\n{\n  void *result; // rax\n\n  if ( 0x7FFFFFFFFFFFFFFFLL / s < n || (result = malloc(n * s), n * s) && !result )\n    xalloc_die();\n  return result;\n}\n"
+        },
+        {
+            "funcName": "xmalloc",
+            "funcStartAddr": "0x404bb0",
+            "funcEndAddr": "0x404bca",
+            "decompiledFuncCode": "void *__fastcall xmalloc(size_t n)\n{\n  void *result; // rax\n\n  result = malloc(n);\n  if ( n )\n  {\n    if ( !result )\n      xalloc_die();\n  }\n  return result;\n}\n"
+        },
+        {
+            "funcName": "xnrealloc",
+            "funcStartAddr": "0x404bd0",
+            "funcEndAddr": "0x404c18",
+            "decompiledFuncCode": "void *__fastcall xnrealloc(void *p, size_t n, size_t s)\n{\n  size_t v3; // rbx\n  void *result; // rax\n\n  if ( 0x7FFFFFFFFFFFFFFFLL / s < n )\n    goto LABEL_8;\n  v3 = n * s;\n  if ( p && !v3 )\n  {\n    free(p);\n    return 0LL;\n  }\n  result = realloc(p, v3);\n  if ( v3 )\n  {\n    if ( !result )\nLABEL_8:\n      xalloc_die();\n  }\n  return result;\n}\n"
+        },
+        {
+            "funcName": "xrealloc",
+            "funcStartAddr": "0x404c20",
+            "funcEndAddr": "0x404c50",
+            "decompiledFuncCode": "void *__fastcall xrealloc(void *p, size_t n)\n{\n  void *result; // rax\n\n  if ( !p || n )\n  {\n    result = realloc(p, n);\n    if ( n )\n    {\n      if ( !result )\n        xalloc_die();\n    }\n  }\n  else\n  {\n    free(p);\n    return 0LL;\n  }\n  return result;\n}\n"
+        },
+        {
+            "funcName": "x2nrealloc",
+            "funcStartAddr": "0x404c50",
+            "funcEndAddr": "0x404ce7",
+            "decompiledFuncCode": "void *__fastcall x2nrealloc(void *p, size_t *pn, size_t s)\n{\n  size_t v3; // rcx\n  size_t v4; // rbx\n  void *result; // rax\n\n  v3 = *pn;\n  if ( p )\n  {\n    if ( 0x5555555555555554LL / s <= v3 )\n      goto LABEL_13;\n    v3 += (v3 >> 1) + 1;\n  }\n  else\n  {\n    if ( !v3 )\n      v3 = 0x80 / s + (s > 0x80);\n    if ( 0x7FFFFFFFFFFFFFFFLL / s < v3 )\n      xalloc_die();\n  }\n  *pn = v3;\n  v4 = v3 * s;\n  if ( p && !v4 )\n  {\n    free(p);\n    return 0LL;\n  }\n  result = realloc(p, v4);\n  if ( v4 && !result )\nLABEL_13:\n    xalloc_die();\n  return result;\n}\n"
+        },
+        {
+            "funcName": "xcharalloc",
+            "funcStartAddr": "0x404cf0",
+            "funcEndAddr": "0x404d0a",
+            "decompiledFuncCode": "char *__fastcall xcharalloc(size_t n)\n{\n  char *result; // rax\n\n  result = (char *)malloc(n);\n  if ( n )\n  {\n    if ( !result )\n      xalloc_die();\n  }\n  return result;\n}\n"
+        },
+        {
+            "funcName": "x2realloc",
+            "funcStartAddr": "0x404d10",
+            "funcEndAddr": "0x404d74",
+            "decompiledFuncCode": "void *__fastcall x2realloc(void *p, size_t *pn)\n{\n  size_t v2; // rax\n  __int64 v3; // rbx\n  void *result; // rax\n\n  v2 = *pn;\n  if ( p )\n  {\n    if ( v2 >= 0x5555555555555554LL )\n      xalloc_die();\n    v3 = v2 + (v2 >> 1) + 1;\n    *pn = v3;\n    if ( v2 + (v2 >> 1) == -1LL )\n    {\n      free(p);\n      return 0LL;\n    }\n  }\n  else\n  {\n    v3 = 128LL;\n    if ( v2 )\n      v3 = *pn;\n    if ( v3 < 0 )\nLABEL_12:\n      xalloc_die();\n    *pn = v3;\n  }\n  result = realloc(p, v3);\n  if ( v3 && !result )\n    goto LABEL_12;\n  return result;\n}\n"
+        },
+        {
+            "funcName": "xzalloc",
+            "funcStartAddr": "0x404d80",
+            "funcEndAddr": "0x404db6",
+            "decompiledFuncCode": "void *__fastcall xzalloc(size_t s)\n{\n  void *v1; // rax\n  void *v2; // r14\n\n  v1 = malloc(s);\n  v2 = v1;\n  if ( s && !v1 )\n    xalloc_die();\n  memset(v1, 0, s);\n  return v2;\n}\n"
+        },
+        {
+            "funcName": "xcalloc",
+            "funcStartAddr": "0x404dc0",
+            "funcEndAddr": "0x404de6",
+            "decompiledFuncCode": "void *__fastcall xcalloc(size_t n, size_t s)\n{\n  void *result; // rax\n\n  if ( 0x7FFFFFFFFFFFFFFFLL / s < n || (result = rpl_calloc(n, s)) == 0LL )\n    xalloc_die();\n  return result;\n}\n"
+        },
+        {
+            "funcName": "xmemdup",
+            "funcStartAddr": "0x404df0",
+            "funcEndAddr": "0x404e2c",
+            "decompiledFuncCode": "void *__fastcall xmemdup(const void *p, size_t s)\n{\n  void *v2; // rax\n  void *v3; // r15\n\n  v2 = malloc(s);\n  v3 = v2;\n  if ( s && !v2 )\n    xalloc_die();\n  memcpy(v2, p, s);\n  return v3;\n}\n"
+        },
+        {
+            "funcName": "xstrdup",
+            "funcStartAddr": "0x404e30",
+            "funcEndAddr": "0x404e72",
+            "decompiledFuncCode": "char *__fastcall xstrdup(const char *string)\n{\n  size_t v1; // rbx\n  char *v2; // rax\n  char *v3; // r15\n  size_t v4; // rbx\n\n  v1 = strlen(string);\n  v2 = (char *)malloc(v1 + 1);\n  v3 = v2;\n  v4 = v1 + 1;\n  if ( v4 && !v2 )\n    xalloc_die();\n  memcpy(v2, string, v4);\n  return v3;\n}\n"
+        },
+        {
+            "funcName": "xalloc_die",
+            "funcStartAddr": "0x404e80",
+            "funcEndAddr": "0x404eb0",
+            "decompiledFuncCode": "void __cdecl __noreturn xalloc_die()\n{\n  int v0; // ebx\n  char *v1; // rax\n\n  v0 = exit_failure;\n  v1 = dcgettext(0LL, \"memory exhausted\", 5);\n  error(v0, 0, \"%s\", v1);\n  abort();\n}\n"
+        },
+        {
+            "funcName": "rpl_calloc",
+            "funcStartAddr": "0x404eb0",
+            "funcEndAddr": "0x404efb",
+            "decompiledFuncCode": "void *__fastcall rpl_calloc(size_t n, size_t s)\n{\n  size_t v2; // rax\n  size_t v3; // rcx\n\n  v2 = 1LL;\n  if ( n )\n  {\n    v3 = 1LL;\n    if ( s )\n    {\n      v2 = s;\n      v3 = n;\n      if ( n * s / s != n )\n      {\n        *__errno_location() = 12;\n        return 0LL;\n      }\n    }\n  }\n  else\n  {\n    v3 = 1LL;\n  }\n  return calloc(v3, v2);\n}\n"
+        },
+        {
+            "funcName": "rpl_mbrtowc",
+            "funcStartAddr": "0x404f00",
+            "funcEndAddr": "0x404f56",
+            "decompiledFuncCode": "size_t __fastcall rpl_mbrtowc(wchar_t *pwc, const char *s, size_t n, mbstate_t *ps)\n{\n  __int64 v4; // rax\n  int *v6; // rbx\n  size_t v7; // rax\n  size_t v8; // r15\n  int v10; // [rsp+0h] [rbp-24h] BYREF\n\n  v10 = HIDWORD(v4);\n  v6 = &v10;\n  if ( pwc )\n    v6 = pwc;\n  v7 = mbrtowc(v6, s, n, ps);\n  v8 = v7;\n  if ( n && v7 >= 0xFFFFFFFFFFFFFFFELL && !hard_locale(0) )\n  {\n    *v6 = *(unsigned __int8 *)s;\n    return 1LL;\n  }\n  return v8;\n}\n"
+        },
+        {
+            "funcName": "close_stream",
+            "funcStartAddr": "0x404f60",
+            "funcEndAddr": "0x404fc0",
+            "decompiledFuncCode": "int __fastcall close_stream(FILE *stream)\n{\n  size_t v1; // r14\n  int flags; // ebp\n  int v3; // eax\n  int v4; // ebx\n\n  v1 = __fpending(stream);\n  flags = stream->_flags;\n  v3 = rpl_fclose(stream);\n  if ( (flags & 0x20) != 0 )\n  {\n    v4 = -1;\n    if ( !v3 )\n      *__errno_location() = 0;\n  }\n  else\n  {\n    v4 = -(v3 != 0);\n    if ( !v1 )\n    {\n      if ( v3 )\n      {\n        v4 = -1;\n        if ( *__errno_location() == 9 )\n          return 0;\n      }\n    }\n  }\n  return v4;\n}\n"
+        },
+        {
+            "funcName": "hard_locale",
+            "funcStartAddr": "0x404fc0",
+            "funcEndAddr": "0x405002",
+            "decompiledFuncCode": "bool __fastcall hard_locale(int category)\n{\n  char *v1; // rax\n  const char *v2; // rbx\n  bool v3; // bp\n\n  v1 = setlocale(category, 0LL);\n  v2 = v1;\n  v3 = 1;\n  if ( v1 && (!strcmp(v1, \"C\") || !strcmp(v2, \"POSIX\")) )\n    return 0;\n  return v3;\n}\n"
+        },
+        {
+            "funcName": "locale_charset",
+            "funcStartAddr": "0x405010",
+            "funcEndAddr": "0x405035",
+            "decompiledFuncCode": "const char *__cdecl locale_charset()\n{\n  char *v0; // rax\n  const char *v1; // rcx\n  const char *result; // rax\n\n  v0 = nl_langinfo(14);\n  v1 = \"Print the user name associated with the current effective user ID.\\nSame as id -un.\\n\\n\" + 84;\n  if ( v0 )\n    v1 = v0;\n  result = \"ASCII\";\n  if ( *v1 )\n    return v1;\n  return result;\n}\n"
+        },
+        {
+            "funcName": "rpl_fclose",
+            "funcStartAddr": "0x405040",
+            "funcEndAddr": "0x4050b4",
+            "decompiledFuncCode": "int __fastcall rpl_fclose(FILE *fp)\n{\n  int v1; // eax\n  int *v2; // r14\n  int v3; // ebp\n  int result; // eax\n\n  if ( fileno(fp) < 0 )\n    return fclose(fp);\n  if ( __freading(fp) )\n  {\n    v1 = fileno(fp);\n    if ( lseek(v1, 0LL, 1) == -1 )\n      return fclose(fp);\n  }\n  if ( !rpl_fflush(fp) )\n    return fclose(fp);\n  v2 = __errno_location();\n  v3 = *v2;\n  result = fclose(fp);\n  if ( v3 )\n  {\n    *v2 = v3;\n    return -1;\n  }\n  return result;\n}\n"
+        },
+        {
+            "funcName": "rpl_fflush",
+            "funcStartAddr": "0x4050c0",
+            "funcEndAddr": "0x4050f3",
+            "decompiledFuncCode": "int __fastcall rpl_fflush(FILE *stream)\n{\n  if ( stream && __freading(stream) && (stream->_flags & 0x100) != 0 )\n    rpl_fseeko(stream, 0LL, 1);\n  return fflush(stream);\n}\n"
+        },
+        {
+            "funcName": "rpl_fseeko",
+            "funcStartAddr": "0x405100",
+            "funcEndAddr": "0x40516d",
+            "decompiledFuncCode": "int __fastcall rpl_fseeko(FILE *fp, off_t offset, int whence)\n{\n  int v5; // eax\n  __off_t v6; // rax\n\n  if ( fp->_IO_read_end != fp->_IO_read_ptr || fp->_IO_write_ptr != fp->_IO_write_base || fp->_IO_save_base )\n    return fseeko(fp, offset, whence);\n  v5 = fileno(fp);\n  v6 = lseek(v5, offset, whence);\n  if ( v6 == -1 )\n    return -1;\n  LOBYTE(fp->_flags) &= ~0x10u;\n  fp->_offset = v6;\n  return 0;\n}\n"
+        },
+        {
+            "funcName": "atexit",
+            "funcStartAddr": "0x4051f0",
+            "funcEndAddr": "0x405202",
+            "decompiledFuncCode": "int __fastcall atexit(void (__fastcall *a1)(void *))\n{\n  return __cxa_atexit(a1, 0LL, _dso_handle);\n}\n"
+        }
+    ],
+    "funcCount": 69
+}

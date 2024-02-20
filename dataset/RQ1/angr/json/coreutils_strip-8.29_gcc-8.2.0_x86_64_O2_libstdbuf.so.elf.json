@@ -1,0 +1,33 @@
+{
+    "funcInfo": [
+        {
+            "funcName": "sub_400a3f",
+            "funcStartAddr": "0x400a3f",
+            "funcEndAddr": "0x400a61",
+            "decompiledFuncCode": "extern unsigned long long __bss_start;\n\nint sub_400a3f()\n{\n    unsigned long long v1;  // rax\n\n    v1 = &__bss_start;\n    if (false)\n    {\n        v1 = 0;\n    }\n    return v1;\n}\n"
+        },
+        {
+            "funcName": "sub_400a9a",
+            "funcStartAddr": "0x400a9a",
+            "funcEndAddr": "0x400b09",
+            "decompiledFuncCode": "extern char __bss_start;\nextern unsigned long long g_601068;\n\nint sub_400a9a()\n{\n    unsigned long long v0;  // [bp-0x18]\n    unsigned long long v1;  // [bp-0x10]\n    unsigned long v2;  // [bp-0x8]\n    unsigned long long v4;  // r12\n    unsigned long long v5;  // rbx\n    unsigned long v6;  // rax\n    unsigned long long v8;  // rax\n    unsigned long long v10;  // rbx\n    unsigned long long v11;  // r12\n\n    if (__bss_start == 0)\n    {\n        v2 = stack_base + 0;\n        v1 = v4;\n        v0 = v5;\n        if (false)\n        {\n            __cxa_finalize();\n        }\n        while (true)\n        {\n            if (g_601068 >= 0)\n            {\n                break;\n            }\n            g_601068 = g_601068 + 1;\n            *((long long *)(6295048 + (v8 + 1) * 8))();\n        }\n        v10 = v0;\n        v11 = v1;\n        __bss_start = 1;\n        return sub_400a3f();\n    }\n    return v6;\n}\n"
+        },
+        {
+            "funcName": "sub_4009c0",
+            "funcStartAddr": "0x4009c0",
+            "funcEndAddr": "0x400a3f",
+            "decompiledFuncCode": "int sub_4009c0()\n{\n    unsigned long long v3;  // rax\n    unsigned long long v4;  // rbx\n\n    v3 = getenv(\"_STDBUF_O\");\n    v4 = v3;\n    if (getenv(\"_STDBUF_E\") != 0)\n    {\n        v3 = _start();\n    }\n    if (getenv(\"_STDBUF_I\") != 0)\n    {\n        v3 = _start();\n    }\n    if (v4 == 0)\n    {\n        return v3;\n    }\n}\n"
+        },
+        {
+            "funcName": "sub_400b0e",
+            "funcStartAddr": "0x400b0e",
+            "funcEndAddr": "0x400b30",
+            "decompiledFuncCode": "extern unsigned long long g_600df8;\n\nint sub_400b0e()\n{\n    unsigned long long *v1;  // rbx\n    unsigned long long v2;  // rax\n    unsigned long v4;  // rdx\n\n    v1 = &g_600df8;\n    while (true)\n    {\n        v2 = *(v1);\n        if (*(v1) == -1)\n        {\n            break;\n        }\n        rax<8>();\n        v1 = &v1[-1];\n    }\n    return v4;\n}\n"
+        }
+    ],
+    "isStripped": "True",
+    "decompilerName": "Angr",
+    "compilerName": "gcc",
+    "optLevel": "-O",
+    "binaryName": "coreutils_strip-8.29_gcc-8.2.0_x86_64_O2_libstdbuf.so.elf"
+}
